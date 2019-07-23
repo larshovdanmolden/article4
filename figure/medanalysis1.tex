@@ -1,0 +1,15 @@
+\begin{tikzpicture}
+   
+   \tikzstyle{mynode}=[draw, ultra thin, draw=black, fill=white, minimum size=17mm,inner sep=0pt, align=center]
+        
+    \node[mynode] (m){$\Delta DC$};
+    \node[mynode,below left=of m](a) {$DL$};
+    \node[mynode,below right=of m](b) {$OR_{t_2}$};
+    \draw[-latex] (a.north) -- node[text width=1.3cm,font=\footnotesize, align=left, fill=white] {$\beta=0.46$ \\ $p<0.001$} (m.west);
+    \draw[-latex] (m.east) -- node[text width=1.3cm,font=\footnotesize,align=right, fill=white] {$\beta=0.48$ \\ $p<0.001$} (b.north);
+    \draw[-latex] (a.east) --
+            node[below=10mm,font=\footnotesize,align=left] {Average Direct Effect, $ADE=0.05$,
+              \\ Average Causal Mediated Effect, $ACME=0.22^{***}$ \\
+            Proportion of effect mediated: 82\%}
+                 (b.west);
+\end{tikzpicture}
