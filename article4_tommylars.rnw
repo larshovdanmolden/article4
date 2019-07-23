@@ -1,0 +1,730 @@
+%https://www.gnu.org/software/emacs/manual/html_node/emacs/Fill-Commands.html
+%https://academic.oup.com/journals/pages/authors/latex_files
+%latexmk -pdf -pvc -auxdir=/Users/larshovdanmolden/Documents/Output/  article2_mancap.tex
+
+\documentclass[review,fleqn]{elsarticle}
+\usepackage[textsize=tiny,colorinlistoftodos]{todonotes}
+\usepackage{subfig}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{filecontents}
+\input{preamble.tex}
+%%\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\setlength{\mathindent}{0pt} %% NB MAYBEREMOVE BEFORE SUBMISSION
+
+
+%%%% TURN OFF PAGE NUMBER FOR INCLUSION IN THESIS
+%\pagenumbering{gobble}
+%%%%%%%
+
+
+\begin{document}
+
+\begin{frontmatter}
+
+
+\title{Evolution of (dynamic) capabilities and its performance implications: An empirical test and extension}
+%\tnotetext[mytitlenote]{Fully documented templates are available in the elsarticle package on \href{http://www.ctan.org/tex-archive/macros/latex/contrib/elsarticle}{CTAN}.}
+
+%% Group authors per affiliation:
+%\author{Lars Hovdan Molden \fnref{myfootnote}}
+%\address{Kongensgt 42, 7713 Steinkjer}
+%\fntext[myfootnote]{Nord University Business School}
+
+%% or include affiliations in footnotes:
+%\author[mymainaddress,mysecondaryaddress]{Elsevier Inc}
+%\ead[url]{www.elsevier.com}
+
+%\author[mysecondaryaddress]{Global Customer Service\corref{mycorrespondingauthor}}
+%\cortext[mycorrespondingauthor]{Corresponding author}
+%\ead{support@elsevier.com}
+
+%\address[mymainaddress]{1600 John F Kennedy Boulevard, Philadelphia}
+%\address[mysecondaryaddress]{360 Park Avenue South, New York}
+
+\begin{abstract}
+  Despite considerable interest from the research community the theory of dynamic
+  capabilities is still very much evolving. Several recent literature reviews demonstrate
+  the need for better understanding of the antecedents and outcome of dynamic
+  capabilities. Building on a much cited theoretical framework developed by
+  \cite{zollo2002} and longitudinal dataset of Norwegian technology firms, we explore
+  the role of learning as an antecedent to dynamic capabilities, and relates this to the
+  outcome of dynamic capabilities themselves.
+
+\end{abstract}
+
+\begin{keyword}
+\texttt{Dynamic Capabilities, Deliberate Learning, Dynamics }
+\end{keyword}
+
+\end{frontmatter}
+
+%\linenumbers
+
+
+\doublespacing
+
+
+\section{Introduction}
+There is ongoing interest in (dynamic) capabilities and how they influence firm
+performance \citep{Fainshmidt2016a,Teece2014}. Indeed, \emph{dynamic capabilities} (DC),
+and its front runner, the resource-based view \citep{Barney2001,Helfat2007}, is now
+considered one of the major theories in strategic management
+\citep{Schilke2018}. Arguably, the key reason is that this theory clearly articulates how
+firms can alter their operating routines through dynamic capabilities. Thus, a key
+ingredient in this theory is that DCs can alter firms operating routines, with subsequent
+performance implications.
+
+An issue that has received far less attention, however, is whether dynamics capabilities
+themselves undergo an evolution \citep{Schilke2018}. Moreover, if DCs undergo an
+evolution, is the evolution inert and past-dependent, or more deliberate and represent
+purposeful change in firms DCs over time? Unpacking this is crucial to the development of
+DC theory as it goes into the very nature of the issue as to whether and to what extent
+DCs can purposefully alter firms operating routines, and the performance implications
+stemming from such change \citep{Helfat2007}. It is therefore surprising that the
+literature has dealt with it sparingly. What is the exception to this is \cite{Zollo2002a}
+highly influential model over DC evolution where they postulate that (dynamic)
+capabilities evolve with regard to firms’ \emph{deliberate learning} (DL). However, Zollo
+\& Winter`s insightful theorizing has received scant empirical testing. Moreover, their
+model can be developed further, by incorporating insights from subsequent research and
+theorizing since this model was published. One salient issue in this regard is that Zollo
+\& Winter did not consider how DCs can influence firms’ DL. Moreover, their model does not
+consider how firm performance may be influenced by the evolution of (dynamic)\todo{should
+  we really go with the parantheses around dynamic throuhgt the whole paper - it feels
+  like we are not certain about the concept} capabilities (through DL). Such feedback
+loops may significantly alter how we understand the relationship between deliberate
+learning and evolution of (dynamic) capabilities in extant DC theory, including the
+performance implications of such evolution. Reflecting this gap in our understanding, we
+ask the following research question:
+
+\emph{What is the role of deliberate learning in the evolution of (dynamic) capabilities and the
+performance implications for such evolution?}
+
+To answer this research question, we not only empirically test ZW’s a highly influential
+model of the evolution of (dynamic) capabilities, but also extend it by incorporating (a)
+feedback loops between DCs and deliberate learning and (b) incorporating firm performance
+into the model.
+
+
+
+\section{Theory}\label{sec:theory}
+Firm capabilities can roughly be divided into two categories. First, ordinary capabilities
+(OR) “are directed toward maintaining and leveraging the status quo in terms of the scale
+and scope of activities, businesses, product lines, customer segments”
+\citep[p. 393]{Schilke2018}. In other words these capabilities are the ones who “permit a
+firm to ‘make a living’ in the short term” \citep[p. 991]{Winter2003}. On the other hand,
+dynamic capabilities (DC) are “those that operate to extend, modify or create ordinary
+capabilities” (ibid). DC theory is emerging as an important paradigm in strategic
+management research, but also facing some considerable challenges with respect to its
+antecedents and outcomes \citep{Eriksson2014,Schilke2018}, as well as its evolution
+and development trajectory \citep{Romme2010,Zollo2002a}. Extant
+literature has dealt with antecedents in many forms such as ### (ref) etc. Similarly,
+outcomes have been the focal point of several contributions focusing on ### (ref)
+etc. However, despite DC building on an evolutionary view of resource development, less
+attention has been dealt to the evolution of DC over time than one could expect. Partly
+this could be due to lacking data (ref), unclear conceptual definitions (ref) or sheer
+complexity of studying evolution (ref). One remarkable exception is Zollo \& Winter (2002)
+who propose a clear evolutionary argument and hypothesis on DC evolution. Still, little
+empirical work has attempted to test their propositions.
+
+\textcolor{red}{DL definition – makes sure all definitions are in order}
+
+By combining insights from 20 years of DC research on external factors such as antecedents
+and outcomes with the internal process shaping DC over time, we can shed light on the
+workings of DC and extend the knowledge of its implications. Using Zollo \& Winter as our
+point of departure we will be able to study the internal process of DC evolution, and by
+adding new dimensions related to antecedents and outcomes we will gain insight into
+important implications of the concept.
+
+
+\subsection{Deliberate learning as antecedent and evolution driver}
+When Zollo \& Winter (2002) put deliberate learning at the center of their model for DC
+evolution they tap into a core tenant of DC theory more developed in later
+contributions. Learning theory in organizations distinguishes between autonomous learning
+processes \citep{Arthur2005} (e.g. learning by doing \citep{Zollo2002a,Arrow1962} based on
+repetitive actions by employees in firms and organizations, and deliberate learning where
+learning takes the form of a planned and deliberate process \citep{Arthur2005}. This
+deliberation and intent as a driver behind the learning process, corresponds well with the
+idea of purposefulness behind strategic intent as evident in the definition of dynamic
+capabilities \citep{Helfat2007}: “the ability to {\bf purposefully} build, extend and
+modify ordinary capabilities” (our emphasis added). (ref). When organizations invest in
+systems to facilitate learning, they invest in capabilities for changing routines in line
+with strategic direction of the organization itself. Hence, investments in deliberate
+learning corresponds with investments in dynamic capabilities and both concepts contribute
+to the development of operational routines.
+
+\emph{H1: Deliberate learning has a direct positive effect on organizations development of
+  operating routines.}
+
+They depart conceptually, however, when we look at the functioning of each. The main
+function of DL is to accumulate knowledge and experience about the operation of the
+organization and its environment (ref). Through this process DL generates insights into
+what should be changed and not in order to achieve improved organizational
+performance. Contrary, DC deals with how change in operational routines should be done
+through putting experience from DL to work (ref). Thus, for DC to be well functioning in
+its quest to change OR, a DL process needs to be in place. Without a proper DL the
+learning will be less purposeful and hence less attune to the strategic intent of the
+firm. Change may still appear, but as organizational change rather than strategic (helfat
+distinction between strategix and organizational change). In other words, without DL firms
+can achieve technical fitness (ref), but only through DL shaping DC can firms achieve
+evolutionary fitness (ref). Consequently, DL is an important antecedent to DC.
+
+\emph{H2: Deliberate learning leads to stronger dynamic capabilities and has a positive
+  influence on the level of dynamic capabilities within the firm.}
+
+\emph{H3: Deliberate learning has an indirect effect on operational routines through
+  dynamic capabilities.}
+
+Besides impacting the level of DC as an antecedent, DL also contributes to the evolution
+of DC over time. Conventional insights suggest that DC cannot be aquired in factor markets
+and thus has to be developed internally \citep{Coen2011,Schilke2014a}\todo{(Helfat,
+  Finkelstein, Mitchell, Peteraf, Singh,\& Teece, 2007; Katkalo, Pitelis, \& Teece, 2010;
+  Maritan \& Peteraf, 2011; Teece, 2014). in Schilke 2014} . This has performance
+implications related to the VRIO principle \citep{Barney1991} (as discussed later in this
+article), as well as consequences for the evolution of DC. Considering DC as itself a
+hierarchy of capabilities \citep{Collis1994,Winter2003} opens up for a distinction between
+first-order and second-order DC. On the one hand, systematic learning generates insights
+into how routines and lower level capabilities should change (i.e. impacting first-order
+DC) \citep{Mahoney1995,Schilke2014a}. On the other, the same learning process is very much
+involved in developing and shaping these capabilities over time (Kianto and Ritala 2010;
+Schilke2014). Consequently, in addition to being an antecedent to DC, DL also would work
+as a second-order DC influencing the evolution of DC over time (the ability of
+“learning-to-learn” (Collis, 1994)).
+
+\emph{H4: Deliberate learning has a direct positive effect on changes in dynamic
+  capabilities over time}
+
+Dynamic capabilities enables firms to adapt better to changing environments
+\citep{Teece1997} and hence creating strategic change in terms of purposefully changing
+operational routines \citep{Helfat2007}. Thus, firms with well-functioning DC would be
+able to utilize more instances of change and thus more opportunities for learning
+(ref). Consequently, high DC leads to more opportunities for both ad-hoc and deliberate
+learning to take place and disclose the demand for investments in methods for systematic
+experiential learning. As deliberate learning emphasizes a purposefulness of learning by
+focusing “on the effect of planned processes for acquiring, codifying, and transferring
+existing knowledge within and between organizations” \citep[p. 1160]{Arthur2005}, many
+opportunities generated from enhanced DC should lead to more investments in learning
+systems. This notion is also supported by previous work emphasizing that doing more of the
+same over time leads experience accumulation and hence improved outcomes
+\citep{Zollo2004a}. Similarly, by being active in changing its resource base firms
+accumulate experience and the importance of deliberate approaches to leading will become
+more apparent. A related point is that when the number of opportunities for learning
+increases due to higher DC, the incentives for the firm to invest in DL increases due to
+potential intensified agency problems \citep{Arthur2005}. The more potential for
+knowledge accumulation through learning, the higher potential for misaligned incentives
+between workers keeping information back in fear of not being sufficiently compensated,
+and management. Hence, the incentive for the firm to invest in DL to better align these
+incentives, increases (ibid). In sum these arguments shape an interesting hypothesis on
+the feedback loop between DL and DC and how DL could be an outcome as well as an
+antecedent of DC \cite{Schilke2018}.(HERE WE ALSO HAVE A DIRECT QUOTE).
+
+\emph{H5: Dynamic capabilities enhances demand for systematic learning so investments in
+  deliberate learning abilities will increase over time.}
+
+
+\subsection{Direct and indirect outcomes of dynamic capabilities}
+The objective of strategic change is to enhance a firm’s competitive advantage
+(ref). Doing so over time makes for the evolutionary fitness of the firm \citep{Helfat2007}. When firms
+are developing capabilities for strategic change through creating, extending and modifying
+the resource base this means making decisions to develop operational routines. Such
+routines can in turn stem from an inherent learning process evolutionary distinct to the
+firm. OR can thus lead to competitive advantage because of their evolutionary character
+\citep{Nelson1982,Winter2003}. To the extent OR stems from idiosyncratic
+evolutionary process of individual firms rather than being the result of investments in
+factor markets, they can satisfy the VRIO condition and thus be a source of competitive
+advantage. In such instances, DC works through OR in creating CA. This indirect impact on
+CA is very much at the core of the DC literature (ref). Firms with high DC will be able to
+better change operating routines to facilitate strategic change in response to changing
+conditions facing the firm. DC then creates VRIO OR and hence CA. When this happens, firms
+improves their OR and the OR itself satisfies the VRIO condition.
+
+\emph{H6a: Operating routines mediates the effect of dynamic capabilities in generating
+competitive advantage.}
+
+On the other hand, resources and capabilities can to a certain extent be captured in
+factor markets through investment decisions (ref) or through alliances (ref) or M\&A
+activates (ref). By acquiring resources through investments, the operating routines of the
+firms may not be directly affected. When these acquisitions happen as a response to
+systematic resource orchestration (ref), i.e. reshaping the resource mix to obtain
+coordinated resource deployments \citep{Kor2005,Pan2006}, they would indeed have
+potential performance implications for the firm. Moreover, when this process of resource
+acquisition process of DC develops a way to acquire and mix resource for the purpose of
+adapting to change, the resources themselves would not necessarily satisfy the VRIO
+condition. The way in which this happens may be much harder to imitate due to the
+complexities such routines exhibit. Although resources themselves exhibit clear
+equifinality in their impact on competitive advantage, the complex routines of the
+orchestration (i.e. dynamic capabilities) would likely satisfy the VRIO condition. In
+other words, there are several ways in which resources can be orchestrated to generate CA,
+whereas improved OR will always mean improved competitiveness et ceteris paribus. In such
+instances DC itself can lead to CA directly.
+
+\emph{H6b: Dynamic capabilities has a direct effect on competitive advantage through the process
+of resource orchestration and acquisition of resources in factor markets.}
+
+In other words, we would expect DC to have both a direct and an indirect impact on
+CA. Although both the direct and the indirect path stems from DC creating, extending and
+modifying the resource base (OR or factor market resources), the difference in the path’s
+stems from to what extent the mediating construct can itself satisfy the VRIO
+condition. OR can, due to their evolutionary nature, in turn shaped by DC, achieve CA
+\citep{Collis1994,Winter2003}. Factor market resources and market acquired capabilities and
+best practices can not \citep{Eisenhardt2000,Peteraf2013}.
+
+
+
+
+\begin{figure}
+
+\begin{minipage}[t]{.5\textwidth}
+  \centering
+  \includegraphics[width=0.9\linewidth]{./figure/fig1.png}
+  \captionsetup{width=0.9\linewidth}
+  \captionof{figure}{Conceptual relationship based on Zollo and Winter. Extensions in grey}
+  \label{fig:fig1}
+\end{minipage}%
+\begin{minipage}[t]{.5\textwidth}
+  \centering
+  \captionsetup{width=0.98\linewidth}
+  \includegraphics[width=0.98\linewidth]{./figure/fig2.png}
+  \captionof{figure}{Dynamic capabilities direct and indirect paths to competitive advantage determined by the VRIO condition}
+  \label{fig:fig2}
+\end{minipage}
+\end{figure}
+
+Figure \ref{fig:fig1} sums up the hypothesis proposed in this section of our paper. The
+white boxes and black arrows represent the parts of the model that was originally proposed
+by \cite{Zollo2002a} whereas the grey parts are extensions based on more recent
+contributions to the field of dynamic capabilities. Figure \ref{fig:fig2} illustrates the
+two proposed paths through which DC affect competitive advantage. The main take away from
+this is that dynamic capabilities can affect CA through changing operational routines that
+by themselves can satisfy the VRIO condition by means of their evolutionary nature. Thus,
+we hypothesize that operating routines mediates the relationship between DC and CA – the
+indirect path. Conversely, the same DC enable the firm to identify resources and
+capabilities in factor markets that are less idiosyncratic and often takes the shape of
+best practices that are definitely imitable and thus bot VRIO. In such instances, the VRIO
+condition is satisfied by the DC itself through its complex process of orchestrating and
+mixing resources – the direct path.
+
+
+\section{Data and methods}
+An empirical test of the Zollo \& Winter model necessitates a certain time span of
+observations in order to enable the study of dynamics over time. The lack of such
+longitudinal studies to investigate dynamics has also been a permanent limitation for
+moving the DC literature forward empirically and theoretically \cite{Schilke2018}. To
+remedy this gap in the literature and to investigate the empirical characteristics of the
+Zollo \& Winter model we sampled a subset of Norwegian technology firms ($N=241$) over two
+time periods.
+
+We collected survey data from R\&D active firms in Norway at two points in time ($T_1=2005$
+and $T_2=2014$). The population was all businesses registered to a scheme for tax deduction
+of R\&D costs (called SkatteFUNN). As all enterprises which are eligible for taxation could
+register their R\&D activities to receive a tax refund, the registered enterprises include
+close to all enterprises which are involved in such activities at the time of our study.
+
+All firms that registered R\&D activities during May to December 2005 were approached
+totaling in all 1721 firms. A web-based questionnaire was developed containing the
+measures of the key constructs of this paper. A link to the questionnaire was e-mailed to
+the firms within a month after they registered R\&D activities. The initial mailing was
+followed by two e-mail reminders. Of the firms approached, 1199 (70 \%) returned filled-in
+questionnaires. The 1199 companies that filled out the questionnaire were contacted again
+9 years later. The majority of firms were contacted in spring/summer 2014. All received a
+web-based questionnaire containing the same measures of DC, CA, OR and so on. 283 of the
+firms returned filled-in questionnaire.
+
+All the firms in the sample was identifiable by means of the official firm
+identifier. This enabled us to attach financial data from the annual accounts of the firms
+despite none of the firms in the sample being publicly traded companies. We obtained the
+financial accounts from the National Firm Registry (BRREG) for all years between 2007 and
+2014 (prior to 2007 was not accessible through our database).
+
+To control for survivor and non-response among our firms over time due to exogenous
+factors such as exit, bankruptcy and so on, we estimate a model Heckman correction (Hair,
+2010). Applied to the context of this paper, Heckman regression is a method that in the
+first step analyses the probability that a firm at $T_1$ will answer the survey at $T_2$
+depending on observables at $T_1$. This is modeled as a probit regression. Based on the
+probit regression in $T_1$, the inverse Mills ratio (sometimes called lambda) is added to the
+analysis in the second step where the goal is to analyze the relationship between our
+focal constructs (using regular OLS regression). The inverse Mills ratio is a control
+factor which controls for unobserved heterogeneity. More concretely, the inverse Mills
+ratio will control for unobserved factors that are related to both firms’ probability of
+answering the survey at $T_2$ (ref).
+
+\subsection{Variable construction}
+
+The focal constructs of this paper are deliberate learning, dynamic capabilities,
+operational routines and competitive advantage. These are all operationalized using the
+survey data described above. Table 1 below describes the items used to operationalize the
+focal constructs and their internal validity in forming an additive index (Cronbach´s
+alpha). The results show that our key constructs can be represented by the items in the
+survey.
+
+
+There are no established measurement models of dynamic capabilities
+\citep{McKelvie2009,Schilke2018}. Therefore this study builds on a mixture of qualitative
+case study methodology, literature review and statistical techniques to develop and refine
+measures of DCs. First, exploratory qualitative interviews, using a semistructured
+interview guide, were conducted with management representatives from 10 R\&D/innovative
+firms. The aim of the interviews was to get an overview of each firm's innovation and
+development processes, in particular the processes related to its dynamic capabilities and
+the management of its resources. Themes raised in the interviews were about network,
+co-operation with external R\&D-institutions, learning in the firm, adaptation and changes
+in the firm. We interviewed SMEs and larger firms, and the industries varied from
+high-tech and ICT to publishing.  Based on the interviews and an extensive literature
+review, statements identified as descriptions of dynamic capabilities and resources were
+developed and included in a questionnaire.
+
+Second, the informants from the 10 firms were subsequently asked to take part in a pretest
+of the questionnaire, including the preliminary items developed to measure dynamic
+capabilities and resources, by responding to the questionnaire and giving comments on the
+individual questions. This was followed up by a telephone call to the interviewees where
+they were asked to report their views on the various questions/items.
+
+Third, the face validity of the items was further examined by pre-testing the measurements
+among experts. Researchers with knowledge of business strategy within firms were asked to
+evaluate the questionnaire. Based on the results from the pilot study, the items were
+adjusted and refined.
+
+Although we recognize at the outset that the concept of dynamic capabilities and their
+underlying resource components are very challenging to research in a systematic and
+econometric fashion \citep{McKelvie2009}, we follow the argument in the
+literature that more empirical work is necessary to test and refine the dynamic
+capabilities concept and how it is related to the evolutionary economic theory
+\citep{Arend2009,McKelvie2009} \todo{Rosenblom, 2000; Verona and Ravasi, 2003;}.  It
+is in this spirit that the research reported in this paper has been undertaken.
+
+Items measuring DC and OCs were developed as statements for which the respondents were
+asked to indicate to what extent each statement fitted a description of their business. We
+adopted one-sided seven point Likert scale where: 1 = strongly disagree and 7 = strongly
+agree. We built on prior studies where items measuring OCs have been measured relative to
+competitors \citep{McKelvie2009}.
+
+\text{red}{CONTINUE WITH THE OTHER KEY CONSTRUCTS – INPUT FROM TOMMY}
+
+\subsection{Control variables}
+
+We add a set of control variables expected to explain parts of the variation in our focal
+constructs. From the survey we add firm size, firm age, the level of dynamism facing the
+firm. Size is the reported number of employees in the firm at $T_2$, and age is the number of
+years since establishment. Dynamism is captured by asking a number of questions about the
+competitive environment facing the firm. A full list of items and their internal validity
+(0.75) is available in appendix ##.
+
+To partly remedy the problem of common method bias, we add controls of financial data from
+the firm´s profit and loss statements, and balance sheet. Specifically, we add the natural
+logarithm of the assets and debt of the firm to capture the leverage (debt risk) of the
+firm, as well as the capital intensity.
+
+One core critique of the dynamic capabilities literature is that it simply is a response
+to the firm being a good firm \citep{Arend2009}. This tautology makes it hard to
+distinguish the direction of the effects the performance implications of dynamic
+capabilities. Simply put both firm performance and dynamic capabilities can be due to some
+unobserved factor of the firm simply being a “good firm”. In such cases we would simply
+regress one on the other and get positive results without the exact mechanism being
+pointed out. To partly control for this we add a proxy for the quality of the firm as a
+control variable. In this paper we use the profit margin of the firm as this type of
+control. It is not perfect as profit margins can be due to many factors outside our model,
+but it serves to control for parts of the possible cofounding factors of firm quality.
+
+\subsection{Estimation and empirical model}
+
+To test our hypotheses, we run a sequential linear regression with heteroskedastic robust
+standard errors and Heckmann two-step correction to control for attrition and survival
+bias (ref). We test the mediation hypotheses within this framework using a causal
+mediation \citep{Baron1986,MacKinnon2008} with quasi-Bayesian confidence intervals
+over a million simulations \citep{Imai2010}. The sequential regression
+model is presented chronologically in accordance with figure \ref{fig:fig1}. This entails that the
+dependent variable in one model will be the independent in the next to study the evolution
+of the proposed model sufficiently. The following models are estimated:
+
+\par\noindent
+\begin{align}
+  OR_{2,i} &= \beta_0 + \beta_1 OR_{1,i} + \beta_2 DL_{i} + \mathbf{\Gamma C_i} + \epsilon_i\\
+  OR_{2,i} &= \beta_0 + \beta_1 OR_{1,i} + \beta_2 DL_{i} + \beta_3 DC_{1,i} + \beta_4
+               \Delta DC + \mathbf{\Gamma C_i} + \epsilon_i\\
+  DC_{2,i} &= \gamma_0 + \gamma_1 DL_{1} + \gamma_2 DC_{1,i} + \mathbf{\Gamma C_i} + \upsilon_i\\
+  CA_{2,i} &= \lambda_0 + \lambda_1 CA_{1,i} +
+             \lambda_2 DC_{1,i} + \lambda_3 \Delta DC_i +\mathbf{\Gamma C_i}+ \mu_i \\
+  CA_{2,i} &= \lambda_0 + \lambda_1 CA_{1,i} + \lambda_2 OR_{1,i} + \lambda_3 \Delta OR_i
+             \lambda_4 DC_{1,i} + \lambda_5 \Delta DC_i +\mathbf{\Gamma C_i}+ \mu_i \\
+  DL_{i} &= \xi_0 + \xi_1 DC_{1,i} +\mathbf{\Gamma C_i}+ \nu_i
+\end{align}
+
+Here $ \mathbf{\Gamma C_i}$ represents a vector of control variables including size, age,
+dynamism, financial assets and profit margin. $\Delta DC_i$ is the change in $DC$ from
+$T_1$ to $T_2$. Similarly $\Delta OR_i$ represents the change in $OR$.
+
+In addition we estimate mediating models and test formally for mediation using the Baron
+\& Kenny method \citep{Baron1986,MacKinnon2008}. We estimate two mediating model to test
+if OR mediates the effect of DC on CA, and if DC mediates the effect of DL on OR,
+respectively. The mediation equations for OR and DC respectively are state below:
+
+\begin{align}
+ \Delta DC_i &= \alpha_0 + \alpha_1 OR_{1,i} + \alpha_2 DL_{i} + \mathbf{\Gamma C_i} + u_i \\
+ \Delta OR_i &= \omega_0 + \omega_1 CA_{1,i} + \omega_2 \Delta DC_{i} + \omega_3 CA_{1,i} + \mathbf{\Gamma C_i} + v_i
+\end{align}
+
+Finally, we run a Heckman selection model with selecting in to the sample at time $T_2$ is
+determined by the following model:
+
+\begin{align}
+  P(R=1) &= \eta_0 + \eta_1 L_i + \eta_2 DC_{1,i} + \mathbf{\Gamma C_i} + m_i
+\end{align}
+
+$R$ is an indicator variable equal to 1 if the firm has responded at $T_2$ and 0 if
+not. $L_i$ is an indicator set to 1 if the person answering the survey is the managing
+director or CEO. This acts as an instrument for considering the probability of the firm
+selection into the sample, but without having any theorized relationship with the main
+outcome variables $DC$, $OR$, and $CA$. It is reasonable to assume that if the CEO was
+involved in answering the survey at $T_1$, would increase the probability of the firm
+answering at $T_2$ as well.
+
+\section{Results}
+The focal variables of our study is presented with pairwise correlation, mean and standard
+deviation in table \ref{tab:desc}.It is worth noting that the mean value of OR and DC is
+declining over time suggesting that the average firm experience a negative development in
+core resources. The ability of the firms in our sample to generate CA is somewhat
+unchanged over the sample period. We also observe a certain correlation in the development
+in DC over time suggesting that prior period DC is a strong predictor of future
+DC. Furthermore, we see a strong correlation between DL and DC which indicates that these
+two constructs are indeed related.
+
+\begin{table}[t]
+\begin{singlespace}
+  \caption{\small Descriptive statistics and correlations for variables in this paper}
+  \label{tab:desc}
+
+<<resultscorr, results="asis",echo=FALSE >>=
+
+print(xtable(art2cor ,size="\\small",caption="Correlation matrix \\label{tab:cor}", align = c("l", rep("p{0.3in}",9)),table.placement="h", size = "\\small", tabular.environment="longtable"), size="scriptsize", label='tab:cor', caption.placement="top", floating=FALSE,latex.environments=NULL)
+
+@
+\vspace{1ex}
+
+     \raggedright {\scriptsize Notes: Pairwise correlations between variables in the study
+    excluding controls}
+\end{singlespace}
+\end{table}
+
+
+
+\begin{table*}[t]
+  \centering
+
+\caption{Regression -How are MDC influencing evolution of lower level capabilities }
+
+<<result1, results="asis", echo=FALSE >>=
+stargazer(mainres,
+          add.lines =list(c("Adjusted $R^2$",r1,r2,r3,r4,r5,r6)),
+          single.row=FALSE, column.sep.width = "1pt", omit.stat=c("LL","ser","f","aic","rsq","adj.rsq"),
+          no.space=FALSE,
+          dep.var.labels=c("OR_{T_2}", "DC_{T_2}","CA_{T_2}","DL"),
+        #  column.labels=c("HECKMAN","OLS","HECKMAN","OLS","HECKMAN","OLS"),
+          model.names=FALSE,
+          object.names=FALSE,
+
+          ### order=c(1,3,2),
+
+           ## covariate.labels= c("$OR_{T_1}$",
+           ##                "$\\Delta OR$",
+           ##                "$CA_{T_1}$"
+           ##                "$DL$",
+           ##                "$DC_{T_1}$",
+           ##                "$\\Delta DC$",
+           ##                "Firm size",
+           ##                "Firm age",
+           ##                "Environmental Dynamism",
+           ##                "Firm profit margin",
+           ##                "Firm assets"
+           ##          ),
+
+          title= "Regression results for model C", font.size="scriptsize",float=FALSE
+          )
+
+@
+\label{tab:reg}
+\end{table*}
+
+\begin{figure}[t]
+
+\begin{minipage}[t]{.5\textwidth}
+
+  \resizebox{7cm}{!}{\input{./figure/medanalysis1.tex}}
+  \captionof{figure}{Mediation analysis 1}
+  \label{fig:fig3}
+\end{minipage}%
+\begin{minipage}[t]{.5\textwidth}
+ \resizebox{7cm}{!}{\input{./figure/medanalysis2.tex}}
+  \captionof{figure}{Mediation analysis 2}
+  \label{fig:fig4}
+\end{minipage}
+\end{figure}
+
+
+Table \ref{tab:reg} shows a summary of the regression models proposed in the previous
+chapter. Models 1,2 and 3 are designed to test DL as \emph{antecedent} for $OR$ and
+$DC$. Consider model 1 we observe that $DL$ is influencing the level of $OR$ within the
+firm ($\beta_2 =$ \Sexpr{mod1_dl}) supporting H1. However, the effect disappears when we
+add $DC$ in model 2 suggesting a mediating effect. In other words we see that firms with
+initial high $DC$($\beta_3=$ \Sexpr{mod2_dc0}) and increasing $DC$ over time ($\beta_4=$
+\Sexpr{mod2_ddc}) also have better $OR$. To control for the mediating effect suggested by
+the change in coefficients for $DL$ between models 1 and 2, we performed a causal
+mediation analysis as reported in figure \ref{fig:fig3}. This analysis confirms the
+indications from models 1 and 2 showing that the direct effect from $DL$ on $OR$ is
+insignificant and small (ADE = \Sexpr{medmod1_ade}). Meanwhile, the indirect effect
+running through changes in $DC$ over time, is significant yielding a positive and
+significant indirect effect of \Sexpr{medmod1_acme}. The proportion of the effect that is
+mediated amounts to \Sexpr{medmod1_shmed}. In sum these results suggest that H1 is
+unsupported, and that the bulk of the effect is indirect running through $DC$, in line with
+the expectations in H3. Similarly, we see from model 3 that $DC$ is indeed influenced by $DL$
+above and beyond its own evolutionary trajectory. This is in line with our expectations
+and lend support to H4.
+
+To evaluate H5 proposing a feedback effect from $DC$ to $DL$, we turn to model 6 in table
+\ref{tab:reg}. Controlled for the usual firm level controls we find a positive effect
+($\xi_1=$ \Sexpr{mod6_dc0}) from $DC_{T_1}$ on $DL$ measured at $T_1$. This supports H5
+suggesting that firms with more $DC$ is more likely to generate opportunities where it
+becomes more prevalent that learning will need to take place. One interesting finding is
+also that this effect environmental dynamism decreases firms level of $DL$. This is indeed
+puzzling and we will look in to this in a post-hoc analysis.\todo{When adding interactions
+  we see that high environmental dynamism in conjunction with DC is positive for DL
+  meaning that DC will indeed work to make firms more aware of the benefits of DL when
+  environments are changing} It is also worth noting that models 1,2 and 3 have positive
+and significant $\rho$ from the Heckman selection model indicating that selection is
+leading to biased estimates. By running a Heckman correction we avoid this potential
+problem.
+
+Models 4 and 5 in table \ref{tab:reg} deals with the \emph{outcome} of DC. H6a and H6b
+both considers effects of $DC$ on the competitive advantage of the firm $CA$. $CA$ is
+influenced by the level of $DC$ of the firm indicating that dynamic capabilities are a
+source of competitive advantage in line with our expectations. Furthermore, considering
+model 5 we see that $OR$ also has a significant positive effect on $CA$ indicating that
+operating routines can also be a source of advantage for the firm. Moreover, the
+coefficient of $\Delta DC$ decline from \Sexpr{mod4_ddc} to \Sexpr{mod5_ddc} when we add
+$OR$. This suggests that some mediation is at work, i.e. that changes in $DC$ leads to
+changes in changes in $OR$ leading to $CA$. This indirect path is in line with the
+expectations from our hypotheses and as described in figure \ref{fig:fig2}. When formally
+testing this mediation running a causal mediation analysis (see figure \ref{fig:fig4}), we
+find added support that both a \emph{direct-} and an \emph{indirect} path exist to explain
+the relationship between $DC$ and $CA$ (ADE = \Sexpr{medmod5_ade}, ACME =
+\Sexpr{medmod5_acme}) and a total mediated share of \Sexpr{medmod5_shmed}.
+
+Table \ref{tab:hyptab} depict a summary of the hypotheses and indicate if they are
+supported or not in our analysis. We will now turn to the discussion. 
+
+\begin{table}
+     \footnotesize
+  \centering
+\input{./figure/hyptab.tex}}
+\end{table}
+
+
+
+\section{Discussion}
+
+The objective of this article is to study the antecedents and outcomes of dynamic
+capabilities, particularly the role of deliberate learning in shaping dynamic capabilities
+over time. Learning is arguably an important determinant of firm success (ref arrow and
+more), and the deliberate investment in learning to learning (i.e. deliberate learning)
+has a long standing position as a theoretical antecedent of dynamic capabilities
+\citep{Zollo2002a,Eriksson2014,Schilke2018}. Furthermore, the role of deliberate learning
+in creating better operational routines is well established (ref), but it`s role in
+generating competietive advantage for the firm, is less understood. Alas, the main
+mechanism, the VRIO principle \citep{Barney1991a} is well known and still deemed highly
+relevant relevant in understanding the source of competitive advantage of the firm
+\citep{Priem2001}. Despite the prevalent and considerable citation of the
+\cite{Zollo2002a} model, neither an empirical analysis of the model propositions, nor it`s
+connection to outcomes such as competitive advantage has, to our knowledge, been
+undertaken. 
+
+Our proposed extension of \cite{Zollo2002a} as depicted in figure \ref{fig:fig1}, taps
+into the debate on the most important \emph{antecedents} and \emph{outcomes} of dynamic
+capabilities \cite{Eriksson2014,Schilke2018}. Our results indicate that deliberate
+learning is indeed an important antecedent of dynamic capabilities. Firms with stronger
+capabilities for deliberate learning will develop higher levels of dynamic
+capabilities. Thus the deliberate decision to invest in systems for learning will lead to
+the evolution of better capacities to "purposefully create, extend, or modify its resource
+base" \citep[p. ###]{Helfat2007}. Indeed, this also follows from Zollo \& Winter`s
+definition where "a dynamic capability is a learned and stable pattern of collective
+activity through which the organization systematically generates and modifies its
+operating routines in pursuit of improved effectiveness" \citep[p
+###]{Zollo2002a}. 
+
+The next step of figure \ref{fig:fig1} is to establish the link between deliberate
+learning and the operational routines of the firm. These operating routines are what
+\cite{Winter2003} calls "how we can earn a living now" (p. 992) or the technical fitness
+of the firm \citep{Helfat2007}. Such operational routines are the product of learning
+processes over time and should indeed be linked to deliberate learning of the firm as
+proposed by \cite{Zollo2002a}. However, we find that this direct effect between deliberate
+learning and operational capabilities disappear when we introduce dynamic capabilities into
+the model. This suggest that dynamic capabilities are evolving as a response to deliberate
+learning and, in turn, shaping operational capabilities in line with expectations of Zollo
+\& Winter. In other words, we find support for an indirect link between deliberate
+learning and operational routines, but no direct path. 
+
+This finding may come from the fact that learning works differently at different levels of
+the capabilities hierarchy \citep{Collis1994}. Considering operational capabilities as
+zero-order capabilities \citep{Winter2003,Schilke2014a} defined as more "geared towards
+the operational functioning of the firm" \citep[p. 340]{Zollo2002a}, learning may be more
+ad-hoc and less routinized as experiences are accumulated "on the fly" or through
+"learning by doing" (ref) rather than deliberate and systematic. Indeed, learning by doing
+is established as a robust result in the empirical literature on it`s link to operational
+excellence (ref). When learning becomes deliberate and systematic through investments in
+learning to learn capabilities, this would not automatically strengthen the short term
+evolution of operational capabilities directly \citep{Arthur2005}. \todo{Need some more
+  references here}. These findings would also lend support to the notion of higher-order
+dynamic capabilities (capabilities to change dynamic capabilities)
+\citep{Collis1994,Winter2003,Schilke2014a} and that deliberate learning could be
+classified as such. In contrast, ad-hoc learning based on repetitive actions by employees
+does not satisfy the requirements for a dynamic capability as the actions are less
+strategic and purposeful.
+
+An interesting finding is also that deliberate learning itself could be seen as a function
+of dynamic capabilities. We argue that this stems from firms with high levels and
+evolution of dynamic capabilities will take more advantage of adapting to change and hence
+creating more opportunities for learning. This leads the firm to realize the need for
+more deliberate approach to systematic learning. Particularly, this would lead to more
+investments in systems for learning and, in turn, improvements in dynamic and operational
+capabilities. For obvious reasons this is a tough causal claim to make and we have little
+support for a causal argument. The insight will thus need considerably better data and
+empirical analysis going forward. However, it has some support in the literature where
+learning can be seen as an outcome as well as an antecedent to dynamic capabilities
+\citep{Schilke2018}. \todo{maybe add someting about the interaction with dynamism} 
+
+Moving from antecedents to outcomes we extended the \cite{Zollo2002a} model by adding
+competitive advantage to the model. We find that both operational capabilities and dynamic
+capabilities can lead to competitive advantage. The most obvious path from the mere
+definition of dynamic capabilities, runs through the evolution of operational
+capabilities. Dynamic capabilities shape operational capabilities and changes them to
+adapt, hence safeguarding that they are adapted. This is beyond the ad-hoc learning and
+adaptation taking place as repetitive actions by employees. TO BE CONTINUED
+
+\subsection{Limitations}
+
+
+
+Our operational construst of $DC$ captures dynamic capabilities in
+a broad, non-functional, sense (e.g. as a broad-purpose capability rather than one for
+a particular purpose) \citep{Schilke2018}, and will hence capture a mind-set of the
+organization rather than a narrow set of learned capabilites. This makes our conclusions
+more general, albeit maybe less precise in predicting what investments in deliberate
+learning would nmean for important capacities such as new product development and
+innovation. 
+ BLABLABLABLA
+
+
+
+
+
+
+\section{Bibliography}
+
+
+\singlespacing
+\bibliography{Dissertation_clean}
+
+
+
+\section{Appendix}
+
+\end{document}
+
+

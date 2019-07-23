@@ -1,0 +1,88 @@
+\usepackage{lineno,hyperref,float}
+\usepackage{amsmath,natbib,bm}
+\usepackage{geometry,array,setspace,lipsum,nccmath}
+\usepackage{amsfonts}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{rotating}
+\usepackage{hypcap}
+\usepackage{adjustbox}
+\usepackage{pdflscape}
+\setstretch{1.0}
+\usepackage{color}
+\usepackage{framed}
+\usepackage{comment}
+%\definecolor{shadecolor}{gray}{0.875}
+\usepackage{caption}
+%\captionsetup[table]{skip=8pt}
+\usepackage{enumitem}
+\usepackage{longtable}
+% Table float box with bottom caption, box width adjusted to content
+\usepackage{afterpage}
+\usepackage{blindtext}
+\usepackage{alltt}
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage{tikz}
+\usepackage{tcolorbox}
+
+\usetikzlibrary{shapes.geometric, arrows}
+\usetikzlibrary{arrows.meta}
+\usepackage{tikzscale}
+\tikzset{every picture/.style={font issue=\footnotesize},
+	font issue/.style={execute at begin picture={#1\selectfont}}
+}
+
+
+\renewcommand\labelitemi{--}
+\tolerance=1600
+
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,    % color of internal links
+  citecolor=blue,    % color of links to bibliography
+  urlcolor=blue,     % color of external links
+  allcolors=blue,
+  bookmarksopen=true,
+  pdfdisplaydoctitle=true
+}
+%\usepackage[doublespacing]{setspace}
+%%\renewcommand\arraystretch{1.3}
+
+\makeatletter
+\@addtoreset{section}{part}
+\makeatother
+%\setcounter{secnumdepth}{0} % sections are level 1
+\newcommand\T{\rule{0pt}{2.6ex}}       % Top strut
+\newcommand\B{\rule[-1.2ex]{0pt}{0pt}} % Bottom strut
+%\renewcommand{\familydefault}{\sfdefault}
+
+\makeatletter
+\renewcommand{\todo}[2][]{%
+    \@todo[caption={#2}, #1]{\begin{spacing}{0.5}#2\end{spacing}}%
+} 
+\makeatother 
+
+\usepackage{natbib}
+%\bibpunct{(}{)}{;}{a}{,}{,}
+%\usepackage{biblatex}
+%\addbibresource{test}
+\usepackage{tocloft}
+
+%\usepackage{harvard}
+\modulolinenumbers[5]
+
+\journal{TBD}
+
+%%APA style
+\bibliographystyle{model5-names}\biboptions{authoryear}
+%\specialcomment{answer}{\begin{shaded}}{\end{shaded}}
+
+%% `Elsevier LaTeX' style
+%\bibliographystyle{elsarticle-num}
+%%%%%%%%%%%%%%%%%%%%%%%
+\setlength\parindent{0pt}
+\setlength{\parskip}{6pt}
+
+
