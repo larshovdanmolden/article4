@@ -93,12 +93,13 @@ zw$or1 <-  rowMeans(zw[,c("Q5.1_t1", "Q5.2_t1", "Q5.3_t1", "Q5.4_t1", "Q5.5_t1",
 zw$dl1 <-  rowMeans(zw[,c("Q8.1_t1", "Q8.2_t1", "Q8.3_t1" , "Q8.4_t1" , "Q8.5_t1", "Q8.6_t1")], na.rm=TRUE)
 zw$dyn <-  rowMeans(zw[,c("Q27", "Q27a", "Q27b", "Q27c", "Q27e", "Q27g")], na.rm=TRUE)
 
+
 Zw$ddc <- as.double(zw$dc1-zw$dc0)
 zw$dor <-  zw$or1-zw$or0
 zw$size <- zw$Q1_t1
 zw$age <- zw$Q2_t1
-zw$dynhigh <- ifelse(zw$dyn > 6, 1,0)
-zw$dynstable <- ifelse(zw$dyn < 6, 1,0)
+zw$dynhigh <- ifelse(zw$dyn > 4, 1,0)
+zw$dynstable <- ifelse(zw$dyn < 4, 1,0)
 
 zw$normdyn <-  scale(zw$dyn)
 ## Adjusting data set by removing NA for pm
@@ -162,11 +163,39 @@ summary(med.out1) ## ADE is insignificant telling us that DL has no direct effec
 
 mod3 <- lm(dc1 ~ dc0 + dl + size + age + dyn + pm + lassets, data=zw);summary(mod3)
 mod4 <- lm(ca1 ~ ca0 +  dc0 + ddc + size + age + dyn + pm + lassets, data=zw);summary(mod4)
-mod5 <- lm(ca1 ~ ca0 +  dc0 + ddc + or0 + dor + size + age + dyn + pm + lassets, data=zw);summary(mod5)
-mod5m <- lm(dor ~ ca0 + ddc + or0 + dl + dc0 + size + age + dyn + pm + lassets, data=zw);summary(mod5m)
+mod5 <- lm(ca1 ~ ca0 +  dc0 + dc1 + or0 + dor + size + age + dyn + pm + lassets, data=zw);summary(mod5)
+mod5m <- lm(dor ~ ca0 + dc1 + or0 + dl + dc0 + size + age + dyn + pm + lassets, data=zw);summary(mod5m)
 
-med.out5 <- mediate(mod5m,mod5, treat="ddc",mediator="dor",robustSE=TRUE, sims=1000)
+med.out5 <- mediate(mod5m,mod5, treat="dc1",mediator="dor",robustSE=TRUE, sims=1000)
 summary(med.out5) ## ADE is insignificant telling us that DL has no direct effect on OR
+
+
+
+zw$dyn <-  rowMeans(zw[,c("Q27a", "Q27b", "Q27c")], na.rm=TRUE)
+summary(zw$dyn)
+zw$dyn <- zw$Q27a
+
+zw$dynhigh <- ifelse(zw$dyn > 4.667, 1,0)
+zwhigh <- subset(zw,zw$dynhigh==1)
+zwlow <- subset(zw,zw$dynhigh==0)
+
+nrow(zwhigh)
+nrow(zwlow)
+
+mod5 <- lm(ca1 ~ ca0 +  dc0 + dc1 + or0 + dor + size + age  + dyn+ pm + lassets, data=zwhigh);summary(mod5)
+mod5m <- lm(dor ~ ca0 + dc1 + or0 + dl + dc0 + size + age + dyn+pm + lassets, data=zwhigh);summary(mod5m)
+
+med.out5hi <- mediate(mod5m,mod5, treat="dc1",mediator="dor",robustSE=TRUE, sims=1000)
+
+mod5 <- lm(ca1 ~ ca0 +  dc0 + dc1 + or0 + dor + size + age  + dyn+ pm + lassets, data=zwlow);summary(mod5)
+mod5m <- lm(dor ~ ca0 + dc1 + or0 + dl + dc0 + size + age  + pm + dyn + lassets, data=zwlow);summary(mod5m)
+
+med.out5lw <- mediate(mod5m,mod5, treat="dc1",mediator="dor",robustSE=TRUE, sims=1000)
+summary(med.out5lw)
+summary(med.out5hi)
+
+
+
 
 mod6 <- lm(dl ~ dc0 +ddc*dyn +  size + age + dyn + pm + lassets, data=zw) ; summary(mod6) ### NB INTERACTION EFFECT
 mod6 <- lm(dl ~ dc0 +  size + age + dyn + pm + lassets, data=zw) ; summary(mod6)
@@ -241,7 +270,41 @@ medmod5_shmed <- round(med.out5$n.avg,3) ## proportion of effect mediated
 
 
 
+## Expoting to mplus
+mplusexport <- zw[,c("Q19","Q19a","Q19b","Q19c","Q19d","Q20d",
+                     "Q19e","Q20b","Q25","Q20",
+                     "Q20c","Q25a","Q25b","Q25c",
+                     "Q6.1_t1","Q6.2_t1","Q6.3_t1","Q6.4_t1","Q6.5_t1","Q7.3_t1",
+                     "Q6.6_t1","Q7.1_t1","Q7.5_t1","Q6.7_t1",
+                     "Q7.2_t1","Q7.6_t1","Q7.7_t1","Q7.8_t1","Q28","Q28a","Q28b","Q28c",
+                     "Q16.1_t1","Q16.2_t1","Q16.3_t1","Q16.4_t1",
+                     "Q21c","Q21d","Q21e","Q22","Q22a","Q22b","Q22c","Q22d",
+                     "Q5.1_t1","Q5.2_t1","Q5.3_t1","Q5.4_t1","Q5.5_t1","Q5.6_t1","Q5.7_t1",
+                     "Q8.1_t1","Q8.2_t1","Q8.3_t1","Q8.4_t1","Q8.5_t1","Q8.6_t1",
+                     "Q27","Q27a","Q27b","Q27c","Q27e","Q27g","size","age","dynhigh")]
 
+mplusexport <- subset(mplusexport, !is.na(Q8.3_t1))
+
+
+mplusexport[is.na(mplusexport)] <- -9999
+
+
+
+write.table(mplusexport,"/Users/larshovdanmolden/Documents/git/article4/estimation/mplusexport.csv", row.names=FALSE, col.names=FALSE, sep=",")
+
+## Testing dynamism as moderator
+
+zwdyn <- zw[,c("Q27a", "Q27b", "Q27c")]
+fa1 <- factanal(na.omit(zwdyn),1)
+fa1
+
+
+zw$dyn <-  rowMeans(zw[,c("Q27a", "Q27b", "Q27c")], na.rm=TRUE)
+
+mod3 <- lm(ca1 ~ ca0 + dyn*dc0 + dor + dc0, data=zw);summary(mod3)
+
+
+mod3 <- lm(ca1 ~ ca0 + dc0*dyn + dc0*dyn2 + dc0+ dor + dc0, data=zw);summary(mod3)
 
 
 ## SEM Robustness for estimating correlation between key constructs

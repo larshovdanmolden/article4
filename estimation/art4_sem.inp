@@ -1,0 +1,102 @@
+
+TITLE:article4_CA
+
+DATA:FILE IS mplusexport.csv;
+VARIABLE:
+NAMES ARE Q19 Q19a Q19b Q19c Q19d Q20d 
+Q19e Q20b Q25 Q20 
+Q20c Q25a Q25b Q25c 
+Q61_t1 Q62_t1 Q63_t1 Q64_t1 Q65_t1 Q73_t1 
+Q66_t1 Q71_t1 Q75_t1 Q67_t1 
+Q72_t1 Q76_t1 Q77_t1 Q78_t1 Q28 Q28a Q28b Q28c 
+Q161_t1 Q162_t1 Q163_t1 Q164_t1 
+Q21c Q21d Q21e Q22 Q22a Q22b Q22c Q22d 
+Q51_t1 Q52_t1 Q53_t1 Q54_t1 Q55_t1 Q56_t1 Q57_t1 
+Q81_t1 Q82_t1 Q83_t1 Q84_t1 Q85_t1 Q86_t1 
+Q27 Q27a Q27b Q27c Q27e Q27g
+sz age dynh;
+
+USEVARIABLES ARE Q19 Q19a Q19b Q19c Q19d Q20d 
+Q19e Q20b Q25 Q20 
+Q20c Q25a Q25b Q25c 
+Q61_t1 Q62_t1 Q63_t1 Q64_t1 Q65_t1 Q73_t1 
+Q66_t1 Q71_t1 Q75_t1 Q67_t1 
+Q72_t1 Q76_t1 Q77_t1 Q78_t1 Q28 Q28a Q28b Q28c 
+Q161_t1 Q162_t1 Q163_t1 Q164_t1 
+Q21c Q21d Q21e Q22 Q22a Q22b Q22c Q22d 
+Q51_t1 Q52_t1 Q53_t1 Q54_t1 Q55_t1 Q56_t1 Q57_t1 
+Q81_t1 Q82_t1 Q83_t1 Q84_t1 Q85_t1 Q86_t1 
+Q27 Q27a Q27b Q27c Q27e Q27g
+sz age dynh;
+ 
+MISSING ARE ALL (-9999);
+!CLUSTER = fid;
+!DEFINE: CENTER rd (GROUPMEAN);	
+
+
+ANALYSIS: 
+TYPE = RANDOM;
+ALGORITHM=INTEGRATION;
+INTEGRATION = MONTECARLO(500);
+ESTIMATOR = WLSMV;
+
+MODEL:
+DC0 BY Q19 Q19a Q19b Q19c Q19d Q20d Q19e Q20b Q25 Q20 ;
+!DC1 BY Q61_t1 Q62_t1 Q63_t1 Q64_t1 Q65_t1 Q73_t1 Q66_t1 Q71_t1 Q75_t1 Q67_t1 Q72_t1 Q76_t1 Q77_t1 Q78_t1;
+DC1 BY Q61_t1 Q62_t1 Q63_t1 Q64_t1 Q65_t1 Q73_t1 Q66_t1 Q71_t1 Q75_t1 Q67_t1 Q72_t1 Q76_t1;
+CA0 BY Q28 Q28a Q28b Q28c;
+CA1 BY Q161_t1 Q162_t1 Q163_t1 Q164_t1;
+OR0 BY Q21c Q21d Q21e Q22 Q22a Q22b Q22c Q22d;
+OR1 BY Q51_t1 Q52_t1 Q53_t1 Q54_t1 Q55_t1 Q56_t1 Q57_t1;
+DYN BY Q27a Q27b Q27c Q27e;
+DYNINT | DC1 XWITH DYN;
+
+
+DC1 ON DC0;
+OR1 ON OR0 DC1;
+CA1 ON CA0 OR1 DC1 DYN;
+CA1 ON DYNINT; 
+
+
+
+!SEIZ BY  q20b  q19c  q20;
+!TRAN BY  q25 q25b q25c;
+
+
+!MAN0 BY OP0 MO0 TA0 PE0;
+!MAN1 BY OP1 MO1 TA1 PE1;
+
+!MAN1 ON MAN0 kur;
+!MAN0 ON kur;
+!MANINT | MAN0 XWITH kur;
+!MAN1 ON MANINT;
+
+
+!IC BY icp ico;
+
+!IC ON rd(a);
+!inn ON IC(b); 
+!inn ON rd(c);
+!inn ON sz agt sz2 pol;
+!MANINT | MAN0 XWITH ldc;
+!inn ON polint;
+!s | inn ON IC; 
+
+
+
+!model constraint: new(indm,tot); 
+!indm=a*b; 
+!tot=c + (a*b);
+
+!outint | IC XWITH out;
+!inn ON polint;
+
+
+
+OUTPUT:STANDARDIZED;
+!OUTPUT: TECH2;
+
+!interpretation https://stats.idre.ucla.edu/mplus/output/lgcm_mlm/mlmtwolevel2/
+
+
+!http://www.statmodel.com/discussion/messages/11/4461.html?1509660108

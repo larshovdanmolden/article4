@@ -66,6 +66,36 @@
 
 
 \section{Introduction}
+
+Dynamic capabilities are proposed to confer a competitive advantage by adding unique value to the firm through systematic change, which enhances operational efficiency and enables increased alignment with the environment (Di Stefano et al., 2014; Peteraf et al., 2013)
+
+Not all organizations possess them (Collis, 1996); their path dependencies, intangibility, complexity, and organizational specificity make them hard to imitate (Gibson & Birkinshaw, 2004; Helfat & Winter, 2011); and few other means allow organizations to purposefully change on a continuous basis (Day & Wensley, 1988; Helfat et al., 2007).
+
+Consistent with the theoretical positions of Eisenhardt and Martin (2000), Helfat and Peteraf (2003), Zahra et al. (2006), and Zott (2003), among others, these researchers have argued that dynamic capabilities’ immediate purpose is to change the resource base, and that this change in the resource base, in turn, explains performance variations. According to this argument, resource changes serve as mediators through which dynamic capabilities affect performance. We
+
+
+
+
+One of the major unresolved issues in dynamic capabilities theory is to what extent and
+how competitive advantage is the ultimate outcome of dynamic capabilities. This very idea
+has 
+
+
+This paper asks two questions: to what extent does a direct lnk between DC and CA exist,
+and what determines variations in the role of mediation between them?
+
+The idea that Dc impacts CA is uncontroversial (not). Little is known about how this
+happens. The theory holds that this happens through xreating extending and modifying the
+resource base. YEt, the change in firm capabilities can themselves lead to CA due to their
+evlutionary nature.
+
+Variations in the share of mediation stems from variation sin the environment. When envdyn
+is high firms need to act faster and hence tends to choose strategies including resource
+orchestration buying in factor markets cause it tkes more time to develop OR. 
+
+In less dynamism the role of OR increases and leads to a significant proportion of CA
+stemming throhg the mediating effect of OR
+
 There is ongoing interest in (dynamic) capabilities and how they influence firm
 performance \citep{Fainshmidt2016a,Teece2014}. Indeed, \emph{dynamic capabilities} (DC),
 and its front runner, the resource-based view \citep{Barney2001,Helfat2007}, is now
@@ -75,35 +105,6 @@ firms can alter their operating routines through dynamic capabilities. Thus, a k
 ingredient in this theory is that DCs can alter firms operating routines, with subsequent
 performance implications.
 
-An issue that has received far less attention, however, is whether dynamics capabilities
-themselves undergo an evolution \citep{Schilke2018}. Moreover, if DCs undergo an
-evolution, is the evolution inert and past-dependent, or more deliberate and represent
-purposeful change in firms DCs over time? Unpacking this is crucial to the development of
-DC theory as it goes into the very nature of the issue as to whether and to what extent
-DCs can purposefully alter firms operating routines, and the performance implications
-stemming from such change \citep{Helfat2007}. It is therefore surprising that the
-literature has dealt with it sparingly. What is the exception to this is \cite{Zollo2002a}
-highly influential model over DC evolution where they postulate that (dynamic)
-capabilities evolve with regard to firms’ \emph{deliberate learning} (DL). However, Zollo
-\& Winter`s insightful theorizing has received scant empirical testing. Moreover, their
-model can be developed further, by incorporating insights from subsequent research and
-theorizing since this model was published. One salient issue in this regard is that Zollo
-\& Winter did not consider how DCs can influence firms’ DL. Moreover, their model does not
-consider how firm performance may be influenced by the evolution of (dynamic)\todo{should
-  we really go with the parantheses around dynamic throuhgt the whole paper - it feels
-  like we are not certain about the concept} capabilities (through DL). Such feedback
-loops may significantly alter how we understand the relationship between deliberate
-learning and evolution of (dynamic) capabilities in extant DC theory, including the
-performance implications of such evolution. Reflecting this gap in our understanding, we
-ask the following research question:
-
-\emph{What is the role of deliberate learning in the evolution of (dynamic) capabilities and the
-performance implications for such evolution?}
-
-To answer this research question, we not only empirically test ZW’s a highly influential
-model of the evolution of (dynamic) capabilities, but also extend it by incorporating (a)
-feedback loops between DCs and deliberate learning and (b) incorporating firm performance
-into the model.
 
 
 
@@ -117,109 +118,7 @@ dynamic capabilities (DC) are “those that operate to extend, modify or create 
 capabilities” (ibid). DC theory is emerging as an important paradigm in strategic
 management research, but also facing some considerable challenges with respect to its
 antecedents and outcomes \citep{Eriksson2014,Schilke2018}, as well as its evolution
-and development trajectory \citep{Romme2010,Zollo2002a}. Extant
-literature has dealt with antecedents in many forms such as ### (ref) etc. Similarly,
-outcomes have been the focal point of several contributions focusing on ### (ref)
-etc. However, despite DC building on an evolutionary view of resource development, less
-attention has been dealt to the evolution of DC over time than one could expect. Partly
-this could be due to lacking data (ref), unclear conceptual definitions (ref) or sheer
-complexity of studying evolution (ref). One remarkable exception is Zollo \& Winter (2002)
-who propose a clear evolutionary argument and hypothesis on DC evolution. Still, little
-empirical work has attempted to test their propositions.
-
-\textcolor{red}{DL definition – makes sure all definitions are in order}
-
-By combining insights from 20 years of DC research on external factors such as antecedents
-and outcomes with the internal process shaping DC over time, we can shed light on the
-workings of DC and extend the knowledge of its implications. Using Zollo \& Winter as our
-point of departure we will be able to study the internal process of DC evolution, and by
-adding new dimensions related to antecedents and outcomes we will gain insight into
-important implications of the concept.
-
-
-\subsection{Deliberate learning as antecedent and evolution driver}
-When Zollo \& Winter (2002) put deliberate learning at the center of their model for DC
-evolution they tap into a core tenant of DC theory more developed in later
-contributions. Learning theory in organizations distinguishes between autonomous learning
-processes \citep{Arthur2005} (e.g. learning by doing \citep{Zollo2002a,Arrow1962} based on
-repetitive actions by employees in firms and organizations, and deliberate learning where
-learning takes the form of a planned and deliberate process \citep{Arthur2005}. This
-deliberation and intent as a driver behind the learning process, corresponds well with the
-idea of purposefulness behind strategic intent as evident in the definition of dynamic
-capabilities \citep{Helfat2007}: “the ability to {\bf purposefully} build, extend and
-modify ordinary capabilities” (our emphasis added). (ref). When organizations invest in
-systems to facilitate learning, they invest in capabilities for changing routines in line
-with strategic direction of the organization itself. Hence, investments in deliberate
-learning corresponds with investments in dynamic capabilities and both concepts contribute
-to the development of operational routines.
-
-\emph{H1: Deliberate learning has a direct positive effect on organizations development of
-  operating routines.}
-
-They depart conceptually, however, when we look at the functioning of each. The main
-function of DL is to accumulate knowledge and experience about the operation of the
-organization and its environment (ref). Through this process DL generates insights into
-what should be changed and not in order to achieve improved organizational
-performance. Contrary, DC deals with how change in operational routines should be done
-through putting experience from DL to work (ref). Thus, for DC to be well functioning in
-its quest to change OR, a DL process needs to be in place. Without a proper DL the
-learning will be less purposeful and hence less attune to the strategic intent of the
-firm. Change may still appear, but as organizational change rather than strategic (helfat
-distinction between strategix and organizational change). In other words, without DL firms
-can achieve technical fitness (ref), but only through DL shaping DC can firms achieve
-evolutionary fitness (ref). Consequently, DL is an important antecedent to DC.
-
-\emph{H2: Deliberate learning leads to stronger dynamic capabilities and has a positive
-  influence on the level of dynamic capabilities within the firm.}
-
-\emph{H3: Deliberate learning has an indirect effect on operational routines through
-  dynamic capabilities.}
-
-Besides impacting the level of DC as an antecedent, DL also contributes to the evolution
-of DC over time. Conventional insights suggest that DC cannot be aquired in factor markets
-and thus has to be developed internally \citep{Coen2011,Schilke2014a}\todo{(Helfat,
-  Finkelstein, Mitchell, Peteraf, Singh,\& Teece, 2007; Katkalo, Pitelis, \& Teece, 2010;
-  Maritan \& Peteraf, 2011; Teece, 2014). in Schilke 2014} . This has performance
-implications related to the VRIO principle \citep{Barney1991} (as discussed later in this
-article), as well as consequences for the evolution of DC. Considering DC as itself a
-hierarchy of capabilities \citep{Collis1994,Winter2003} opens up for a distinction between
-first-order and second-order DC. On the one hand, systematic learning generates insights
-into how routines and lower level capabilities should change (i.e. impacting first-order
-DC) \citep{Mahoney1995,Schilke2014a}. On the other, the same learning process is very much
-involved in developing and shaping these capabilities over time (Kianto and Ritala 2010;
-Schilke2014). Consequently, in addition to being an antecedent to DC, DL also would work
-as a second-order DC influencing the evolution of DC over time (the ability of
-“learning-to-learn” (Collis, 1994)).
-
-\emph{H4: Deliberate learning has a direct positive effect on changes in dynamic
-  capabilities over time}
-
-Dynamic capabilities enables firms to adapt better to changing environments
-\citep{Teece1997} and hence creating strategic change in terms of purposefully changing
-operational routines \citep{Helfat2007}. Thus, firms with well-functioning DC would be
-able to utilize more instances of change and thus more opportunities for learning
-(ref). Consequently, high DC leads to more opportunities for both ad-hoc and deliberate
-learning to take place and disclose the demand for investments in methods for systematic
-experiential learning. As deliberate learning emphasizes a purposefulness of learning by
-focusing “on the effect of planned processes for acquiring, codifying, and transferring
-existing knowledge within and between organizations” \citep[p. 1160]{Arthur2005}, many
-opportunities generated from enhanced DC should lead to more investments in learning
-systems. This notion is also supported by previous work emphasizing that doing more of the
-same over time leads experience accumulation and hence improved outcomes
-\citep{Zollo2004a}. Similarly, by being active in changing its resource base firms
-accumulate experience and the importance of deliberate approaches to leading will become
-more apparent. A related point is that when the number of opportunities for learning
-increases due to higher DC, the incentives for the firm to invest in DL increases due to
-potential intensified agency problems \citep{Arthur2005}. The more potential for
-knowledge accumulation through learning, the higher potential for misaligned incentives
-between workers keeping information back in fear of not being sufficiently compensated,
-and management. Hence, the incentive for the firm to invest in DL to better align these
-incentives, increases (ibid). In sum these arguments shape an interesting hypothesis on
-the feedback loop between DL and DC and how DL could be an outcome as well as an
-antecedent of DC \cite{Schilke2018}.(HERE WE ALSO HAVE A DIRECT QUOTE).
-
-\emph{H5: Dynamic capabilities enhances demand for systematic learning so investments in
-  deliberate learning abilities will increase over time.}
+and development trajectory \citep{Romme2010,Zollo2002a}.
 
 
 \subsection{Direct and indirect outcomes of dynamic capabilities}
