@@ -43,13 +43,9 @@
 %\address[mysecondaryaddress]{360 Park Avenue South, New York}
 
 \begin{abstract}
-  Despite considerable interest from the research community the theory of dynamic
-  capabilities is still very much evolving. Several recent literature reviews demonstrate
-  the need for better understanding of the antecedents and outcome of dynamic
-  capabilities. Building on a much cited theoretical framework developed by
-  \cite{zollo2002} and longitudinal dataset of Norwegian technology firms, we explore
-  the role of learning as an antecedent to dynamic capabilities, and relates this to the
-  outcome of dynamic capabilities themselves.
+ We find that DC as routines to shape routines is most prevelant under moderate dynamism,
+whereas DC as routines to capture resources in factor markets are more prevelant under
+dynamic environments. 
 
 \end{abstract}
 
@@ -66,152 +62,281 @@
 
 
 \section{Introduction}
+In a recent "state of the art" literature review on dynamic capabilities
+\cite{Schilke2018} state that much of the attention and interest surrounding the theory is
+that it offer a route to competitive advantage which they argue is "the virtual Holy Grail
+of strategic management" (p. 393). And indeed a considerable body of the extant literature
+concerns itself with exactly this path to competitive advantage (refs from
+shcilke). Still, a discourse regarding the contingencies of the dynamic
+capabilities-competitive advantage (DC-CA) nexus (?) has panned out in the literature,
+most notably coined "the elephant in the room" \citep{Peteraf2013}: Under which conditions
+will dynamic capabilities lead to competitive advantage? 
 
-Dynamic capabilities are proposed to confer a competitive advantage by adding unique value to the firm through systematic change, which enhances operational efficiency and enables increased alignment with the environment (Di Stefano et al., 2014; Peteraf et al., 2013)
+\cite{Peteraf2013} argue that the seminal papers in the dynamic capabilities theory
+tradition (\cite{Teece1997} and \cite{Eisenhardt2000}) differ considerably in their view
+of to what extent the DC-CA nexus exist and under what conditions it is functional. A key
+tenant of this discourse is related to the level of routinization and the ability to
+satisfy the VRIO condition \citep{Barney1991a} of the resource-based view
+\citep{Peteraf2013}. 
 
-Not all organizations possess them (Collis, 1996); their path dependencies, intangibility, complexity, and organizational specificity make them hard to imitate (Gibson & Birkinshaw, 2004; Helfat & Winter, 2011); and few other means allow organizations to purposefully change on a continuous basis (Day & Wensley, 1988; Helfat et al., 2007).
+In this paper we aim to contribute to dissecting the elephant by asking how does the DC-CA
+nexus differ between firms and what determines these differences? 
 
-Consistent with the theoretical positions of Eisenhardt and Martin (2000), Helfat and Peteraf (2003), Zahra et al. (2006), and Zott (2003), among others, these researchers have argued that dynamic capabilities’ immediate purpose is to change the resource base, and that this change in the resource base, in turn, explains performance variations. According to this argument, resource changes serve as mediators through which dynamic capabilities affect performance. We
+We do this by exploring two paths from dynamic capabilities to competitive advantage: the
+\emph{evolutionary path} and the \emph{market path}. The former is thoroughly described
+and explored in the literature (refs) and stems from the core idea of the dynamic
+capabilities theorizing. In this path dynamic capabilities work to change the operating
+routines of the firm and hence contributing to it's competitive advantage. We argue that
+this path is more suited for less dynamic environments because of its path dependent
+functioning.
 
+The \emph{market path} works not through shaping operational capabilities and routines,
+but by enabling the firm to act in factor markets for new capabilities and
+resources. Hence, it is less path dependent and can be more rapidly
+deployed. Consequently, it is more prevalent in dynamic environments.
 
+This paper contributes to the extant literature on the link between dynamic capabilities
+and competitive advantage in three ways. First, provides an empirical test to the
+drive-train model of \cite{DiStefano2014} on how dynamic capabilities can operate both
+quickly and with high frequency more directly on the strategic direction of the firm by
+acting in factor markets for important resources, and also more slowly through the
+evolutionary path of changing operational capabilities. Second, by conceptually clarifying
+the different paths to competitive advantage by linking it closely to the role of
+capability evolution and the VRIO condition. Finally, we.........
 
-
-One of the major unresolved issues in dynamic capabilities theory is to what extent and
-how competitive advantage is the ultimate outcome of dynamic capabilities. This very idea
-has 
-
-
-This paper asks two questions: to what extent does a direct lnk between DC and CA exist,
-and what determines variations in the role of mediation between them?
-
-The idea that Dc impacts CA is uncontroversial (not). Little is known about how this
-happens. The theory holds that this happens through xreating extending and modifying the
-resource base. YEt, the change in firm capabilities can themselves lead to CA due to their
-evlutionary nature.
-
-Variations in the share of mediation stems from variation sin the environment. When envdyn
-is high firms need to act faster and hence tends to choose strategies including resource
-orchestration buying in factor markets cause it tkes more time to develop OR. 
-
-In less dynamism the role of OR increases and leads to a significant proportion of CA
-stemming throhg the mediating effect of OR
-
-There is ongoing interest in (dynamic) capabilities and how they influence firm
-performance \citep{Fainshmidt2016a,Teece2014}. Indeed, \emph{dynamic capabilities} (DC),
-and its front runner, the resource-based view \citep{Barney2001,Helfat2007}, is now
-considered one of the major theories in strategic management
-\citep{Schilke2018}. Arguably, the key reason is that this theory clearly articulates how
-firms can alter their operating routines through dynamic capabilities. Thus, a key
-ingredient in this theory is that DCs can alter firms operating routines, with subsequent
-performance implications.
-
-
-
-
-\section{Theory}\label{sec:theory}
-Firm capabilities can roughly be divided into two categories. First, ordinary capabilities
-(OR) “are directed toward maintaining and leveraging the status quo in terms of the scale
-and scope of activities, businesses, product lines, customer segments”
-\citep[p. 393]{Schilke2018}. In other words these capabilities are the ones who “permit a
-firm to ‘make a living’ in the short term” \citep[p. 991]{Winter2003}. On the other hand,
-dynamic capabilities (DC) are “those that operate to extend, modify or create ordinary
-capabilities” (ibid). DC theory is emerging as an important paradigm in strategic
-management research, but also facing some considerable challenges with respect to its
-antecedents and outcomes \citep{Eriksson2014,Schilke2018}, as well as its evolution
-and development trajectory \citep{Romme2010,Zollo2002a}.
+CLARIFIES THE ROLE OF THE ENVIRONMENT AND MEDIATIONS HAPPENING
 
 
-\subsection{Direct and indirect outcomes of dynamic capabilities}
+%% How does dynamic capabilities lead to competitive advantage? 
+%% Dynamic capabilities are proposed to confer a competitive advantage by adding unique value to the firm through systematic change, which enhances operational efficiency and enables increased alignment with the environment (Di Stefano et al., 2014; Peteraf et al., 2013)
+
+%% Not all organizations possess them (Collis, 1996); their path dependencies, intangibility, complexity, and organizational specificity make them hard to imitate (Gibson & Birkinshaw, 2004; Helfat & Winter, 2011); and few other means allow organizations to purposefully change on a continuous basis (Day & Wensley, 1988; Helfat et al., 2007).
+
+%% Consistent with the theoretical positions of Eisenhardt and Martin (2000), Helfat and Peteraf (2003), Zahra et al. (2006), and Zott (2003), among others, these researchers have argued that dynamic capabilities’ immediate purpose is to change the resource base, and that this change in the resource base, in turn, explains performance variations. According to this argument, resource changes serve as mediators through which dynamic capabilities affect performance. We
+
+
+%% One of the major unresolved issues in dynamic capabilities theory is to what extent and
+%% how competitive advantage is the ultimate outcome of dynamic capabilities. This very idea
+%% has 
+
+
+%% This paper asks two questions: to what extent does a direct lnk between DC and CA exist,
+%% and what determines variations in the role of mediation between them?
+
+%% The idea that Dc impacts CA is uncontroversial (not). Little is known about how this
+%% happens. The theory holds that this happens through xreating extending and modifying the
+%% resource base. YEt, the change in firm capabilities can themselves lead to CA due to their
+%% evlutionary nature.
+
+%% Variations in the share of mediation stems from variation sin the environment. When envdyn
+%% is high firms need to act faster and hence tends to choose strategies including resource
+%% orchestration buying in factor markets cause it tkes more time to develop OR. 
+
+%% In less dynamism the role of OR increases and leads to a significant proportion of CA
+%% stemming throhg the mediating effect of OR
+
+%% There is ongoing interest in (dynamic) capabilities and how they influence firm
+%% performance \citep{Fainshmidt2016a,Teece2014}. Indeed, \emph{dynamic capabilities} (DC),
+%% and its front runner, the resource-based view \citep{Barney2001,Helfat2007}, is now
+%% considered one of the major theories in strategic management
+%% \citep{Schilke2018}. Arguably, the key reason is that this theory clearly articulates how
+%% firms can alter their operating routines through dynamic capabilities. Thus, a key
+%% ingredient in this theory is that DCs can alter firms operating routines, with subsequent
+%% performance implications.
+
+
+We demonstrate that two paths indeed do exist and that their relative importance varies
+with the degree of environmental dynamism facing the firm. 
+
+\section{Hypotheses}\label{sec:hyp}
+
+%% We can use the drive train to determine hwo DC works differently under different levels of
+%% dynamism. It is not that DC does not work under stable conditions as EM claims. Is only
+%% that the effect runs stringer through the evolutionary path. Whereas the market path is
+%% stringer under higher dynamism
+
+
+One contentious issue surrounding the DC theory is the extent to which differing views on
+the nature of dynamic capabilities \citep{Peteraf2013} as well as their outcome. One
+strand of contributions sees DC as routines that are simple in nature and more as best
+practices to consider (EM). Thus, dynamic capabilities are more like behavioral patterns
+and less idiosyncratic to the firm and will consequently not be able to satisfy the VRIO
+condition for competitive advantage to emerge. Dynamic capabilities as such routines are
+short lived, unstable and “substitutable” (EM: 1110) thus violating a key VRIN condition,
+and they are more “more homogeneous (..) than is usually assumed” (EM: 1116). However, the
+simplicity of simple rules also makes them faster do deploy and put in motion, albeit
+potentially unstable. To the extent dynamic capabilities manifest themselves as simple
+rules they cannot alone create competitive advantage, but could very well generate
+strategic change by facilitating acquisition of resources in factor markets. One example
+is the role of post-acquisition routines where routines to identify and deal with
+acquisition partners are a source of generating strategic change (Eisenhardt and Sull
+2001, ref). Another example is (see refs from Schilke 2018). The functioning of this
+expression of dynamic capabilities are more latent and hence mainly observable ex
+post. Hence we can see this as direct route to competitive advantage as this expression of
+dynamic capabilities work directly in the factor market in capturing resources
+needed for strategic change. We coin this direct connection as the \emph{market path}.
+
+On the other hand, a stream of contributions see dynamic capabilities as evolutionary and
+more complex routines (ref) or processes (ref) set to change underlying capabilities in
+the face of changing conditions (TPS). This notion stems from evolutionary economics
+\citep{Winter2003,Nelson1982} and the behavioral theory of the firm \citep{Cyert1963}
+holding that path dependency and complex processes for changing underlying operating
+routines are a source of competitive advantage for the firm. Along this indirect path
+change is gradual and running through changes in underlying routines. We coin this the
+\emph{evolutionary path}. 
+
+These paths from dynamic capabilities to competitive advantage are different expressions
+of dynamic capabilities with different mediums of intermediation. The \emph{market path}
+works in the market and his hence not typically altering lower order capabilities and
+resources in the firm directly, but rather acquiring new ones. The source of competitive
+advantage along this path stems from the interaction with the other, \emph{evolutionary
+  path} in a dynamic bundle \citep{Peteraf2013}. Such interactions create a bundle of
+capabilities and routines that are socially complex and hard to imitate
+\citep[p. 320]{DiStefano2014}. Moreover, the interactions between the two paths of dynamic
+capabilities is separable with respect to what intermediation exist. Consequently,
+separate paths exist albeit a part of a dynamic bundle.
+
+\cite{DiStefano2014} propose an integrated framework where simple routines and more
+complex processes could contribute simultanously to the firms outcome, specifically its
+competitive advantage. In this framework, coined the "organizational drivetrain" the
+authors envision the movement of an organization as set in motion by a drivetrain system
+not unlike that of a bicycle.
+
+Building on the notion of an organizational drivetrain we argue that dynamic capabilities
+can indeed impact the organizational movement or change through two distinct but
+interconnected mechanisms (i.e. the crank set and the rear shifter). The two mechanisms
+consitutting the drivetrain is consistent with our notion of \emph{evolutionary path} and the \emph{market path}. The
+evolutionary path is instigated by more complex processes setting in motiong a chance in
+the lower order (operational) routines \cite{Collis1994,Winter2003}. In the drivetrain
+metaphor this path corresponds to change stemming from the front crank set of thich there
+are fewer gears, but with larger impact. This path is slower
+and yields a more idiosyncratic set of organizational routines which is very much in line
+with the idea put forth in the seminal founding papers \citep{Teece1997,Winter2003}. 
+
+Seeing the bike rider and her efforts to handle the levers of control (i.e. the gear
+shifter) as the dynamic capability, and consider it not only as a management effort, but
+that of the organization as a whole. The process of changing front gears are more profound
+(i.e. evolutionary) and costly, and it is for larger and slower strategic
+changes. Operating with simple routines in factor markets, however, is quicker and the
+rider does this on a more frequent basis with less effort. 
+
+H1: Dynamic capabilities works to create competitive advantage through two distinctly
+different paths.
+
+\subsection{The two paths of dynamic capabilities}
 The objective of strategic change is to enhance a firm’s competitive advantage
-(ref). Doing so over time makes for the evolutionary fitness of the firm \citep{Helfat2007}. When firms
-are developing capabilities for strategic change through creating, extending and modifying
-the resource base this means making decisions to develop operational routines. Such
-routines can in turn stem from an inherent learning process evolutionary distinct to the
-firm. OR can thus lead to competitive advantage because of their evolutionary character
-\citep{Nelson1982,Winter2003}. To the extent OR stems from idiosyncratic
-evolutionary process of individual firms rather than being the result of investments in
-factor markets, they can satisfy the VRIO condition and thus be a source of competitive
-advantage. In such instances, DC works through OR in creating CA. This indirect impact on
-CA is very much at the core of the DC literature (ref). Firms with high DC will be able to
-better change operating routines to facilitate strategic change in response to changing
-conditions facing the firm. DC then creates VRIO OR and hence CA. When this happens, firms
-improves their OR and the OR itself satisfies the VRIO condition.
+(ref). Doing so over time makes for the evolutionary fitness of the firm
+\citep{Helfat2007}. When firms are developing capabilities for strategic change through
+creating, extending and modifying the resource base this means making decisions to develop
+operational routines. Such routines can in turn stem from an inherent learning process
+evolutionary distinct to the firm. Operating routines can thus lead to competitive
+advantage because of their evolutionary character \citep{Nelson1982,Winter2003}. To the
+extent operating routines stems from idiosyncratic evolutionary process of individual
+firms rather than being the result of investments in factor markets, they can satisfy the
+VRIO condition and thus be a source of competitive advantage. In such instances, dynamic
+capabilities work through operating routines in creating competitive advantage. This
+indirect impact on competitive advantage is very much at the core of the DC literature
+(ref). Firms with high dynamic capabilities will be able to better change operating
+routines to facilitate strategic change in response to changing conditions facing the
+firm. Dynamic capabilities then creates VRIO operating routines and hence competitive
+advantage. When this happens, firms changes their operating routines in a evolutionary
+making operating routines themselves OR itself satisfies the VRIO condition.
 
-\emph{H6a: Operating routines mediates the effect of dynamic capabilities in generating
-competitive advantage.}
+\emph{H2: Dynamic capabilities has an indirect effect on competitive advantage through
+  changing the operating routines of the firm.}
 
 On the other hand, resources and capabilities can to a certain extent be captured in
 factor markets through investment decisions (ref) or through alliances (ref) or M\&A
 activates (ref). By acquiring resources through investments, the operating routines of the
 firms may not be directly affected. When these acquisitions happen as a response to
 systematic resource orchestration (ref), i.e. reshaping the resource mix to obtain
-coordinated resource deployments \citep{Kor2005,Pan2006}, they would indeed have
-potential performance implications for the firm. Moreover, when this process of resource
-acquisition process of DC develops a way to acquire and mix resource for the purpose of
-adapting to change, the resources themselves would not necessarily satisfy the VRIO
-condition. The way in which this happens may be much harder to imitate due to the
-complexities such routines exhibit. Although resources themselves exhibit clear
-equifinality in their impact on competitive advantage, the complex routines of the
-orchestration (i.e. dynamic capabilities) would likely satisfy the VRIO condition. In
-other words, there are several ways in which resources can be orchestrated to generate CA,
+coordinated resource deployments \citep{Kor2005,Pan2006}, they would indeed have potential
+performance implications for the firm. Moreover, when this process of resource acquisition
+process of DC develops a way to acquire and mix resource for the purpose of adapting to
+change, the resources themselves would not necessarily satisfy the VRIO condition. The way
+in which this happens may be much harder to imitate due to the complexities such routines
+exhibit. Although resources themselves exhibit clear equifinality in their impact on
+competitive advantage, combined with the simple routines of the orchestration
+(i.e. dynamic capabilities), the sum would likely satisfy the VRIO condition. This is
+especially true if routines are deployed rapidly in changing market conditions. In other
+words, there are several ways in which resources can be orchestrated to generate CA,
 whereas improved OR will always mean improved competitiveness et ceteris paribus. In such
 instances DC itself can lead to CA directly.
 
-\emph{H6b: Dynamic capabilities has a direct effect on competitive advantage through the process
-of resource orchestration and acquisition of resources in factor markets.}
+\emph{H3: Dynamic capabilities has a direct effect on competitive advantage through the
+  process of resource orchestration and acquisition of resources in factor markets.}
 
-In other words, we would expect DC to have both a direct and an indirect impact on
-CA. Although both the direct and the indirect path stems from DC creating, extending and
-modifying the resource base (OR or factor market resources), the difference in the path’s
-stems from to what extent the mediating construct can itself satisfy the VRIO
-condition. OR can, due to their evolutionary nature, in turn shaped by DC, achieve CA
-\citep{Collis1994,Winter2003}. Factor market resources and market acquired capabilities and
-best practices can not \citep{Eisenhardt2000,Peteraf2013}.
+In other words, we would expect DC to have both a direct and an indirect impact on CA. The
+indirect impact stems from the \emph{evolutionary path} of complex processes, whereas the
+direct impact stems from the \emph{market path}.  Although both the direct and the
+indirect path stems from DC creating, extending and modifying the resource base (OR or
+factor market resources), the difference in the path’s stems from to what extent the
+mediating construct alone can by itself satisfy the VRIO condition. Operating routines
+can, due to their evolutionary nature, in turn shaped by DC, achieve CA
+\citep{Collis1994,Winter2003}. Factor market resources and market acquired capabilities
+and best practices can not \citep{Eisenhardt2000,Peteraf2013}, but in conjuncture with the
+routines of acting in factor markets as well as the speed of deployment, the sum of
+dynamic capabilities and factor market action would lead to competitive advantage.
 
+However, the interlinkages between simple routines (the market path) and the coplex
+processes (the evolutionary path) would vary with the environment. 
 
+\subsection{Interplay under environmental dynamism}
+
+\cite{DiStefano2014} note that "even if specific simple rules are unstable and ephemeral,
+the system as a whole is not" and that the "real source of sustainable competitive ad- vantage for an enterprise is the difficulty of imitating and substituting for the entire dynamic bundle that the system represents" (p.sss).
+
+But the interlinkages between the parts of the system (the evolutionary- and the market
+path), are likely to vary with the environmental dynamism. Under moderatly dynamism
+dynamic capabilities takes the form of best pracitces (e.g. aquisition targeting) and is
+less important than under more dynamic environments. However, albeit best practices, the
+way they are implemented in the factor markets are still idiosyncratic. And taken into
+conjunction with the routinzed process of changing underlying routines, VRIO will very
+likely emerge under more stable conditions. It is not that the market/direct expression
+of dynamic capabilities are not present in stable environments, rather it is less pronounced and the indirect
+mediated effect (evolutionary path) is more important. In other words, it is not neither
+nor, but degrees of importance. 
+
+Moreover, in high velocity environments the role of the evolutionary path tends to
+weaken as such path-dependent changes occur slower compared to the market path. From the
+market path with its simple routines we can argue that creation of "new knowledge” to
+“allow for emergent adaptation” (EM, p. 1116) is the consequence. Consequently, the market
+path is stronger and more prevalent under higher levels of environmental dynamism.
+
+\emph{H4: Dynamic capabilities works relatively stronger through the market path in highly
+dynamic environments.} 
 
 
 \begin{figure}
-
-\begin{minipage}[t]{.5\textwidth}
   \centering
-  \includegraphics[width=0.9\linewidth]{./figure/fig1.png}
-  \captionsetup{width=0.9\linewidth}
-  \captionof{figure}{Conceptual relationship based on Zollo and Winter. Extensions in grey}
-  \label{fig:fig1}
-\end{minipage}%
-\begin{minipage}[t]{.5\textwidth}
-  \centering
-  \captionsetup{width=0.98\linewidth}
-  \includegraphics[width=0.98\linewidth]{./figure/fig2.png}
+  \captionsetup{width=0.5\linewidth}
+  \includegraphics[width=0.5\linewidth]{./figure/fig2.png}
   \captionof{figure}{Dynamic capabilities direct and indirect paths to competitive advantage determined by the VRIO condition}
   \label{fig:fig2}
-\end{minipage}
 \end{figure}
 
-Figure \ref{fig:fig1} sums up the hypothesis proposed in this section of our paper. The
-white boxes and black arrows represent the parts of the model that was originally proposed
-by \cite{Zollo2002a} whereas the grey parts are extensions based on more recent
-contributions to the field of dynamic capabilities. Figure \ref{fig:fig2} illustrates the
-two proposed paths through which DC affect competitive advantage. The main take away from
-this is that dynamic capabilities can affect CA through changing operational routines that
-by themselves can satisfy the VRIO condition by means of their evolutionary nature. Thus,
-we hypothesize that operating routines mediates the relationship between DC and CA – the
-indirect path. Conversely, the same DC enable the firm to identify resources and
-capabilities in factor markets that are less idiosyncratic and often takes the shape of
-best practices that are definitely imitable and thus bot VRIO. In such instances, the VRIO
-condition is satisfied by the DC itself through its complex process of orchestrating and
-mixing resources – the direct path.
+Figure \ref{fig:fig2} illustrates the two proposed paths through which DC affect
+competitive advantage. The main take away from this is that dynamic capabilities can
+affect CA through changing operational routines that by themselves can satisfy the VRIO
+condition by means of their evolutionary nature. Thus, we hypothesize that operating
+routines mediates the relationship between dynamic capabilities and competitive advantage
+the evolutionary path. Conversely, the same dynamic capabilities enable the firm to
+identify resources and capabilities in factor markets that are less idiosyncratic and
+often takes the shape of best practices that are definitely imitable and thus bot VRIO. In
+such instances, the VRIO condition is satisfied by the DC itself through its complex
+process of orchestrating and mixing resources – the market path.
 
 
 \section{Data and methods}
-An empirical test of the Zollo \& Winter model necessitates a certain time span of
-observations in order to enable the study of dynamics over time. The lack of such
-longitudinal studies to investigate dynamics has also been a permanent limitation for
-moving the DC literature forward empirically and theoretically \cite{Schilke2018}. To
-remedy this gap in the literature and to investigate the empirical characteristics of the
-Zollo \& Winter model we sampled a subset of Norwegian technology firms ($N=241$) over two
-time periods.
+
+To test the relationships between dynamic capabilities and competitive advantage we need a
+proper metric of both. We also benefit vastly from studying the same firms over time.  The
+lack of h longitudinal studies to investigate dynamics over time and control for path
+dependency of organizational routines has been noted as permanent limitation for moving
+the DC literature forward empirically and theoretically \cite{Schilke2018}. To remedy this
+gap in the literature and to investigate the empirical characteristics of the Zollo \&
+Winter model we sampled a subset of Norwegian technology firms ($N=241$) over two time
+periods.
 
 We collected survey data from R\&D active firms in Norway at two points in time ($T_1=2005$
 and $T_2=2014$). The population was all businesses registered to a scheme for tax deduction

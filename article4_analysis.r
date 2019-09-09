@@ -182,13 +182,13 @@ zwlow <- subset(zw,zw$dynhigh==0)
 nrow(zwhigh)
 nrow(zwlow)
 
-mod5 <- lm(ca1 ~ ca0 +  dc0 + dc1 + or0 + dor + size + age  + dyn+ pm + lassets, data=zwhigh);summary(mod5)
-mod5m <- lm(dor ~ ca0 + dc1 + or0 + dl + dc0 + size + age + dyn+pm + lassets, data=zwhigh);summary(mod5m)
+mod5 <- lm(ca1 ~ ca0 +  dc0 + dc1 + or0 + dor + size + age  + pm + lassets, data=zwhigh);summary(mod5)
+mod5m <- lm(dor ~ ca0 + dc1 + or0 + dc0 + size + age + dyn + pm + lassets, data=zwhigh);summary(mod5m)
 
 med.out5hi <- mediate(mod5m,mod5, treat="dc1",mediator="dor",robustSE=TRUE, sims=1000)
 
-mod5 <- lm(ca1 ~ ca0 +  dc0 + dc1 + or0 + dor + size + age  + dyn+ pm + lassets, data=zwlow);summary(mod5)
-mod5m <- lm(dor ~ ca0 + dc1 + or0 + dl + dc0 + size + age  + pm + dyn + lassets, data=zwlow);summary(mod5m)
+mod5 <- lm(ca1 ~ ca0 +  dc0 + dc1 + or0 + dor + size + age  + pm + lassets, data=zwlow);summary(mod5)
+mod5m <- lm(dor ~ ca0 + dc1 + or0  + dc0 + size + age  + pm + lassets, data=zwlow);summary(mod5m)
 
 med.out5lw <- mediate(mod5m,mod5, treat="dc1",mediator="dor",robustSE=TRUE, sims=1000)
 summary(med.out5lw)
@@ -270,6 +270,12 @@ medmod5_shmed <- round(med.out5$n.avg,3) ## proportion of effect mediated
 
 
 
+
+### TESTING DC CONSTRUCT
+
+mod1 <- lm(ca1~ ca0 + pm + lassets + dc1 + or1 , data=zw);summary(mod1)
+mod1 <- lm(ca1~ + pm , data=zw);summary(mod1)
+
 ## Expoting to mplus
 mplusexport <- zw[,c("Q19","Q19a","Q19b","Q19c","Q19d","Q20d",
                      "Q19e","Q20b","Q25","Q20",
@@ -281,7 +287,7 @@ mplusexport <- zw[,c("Q19","Q19a","Q19b","Q19c","Q19d","Q20d",
                      "Q21c","Q21d","Q21e","Q22","Q22a","Q22b","Q22c","Q22d",
                      "Q5.1_t1","Q5.2_t1","Q5.3_t1","Q5.4_t1","Q5.5_t1","Q5.6_t1","Q5.7_t1",
                      "Q8.1_t1","Q8.2_t1","Q8.3_t1","Q8.4_t1","Q8.5_t1","Q8.6_t1",
-                     "Q27","Q27a","Q27b","Q27c","Q27e","Q27g","size","age","dynhigh")]
+                     "Q27","Q27a","Q27b","Q27c","Q27e","Q27g","size","age","dynhigh","pm","lassets")]
 
 mplusexport <- subset(mplusexport, !is.na(Q8.3_t1))
 
