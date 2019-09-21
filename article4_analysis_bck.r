@@ -1002,8 +1002,8 @@ items <- c(#"Q19a","Q19c", "Q20b", "Q20c", #DC01
            #"Q19b","Q19d","Q20d", "Q20e", #DC02
            "Q6.2_t1","Q6.4_t1", "Q7.1_t1","Q7.2_t1","Q6.5_t1", #DC1
            "Q6.3_t1","Q7.3_t1","Q7.4_t1", #DC1
-           "Q28","Q28a","Q28c", #CA0
-           "Q16.1_t1","Q16.2_t1","Q16.4_t1")#CA1
+           "Q28a","Q28b","Q28c", #CA0
+           "Q16.2_t1","Q16.3_t1","Q16.4_t1")#CA1
            #"Q21c","Q21d","Q21e", #OC0
            #"Q5.4_t1","Q5.6_t1","Q5.7_t1", #OC1
            #"Q8.7_t1", "Q8.8_t1", "Q8.9_t1")
@@ -1048,7 +1048,7 @@ semPLS::gof(ecsi)
 items <- c(#"Q19a","Q19c", "Q20b", "Q20c", #DC01
            #"Q19b","Q19d","Q20d", "Q20e", #DC02
            "Q6.2_t1","Q6.4_t1", "Q7.1_t1","Q7.2_t1","Q6.5_t1", #DC1
-           "Q6.3_t1","Q7.3_t1","Q7.4_t1", #DC1
+           "Q6.1_t1","Q6.3_t1","Q7.4_t1", #DC1
            "Q28","Q28a","Q28c", #CA0
            "Q16.1_t1","Q16.2_t1","Q16.4_t1", #CA1
            #"Q21c","Q21d","Q21e", #OC0
@@ -1082,7 +1082,7 @@ ecsi
 pathDiagram(ecsi, file = "ecsiStructure", full = FALSE, edge.labels = "both", output.type = "graphics", digits = 2,graphics.fmt="pdf")
 
 
-ecsiBoot <- bootsempls(ecsi, nboot = 200, start = "ones", verbose = FALSE)
+ecsiBoot <- bootsempls(ecsi, nboot = 500, start = "ones", verbose = FALSE)
 ecsiBoot
 
 semPLS::rSquared(ecsi)
@@ -1142,7 +1142,7 @@ semPLS::gof(ecsi)
 items <- c(#"Q19a","Q19c", "Q20b", "Q20c", #DC01
            #"Q19b","Q19d","Q20d", "Q20e", #DC02
            "Q6.2_t1","Q6.4_t1", "Q7.1_t1","Q7.2_t1","Q6.5_t1", #DC1
-           "Q6.3_t1","Q7.3_t1","Q7.4_t1", #DC1
+           "Q6.1_t1","Q6.3_t1","Q7.4_t1", #DC1
            "Q28","Q28a","Q28c", #CA0
            "Q16.1_t1","Q16.2_t1","Q16.4_t1", #CA1
            #"Q21c","Q21d","Q21e", #OC0
@@ -1181,3 +1181,54 @@ ecsiBoot
 
 semPLS::rSquared(ecsi)
 semPLS::gof(ecsi)
+semPLS::dgrho(ecsi)
+semPLS::dgrho(ecsi)
+
+
+
+
+## ##### POST HOC
+## ## PARTIAL MODEL OR 2DC
+## items <- c(#"Q19a","Q19c", "Q20b", "Q20c", #DC0
+##                                         #"Q19b","Q19d","Q20d", "Q20e", #DC02
+##            "Q6.2_t1","Q6.4_t1", "Q7.1_t1","Q7.2_t1","Q6.5_t1", #DC1
+##            "Q6.3_t1","Q7.3_t1","Q7.4_t1", #DC1
+##            "Q28","Q28a","Q28c", #CA0
+##            "Q16.1_t1","Q16.2_t1","Q16.4_t1", #CA1
+##            "Q21c","Q21d","Q21e", #OC0
+##            "Q5.4_t1","Q5.6_t1","Q5.7_t1") #OC1
+##            #"Q8.7_t1", "Q8.8_t1", "Q8.9_t1",
+##            #"Q24","Q24a","Q24b","Q24c","Q24d")
+##            #"size","pm","age","lassets")
+
+## latents <- c(rep("DC01",4),
+##              rep("DC02",4),
+##            #  rep("DC11",4),
+##            #  rep("dc12",4),
+##              rep("CA0",3),
+##              rep("CA1",3),
+##              rep("OR0",3),
+##              rep("OR1",3))
+##            #  rep("MA01",3))
+##            #  rep("MA01",5))
+##             # "SZ","PM","AGE","ASS")
+
+## mm <- cbind(latents,items); colnames(mm) <- c("source","target")
+## iv <- c("OR1","CA0","DC01","DC01","DC02","DC02","OR0","OR0","OR0")
+## dv <- c("CA1","CA1","CA1","OR1","CA1","OR1","OR1","DC01","DC02")
+
+## sm <- cbind(iv,dv);colnames(sm) <- c("source","target")
+
+## ECSI <- plsm(data = zwadj, strucmod = sm, measuremod = mm)
+## ecsi <- sempls(model = ECSI, data = zwadj, wscheme = "centroid",maxit=1000)
+## ecsi
+
+## pathDiagram(ecsi, file = "ecsiStructure", full = FALSE, edge.labels = "both", output.type = "graphics", digits = 2,graphics.fmt="pdf")
+
+
+## ecsiBoot <- bootsempls(ecsi, nboot = 200, start = "ones", verbose = FALSE)
+## ecsiBoot
+
+## semPLS::rSquared(ecsi)
+## semPLS::gof(ecsi)
+
