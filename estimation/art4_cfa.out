@@ -1,0 +1,566 @@
+Mplus VERSION 8 (Mac)
+MUTHEN & MUTHEN
+09/16/2019   1:09 PM
+
+INPUT INSTRUCTIONS
+
+
+  TITLE:article4_CA
+
+  DATA:FILE IS mplusexport1.csv;
+  VARIABLE:
+  NAMES ARE Q19 Q19a Q19b Q19c Q19d
+  Q20b Q20c Q20d Q20e;
+
+
+  USEVARIABLES ARE  Q19a Q19b Q19c
+  Q20b Q20c Q20d Q20e;
+
+
+  !Q20b Q25 Q20
+  !Q25a Q25b Q25c;
+
+
+  MISSING ARE ALL (-9999);
+  !CLUSTER = fid;
+  !DEFINE: CENTER rd (GROUPMEAN);	
+  DATA MISSING:
+  !TYPE = IMPUTATION;
+  !NAME = Q19 Q19a Q19b Q19c Q19d Q20d;
+  ANALYSIS:
+  TYPE = EFA 1 2;
+  ESTIMATOR = ML;
+  !ROTATION = PROMAX;
+  !TYPE = IMPUTATION;
+  !ALGORITHM=INTEGRATION;
+  !INTEGRATION = MONTECARLO(500);
+  !ESTIMATOR = WLSMV;
+
+  MODEL:
+  !DC0 BY Q19 Q19c Q19d Q20d Q19e Q20b;
+  !SE0 BY Q19 Q19a Q19b Q19c Q19d Q20d;
+  !SE0 BY Q19 Q19c Q19d Q20d;
+  !SI0 BY Q19e Q20b Q25;
+  !TR0 BY Q20c Q25a Q25b Q25c;
+  !DC0 BY SE0 SI0 TR0;
+  !DC0 BY Q19 Q19a Q19b Q19c Q19d Q20d Q19e Q20b Q25 Q20c Q25a Q25b;
+  !DC1 BY Q61_t1 Q62_t1 Q63_t1 Q64_t1 Q65_t1 Q73_t1 Q66_t1
+  !Q71_t1 Q75_t1 Q67_t1 Q72_t1 Q76_t1 Q77_t1 Q78_t1;
+  !DC1 BY Q61_t1 Q62_t1 Q63_t1 Q64_t1 Q65_t1 Q73_t1 Q66_t1 Q71_t1 Q75_t1 Q67_t1 Q72_t1 Q76_t
+  !CA0 BY Q28 Q28a Q28b Q28c;
+  !CA1 BY Q161_t1 Q162_t1 Q163_t1 Q164_t1;
+  !OR0 BY Q21c Q21d Q21e Q22c;
+  !OR1 BY Q54_t1 Q55_t1 Q56_t1 Q57_t1;
+  !MA BY Q24 Q24a Q23b ;
+  !DYN BY Q27a Q27b Q27c Q27e;
+  !DYNINT | DC1 XWITH DYN;
+  !MAINT | OR1 XWITH MA;
+
+  !OR1 ON DC0 sz age;
+  !MA ON DC0 sz age;
+  !DC1 ON DC0;
+  !CA1 ON CA0 OR1 MA MAINT sz age pm ass;
+  !CA1 ON DYNINT;
+  !OR1 WITH MA;
+
+
+  !SEIZ BY  q20b  q19c  q20;
+  !TRAN BY  q25 q25b q25c;
+
+
+  !MAN0 BY OP0 MO0 TA0 PE0;
+  !MAN1 BY OP1 MO1 TA1 PE1;
+
+  !MAN1 ON MAN0 kur;
+  !MAN0 ON kur;
+  !MANINT | MAN0 XWITH kur;
+  !MAN1 ON MANINT;
+
+
+  !IC BY icp ico;
+
+  !IC ON rd(a);
+  !inn ON IC(b);
+  !inn ON rd(c);
+  !inn ON sz agt sz2 pol;
+  !MANINT | MAN0 XWITH ldc;
+  !inn ON polint;
+  !s | inn ON IC;
+
+
+  !!! H5P.org
+
+  !model constraint: new(indm,tot);
+  !indm=a*b;
+  !tot=c + (a*b);
+
+  !outint | IC XWITH out;
+  !inn ON polint;
+
+
+
+  OUTPUT:STANDARDIZED;
+  !OUTPUT: TECH2;
+
+  !interpretation https://stats.idre.ucla.edu/mplus/output/lgcm_mlm/mlmtwolevel2/
+
+
+  !http://www.statmodel.com/discussion/messages/11/4461.html?1509660108
+
+
+
+*** WARNING
+  Input line exceeded 90 characters. Some input may be truncated.
+  !DC1 BY Q61_t1 Q62_t1 Q63_t1 Q64_t1 Q65_t1 Q73_t1 Q66_t1 Q71_t1 Q75_t1 Q67_t1 Q72_t1 Q76_t1
+*** WARNING in OUTPUT command
+  STANDARDIZED (STD, STDY, STDYX) options are not available for TYPE=EFA.
+  Request for STANDARDIZED options will be ignored.  Note that STANDARDIZED options
+  are available with the use of EFA factors (ESEM) declared in the MODEL command.
+   2 WARNING(S) FOUND IN THE INPUT INSTRUCTIONS
+
+
+
+article4_CA
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                         262
+
+Number of dependent variables                                    7
+Number of independent variables                                  0
+Number of continuous latent variables                            0
+
+Observed dependent variables
+
+  Continuous
+   Q19A        Q19B        Q19C        Q20B        Q20C        Q20D
+   Q20E
+
+
+Estimator                                                       ML
+Rotation                                                    GEOMIN
+Row standardization                                    CORRELATION
+Type of rotation                                           OBLIQUE
+Epsilon value                                               Varies
+Information matrix                                        OBSERVED
+Maximum number of iterations                                  1000
+Convergence criterion                                    0.500D-04
+Maximum number of steepest descent iterations                   20
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+Optimization Specifications for the Exploratory Factor Analysis
+Rotation Algorithm
+  Number of random starts                                       30
+  Maximum number of iterations                               10000
+  Derivative convergence criterion                       0.100D-04
+
+Input data file(s)
+  mplusexport1.csv
+
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of missing data patterns            15
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+
+     PROPORTION OF DATA PRESENT
+
+
+           Covariance Coverage
+              Q19A          Q19B          Q19C          Q20B          Q20C
+              ________      ________      ________      ________      ________
+ Q19A           0.969
+ Q19B           0.962         0.992
+ Q19C           0.943         0.962         0.969
+ Q20B           0.950         0.966         0.950         0.973
+ Q20C           0.947         0.958         0.943         0.950         0.966
+ Q20D           0.947         0.969         0.950         0.958         0.943
+ Q20E           0.966         0.973         0.950         0.958         0.950
+
+
+           Covariance Coverage
+              Q20D          Q20E
+              ________      ________
+ Q20D           0.977
+ Q20E           0.958         0.981
+
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     Q19A                  4.276      -0.279       0.000    0.79%       3.000      4.000      4.000
+             254.000       2.830      -0.716       7.000    8.66%       5.000      6.000
+     Q19B                  5.112      -0.792       0.000    0.77%       4.000      5.000      5.000
+             260.000       2.138       0.394       7.000   16.92%       6.000      6.000
+     Q19C                  4.358      -0.340       0.000    1.18%       3.000      4.000      4.000
+             254.000       2.443      -0.429       7.000    7.09%       5.000      6.000
+     Q20B                  4.529      -0.638       0.000    0.78%       3.000      4.000      5.000
+             255.000       2.390      -0.128       7.000    6.27%       5.000      6.000
+     Q20C                  4.162      -0.369       0.000    1.98%       3.000      4.000      4.000
+             253.000       2.626      -0.334       7.000    5.53%       5.000      6.000
+     Q20D                  4.977      -0.830       0.000    0.78%       4.000      5.000      5.000
+             256.000       2.664       0.082       7.000   16.80%       6.000      6.000
+     Q20E                  5.144      -0.826       0.000    0.78%       4.000      5.000      5.000
+             257.000       1.641       1.416       7.000   14.01%       5.000      6.000
+
+
+SUMMARY OF MODEL FIT INFORMATION
+
+
+                   Number of                   Degrees of
+     Model        Parameters      Chi-Square    Freedom     P-Value
+
+     1-factor          21             35.796        14       0.0011
+     2-factor          27             10.534         8       0.2295
+
+                                               Degrees of
+     Models Compared              Chi-Square    Freedom     P-Value
+
+     1-factor against 2-factor        25.261         6       0.0003
+
+
+
+RESULTS FOR EXPLORATORY FACTOR ANALYSIS
+
+
+           EIGENVALUES FOR SAMPLE CORRELATION MATRIX
+                  1             2             3             4             5
+              ________      ________      ________      ________      ________
+                2.825         1.052         0.793         0.661         0.620
+
+
+           EIGENVALUES FOR SAMPLE CORRELATION MATRIX
+                  6             7
+              ________      ________
+                0.556         0.492
+
+
+EXPLORATORY FACTOR ANALYSIS WITH 1 FACTOR(S):
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       21
+
+Loglikelihood
+
+          H0 Value                       -3155.339
+          H1 Value                       -3137.441
+
+Information Criteria
+
+          Akaike (AIC)                    6352.678
+          Bayesian (BIC)                  6427.614
+          Sample-Size Adjusted BIC        6361.034
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit
+
+          Value                             35.796
+          Degrees of Freedom                    14
+          P-Value                           0.0011
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.077
+          90 Percent C.I.                    0.046  0.109
+          Probability RMSEA <= .05           0.071
+
+CFI/TLI
+
+          CFI                                0.931
+          TLI                                0.896
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                            335.122
+          Degrees of Freedom                    21
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.048
+
+
+
+MINIMUM ROTATION FUNCTION VALUE       2.15359
+
+
+
+           GEOMIN ROTATED LOADINGS (* significant at 5% level)
+                  1
+              ________
+ Q19A           0.488*
+ Q19B           0.414*
+ Q19C           0.659*
+ Q20B           0.668*
+ Q20C           0.580*
+ Q20D           0.503*
+ Q20E           0.522*
+
+
+           GEOMIN FACTOR CORRELATIONS (* significant at 5% level)
+                  1
+              ________
+      1         1.000
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              Q19A          Q19B          Q19C          Q20B          Q20C
+              ________      ________      ________      ________      ________
+                0.762         0.828         0.565         0.553         0.663
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              Q20D          Q20E
+              ________      ________
+                0.747         0.728
+
+
+           S.E. GEOMIN ROTATED LOADINGS
+                  1
+              ________
+ Q19A           0.059
+ Q19B           0.063
+ Q19C           0.050
+ Q20B           0.048
+ Q20C           0.053
+ Q20D           0.058
+ Q20E           0.056
+
+
+           S.E. GEOMIN FACTOR CORRELATIONS
+                  1
+              ________
+      1         0.000
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              Q19A          Q19B          Q19C          Q20B          Q20C
+              ________      ________      ________      ________      ________
+                0.057         0.052         0.066         0.064         0.062
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              Q20D          Q20E
+              ________      ________
+                0.058         0.059
+
+
+           Est./S.E. GEOMIN ROTATED LOADINGS
+                  1
+              ________
+ Q19A           8.303
+ Q19B           6.628
+ Q19C          13.233
+ Q20B          13.863
+ Q20C          10.873
+ Q20D           8.700
+ Q20E           9.235
+
+
+           Est./S.E. GEOMIN FACTOR CORRELATIONS
+                  1
+              ________
+      1         0.000
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              Q19A          Q19B          Q19C          Q20B          Q20C
+              ________      ________      ________      ________      ________
+               13.303        15.979         8.609         8.591        10.708
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              Q20D          Q20E
+              ________      ________
+               12.819        12.357
+
+
+EXPLORATORY FACTOR ANALYSIS WITH 2 FACTOR(S):
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       27
+
+Loglikelihood
+
+          H0 Value                       -3142.709
+          H1 Value                       -3137.441
+
+Information Criteria
+
+          Akaike (AIC)                    6339.417
+          Bayesian (BIC)                  6435.762
+          Sample-Size Adjusted BIC        6350.160
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit
+
+          Value                             10.534
+          Degrees of Freedom                     8
+          P-Value                           0.2295
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.035
+          90 Percent C.I.                    0.000  0.085
+          Probability RMSEA <= .05           0.629
+
+CFI/TLI
+
+          CFI                                0.992
+          TLI                                0.979
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                            335.122
+          Degrees of Freedom                    21
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.023
+
+
+
+MINIMUM ROTATION FUNCTION VALUE       0.38623
+
+
+
+           GEOMIN ROTATED LOADINGS (* significant at 5% level)
+                  1             2
+              ________      ________
+ Q19A           0.669*       -0.148
+ Q19B          -0.133         0.636*
+ Q19C           0.716*        0.006
+ Q20B           0.433*        0.273
+ Q20C           0.522*        0.087
+ Q20D           0.029         0.550*
+ Q20E           0.019         0.596*
+
+
+           GEOMIN FACTOR CORRELATIONS (* significant at 5% level)
+                  1             2
+              ________      ________
+      1         1.000
+      2         0.678*        1.000
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              Q19A          Q19B          Q19C          Q20B          Q20C
+              ________      ________      ________      ________      ________
+                0.664         0.692         0.482         0.577         0.658
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              Q20D          Q20E
+              ________      ________
+                0.675         0.629
+
+
+           S.E. GEOMIN ROTATED LOADINGS
+                  1             2
+              ________      ________
+ Q19A           0.159         0.173
+ Q19B           0.117         0.124
+ Q19C           0.058         0.012
+ Q20B           0.147         0.151
+ Q20C           0.152         0.164
+ Q20D           0.178         0.175
+ Q20E           0.083         0.104
+
+
+           S.E. GEOMIN FACTOR CORRELATIONS
+                  1             2
+              ________      ________
+      1         0.000
+      2         0.093         0.000
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              Q19A          Q19B          Q19C          Q20B          Q20C
+              ________      ________      ________      ________      ________
+                0.088         0.097         0.083         0.063         0.067
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              Q20D          Q20E
+              ________      ________
+                0.081         0.082
+
+
+           Est./S.E. GEOMIN ROTATED LOADINGS
+                  1             2
+              ________      ________
+ Q19A           4.221        -0.856
+ Q19B          -1.134         5.149
+ Q19C          12.379         0.491
+ Q20B           2.953         1.812
+ Q20C           3.447         0.533
+ Q20D           0.164         3.146
+ Q20E           0.227         5.716
+
+
+           Est./S.E. GEOMIN FACTOR CORRELATIONS
+                  1             2
+              ________      ________
+      1         0.000
+      2         7.308         0.000
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              Q19A          Q19B          Q19C          Q20B          Q20C
+              ________      ________      ________      ________      ________
+                7.537         7.139         5.837         9.216         9.787
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              Q20D          Q20E
+              ________      ________
+                8.307         7.698
+
+
+           FACTOR STRUCTURE
+                  1             2
+              ________      ________
+ Q19A           0.569         0.306
+ Q19B           0.299         0.546
+ Q19C           0.720         0.491
+ Q20B           0.619         0.567
+ Q20C           0.581         0.441
+ Q20D           0.402         0.570
+ Q20E           0.423         0.609
+
+
+     Beginning Time:  13:09:53
+        Ending Time:  13:09:53
+       Elapsed Time:  00:00:00
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2017 Muthen & Muthen

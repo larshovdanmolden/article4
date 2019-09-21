@@ -7,7 +7,7 @@ source("./estimation/article_functions.r")
 require("MASS")
 library(sampleSelection)
 library(mediation)
-library(polycor)
+#library(polycor)
 
 ## This loads the data workspace where skattefunn_data.r is already loaded
 load("./data/art3base.RData")
@@ -63,16 +63,7 @@ zw$lassets <- log(zw$assets)
 
 
 
-
-
-
-
-
-
-
-
-
-
+### Creating variable for determining constant in respondent
 
 
 ## Creating variables
@@ -92,9 +83,9 @@ zw$or0 <-  rowMeans(zw[,c("Q21c", "Q21d", "Q21e", "Q22", "Q22a", "Q22b", "Q22c",
 zw$or1 <-  rowMeans(zw[,c("Q5.1_t1", "Q5.2_t1", "Q5.3_t1", "Q5.4_t1", "Q5.5_t1", "Q5.6_t1", "Q5.7_t1")], na.rm=TRUE)
 zw$dl1 <-  rowMeans(zw[,c("Q8.1_t1", "Q8.2_t1", "Q8.3_t1" , "Q8.4_t1" , "Q8.5_t1", "Q8.6_t1")], na.rm=TRUE)
 zw$dyn <-  rowMeans(zw[,c("Q27", "Q27a", "Q27b", "Q27c", "Q27e", "Q27g")], na.rm=TRUE)
+zw$ma <-  rowMeans(zw[,c("Q24","Q24a", "Q24b", "Q23b","Q23c")], na.rm=TRUE)
 
-
-Zw$ddc <- as.double(zw$dc1-zw$dc0)
+zw$ddc <- as.double(zw$dc1-zw$dc0)
 zw$dor <-  zw$or1-zw$or0
 zw$size <- zw$Q1_t1
 zw$age <- zw$Q2_t1
@@ -154,273 +145,84 @@ names(art2cor) <- c("Mean","SD",paste(seq(1:7),sep=","))
 art2cor
 
 
-## Regressions
-mod1 <- lm(or1 ~ or0 + dl +  size + age + dyn + pm + lassets, data=zw);summary(mod1)
-mod2 <- lm(or1 ~ or0 + dl + dc0 + ddc + size + age + dyn + pm + lassets, data=zw);summary(mod2)
-mod1m <- lm(ddc ~ or0 + dl + size + age + dyn + pm + lassets, data=zw);summary(mod1m)
-med.out1 <- mediate(mod1m,mod2, treat="dl",mediator="ddc",robustSE=TRUE, sims=1000)
-summary(med.out1) ## ADE is insignificant telling us that DL has no direct effect on OR
+### DATA IMPU
+foo <- zw[,c("Q24","Q24a","Q23b","Q23a")]
 
-mod3 <- lm(dc1 ~ dc0 + dl + size + age + dyn + pm + lassets, data=zw);summary(mod3)
-mod4 <- lm(ca1 ~ ca0 +  dc0 + ddc + size + age + dyn + pm + lassets, data=zw);summary(mod4)
-mod5 <- lm(ca1 ~ ca0 +  dc0 + dc1 + or0 + dor + size + age + dyn + pm + lassets, data=zw);summary(mod5)
-mod5m <- lm(dor ~ ca0 + dc1 + or0 + dl + dc0 + size + age + dyn + pm + lassets, data=zw);summary(mod5m)
+summary(foo)
 
-med.out5 <- mediate(mod5m,mod5, treat="dc1",mediator="dor",robustSE=TRUE, sims=1000)
-summary(med.out5) ## ADE is insignificant telling us that DL has no direct effect on OR
 
+pcformal <-  princomp(~.,data=foo, nfactors=1, rotate="oblimin", na.action=na.omit)
+summary(pcformal)
+### MMA SEM
+zw$ma <-  rowMeans(zw[,c("Q24","Q24a","Q23b","Q23a")], na.rm=TRUE)
+zw$maorint <- zw$ma*zw$or1
 
+model <- '
+# outcome model
+ca1 ~  ca0 +  b1*or1 + b2*ma+ dc0 + size + age
+# mediator models
+or1 ~ a1*dc0 + size + age
+ma ~ a2*dc0 + size + age
 
-zw$dyn <-  rowMeans(zw[,c("Q27a", "Q27b", "Q27c")], na.rm=TRUE)
-summary(zw$dyn)
-zw$dyn <- zw$Q27a
+# indirect effects (IDE)
+medVar1DOR  := a1*b1
+medVar2MA  := a2*b2
+sumIDE := (a1*b1) + (a2*b2)
 
-zw$dynhigh <- ifelse(zw$dyn > 4.667, 1,0)
-zwhigh <- subset(zw,zw$dynhigh==1)
-zwlow <- subset(zw,zw$dynhigh==0)
+# total effect
+total := (a1*b1) + (a2*b2)
+or1 ~~ ma # model correlation between mediators
+'
 
-nrow(zwhigh)
-nrow(zwlow)
+fitfull <- sem(model, data=zw, estimator="ML")
+summary(fitfull, fit.measures=TRUE, standardize=TRUE, rsquare=TRUE)
 
-mod5 <- lm(ca1 ~ ca0 +  dc0 + dc1 + or0 + dor + size + age  + pm + lassets, data=zwhigh);summary(mod5)
-mod5m <- lm(dor ~ ca0 + dc1 + or0 + dc0 + size + age + dyn + pm + lassets, data=zwhigh);summary(mod5m)
 
-med.out5hi <- mediate(mod5m,mod5, treat="dc1",mediator="dor",robustSE=TRUE, sims=1000)
 
-mod5 <- lm(ca1 ~ ca0 +  dc0 + dc1 + or0 + dor + size + age  + pm + lassets, data=zwlow);summary(mod5)
-mod5m <- lm(dor ~ ca0 + dc1 + or0  + dc0 + size + age  + pm + lassets, data=zwlow);summary(mod5m)
+model <- '
+# outcome model
+ca1 ~  ca0  + b2*ma + size + age + pm + lassets
 
-med.out5lw <- mediate(mod5m,mod5, treat="dc1",mediator="dor",robustSE=TRUE, sims=1000)
-summary(med.out5lw)
-summary(med.out5hi)
+# mediator models
+#or1 ~ a1*dc0 + size + age
+ma ~ a2*dc0
 
+# indirect effects (IDE)
+#medVar1DOR  := a1*b1
+#medVar2MA  := a2*b2
+#sumIDE := (a1*b1) + (a2*b2)
 
+# total effect
+#total := (a1*b1) + (a2*b2)
+#or1 ~~ ma # model correlation between mediators
+'
 
+fitma <- sem(model, data=zw)
 
-mod6 <- lm(dl ~ dc0 +ddc*dyn +  size + age + dyn + pm + lassets, data=zw) ; summary(mod6) ### NB INTERACTION EFFECT
-mod6 <- lm(dl ~ dc0 +  size + age + dyn + pm + lassets, data=zw) ; summary(mod6)
 
+summary(fitma, fit.measures=TRUE, standardize=TRUE, rsquare=TRUE)
 
-## Heckmann Regressions
-zw$period <- ifelse(!is.na(zw$Q1_t1),1,0)
 
+model <- '
+# outcome model
+ca1 ~  ca0  + or1 + size + age + pm + lassets
 
-heckmodel1 <- selection(period ~ Q35b + dyn + dc0 + lassets + pm, or1 ~ or0 + dl + size + age + dyn + pm + lassets, data=zw)
-summary(heckmodel1)
+# mediator models
+or1 ~ a1*dc0 + size + age
+#ma ~ a2*dc0
 
-heckmodel2 <- selection(period ~ Q35b + dyn + dc0 + lassets + pm, or1 ~ or0 + dl + dc0 + ddc + size + age + dyn + pm + lassets, data=zw)
-summary(heckmodel2)
+# indirect effects (IDE)
+#medVar1DOR  := a1*b1
+#medVar2MA  := a2*b2
+#sumIDE := (a1*b1) + (a2*b2)
 
-heckmodel3 <- selection(period ~ Q35b + dyn + dc0 + lassets + pm, dc1 ~ dc0 + dl + size + age + dyn + pm + lassets, data=zw)
-summary(heckmodel3)
+# total effect
+#total := (a1*b1) + (a2*b2)
+#or1 ~~ ma # model correlation between mediators
+'
 
-heckmodel4 <- selection(period ~ Q35b + dyn + dc0 + lassets + pm, ca1 ~ ca0 + dl + dc0 + ddc + size + age + dyn + pm + lassets, data=zw)
-summary(heckmodel4)
+fitor <- sem(model, data=zw)
+summary(fitor, fit.measures=TRUE, standardize=TRUE, rsquare=TRUE)
 
-heckmodel5 <- selection(period ~ Q35b + dyn + dc0 + lassets + pm, ca1 ~ ca0 + dl + dc0 + ddc + or0 + dor + size + age + dyn + pm + lassets, data=zw)
-summary(heckmodel5)
 
-## if rho is zero (meaning non significant) / no selection bias
 
-mainres <- list(heckmodel1, heckmodel2,heckmodel3,heckmodel4,heckmodel5,mod6)
-
-
-## Robustmess / include more observations
-mod3 <- lm(dc1 ~ dc0 + dl + size + age + dyn, data=zw);summary(mod3)
-mod4 <- lm(ca1 ~ ca0 + dl + dc0 + ddc + or0 + dor + size + age + dyn, data=zw);summary(mod4)
-mod4m <- lm(dor ~ ca0 + ddc + or0 + dl + dc0 + size + age + dyn, data=zw);summary(mod1m)
-
-med.out4 <- mediate(mod4m,mod4, treat="ddc",mediator="dor",robustSE=TRUE, sims=1000)
-summary(med.out4) ## ADE is insignificant telling us that DL has no direct effect on OR
-
-
-## Extract R2 values
-
-r1 <- round(summary(mod1)$adj.r.squared,3)
-r2 <- round(summary(mod2)$adj.r.squared,3)
-r3 <- round(summary(mod3)$adj.r.squared,3)
-r4 <- round(summary(mod4)$adj.r.squared,3)
-r5 <- round(summary(mod5)$adj.r.squared,3)
-r6 <- round(summary(mod6)$adj.r.squared,3)
-
-## extract coefficients
-
-mod1_dl <- round(heckmodel1$estimate["dl"],3)
-mod2_dl <- round(heckmodel2$estimate["dl"],3)
-mod3_dl <- round(heckmodel3$estimate["dl"],3)
-mod4_dl <- round(heckmodel3$estimate["dl"],3)
-mod5_dl <- round(heckmodel3$estimate["dl"],3)
-
-mod2_dc0 <- round(heckmodel2$estimate["dc0"],3)
-mod4_dc0 <- round(heckmodel4$estimate["dc0"],3)
-mod5_dc0 <- round(heckmodel5$estimate["dc0"],3)
-mod6_dc0 <- round(mod6$coefficients["dc0"],3)
-
-mod2_ddc <- round(heckmodel2$estimate["ddc"],3)
-mod4_ddc <- round(heckmodel4$estimate["ddc"],3)
-mod5_ddc <- round(heckmodel5$estimate["ddc"],3)
-
-medmod1_ade <- round(med.out1$z0,3)  ## average direct effect
-medmod1_acme <- round(med.out1$d0,3) ## average causal mediated effect
-medmod1_shmed <- round(med.out1$n.avg,3) ## proportion of effect mediated
-
-medmod5_ade <- round(med.out5$z0,3)  ## average direct effect
-medmod5_acme <- round(med.out5$d0,3) ## average causal mediated effect
-medmod5_shmed <- round(med.out5$n.avg,3) ## proportion of effect mediated
-
-
-
-
-### TESTING DC CONSTRUCT
-
-mod1 <- lm(ca1~ ca0 + pm + lassets + dc1 + or1 , data=zw);summary(mod1)
-mod1 <- lm(ca1~ + pm , data=zw);summary(mod1)
-
-## Expoting to mplus
-mplusexport <- zw[,c("Q19","Q19a","Q19b","Q19c","Q19d","Q20d",
-                     "Q19e","Q20b","Q25","Q20",
-                     "Q20c","Q25a","Q25b","Q25c",
-                     "Q6.1_t1","Q6.2_t1","Q6.3_t1","Q6.4_t1","Q6.5_t1","Q7.3_t1",
-                     "Q6.6_t1","Q7.1_t1","Q7.5_t1","Q6.7_t1",
-                     "Q7.2_t1","Q7.6_t1","Q7.7_t1","Q7.8_t1","Q28","Q28a","Q28b","Q28c",
-                     "Q16.1_t1","Q16.2_t1","Q16.3_t1","Q16.4_t1",
-                     "Q21c","Q21d","Q21e","Q22","Q22a","Q22b","Q22c","Q22d",
-                     "Q5.1_t1","Q5.2_t1","Q5.3_t1","Q5.4_t1","Q5.5_t1","Q5.6_t1","Q5.7_t1",
-                     "Q8.1_t1","Q8.2_t1","Q8.3_t1","Q8.4_t1","Q8.5_t1","Q8.6_t1",
-                     "Q27","Q27a","Q27b","Q27c","Q27e","Q27g","size","age","dynhigh","pm","lassets")]
-
-mplusexport <- subset(mplusexport, !is.na(Q8.3_t1))
-
-
-mplusexport[is.na(mplusexport)] <- -9999
-
-
-
-write.table(mplusexport,"/Users/larshovdanmolden/Documents/git/article4/estimation/mplusexport.csv", row.names=FALSE, col.names=FALSE, sep=",")
-
-## Testing dynamism as moderator
-
-zwdyn <- zw[,c("Q27a", "Q27b", "Q27c")]
-fa1 <- factanal(na.omit(zwdyn),1)
-fa1
-
-
-zw$dyn <-  rowMeans(zw[,c("Q27a", "Q27b", "Q27c")], na.rm=TRUE)
-
-mod3 <- lm(ca1 ~ ca0 + dyn*dc0 + dor + dc0, data=zw);summary(mod3)
-
-
-mod3 <- lm(ca1 ~ ca0 + dc0*dyn + dc0*dyn2 + dc0+ dor + dc0, data=zw);summary(mod3)
-
-
-## SEM Robustness for estimating correlation between key constructs
-
-require(lavaan)
-require(semPlot)
-
-
-model <- "
-
-SENSE0 =~ Q19+ Q19a+ Q19b+ Q19c+ Q19d+ Q20d
-SEIZE0 =~  Q19e+ Q20b+ Q19c+ Q25+ Q20
-TRAN0 =~ Q20c+ Q25a+ Q25b+ Q25c
-
-DC0 =~ SENSE0 + SEIZE0 + TRAN0
-
-SENSE1 =~ Q6.1_t1+Q6.2_t1+Q6.3_t1+Q6.4_t1+Q6.5_t1+Q7.3_t1
-SEIZE1 =~Q6.6_t1+Q7.1_t1+Q6.4_t1+Q7.5_t1+Q6.7_t1
-TRAN1 =~ Q7.2_t1+Q7.6_t1+Q7.7_t1+Q7.8_t1
-
-DC1 =~ SENSE1 + SEIZE1 + TRAN1
-DDC =~ dsense + dseize + dtran
-
-CA0 =~ Q28+Q28a+ Q28b+ Q28c
-CA1 =~ Q16.1_t1+Q16.2_t1+ Q16.3_t1+ Q16.4_t1
-OR0 =~ Q21c+ Q21d+ Q21e+ Q22+ Q22a+ Q22b+ Q22c+ Q22d
-OR1 =~ Q5.1_t1+ Q5.2_t1+ Q5.3_t1+ Q5.4_t1+ Q5.5_t1+ Q5.6_t1+ Q5.7_t1
-DL1 =~ Q8.1_t1+ Q8.2_t1+ Q8.3_t1 + Q8.4_t1 + Q8.5_t1+ Q8.6_t1
-DYN =~ Q27+ Q27a+ Q27b+ Q27c+ Q27e+ Q27g
-
-
-DC1 ~ DC0
-OR1 ~ OR0 + DC0
-CA1 ~ CA0 + DC1 + OR1
-
-"
-
-
-
-
-
-fit <- sem(model, data = zw)
-
-
-
-summary(fit,fit.measures=TRUE)
-
-
-semPaths(fit)
-semPaths(fit,what="equality","est",style="lisrel",layout="tree", sizeLat=8, edge.label.cex = 0.9, ask =FALSE)
-
-
-
-
-
-
-
-## Creating variables
-sense0 <- rowMeans(zw[,c("Q19", "Q19a", "Q19b", "Q19c", "Q19d", "Q20d")], na.rm=TRUE)
-seize0 <- as.double(rowMeans(zw[,c( "Q19e", "Q20b", "Q19c", "Q25", "Q20")], na.rm=TRUE))
-tran0 <- as.double(rowMeans(zw[,c("Q20c", "Q25a", "Q25b", "Q25c")], na.rm=TRUE))
-zw$dc0 <- rowMeans(cbind(sense0,seize0,tran0),na.rm=TRUE)
-
-sense1 <- as.double(rowMeans(zw[,c("Q6.1_t1","Q6.2_t1","Q6.3_t1","Q6.4_t1","Q6.5_t1","Q7.3_t1")], na.rm=TRUE))
-seize1 <-as.double(rowMeans(zw[,c("Q6.6_t1","Q7.1_t1","Q6.4_t1","Q7.5_t1","Q6.7_t1")], na.rm=TRUE))
-tran1 <- as.double(rowMeans(zw[,c("Q7.2_t1","Q7.6_t1","Q7.7_t1","Q7.8_t1")], na.rm=TRUE))
-zw$dc1 <- rowMeans(cbind(sense1,seize1,tran1),na.rm=TRUE)
-
-zw$ca0 <-  rowMeans(zw[,c("Q28","Q28a", "Q28b", "Q28c")], na.rm=TRUE)
-zw$ca1 <-  rowMeans(zw[,c("Q16.1_t1","Q16.2_t1", "Q16.3_t1", "Q16.4_t1")], na.rm=TRUE)
-zw$or0 <-  rowMeans(zw[,c("Q21c", "Q21d", "Q21e", "Q22", "Q22a", "Q22b", "Q22c", "Q22d")], na.rm=TRUE)
-zw$or1 <-  rowMeans(zw[,c("Q5.1_t1", "Q5.2_t1", "Q5.3_t1", "Q5.4_t1", "Q5.5_t1", "Q5.6_t1", "Q5.7_t1")], na.rm=TRUE)
-zw$dl1 <-  rowMeans(zw[,c("Q8.1_t1", "Q8.2_t1", "Q8.3_t1" , "Q8.4_t1" , "Q8.5_t1", "Q8.6_t1")], na.rm=TRUE)
-zw$dyn <-  rowMeans(zw[,c("Q27", "Q27a", "Q27b", "Q27c", "Q27e", "Q27g")], na.rm=TRUE)
-
-zw$dsense <- (sense1-sense0)
-zw$dseize <- (seize1-seize0)
-zw$dtran <- (tran1-tran0)
-
-
-
-
-##########
-## mod1 <- lm(ca1 ~ ca0 + dl + or0*dyn + size + age + dyn + pm + lassets,data=zwadj);summary(mod1)
-
-
-mod1 <- lm(ca1 ~ ca0 + dl + or0 + dor + size + age  + pm + lassets,data=zw);summary(mod1)
-mod1 <- lm(ca1 ~ ca0 + dl + or0 + dor + dc0 + ddc + size + age  + pm + lassets,data=zw);summary(mod1)
-
-mod1 <- lm(ca1 ~ ca0 + dl + or0 + dor + dc0 + ddc + size + age  + pm + lassets, data=zw);summary(mod1)
-mod1m <- lm(dor ~ ca0 + ddc + or0 + dl + dc0 + size + age + dyn + pm + lassets, data=zw);summary(mod1m)
-
-med.out <- mediate(mod1m,mod1, treat="ddc",mediator="dor",robustSE=TRUE, sims=1000)
-summary(med.out) ## ADE is insignificant telling us that DL has no direct effect on OR
-
-
-zwadj <- zw[!is.na(zw$dca),]
-
-mod1 <- lm(dca ~  dl + dor + ddc + size + age  + pm + lassets, data=zwadj);summary(mod1)
-mod1m <- lm(dor ~ ddc  + dl + size + age + dyn + pm + lassets, data=zwadj);summary(mod1m)
-
-med.out <- mediate(mod1m,mod1, treat="ddc",mediator="dor",robustSE=TRUE, sims=1000)
-summary(med.out) ## ADE is insignificant telling us that DL has no direct effect on OR
-
-
-cor(zw$dc1,zw$dor, use="complete.obs")
-zw$dca <- zw$ca1 - zw$ca0
-
-
-mod1 <- lm(pm ~ ca0 + dor + ddc + size + age + lassets,data=zw);summary(mod1)
-
-
-capture.output(summary(mod1), file="testreg.xls")

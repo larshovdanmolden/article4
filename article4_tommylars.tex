@@ -2,7 +2,57 @@
 %https://academic.oup.com/journals/pages/authors/latex_files
 %latexmk -pdf -pvc -auxdir=/Users/larshovdanmolden/Documents/Output/  article2_mancap.tex
 
-\documentclass[review,fleqn]{elsarticle}
+\documentclass[review,fleqn]{elsarticle}\usepackage[]{graphicx}\usepackage[]{color}
+% maxwidth is the original width if it is less than linewidth
+% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+\let\hlipl\hlkwb
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
 \usepackage[textsize=tiny,colorinlistoftodos]{todonotes}
 \usepackage{subfig}
 \usepackage{caption}
@@ -16,8 +66,7 @@
 %%%% TURN OFF PAGE NUMBER FOR INCLUSION IN THESIS
 %\pagenumbering{gobble}
 %%%%%%%
-
-
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
 
 \begin{frontmatter}
@@ -459,17 +508,17 @@ two constructs are indeed related.
 Table \ref{tab:reg} shows a summary of the regression models proposed in the previous
 chapter. Models 1,2 and 3 are designed to test DL as \emph{antecedent} for $OR$ and
 $DC$. Consider model 1 we observe that $DL$ is influencing the level of $OR$ within the
-firm ($\beta_2 =$ \Sexpr{mod1_dl}) supporting H1. However, the effect disappears when we
+firm ($\beta_2 =$ 0.325) supporting H1. However, the effect disappears when we
 add $DC$ in model 2 suggesting a mediating effect. In other words we see that firms with
-initial high $DC$($\beta_3=$ \Sexpr{mod2_dc0}) and increasing $DC$ over time ($\beta_4=$
-\Sexpr{mod2_ddc}) also have better $OR$. To control for the mediating effect suggested by
+initial high $DC$($\beta_3=$ -0.007) and increasing $DC$ over time ($\beta_4=$
+0.497) also have better $OR$. To control for the mediating effect suggested by
 the change in coefficients for $DL$ between models 1 and 2, we performed a causal
 mediation analysis as reported in figure \ref{fig:fig3}. This analysis confirms the
 indications from models 1 and 2 showing that the direct effect from $DL$ on $OR$ is
-insignificant and small (ADE = \Sexpr{medmod1_ade}). Meanwhile, the indirect effect
+insignificant and small (ADE = 0.05). Meanwhile, the indirect effect
 running through changes in $DC$ over time, is significant yielding a positive and
-significant indirect effect of \Sexpr{medmod1_acme}. The proportion of the effect that is
-mediated amounts to \Sexpr{medmod1_shmed}. In sum these results suggest that H1 is
+significant indirect effect of 0.222. The proportion of the effect that is
+mediated amounts to 0.818. In sum these results suggest that H1 is
 unsupported, and that the bulk of the effect is indirect running through $DC$, in line with
 the expectations in H3. Similarly, we see from model 3 that $DC$ is indeed influenced by $DL$
 above and beyond its own evolutionary trajectory. This is in line with our expectations
@@ -477,7 +526,7 @@ and lend support to H4.
 
 To evaluate H5 proposing a feedback effect from $DC$ to $DL$, we turn to model 6 in table
 \ref{tab:reg}. Controlled for the usual firm level controls we find a positive effect
-($\xi_1=$ \Sexpr{mod6_dc0}) from $DC_{T_1}$ on $DL$ measured at $T_1$. This supports H5
+($\xi_1=$ 0.913) from $DC_{T_1}$ on $DL$ measured at $T_1$. This supports H5
 suggesting that firms with more $DC$ is more likely to generate opportunities where it
 becomes more prevalent that learning will need to take place. One interesting finding is
 also that this effect environmental dynamism decreases firms level of $DL$. This is indeed
@@ -495,14 +544,14 @@ influenced by the level of $DC$ of the firm indicating that dynamic capabilities
 source of competitive advantage in line with our expectations. Furthermore, considering
 model 5 we see that $OR$ also has a significant positive effect on $CA$ indicating that
 operating routines can also be a source of advantage for the firm. Moreover, the
-coefficient of $\Delta DC$ decline from \Sexpr{mod4_ddc} to \Sexpr{mod5_ddc} when we add
+coefficient of $\Delta DC$ decline from 0.589 to 0.425 when we add
 $OR$. This suggests that some mediation is at work, i.e. that changes in $DC$ leads to
 changes in changes in $OR$ leading to $CA$. This indirect path is in line with the
 expectations from our hypotheses and as described in figure \ref{fig:fig2}. When formally
 testing this mediation running a causal mediation analysis (see figure \ref{fig:fig4}), we
 find added support that both a \emph{direct-} and an \emph{indirect} path exist to explain
-the relationship between $DC$ and $CA$ (ADE = \Sexpr{medmod5_ade}, ACME =
-\Sexpr{medmod5_acme}) and a total mediated share of \Sexpr{medmod5_shmed}.
+the relationship between $DC$ and $CA$ (ADE = 0.371, ACME =
+0.198) and a total mediated share of 0.347.
 
 Table \ref{tab:hyptab} depict a summary of the hypotheses and indicate if they are
 supported or not in our analysis. We will now turn to the discussion. 

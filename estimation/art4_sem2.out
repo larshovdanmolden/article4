@@ -1,0 +1,792 @@
+Mplus VERSION 8 (Mac)
+MUTHEN & MUTHEN
+09/19/2019  12:45 PM
+
+INPUT INSTRUCTIONS
+
+
+  TITLE:article4_CA
+
+  DATA:FILE IS mplusexport1.csv;
+  VARIABLE:
+  NAMES ARE Q19a Q19c Q20b Q20c
+  Q19b Q19d Q20d Q20e
+  Q62_t1 Q64_t1 Q71_t1 Q72_t1
+  Q63_t1 Q65_t1 Q73_t1 Q74_t1
+  Q28 Q28a Q28b Q28c
+  Q161_t1 Q162_t1 Q163_t1 Q164_t1
+  Q21c Q21d Q21e
+  Q54_t1 Q56_t1  Q57_t1
+  Q23a Q23b Q23c Q24 Q24a Q24b Q24c Q24d
+  Q87_t1 Q88_t1 Q89_t1
+  size age dynhigh pm lassets;
+
+  USEVARIABLES ARE Q19a Q19c Q20b Q20c
+  Q19b Q19d Q20d Q20e
+  Q28 Q28a Q28b Q28c
+  Q161_t1 Q162_t1 Q163_t1 Q164_t1
+  Q21c Q21d Q21e
+  Q54_t1 Q56_t1 Q57_t1
+  Q23a Q23b Q23c Q24 Q24a Q24b Q24c Q24d
+  Q87_t1 Q88_t1 Q89_t1
+  size age dynhigh pm lassets;
+
+  MISSING ARE ALL (-9999);
+  !CLUSTER = fid;
+  !DEFINE: CENTER rd (GROUPMEAN);	
+  DATA MISSING:
+  !TYPE = IMPUTATION;
+  !NAME = Q19 Q19a Q19b Q19c Q19d Q20d;
+  ANALYSIS:
+  !TYPE = RANDOM;
+  !TYPE = IMPUTATION;
+  !ALGORITHM=INTEGRATION;
+  !INTEGRATION = MONTECARLO(500);
+  !ESTIMATOR = WLSMV;
+
+  MODEL:
+  !DC0 BY Q19 Q19c Q19d Q20d Q19e Q20b;
+  !SE0 BY Q19 Q19a Q19b Q19c Q19d Q20d;
+  !SE0 BY Q19 Q19c Q19d Q20d;
+  !SI0 BY Q19e Q20b Q25;
+  !TR0 BY Q20c Q25a Q25b Q25c;
+  DC1 BY Q19a Q19c Q20b Q20c;
+  DC2 BY Q19b Q19d Q20d Q20e;
+  !DC0 BY DC01 DC02;
+  !DC0 BY Q19 Q19a Q19b Q19c Q19d Q20d Q19e Q20b Q25 Q20c Q25a Q25b;
+  !DC1 BY Q61_t1 Q62_t1 Q63_t1 Q64_t1 Q65_t1 Q73_t1 Q66_t1
+  !Q71_t1 Q75_t1 Q67_t1 Q72_t1 Q76_t1 Q77_t1 Q78_t1;
+  !DC1 BY Q61_t1 Q62_t1 Q63_t1 Q64_t1 Q65_t1 Q73_t1 Q66_t1 Q71_t1 Q75_t1 Q67_t1 Q72_t1 Q76_t
+  CA0 BY Q28 Q28a Q28b Q28c;
+  CA1 BY Q161_t1 Q162_t1 Q163_t1 Q164_t1;
+  !OR0 BY Q21c Q21d Q21e;
+  !OR1 BY Q54_t1 Q56_t1 Q57_t1;
+  !MA BY Q24 Q24a Q23b ;
+  MA BY Q87_t1 Q88_t1 Q89_t1;
+  !DYN BY Q27a Q27b Q27c Q27e;
+  !DYNINT | DC1 XWITH DYN;
+  !MAINT | OR1 XWITH MA;
+
+  !OR1 ON DC0;
+  MA ON DC1 DC2;
+  !DC1 ON DC0;
+  CA1 ON CA0 MA DC1 DC2;
+  !CA1 ON DYNINT;
+  !OR1 WITH MA;
+  DC1 WITH DC2;
+
+  !SEIZ BY  q20b  q19c  q20;
+  !TRAN BY  q25 q25b q25c;
+
+
+  !MAN0 BY OP0 MO0 TA0 PE0;
+  !MAN1 BY OP1 MO1 TA1 PE1;
+
+  !MAN1 ON MAN0 kur;
+  !MAN0 ON kur;
+  !MANINT | MAN0 XWITH kur;
+  !MAN1 ON MANINT;
+
+
+  !IC BY icp ico;
+
+  !IC ON rd(a);
+  !inn ON IC(b);
+  !inn ON rd(c);
+  !inn ON sz agt sz2 pol;
+  !MANINT | MAN0 XWITH ldc;
+  !inn ON polint;
+  !s | inn ON IC;
+
+
+  !!! H5P.org
+
+  !model constraint: new(indm,tot);
+  !indm=a*b;
+  !tot=c + (a*b);
+
+  !outint | IC XWITH out;
+  !inn ON polint;
+
+
+
+  OUTPUT:STANDARDIZED;
+  !OUTPUT: TECH2;
+
+  !interpretation https://stats.idre.ucla.edu/mplus/output/lgcm_mlm/mlmtwolevel2/
+
+
+  !http://www.statmodel.com/discussion/messages/11/4461.html?1509660108
+
+
+
+*** WARNING
+  Input line exceeded 90 characters. Some input may be truncated.
+  !DC1 BY Q61_t1 Q62_t1 Q63_t1 Q64_t1 Q65_t1 Q73_t1 Q66_t1 Q71_t1 Q75_t1 Q67_t1 Q72_t1 Q76_t1
+*** WARNING in MODEL command
+  Variable is uncorrelated with all other variables:  Q21C
+*** WARNING in MODEL command
+  Variable is uncorrelated with all other variables:  Q21D
+*** WARNING in MODEL command
+  Variable is uncorrelated with all other variables:  Q21E
+*** WARNING in MODEL command
+  Variable is uncorrelated with all other variables:  Q54_T1
+*** WARNING in MODEL command
+  Variable is uncorrelated with all other variables:  Q56_T1
+*** WARNING in MODEL command
+  Variable is uncorrelated with all other variables:  Q57_T1
+*** WARNING in MODEL command
+  Variable is uncorrelated with all other variables:  Q23A
+*** WARNING in MODEL command
+  Variable is uncorrelated with all other variables:  Q23B
+*** WARNING in MODEL command
+  Variable is uncorrelated with all other variables:  Q23C
+*** WARNING in MODEL command
+  Variable is uncorrelated with all other variables:  Q24
+*** WARNING in MODEL command
+  Variable is uncorrelated with all other variables:  Q24A
+*** WARNING in MODEL command
+  Variable is uncorrelated with all other variables:  Q24B
+*** WARNING in MODEL command
+  Variable is uncorrelated with all other variables:  Q24C
+*** WARNING in MODEL command
+  Variable is uncorrelated with all other variables:  Q24D
+*** WARNING in MODEL command
+  Variable is uncorrelated with all other variables:  SIZE
+*** WARNING in MODEL command
+  Variable is uncorrelated with all other variables:  AGE
+*** WARNING in MODEL command
+  Variable is uncorrelated with all other variables:  DYNHIGH
+*** WARNING in MODEL command
+  Variable is uncorrelated with all other variables:  PM
+*** WARNING in MODEL command
+  Variable is uncorrelated with all other variables:  LASSETS
+*** WARNING in MODEL command
+  At least one variable is uncorrelated with all other variables in the model.
+  Check that this is what is intended.
+  21 WARNING(S) FOUND IN THE INPUT INSTRUCTIONS
+
+
+
+article4_CA
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                         261
+
+Number of dependent variables                                   38
+Number of independent variables                                  0
+Number of continuous latent variables                            5
+
+Observed dependent variables
+
+  Continuous
+   Q19A        Q19C        Q20B        Q20C        Q19B        Q19D
+   Q20D        Q20E        Q28         Q28A        Q28B        Q28C
+   Q161_T1     Q162_T1     Q163_T1     Q164_T1     Q21C        Q21D
+   Q21E        Q54_T1      Q56_T1      Q57_T1      Q23A        Q23B
+   Q23C        Q24         Q24A        Q24B        Q24C        Q24D
+   Q87_T1      Q88_T1      Q89_T1      SIZE        AGE         DYNHIGH
+   PM          LASSETS
+
+Continuous latent variables
+   DC1         DC2         CA0         CA1         MA
+
+
+Estimator                                                       ML
+Information matrix                                        OBSERVED
+Maximum number of iterations                                  1000
+Convergence criterion                                    0.500D-04
+Maximum number of steepest descent iterations                   20
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+
+Input data file(s)
+  mplusexport1.csv
+
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of missing data patterns           106
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+
+     PROPORTION OF DATA PRESENT
+
+
+           Covariance Coverage
+              Q19A          Q19C          Q20B          Q20C          Q19B
+              ________      ________      ________      ________      ________
+ Q19A           0.989
+ Q19C           0.969         0.969
+ Q20B           0.981         0.962         0.992
+ Q20C           0.958         0.943         0.962         0.969
+ Q19B           0.973         0.954         0.977         0.962         0.981
+ Q19D           0.966         0.950         0.966         0.950         0.962
+ Q20D           0.962         0.946         0.958         0.943         0.954
+ Q20E           0.966         0.946         0.969         0.950         0.962
+ Q28            0.977         0.958         0.977         0.954         0.969
+ Q28A           0.985         0.966         0.985         0.962         0.977
+ Q28B           0.973         0.954         0.973         0.950         0.966
+ Q28C           0.789         0.789         0.785         0.770         0.778
+ Q161_T1        0.793         0.793         0.789         0.778         0.782
+ Q162_T1        0.801         0.793         0.801         0.782         0.789
+ Q163_T1        0.893         0.885         0.885         0.870         0.881
+ Q164_T1        0.904         0.893         0.897         0.874         0.889
+ Q21C           0.816         0.808         0.808         0.797         0.808
+ Q21D           0.989         0.969         0.989         0.966         0.981
+ Q21E           0.989         0.969         0.989         0.966         0.981
+ Q54_T1         0.969         0.950         0.973         0.946         0.966
+ Q56_T1         0.977         0.958         0.981         0.958         0.977
+ Q57_T1         0.973         0.954         0.977         0.958         0.966
+ Q23A           0.920         0.908         0.923         0.900         0.908
+ Q23B           0.908         0.900         0.908         0.889         0.897
+ Q23C           0.904         0.897         0.904         0.877         0.893
+ Q24            0.920         0.912         0.923         0.904         0.912
+ Q24A           0.831         0.828         0.835         0.824         0.828
+ Q24B           0.736         0.728         0.736         0.716         0.728
+ Q24C           0.732         0.724         0.732         0.716         0.728
+ Q24D           0.989         0.969         0.992         0.969         0.981
+ Q87_T1         0.985         0.966         0.989         0.966         0.977
+ Q88_T1         0.985         0.966         0.989         0.966         0.977
+ Q89_T1         0.985         0.966         0.989         0.966         0.977
+ SIZE           0.985         0.966         0.989         0.966         0.977
+ AGE            0.977         0.958         0.981         0.962         0.973
+ DYNHIGH        0.977         0.958         0.981         0.958         0.969
+ PM             0.966         0.946         0.969         0.946         0.958
+ LASSETS        0.954         0.935         0.958         0.943         0.954
+
+
+           Covariance Coverage
+              Q19D          Q20D          Q20E          Q28           Q28A
+              ________      ________      ________      ________      ________
+ Q19D           0.973
+ Q20D           0.950         0.966
+ Q20E           0.958         0.943         0.977
+ Q28            0.962         0.954         0.962         0.985
+ Q28A           0.969         0.962         0.969         0.985         0.992
+ Q28B           0.958         0.950         0.958         0.977         0.981
+ Q28C           0.778         0.774         0.774         0.782         0.785
+ Q161_T1        0.782         0.778         0.782         0.785         0.789
+ Q162_T1        0.785         0.789         0.785         0.797         0.801
+ Q163_T1        0.877         0.881         0.874         0.885         0.889
+ Q164_T1        0.881         0.885         0.881         0.897         0.900
+ Q21C           0.805         0.808         0.808         0.808         0.812
+ Q21D           0.973         0.966         0.973         0.985         0.992
+ Q21E           0.973         0.966         0.973         0.985         0.992
+ Q54_T1         0.958         0.950         0.954         0.966         0.973
+ Q56_T1         0.962         0.958         0.962         0.973         0.981
+ Q57_T1         0.958         0.950         0.962         0.969         0.977
+ Q23A           0.904         0.893         0.908         0.912         0.920
+ Q23B           0.897         0.893         0.893         0.900         0.908
+ Q23C           0.885         0.881         0.893         0.893         0.900
+ Q24            0.904         0.900         0.904         0.916         0.920
+ Q24A           0.824         0.820         0.820         0.828         0.831
+ Q24B           0.724         0.716         0.724         0.728         0.732
+ Q24C           0.720         0.716         0.720         0.724         0.728
+ Q24D           0.973         0.966         0.977         0.985         0.992
+ Q87_T1         0.969         0.962         0.973         0.981         0.989
+ Q88_T1         0.969         0.962         0.973         0.981         0.989
+ Q89_T1         0.969         0.962         0.973         0.981         0.989
+ SIZE           0.969         0.962         0.973         0.981         0.989
+ AGE            0.962         0.954         0.966         0.973         0.981
+ DYNHIGH        0.966         0.954         0.969         0.973         0.981
+ PM             0.958         0.943         0.962         0.962         0.969
+ LASSETS        0.943         0.931         0.946         0.950         0.958
+
+
+           Covariance Coverage
+              Q28B          Q28C          Q161_T1       Q162_T1       Q163_T1
+              ________      ________      ________      ________      ________
+ Q28B           0.981
+ Q28C           0.778         0.789
+ Q161_T1        0.782         0.747         0.793
+ Q162_T1        0.793         0.732         0.747         0.805
+ Q163_T1        0.881         0.759         0.762         0.778         0.893
+ Q164_T1        0.897         0.759         0.759         0.770         0.877
+ Q21C           0.805         0.705         0.713         0.720         0.785
+ Q21D           0.981         0.789         0.793         0.805         0.893
+ Q21E           0.981         0.789         0.793         0.805         0.893
+ Q54_T1         0.962         0.782         0.785         0.793         0.881
+ Q56_T1         0.969         0.782         0.785         0.797         0.885
+ Q57_T1         0.966         0.782         0.785         0.797         0.881
+ Q23A           0.912         0.762         0.774         0.782         0.843
+ Q23B           0.900         0.759         0.774         0.774         0.847
+ Q23C           0.893         0.759         0.762         0.762         0.839
+ Q24            0.916         0.759         0.766         0.770         0.847
+ Q24A           0.828         0.720         0.724         0.732         0.766
+ Q24B           0.728         0.636         0.644         0.655         0.690
+ Q24C           0.724         0.644         0.644         0.655         0.690
+ Q24D           0.981         0.789         0.793         0.805         0.893
+ Q87_T1         0.977         0.785         0.789         0.801         0.889
+ Q88_T1         0.977         0.785         0.789         0.801         0.889
+ Q89_T1         0.977         0.785         0.789         0.801         0.889
+ SIZE           0.977         0.785         0.789         0.801         0.889
+ AGE            0.969         0.778         0.782         0.793         0.881
+ DYNHIGH        0.969         0.778         0.785         0.793         0.881
+ PM             0.958         0.774         0.785         0.789         0.877
+ LASSETS        0.946         0.770         0.774         0.778         0.862
+
+
+           Covariance Coverage
+              Q164_T1       Q21C          Q21D          Q21E          Q54_T1
+              ________      ________      ________      ________      ________
+ Q164_T1        0.904
+ Q21C           0.793         0.816
+ Q21D           0.904         0.816         0.996
+ Q21E           0.904         0.816         0.996         0.996
+ Q54_T1         0.893         0.805         0.977         0.977         0.977
+ Q56_T1         0.897         0.808         0.985         0.985         0.973
+ Q57_T1         0.893         0.812         0.981         0.981         0.966
+ Q23A           0.858         0.782         0.923         0.923         0.908
+ Q23B           0.858         0.778         0.912         0.912         0.897
+ Q23C           0.851         0.782         0.904         0.904         0.893
+ Q24            0.854         0.789         0.923         0.923         0.912
+ Q24A           0.770         0.728         0.835         0.835         0.828
+ Q24B           0.693         0.655         0.736         0.736         0.732
+ Q24C           0.701         0.655         0.732         0.732         0.728
+ Q24D           0.904         0.816         0.996         0.996         0.977
+ Q87_T1         0.900         0.812         0.992         0.992         0.973
+ Q88_T1         0.900         0.812         0.992         0.992         0.973
+ Q89_T1         0.900         0.812         0.992         0.992         0.973
+ SIZE           0.900         0.812         0.992         0.992         0.973
+ AGE            0.893         0.805         0.985         0.985         0.966
+ DYNHIGH        0.893         0.808         0.985         0.985         0.966
+ PM             0.885         0.808         0.973         0.973         0.958
+ LASSETS        0.874         0.789         0.962         0.962         0.946
+
+
+           Covariance Coverage
+              Q56_T1        Q57_T1        Q23A          Q23B          Q23C
+              ________      ________      ________      ________      ________
+ Q56_T1         0.985
+ Q57_T1         0.969         0.985
+ Q23A           0.912         0.923         0.927
+ Q23B           0.900         0.908         0.897         0.912
+ Q23C           0.897         0.900         0.874         0.870         0.908
+ Q24            0.916         0.920         0.881         0.870         0.885
+ Q24A           0.835         0.835         0.824         0.808         0.808
+ Q24B           0.732         0.736         0.724         0.716         0.728
+ Q24C           0.732         0.732         0.728         0.720         0.720
+ Q24D           0.985         0.985         0.927         0.912         0.908
+ Q87_T1         0.981         0.981         0.923         0.908         0.904
+ Q88_T1         0.981         0.981         0.923         0.908         0.904
+ Q89_T1         0.981         0.981         0.923         0.908         0.904
+ SIZE           0.981         0.981         0.923         0.908         0.904
+ AGE            0.977         0.973         0.916         0.900         0.897
+ DYNHIGH        0.973         0.973         0.920         0.904         0.900
+ PM             0.962         0.966         0.916         0.900         0.893
+ LASSETS        0.954         0.950         0.897         0.881         0.881
+
+
+           Covariance Coverage
+              Q24           Q24A          Q24B          Q24C          Q24D
+              ________      ________      ________      ________      ________
+ Q24            0.927
+ Q24A           0.824         0.835
+ Q24B           0.724         0.716         0.736
+ Q24C           0.716         0.701         0.690         0.732
+ Q24D           0.927         0.835         0.736         0.732         1.000
+ Q87_T1         0.923         0.831         0.736         0.728         0.996
+ Q88_T1         0.923         0.831         0.732         0.728         0.996
+ Q89_T1         0.923         0.831         0.732         0.728         0.996
+ SIZE           0.923         0.831         0.732         0.728         0.996
+ AGE            0.916         0.828         0.724         0.724         0.989
+ DYNHIGH        0.916         0.828         0.728         0.724         0.989
+ PM             0.904         0.824         0.732         0.732         0.977
+ LASSETS        0.897         0.812         0.724         0.724         0.966
+
+
+           Covariance Coverage
+              Q87_T1        Q88_T1        Q89_T1        SIZE          AGE
+              ________      ________      ________      ________      ________
+ Q87_T1         0.996
+ Q88_T1         0.992         0.996
+ Q89_T1         0.992         0.996         0.996
+ SIZE           0.992         0.996         0.996         0.996
+ AGE            0.985         0.989         0.989         0.989         0.989
+ DYNHIGH        0.985         0.989         0.989         0.989         0.981
+ PM             0.973         0.973         0.973         0.973         0.966
+ LASSETS        0.962         0.962         0.962         0.962         0.958
+
+
+           Covariance Coverage
+              DYNHIGH       PM            LASSETS
+              ________      ________      ________
+ DYNHIGH        0.989
+ PM             0.969         0.977
+ LASSETS        0.954         0.950         0.966
+
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     Q19A                  5.721      -1.015       0.000    0.39%       5.000      6.000      6.000
+             258.000       1.232       2.126       7.000   27.13%       6.000      7.000
+     Q19C                  4.265      -0.281       0.000    0.79%       3.000      4.000      4.000
+             253.000       2.811      -0.712       7.000    8.30%       5.000      6.000
+     Q20B                  5.104      -0.791       0.000    0.77%       4.000      5.000      5.000
+             259.000       2.132       0.399       7.000   16.60%       6.000      6.000
+     Q20C                  4.360      -0.342       0.000    1.19%       3.000      4.000      4.000
+             253.000       2.452      -0.437       7.000    7.11%       5.000      6.000
+     Q19B                  5.156      -0.865       0.000    0.39%       4.000      5.000      5.000
+             256.000       2.343       0.284       7.000   19.53%       6.000      6.000
+     Q19D                  4.535      -0.648       0.000    0.79%       3.000      4.000      5.000
+             254.000       2.390      -0.111       7.000    6.30%       5.000      6.000
+     Q20D                  4.151      -0.376       0.000    1.98%       3.000      4.000      4.000
+             252.000       2.604      -0.327       7.000    5.16%       5.000      6.000
+     Q20E                  4.969      -0.829       0.000    0.78%       4.000      5.000      5.000
+             255.000       2.658       0.082       7.000   16.47%       6.000      6.000
+     Q28                   4.058      -0.071       1.000    4.28%       3.000      4.000      4.000
+             257.000       2.117      -0.442       7.000    5.06%       4.000      5.000
+     Q28A                  4.510      -0.338       1.000    3.47%       3.000      4.000      5.000
+             259.000       2.466      -0.623       7.000    9.65%       5.000      6.000
+     Q28B                  4.758      -0.372       1.000    1.56%       4.000      4.000      5.000
+             256.000       1.746      -0.100       7.000    8.59%       5.000      6.000
+     Q28C                  3.820      -0.055       0.000    0.97%       2.000      3.000      4.000
+             206.000       2.982      -0.830       7.000    5.34%       4.000      6.000
+     Q161_T1               4.048      -0.234       0.000    0.97%       3.000      4.000      4.000
+             207.000       2.568      -0.495       7.000    5.31%       4.000      5.000
+     Q162_T1               3.271       0.170       0.000    1.43%       2.000      3.000      3.000
+             210.000       2.664      -0.680       7.000    2.86%       4.000      5.000
+     Q163_T1               3.678       0.077       0.000    0.86%       2.000      3.000      4.000
+             233.000       3.729      -1.103       7.000    9.01%       4.000      5.000
+     Q164_T1               4.301      -0.396       0.000    0.42%       2.000      4.000      5.000
+             236.000       3.295      -0.891       7.000    9.32%       5.000      6.000
+     Q21C                  4.967      -0.926       0.000    0.94%       4.000      5.000      5.000
+             213.000       2.229       0.948       7.000   14.08%       5.000      6.000
+     Q21D                  3.965       0.061       1.000    7.31%       3.000      4.000      4.000
+             260.000       2.618      -0.615       7.000    8.08%       4.000      5.000
+     Q21E                  3.800       0.143       1.000    8.08%       2.000      3.000      4.000
+             260.000       2.568      -0.590       7.000    6.92%       4.000      5.000
+     Q54_T1                3.267       0.223       1.000   14.12%       2.000      3.000      3.000
+             255.000       2.141      -0.416       7.000    1.96%       4.000      4.000
+     Q56_T1                3.735       0.126       1.000   12.45%       2.000      3.000      4.000
+             257.000       3.082      -0.846       7.000    8.17%       4.000      5.000
+     Q57_T1                5.661      -1.373       0.000    0.78%       5.000      6.000      6.000
+             257.000       1.601       2.830       7.000   27.24%       6.000      7.000
+     Q23A                  5.405      -0.823       0.000    0.41%       4.000      5.000      6.000
+             242.000       1.704       0.777       7.000   22.31%       6.000      7.000
+     Q23B                  5.399      -0.736       0.000    0.42%       4.000      5.000      6.000
+             238.000       1.349       1.194       7.000   17.23%       6.000      6.000
+     Q23C                  3.646       0.100       1.000    9.70%       2.000      3.000      4.000
+             237.000       2.406      -0.618       7.000    3.80%       4.000      5.000
+     Q24                   4.851      -0.561       0.000    0.41%       4.000      5.000      5.000
+             242.000       2.118      -0.075       7.000   11.16%       5.000      6.000
+     Q24A                  4.211      -0.213       0.000    0.92%       3.000      4.000      4.000
+             218.000       1.744       0.410       7.000    4.13%       4.000      5.000
+     Q24B                  5.135      -0.564       0.000    0.52%       4.000      5.000      5.000
+             192.000       1.648       0.568       7.000   15.62%       5.000      6.000
+     Q24C                  5.141      -0.449       0.000    0.52%       4.000      5.000      5.000
+             191.000       1.692       0.202       7.000   16.75%       6.000      6.000
+     Q24D                  3.521       0.158       1.000    7.28%       2.000      3.000      4.000
+             261.000       1.928      -0.455       7.000    1.15%       4.000      5.000
+     Q87_T1                4.835      -0.338       1.000    1.92%       4.000      4.000      5.000
+             260.000       1.915      -0.163       7.000   12.69%       5.000      6.000
+     Q88_T1                4.219      -0.399       1.000    3.08%       3.000      4.000      4.000
+             260.000       1.479       0.407       7.000    1.92%       4.000      5.000
+     Q89_T1                5.385      -0.613       2.000    1.92%       4.000      5.000      6.000
+             260.000       1.483      -0.162       7.000   18.08%       6.000      6.000
+     SIZE                  4.762      -0.194       1.000    1.15%       4.000      4.000      5.000
+             260.000       1.474       0.060       7.000    7.31%       5.000      6.000
+     AGE                   5.027      -0.475       1.000    0.78%       4.000      5.000      5.000
+             258.000       1.631      -0.006       7.000   12.02%       5.000      6.000
+     DYNHIGH               4.888      -0.257       1.000    0.78%       4.000      5.000      5.000
+             258.000       1.689      -0.157       7.000   12.40%       5.000      6.000
+     PM                    5.173      -0.886       0.000    0.78%       4.000      5.000      5.000
+             255.000       2.409       0.472       7.000   21.96%       6.000      7.000
+     LASSETS               4.690      -0.572       0.000    1.19%       3.000      4.000      5.000
+             252.000       2.523       0.019       7.000   12.70%       5.000      6.000
+
+
+     NO CONVERGENCE.  NUMBER OF ITERATIONS EXCEEDED.
+
+
+
+MODEL RESULTS
+
+                    Estimate
+
+ DC1      BY
+    Q19A               1.000
+    Q19C               1.384
+    Q20B               1.037
+    Q20C               1.868
+
+ DC2      BY
+    Q19B               1.000
+    Q19D               0.977
+    Q20D               0.879
+    Q20E               0.796
+
+ CA0      BY
+    Q28                1.000
+    Q28A               1.076
+    Q28B               0.900
+    Q28C               0.258
+
+ CA1      BY
+    Q161_T1            1.000
+    Q162_T1            0.644
+    Q163_T1            2.185
+    Q164_T1            1.988
+
+ MA       BY
+    Q87_T1             1.000
+    Q88_T1             1.086
+    Q89_T1             0.433
+
+ MA       ON
+    DC1              -16.636
+    DC2                9.304
+
+ CA1      ON
+    CA0               -0.094
+    MA                 0.241
+    DC1               -0.442
+    DC2                0.246
+
+ DC1      WITH
+    DC2                0.603
+
+ CA0      WITH
+    DC1                0.198
+    DC2                0.394
+
+ Means
+    Q21C               4.967
+    Q21D               3.965
+    Q21E               3.800
+    Q54_T1             3.267
+    Q56_T1             3.735
+    Q57_T1             5.661
+    Q23A               5.405
+    Q23B               5.399
+    Q23C               3.646
+    Q24                4.851
+    Q24A               4.211
+    Q24B               5.135
+    Q24C               5.141
+    Q24D               3.521
+    SIZE               4.762
+    AGE                5.027
+    DYNHIGH            4.888
+    PM                 5.173
+    LASSETS            4.690
+
+ Intercepts
+    Q19A               5.717
+    Q19C               4.263
+    Q20B               5.106
+    Q20C               4.378
+    Q19B               5.158
+    Q19D               4.549
+    Q20D               4.157
+    Q20E               4.978
+    Q28                4.066
+    Q28A               4.513
+    Q28B               4.772
+    Q28C               3.813
+    Q161_T1            4.073
+    Q162_T1            3.311
+    Q163_T1            3.714
+    Q164_T1            4.319
+    Q87_T1             4.837
+    Q88_T1             4.220
+    Q89_T1             5.385
+
+ Variances
+    Q21C               2.229
+    Q21D               2.618
+    Q21E               2.568
+    Q54_T1             2.141
+    Q56_T1             3.082
+    Q57_T1             1.601
+    Q23A               1.704
+    Q23B               1.349
+    Q23C               2.406
+    Q24                2.118
+    Q24A               1.744
+    Q24B               1.648
+    Q24C               1.692
+    Q24D               1.928
+    SIZE               1.474
+    AGE                1.631
+    DYNHIGH            1.689
+    PM                 2.409
+    LASSETS            2.523
+    DC1                0.338
+    DC2                1.085
+    CA0                0.932
+
+ Residual Variances
+    Q19A               0.894
+    Q19C               2.161
+    Q20B               1.766
+    Q20C               1.278
+    Q19B               1.264
+    Q19D               1.361
+    Q20D               1.768
+    Q20E               1.966
+    Q28                1.184
+    Q28A               1.388
+    Q28B               0.999
+    Q28C               2.921
+    Q161_T1            1.980
+    Q162_T1            2.424
+    Q163_T1            0.857
+    Q164_T1            0.948
+    Q87_T1             1.226
+    Q88_T1             0.665
+    Q89_T1             1.353
+    CA1                0.560
+    MA                -0.331
+
+
+MODEL COMMAND WITH FINAL ESTIMATES USED AS STARTING VALUES
+
+     dc1 BY q19a@1;
+     dc1 BY q19c*1.38389;
+     dc1 BY q20b*1.03712;
+     dc1 BY q20c*1.86799;
+     dc2 BY q19b@1;
+     dc2 BY q19d*0.97658;
+     dc2 BY q20d*0.87877;
+     dc2 BY q20e*0.79606;
+     ca0 BY q28@1;
+     ca0 BY q28a*1.07575;
+     ca0 BY q28b*0.90032;
+     ca0 BY q28c*0.25818;
+     ca1 BY q161_t1@1;
+     ca1 BY q162_t1*0.64422;
+     ca1 BY q163_t1*2.18459;
+     ca1 BY q164_t1*1.98755;
+     ma BY q87_t1@1;
+     ma BY q88_t1*1.08576;
+     ma BY q89_t1*0.43286;
+
+     ma ON dc1*-16.63594;
+     ma ON dc2*9.30399;
+     ca1 ON ca0*-0.09364;
+     ca1 ON ma*0.24091;
+     ca1 ON dc1*-0.44156;
+     ca1 ON dc2*0.24643;
+
+     dc1 WITH dc2*0.60264;
+     ca0 WITH dc1*0.19820;
+     ca0 WITH dc2*0.39352;
+
+     [ q19a*5.71655 ];
+     [ q19c*4.26336 ];
+     [ q20b*5.10582 ];
+     [ q20c*4.37772 ];
+     [ q19b*5.15807 ];
+     [ q19d*4.54914 ];
+     [ q20d*4.15686 ];
+     [ q20e*4.97769 ];
+     [ q28*4.06625 ];
+     [ q28a*4.51275 ];
+     [ q28b*4.77157 ];
+     [ q28c*3.81290 ];
+     [ q161_t1*4.07271 ];
+     [ q162_t1*3.31062 ];
+     [ q163_t1*3.71362 ];
+     [ q164_t1*4.31903 ];
+     [ q21c*4.96714 ];
+     [ q21d*3.96538 ];
+     [ q21e*3.80000 ];
+     [ q54_t1*3.26667 ];
+     [ q56_t1*3.73541 ];
+     [ q57_t1*5.66148 ];
+     [ q23a*5.40496 ];
+     [ q23b*5.39916 ];
+     [ q23c*3.64557 ];
+     [ q24*4.85124 ];
+     [ q24a*4.21101 ];
+     [ q24b*5.13542 ];
+     [ q24c*5.14136 ];
+     [ q24d*3.52107 ];
+     [ q87_t1*4.83726 ];
+     [ q88_t1*4.22011 ];
+     [ q89_t1*5.38499 ];
+     [ size*4.76154 ];
+     [ age*5.02713 ];
+     [ dynhigh*4.88760 ];
+     [ pm*5.17255 ];
+     [ lassets*4.69048 ];
+
+     q19a*0.89395;
+     q19c*2.16110;
+     q20b*1.76619;
+     q20c*1.27753;
+     q19b*1.26361;
+     q19d*1.36113;
+     q20d*1.76797;
+     q20e*1.96562;
+     q28*1.18427;
+     q28a*1.38795;
+     q28b*0.99931;
+     q28c*2.92072;
+     q161_t1*1.97991;
+     q162_t1*2.42398;
+     q163_t1*0.85688;
+     q164_t1*0.94795;
+     q21c*2.22897;
+     q21d*2.61803;
+     q21e*2.56769;
+     q54_t1*2.14065;
+     q56_t1*3.08174;
+     q57_t1*1.60136;
+     q23a*1.70378;
+     q23b*1.34907;
+     q23c*2.40602;
+     q24*2.11837;
+     q24a*1.74447;
+     q24b*1.64833;
+     q24c*1.69206;
+     q24d*1.92772;
+     q87_t1*1.22594;
+     q88_t1*0.66532;
+     q89_t1*1.35348;
+     size*1.47391;
+     age*1.63105;
+     dynhigh*1.68892;
+     pm*2.40944;
+     lassets*2.52324;
+     dc1*0.33830;
+     dc2*1.08530;
+     ca0*0.93190;
+     ca1*0.56012;
+     ma*-0.33062;
+
+
+
+     Beginning Time:  12:45:56
+        Ending Time:  12:46:21
+       Elapsed Time:  00:00:25
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2017 Muthen & Muthen
