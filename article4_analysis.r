@@ -8,7 +8,8 @@ require("MASS")
 library(sampleSelection)
 library(mediation)
 library(reshape)
-install.packages("reshape")
+library(huxtable)
+install.packages("huxtable")
                                         #library(polycor)
 
 ## This loads the data workspace where skattefunn_data.r is already loaded
@@ -218,13 +219,13 @@ pma1imp
 ## Running median imputations
 dc01 <-  imputezw(zwadj[,c("Q6.2_t1","Q6.4_t1", "Q6.5_t1","Q7.1_t1","Q7.2_t1")] )
 dc02 <-  imputezw(zwadj[,c("Q6.1_t1","Q6.3_t1","Q7.4_t1")] )
-ca0 <-  imputezw(zwadj[,c("Q28","Q28b","Q28c")] )
+ca0 <-  imputezw(zwadj[,c("Q28","Q28a","Q28c")] )
 ca1 <-   imputezw(zwadj[,c("Q16.1_t1","Q16.2_t1","Q16.4_t1")] )
 or1 <-   imputezw(zwadj[,c("Q5.4_t1","Q5.6_t1","Q5.7_t1")])
-ma1 <-  imputezw(zwadj[,c( "Q8.7_t1", "Q8.8_t1", "Q8.9_t1")])
-complist <- list(dc11=dc11,dc12=dc12,ca0=ca0,ca1=ca1,or0=or0,ma1=ma1)
+ma01 <-  imputezw(zwadj[,c( "Q8.7_t1", "Q8.8_t1", "Q8.9_t1")])
+complist <- list(dc01=dc01,dc02=dc02,ca0=ca0,ca1=ca1,or1=or1,ma1=ma01)
 vcontrols <- zwadj[,c("size","age","dyn","pm","lassets")]
-zwadj <- cbind(dc11,dc12,ca0,ca1,or0,or1,ma1,vcontrols)
+zwadj <- cbind(dc01,dc02,ca0,ca1,or0,or1,ma01,vcontrols)
 
 
 names(complist[[1]])
@@ -242,12 +243,12 @@ latents <- c(rep("DC01",5),
              rep("CA0",3),
              rep("CA1",3),
              rep("OR1",3),
-             rep("MA01",3))
+             rep("MA1",3))
 
 
 mm <- cbind(latents,items); colnames(mm) <- c("source","target")
-iv <- c("MA01","CA0","DC01","DC01","DC02","DC02","OR1","DC01","DC02")
-dv <- c("CA1","CA1","CA1","MA01","CA1","MA01","CA1","OR1","OR1")
+iv <- c("MA1","CA0","DC01","DC01","DC02","DC02","OR1","DC01","DC02")
+dv <- c("CA1","CA1","CA1","MA1","CA1","MA1","CA1","OR1","OR1")
 sm <- cbind(iv,dv);colnames(sm) <- c("source","target")
 
 FULL <- plsm(data = zwadj, strucmod = sm, measuremod = mm)
@@ -265,12 +266,14 @@ fullGOF <- semPLS::gof(ecsi)
 
 constructs <- unique(latents)
 cfull <- full$coefficients[grep("^lam",rownames(full$coefficients)),]
-
+cfull$num <- substring(rownames(cfull),7,7)
 
 extcomp <- function(cname,cfull){
     ## Function to extract loadings from a PLS object
+
     cest <-  cfull[grep(paste("^",cname,sep=""),cfull$Path),]$Estimate
     cnam <-  rep(cname,length(cest))
+   # iname <- paste(cnam,"_",cfull$num,sep="")
     output <- data.frame(cnam,cest)
     return(output)
     }
@@ -283,23 +286,62 @@ falpha <- function(cons){
 
 ## extracting alpha from constructs
 lalpha <- lapply(complist,falpha)
-calpha <- melt(lalpha);names(lalpha) <- c("value","cnam");lalpha$cnam <- toupper(lalpha$cnam)
+calpha <- melt(lalpha)
+colnames(calpha) <- c("alpha","cnam");calpha$cnam <- toupper(calpha$cnam)
+calpha
+
 
 ## extracting factor loadings
 ctab <- lapply(constructs,extcomp, cfull=cfull)
 ctab <- melt(ctab)
+ctab$iname <- paste(ctab$cnam,"_",cfull$num,sep="")
+ctab
+calpha
+
 
 ## Extracting DG rho
 fullCI$cnam <- rownames(fullCI)
-cci <- fullCI[,c(3,1)]
-
+cci <- fullCI[,c(3,1)];colnames(cci) <- c("cnam","rho")
+ctab <- merge(ctab,calpha,by="cnam",all.x=TRUE)
+ctab <- merge(ctab,cci,by="cnam")
 ## Creating factor output table
 
 
+ht <- hux(
+    Factor = ctab$cnam,
+    Items = ctab$iname,
+    Loading = round(ctab$value,3),
+    Alpha = round(ctab$alpha,3),
+    CI = round(ctab$rho,3),
+    add_colnames = TRUE
+)
+f <- which(cfull$num==1)+1
 
+cfull
 
+f
+ht
+bold(ht)[1,]           <- TRUE
+#bottom_border(ht)[1,]  <- 2
+bottom_border(ht)[f,]  <- 2
+align(ht)[,2]          <- 'right'
+right_padding(ht)      <- 10
+left_padding(ht)       <- 10
+width(ht)              <- 0.35
+number_format(ht)[,c(3,4,5)]      <- 2
+ht$Alpha[duplicated(ht$Alpha)] <- NA
+ht$CI[duplicated(ht$CI)] <- NA
+ht$Factor[duplicated(ht$Factor)] <- NA
 
-ctab
+f
+ht
+quick_pdf(ht, file = 'motorcarsdata.pdf')
+ht
+
+class(ht)
+
+ht
+ht$Alpha[duplicated(ht$Alpha)] <- NA
 ctab
 class(ctab)
 
