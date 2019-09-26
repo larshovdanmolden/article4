@@ -1,0 +1,42 @@
+
+
+
+|---------------------------+---------------------+---------------------+---------------------+---------------------|
+|                           | Model:              |                     |                     |                     |
+|                           | Direct              | Process             | Routines            | Full                |
+|                           | (1)                 | (2)                 | (3)                 | (4)                 |
+|---------------------------+---------------------+---------------------+---------------------+---------------------|
+|                           |                     |                     |                     |                     |
+| $CA_{t-1} \rightarrow CA$ | \Sexpr{plmest[1,2]} | \Sexpr{plmest[1,3]} | \Sexpr{plmest[1,4]} | \Sexpr{plmest[1,5]} |
+|                           | (\Sexpr{plmt[1,2]}) | (\Sexpr{plmt[1,3]}) | (\Sexpr{plmt[1,4]}) | (\Sexpr{plmt[1,5]}) |
+|                           |                     |                     |                     |                     |
+| $DC_P \rightarrow CA$     | \Sexpr{plmest[2,2]} | \Sexpr{plmest[2,3]} | \Sexpr{plmest[2,4]} | \Sexpr{plmest[2,5]} |
+|                           | (\Sexpr{plmt[2,2]}) | (\Sexpr{plmt[2,3]}) | (\Sexpr{plmt[2,4]}) | (\Sexpr{plmt[2,5]}) |
+| $DC_X \rightarrow CA$     | \Sexpr{plmest[3,2]} | \Sexpr{plmest[3,3]} | \Sexpr{plmest[3,4]} | \Sexpr{plmest[3,5]} |
+|                           | (\Sexpr{plmt[3,2]}) | (\Sexpr{plmt[3,3]}) | (\Sexpr{plmt[3,4]}) | (\Sexpr{plmt[3,5]}) |
+|                           |                     |                     |                     |                     |
+| $DC_P \rightarrow P$      |                     | \Sexpr{plmest[4,3]} |                     | \Sexpr{plmest[4,5]} |
+|                           |                     | (\Sexpr{plmt[4,3]}) |                     | (\Sexpr{plmt[4,5]}) |
+| $DC_P \rightarrow R$      |                     |                     | \Sexpr{plmest[5,4]} | \Sexpr{plmest[5,5]} |
+|                           |                     |                     | (\Sexpr{plmt[5,4]}) | (\Sexpr{plmt[5,5]}) |
+| $DC_X \rightarrow P$      |                     | \Sexpr{plmest[6,3]} |                     | \Sexpr{plmest[6,5]} |
+|                           |                     | (\Sexpr{plmt[6,3]}) |                     | (\Sexpr{plmt[6,5]}) |
+| $DC_X \rightarrow R$      |                     |                     | \Sexpr{plmest[7,4]} | \Sexpr{plmest[7,5]} |
+|                           |                     |                     | (\Sexpr{plmt[7,4]}) | (\Sexpr{plmt[7,5]}) |
+|                           |                     |                     |                     |                     |
+| $P \rightarrow CA$        |                     | \Sexpr{plmest[8,3]} |                     | \Sexpr{plmest[8,5]} |
+|                           |                     | (\Sexpr{plmt[8,3]}) |                     | (\Sexpr{plmt[8,5]}) |
+| $R \rightarrow CA$        |                     |                     | \Sexpr{plmest[9,4]} | \Sexpr{plmest[9,5]} |
+|                           |                     |                     | (\Sexpr{plmt[9,4]}) | (\Sexpr{plmt[9,5]}) |
+|                           |                     |                     |                     |                     |             
+|---------------------------+---------------------+---------------------+---------------------+---------------------|
+| Goodness of fit           | \Sexpr{gofdir}      | \Sexpr{gofor}       | \Sexpr{gofma}       | \Sexpr{goffull}     |
+| Number of observations    | \Sexpr{N}           | \Sexpr{N}           | \Sexpr{N}           | \Sexpr{N}           |
+| Firm level controls       | YES                 | YES                 | YES                 | YES                 |
+|---------------------------+---------------------+---------------------+---------------------+---------------------|
+|                           |                     |                     |                     |                     |
+
+             
+             
+            
+                      

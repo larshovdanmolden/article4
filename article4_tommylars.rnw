@@ -5,9 +5,12 @@
 \documentclass[review,fleqn]{elsarticle}
 \usepackage[textsize=tiny,colorinlistoftodos]{todonotes}
 \usepackage{subfig}
-\usepackage{caption}
 \usepackage{subcaption}
-\usepackage{filecontents}
+
+
+
+
+
 \input{preamble.tex}
 %%\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \setlength{\mathindent}{0pt} %% NB MAYBEREMOVE BEFORE SUBMISSION
@@ -45,7 +48,7 @@
 \begin{abstract}
  We find that DC as routines to shape routines is most prevelant under moderate dynamism,
 whereas DC as routines to capture resources in factor markets are more prevelant under
-dynamic environments. 
+dynamic environments.
 
 \end{abstract}
 
@@ -62,6 +65,8 @@ dynamic environments.
 
 
 \section{Introduction}
+
+\Sexpr{resest[1,2]}
 In a recent "state of the art" literature review on dynamic capabilities
 \cite{Schilke2018} state that much of the attention and interest surrounding the theory is
 that it offer a route to competitive advantage which they argue is "the virtual Holy Grail
@@ -70,17 +75,17 @@ concerns itself with exactly this path to competitive advantage (refs from
 shcilke). Still, a discourse regarding the contingencies of the dynamic
 capabilities-competitive advantage (DC-CA) nexus (?) has panned out in the literature,
 most notably coined "the elephant in the room" \citep{Peteraf2013}: Under which conditions
-will dynamic capabilities lead to competitive advantage? 
+will dynamic capabilities lead to competitive advantage?
 
 \cite{Peteraf2013} argue that the seminal papers in the dynamic capabilities theory
 tradition (\cite{Teece1997} and \cite{Eisenhardt2000}) differ considerably in their view
 of to what extent the DC-CA nexus exist and under what conditions it is functional. A key
 tenant of this discourse is related to the level of routinization and the ability to
 satisfy the VRIO condition \citep{Barney1991a} of the resource-based view
-\citep{Peteraf2013}. 
+\citep{Peteraf2013}.
 
 In this paper we aim to contribute to dissecting the elephant by asking how does the DC-CA
-nexus differ between firms and what determines these differences? 
+nexus differ between firms and what determines these differences?
 
 We do this by exploring two paths from dynamic capabilities to competitive advantage: the
 \emph{evolutionary path} and the \emph{market path}. The former is thoroughly described
@@ -107,7 +112,7 @@ capability evolution and the VRIO condition. Finally, we.........
 CLARIFIES THE ROLE OF THE ENVIRONMENT AND MEDIATIONS HAPPENING
 
 
-%% How does dynamic capabilities lead to competitive advantage? 
+%% How does dynamic capabilities lead to competitive advantage?
 %% Dynamic capabilities are proposed to confer a competitive advantage by adding unique value to the firm through systematic change, which enhances operational efficiency and enables increased alignment with the environment (Di Stefano et al., 2014; Peteraf et al., 2013)
 
 %% Not all organizations possess them (Collis, 1996); their path dependencies, intangibility, complexity, and organizational specificity make them hard to imitate (Gibson & Birkinshaw, 2004; Helfat & Winter, 2011); and few other means allow organizations to purposefully change on a continuous basis (Day & Wensley, 1988; Helfat et al., 2007).
@@ -117,7 +122,7 @@ CLARIFIES THE ROLE OF THE ENVIRONMENT AND MEDIATIONS HAPPENING
 
 %% One of the major unresolved issues in dynamic capabilities theory is to what extent and
 %% how competitive advantage is the ultimate outcome of dynamic capabilities. This very idea
-%% has 
+%% has
 
 
 %% This paper asks two questions: to what extent does a direct lnk between DC and CA exist,
@@ -130,7 +135,7 @@ CLARIFIES THE ROLE OF THE ENVIRONMENT AND MEDIATIONS HAPPENING
 
 %% Variations in the share of mediation stems from variation sin the environment. When envdyn
 %% is high firms need to act faster and hence tends to choose strategies including resource
-%% orchestration buying in factor markets cause it tkes more time to develop OR. 
+%% orchestration buying in factor markets cause it tkes more time to develop OR.
 
 %% In less dynamism the role of OR increases and leads to a significant proportion of CA
 %% stemming throhg the mediating effect of OR
@@ -146,7 +151,7 @@ CLARIFIES THE ROLE OF THE ENVIRONMENT AND MEDIATIONS HAPPENING
 
 
 We demonstrate that two paths indeed do exist and that their relative importance varies
-with the degree of environmental dynamism facing the firm. 
+with the degree of environmental dynamism facing the firm.
 
 \section{Hypotheses}\label{sec:hyp}
 
@@ -183,7 +188,7 @@ the face of changing conditions (TPS). This notion stems from evolutionary econo
 holding that path dependency and complex processes for changing underlying operating
 routines are a source of competitive advantage for the firm. Along this indirect path
 change is gradual and running through changes in underlying routines. We coin this the
-\emph{evolutionary path}. 
+\emph{evolutionary path}.
 
 These paths from dynamic capabilities to competitive advantage are different expressions
 of dynamic capabilities with different mediums of intermediation. The \emph{market path}
@@ -211,14 +216,14 @@ the lower order (operational) routines \cite{Collis1994,Winter2003}. In the driv
 metaphor this path corresponds to change stemming from the front crank set of thich there
 are fewer gears, but with larger impact. This path is slower
 and yields a more idiosyncratic set of organizational routines which is very much in line
-with the idea put forth in the seminal founding papers \citep{Teece1997,Winter2003}. 
+with the idea put forth in the seminal founding papers \citep{Teece1997,Winter2003}.
 
 Seeing the bike rider and her efforts to handle the levers of control (i.e. the gear
 shifter) as the dynamic capability, and consider it not only as a management effort, but
 that of the organization as a whole. The process of changing front gears are more profound
 (i.e. evolutionary) and costly, and it is for larger and slower strategic
 changes. Operating with simple routines in factor markets, however, is quicker and the
-rider does this on a more frequent basis with less effort. 
+rider does this on a more frequent basis with less effort.
 
 H1: Dynamic capabilities works to create competitive advantage through two distinctly
 different paths.
@@ -279,7 +284,7 @@ routines of acting in factor markets as well as the speed of deployment, the sum
 dynamic capabilities and factor market action would lead to competitive advantage.
 
 However, the interlinkages between simple routines (the market path) and the coplex
-processes (the evolutionary path) would vary with the environment. 
+processes (the evolutionary path) would vary with the environment.
 
 \subsection{Interplay under environmental dynamism}
 
@@ -295,7 +300,7 @@ conjunction with the routinzed process of changing underlying routines, VRIO wil
 likely emerge under more stable conditions. It is not that the market/direct expression
 of dynamic capabilities are not present in stable environments, rather it is less pronounced and the indirect
 mediated effect (evolutionary path) is more important. In other words, it is not neither
-nor, but degrees of importance. 
+nor, but degrees of importance.
 
 Moreover, in high velocity environments the role of the evolutionary path tends to
 weaken as such path-dependent changes occur slower compared to the market path. From the
@@ -304,7 +309,7 @@ market path with its simple routines we can argue that creation of "new knowledg
 path is stronger and more prevalent under higher levels of environmental dynamism.
 
 \emph{H4: Dynamic capabilities works relatively stronger through the market path in highly
-dynamic environments.} 
+dynamic environments.}
 
 
 \begin{figure}
@@ -333,7 +338,7 @@ To test the relationships between dynamic capabilities and competitive advantage
 proper metric of both. We also benefit vastly from studying the same firms over time.  The
 lack of h longitudinal studies to investigate dynamics over time and control for path
 dependency of organizational routines has been noted as permanent limitation for moving
-the DC literature forward empirically and theoretically \cite{Schilke2018}. 
+the DC literature forward empirically and theoretically \cite{Schilke2018}.
 
 We collected survey data from R\&D active firms in Norway at two points in time
 ($T_1=2005$ and $T_2=2014$). The population was all businesses registered to a scheme for
@@ -407,6 +412,13 @@ agree. We built on prior studies where items measuring OCs have been measured re
 competitors \citep{McKelvie2009}.
 
 
+<<result1, results="asis", echo=FALSE >>=
+
+ht
+
+@
+
+
 \subsection{Control variables}
 
 We add a set of control variables expected to explain parts of the variation in our focal
@@ -414,7 +426,7 @@ constructs. From the survey we add firm size, firm age, the level of dynamism fa
 firm. Size is the reported number of employees in the firm at $T_2$, and age is the number of
 years since establishment. Dynamism is captured by asking a number of questions about the
 competitive environment facing the firm. A full list of items and their internal validity
-(0.75) is available in appendix ##.
+(0.75) is available in appendix 1111.
 
 To partly remedy the problem of common method bias, we add controls of financial data from
 the firm´s profit and loss statements, and balance sheet. Specifically, we add the natural
@@ -442,7 +454,7 @@ over a million simulations \citep{Imai2010}.
 In addition we estimate mediating models and test formally for mediation using the Baron
 \& Kenny method \citep{Baron1986,MacKinnon2008}. We estimate two mediating model to test
 if OR mediates the effect of DC on CA, and if DC mediates the effect of DL on OR,
-respectively. 
+respectively.
 
 \section{Results}
 The focal variables of our study is presented with pairwise correlation, mean and standard
@@ -455,21 +467,92 @@ DC. Furthermore, we see a strong correlation between DL and DC which indicates t
 two constructs are indeed related.
 
 
+\begin{figure}[ht] \label{ fig7} 
+  \begin{minipage}[b]{0.5\linewidth}
+    \includegraphics[width=.99\linewidth]{full.pdf} 
+    \caption{Full model} 
+  \end{minipage} 
+  \begin{minipage}[b]{0.5\linewidth}
+    \includegraphics[width=.99\linewidth]{ma.pdf} 
+    \caption{Routine mediation} 
+  \end{minipage} 
+  \begin{minipage}[b]{0.5\linewidth}
+    \includegraphics[width=.99\linewidth]{or.pdf} 
+    \caption{Process mediation} 
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.5\linewidth}
+    \includegraphics[width=.99\linewidth]{dir.pdf} 
+    \caption{Direct model} 
+  \end{minipage} 
+\end{figure}
+
+
+\begin{figure}
+     \centering
+  \caption{Structural model of full estimation - PLS-SEM}
+  \input{./figure/fullmod.tex}
+\end{figure}
+
+\begin{table}
+\begin{center}
+\script size
+\begin{tabular}{lcccc}
+
+\hline \\[-2pt]
+ & \multicolumn{4}{c}{{\bf Models:}} \\  \cline{2-5} \\[-3pt] 
+ & \emph{Direct} & \emph{Process} & \emph{Routines} & \emph{Full}\\
+ & (1) & (2) & (3) & (4)\\
+\hline
+ &  &  &  & \\
+\(CA_{t-1} \rightarrow CA\) & \Sexpr{plmest[1,2]} & \Sexpr{plmest[1,3]} & \Sexpr{plmest[1,4]} & \Sexpr{plmest[1,5]}\\
+ & (\Sexpr{plmt[1,2]}) & (\Sexpr{plmt[1,3]}) & (\Sexpr{plmt[1,4]}) & (\Sexpr{plmt[1,5]})\\[3pt]
+ &  &  &  & \\
+\(DC_P \rightarrow CA\) & \Sexpr{plmest[2,2]} & \Sexpr{plmest[2,3]} & \Sexpr{plmest[2,4]} & \Sexpr{plmest[2,5]}\\
+ & (\Sexpr{plmt[2,2]}) & (\Sexpr{plmt[2,3]}) & (\Sexpr{plmt[2,4]}) & (\Sexpr{plmt[2,5]})\\[4pt]
+\(DC_X \rightarrow CA\) & \Sexpr{plmest[3,2]} & \Sexpr{plmest[3,3]} & \Sexpr{plmest[3,4]} & \Sexpr{plmest[3,5]}\\
+ & (\Sexpr{plmt[3,2]}) & (\Sexpr{plmt[3,3]}) & (\Sexpr{plmt[3,4]}) & (\Sexpr{plmt[3,5]})\\[4pt]
+ &  &  &  & \\
+\(DC_P \rightarrow P\) &  & \Sexpr{plmest[4,3]} &  & \Sexpr{plmest[4,5]}\\
+ &  & (\Sexpr{plmt[4,3]}) &  & (\Sexpr{plmt[4,5]})\\[4pt]
+\(DC_P \rightarrow R\) &  &  & \Sexpr{plmest[5,4]} & \Sexpr{plmest[5,5]}\\
+ &  &  & (\Sexpr{plmt[5,4]}) & (\Sexpr{plmt[5,5]})\\[4pt]
+\(DC_X \rightarrow P\) &  & \Sexpr{plmest[6,3]} &  & \Sexpr{plmest[6,5]}\\
+ &  & (\Sexpr{plmt[6,3]}) &  & (\Sexpr{plmt[6,5]})\\[4pt]
+\(DC_X \rightarrow R\) &  &  & \Sexpr{plmest[7,4]} & \Sexpr{plmest[7,5]}\\
+ &  &  & (\Sexpr{plmt[7,4]}) & (\Sexpr{plmt[7,5]})\\[4pt]
+ &  &  &  & \\
+\(P \rightarrow CA\) &  & \Sexpr{plmest[8,3]} &  & \Sexpr{plmest[8,5]}\\
+ &  & (\Sexpr{plmt[8,3]}) &  & (\Sexpr{plmt[8,5]})\\[4pt]
+\(R \rightarrow CA\) &  &  & \Sexpr{plmest[9,4]} & \Sexpr{plmest[9,5]}\\
+ &  &  & (\Sexpr{plmt[9,4]}) & (\Sexpr{plmt[9,5]})\\[4pt]
+ &  &  &  & \\
+\hline \\[-3pt] 
+Goodness of fit & \Sexpr{gofdir} & \Sexpr{gofor} & \Sexpr{gofma} & \Sexpr{goffull}\\
+Number of observations & \Sexpr{N} & \Sexpr{N} & \Sexpr{N} & \Sexpr{N}\\
+  Firm level controls & YES & YES & YES & YES\\[3pt]
+\hline
+ &  &  &  & \\
+\end{tabular}
+\end{center}
+ \label{tab:reg}
+\end{table}
+
 
 Table \ref{tab:reg} shows a summary of the regression models proposed in the previous
 chapter. Models 1,2 and 3 are designed to test DL as \emph{antecedent} for $OR$ and
 $DC$. Consider model 1 we observe that $DL$ is influencing the level of $OR$ within the
-firm ($\beta_2 =$ \Sexpr{mod1_dl}) supporting H1. However, the effect disappears when we
+firm ($\beta_2 =$r) supporting H1. However, the effect disappears when we
 add $DC$ in model 2 suggesting a mediating effect. In other words we see that firms with
-initial high $DC$($\beta_3=$ \Sexpr{mod2_dc0}) and increasing $DC$ over time ($\beta_4=$
-\Sexpr{mod2_ddc}) also have better $OR$. To control for the mediating effect suggested by
+initial high $DC$($\beta_3=$ \ {mod2_dc0}) and increasing $DC$ over time ($\beta_4=$
+\ {mod2_ddc}) also have better $OR$. To control for the mediating effect suggested by
 the change in coefficients for $DL$ between models 1 and 2, we performed a causal
 mediation analysis as reported in figure \ref{fig:fig3}. This analysis confirms the
 indications from models 1 and 2 showing that the direct effect from $DL$ on $OR$ is
-insignificant and small (ADE = \Sexpr{medmod1_ade}). Meanwhile, the indirect effect
+insignificant and small (ADE = \ {medmod1_ade}). Meanwhile, the indirect effect
 running through changes in $DC$ over time, is significant yielding a positive and
-significant indirect effect of \Sexpr{medmod1_acme}. The proportion of the effect that is
-mediated amounts to \Sexpr{medmod1_shmed}. In sum these results suggest that H1 is
+significant indirect effect of \ {medmod1_acme}. The proportion of the effect that is
+mediated amounts to \ {medmod1_shmed}. In sum these results suggest that H1 is
 unsupported, and that the bulk of the effect is indirect running through $DC$, in line with
 the expectations in H3. Similarly, we see from model 3 that $DC$ is indeed influenced by $DL$
 above and beyond its own evolutionary trajectory. This is in line with our expectations
@@ -477,7 +560,7 @@ and lend support to H4.
 
 To evaluate H5 proposing a feedback effect from $DC$ to $DL$, we turn to model 6 in table
 \ref{tab:reg}. Controlled for the usual firm level controls we find a positive effect
-($\xi_1=$ \Sexpr{mod6_dc0}) from $DC_{T_1}$ on $DL$ measured at $T_1$. This supports H5
+($\xi_1=$ \ {mod6_dc0}) from $DC_{T_1}$ on $DL$ measured at $T_1$. This supports H5
 suggesting that firms with more $DC$ is more likely to generate opportunities where it
 becomes more prevalent that learning will need to take place. One interesting finding is
 also that this effect environmental dynamism decreases firms level of $DL$. This is indeed
@@ -495,17 +578,17 @@ influenced by the level of $DC$ of the firm indicating that dynamic capabilities
 source of competitive advantage in line with our expectations. Furthermore, considering
 model 5 we see that $OR$ also has a significant positive effect on $CA$ indicating that
 operating routines can also be a source of advantage for the firm. Moreover, the
-coefficient of $\Delta DC$ decline from \Sexpr{mod4_ddc} to \Sexpr{mod5_ddc} when we add
+coefficient of $\Delta DC$ decline from  {mod4_ddc} to  {mod5_ddc} when we add
 $OR$. This suggests that some mediation is at work, i.e. that changes in $DC$ leads to
 changes in changes in $OR$ leading to $CA$. This indirect path is in line with the
 expectations from our hypotheses and as described in figure \ref{fig:fig2}. When formally
 testing this mediation running a causal mediation analysis (see figure \ref{fig:fig4}), we
 find added support that both a \emph{direct-} and an \emph{indirect} path exist to explain
-the relationship between $DC$ and $CA$ (ADE = \Sexpr{medmod5_ade}, ACME =
-\Sexpr{medmod5_acme}) and a total mediated share of \Sexpr{medmod5_shmed}.
+the relationship between $DC$ and $CA$ (ADE = \ {medmod5_ade}, ACME =
+\ {medmod5_acme}) and a total mediated share of \ {medmod5_shmed}.
 
 Table \ref{tab:hyptab} depict a summary of the hypotheses and indicate if they are
-supported or not in our analysis. We will now turn to the discussion. 
+supported or not in our analysis. We will now turn to the discussion.
 
 
 

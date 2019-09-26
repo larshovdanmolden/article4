@@ -1092,7 +1092,7 @@ semPLS::gof(ecsi)
 
 
 
-## PARTIAL MODEL OR 2DC
+## Partial MODEL OR 2DC
 items <- c(#"Q19a","Q19c", "Q20b", "Q20c", #DC0
                                         #"Q19b","Q19d","Q20d", "Q20e", #DC02
            "Q6.2_t1","Q6.4_t1", "Q7.1_t1","Q7.2_t1","Q6.5_t1", #DC1
