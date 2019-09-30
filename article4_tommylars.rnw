@@ -66,7 +66,53 @@ dynamic environments.
 
 \section{Introduction}
 
-\Sexpr{resest[1,2]}
+DC is often critizesd for being tautological and less focus has been placed on instances
+when dynamism can lead to poorer competitive outcomes. 
+Structural inertia, commitment \cite{schreyogg2007}. Under what conditions are changing
+capabilities counterproducttive
+
+The relationship between dynamic capabilities and competitive advantage has been one of
+great contention in the extant literature \citep{Peteraf2013,Ambrosini2009}. From this
+debate a richer understanding of how different dynamic capabilities (or functional forms
+of them) work differently to change different types of firm resources
+\citep{Helfat2015a,Teece2007,Ambrosini2009a} with implications for competitive advantage
+\citep{Peteraf2013} has emerged. Increasingly the relationship between (1) dynamic
+capabilities, (2) firm resources and routines, and competitive advantage is seen as a
+complex system with interactions between different types of each 1 and 2. Many conceptual
+contributions have excellently discussed varieties or functional forms of either dynamic
+capabilities \citep{Ambrosini2009a,Helfat2015ad,DiStefano2014} or underlying resources or
+routines \citep{Winter2003,Eisenhardt2000}. However, very few, is any, papers attempts to
+integrate varieties at multiple levels simultaneously. The bulk of contributions focus
+only on heterogeneity at the dynamic capabilities level, or at
+
+
+
+work dDC offers a theory of how firms achieve
+competitive advantage over time. Yet the DC theory suffers from contradictory claims about
+competitive advantage as its outcome. On the one hand a stream of contributions argue that
+DC will lead to competitive advantage because it operates by changing operational
+capabilities in face of change and hence create strategic change (ref helfat). In this
+view these changes result in complex and path dependent processes that will be
+idiosyncratic to the firm and hard to imitate. Consequently, they can lead to competitive
+advantage.
+
+A contrary stream of literature argues that changes of operational capabilities over time
+takes the form of routines and converges towards best practice (ref EM). Such best
+practices are simpler and more observable routines that are both imitable and easy to
+copy. Such firm resources are then not idiosyncratic and can consequently not be the
+source of competitive advantage. 
+
+The way DC work differnelty throug changing two sets of operational capabilities = complex
+and path dependent processes based capabilities, and simple rules/based routines. 
+
+These contradictory positions have been thoroughly discussed in earlier work (see
+\cite{Peteraf2013} for a review). On the one hand DC takes the form of simple rules
+shaping underlying routines. On the other hand they take the form of complex processes.  
+
+Regarding the action and the object ofthe action, simple rules are more likely to be
+involved in developing something new in response to new opportunities, while complex
+rou- tines are more concerned with changing existing resources and capabilities.
+
 In a recent "state of the art" literature review on dynamic capabilities
 \cite{Schilke2018} state that much of the attention and interest surrounding the theory is
 that it offer a route to competitive advantage which they argue is "the virtual Holy Grail
@@ -110,7 +156,6 @@ the different paths to competitive advantage by linking it closely to the role o
 capability evolution and the VRIO condition. Finally, we.........
 
 CLARIFIES THE ROLE OF THE ENVIRONMENT AND MEDIATIONS HAPPENING
-
 
 %% How does dynamic capabilities lead to competitive advantage?
 %% Dynamic capabilities are proposed to confer a competitive advantage by adding unique value to the firm through systematic change, which enhances operational efficiency and enables increased alignment with the environment (Di Stefano et al., 2014; Peteraf et al., 2013)
