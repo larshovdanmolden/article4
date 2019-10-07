@@ -651,7 +651,8 @@ head(vsense0)
 
 vsense0
 foo
-nrow(foo)
+nrow(foo)xk
+
 
 vcontrols <- zwadj[,c("size","age","dynhigh","pm","lassets")]
 

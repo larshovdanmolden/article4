@@ -145,21 +145,21 @@ ca1 <-   imputezw(zwadj[,c("Q16.1_t1","Q16.2_t1","Q16.4_t1")] )
 or1 <-   imputezw(zwadj[,c("Q5.4_t1","Q5.6_t1","Q5.7_t1")])
 ma01 <-  imputezw(zwadj[,c( "Q8.7_t1", "Q8.8_t1", "Q8.9_t1")])
 complist <- list(DC_P=dc01,DC_X=dc02,CA_t=ca0,CA=ca1,P=or1,R=ma01)
-vcontrols <- zwadj[,c("size","age","dyn","pm","lassets")]
+vcontrols <- zwadj[,c("size","age","dyn","pm","lassets","Q17.5_t1")]
 zwadj <- cbind(dc01,dc02,ca0,ca1,or1,ma01,vcontrols)
 
 
 names(complist[[1]])
 
 ##Factor extraction full model based on insight from Polychoric PCA
-items <- c("Q6.2_t1","Q6.4_t1", "Q7.1_t1","Q7.2_t1","Q6.5_t1", #DC1
+items <- c("Q6.2_t1","Q6.4_t1", "Q7.2_t1", #DC1 "Q7.1_t1""Q6.5_t1",
            "Q6.1_t1","Q7.3_t1","Q7.4_t1", #DC2
            "Q28","Q28a","Q28c", #CA0
            "Q16.1_t1","Q16.2_t1","Q16.4_t1", #CA1
            "Q5.4_t1","Q5.6_t1","Q5.7_t1", #OR1
            "Q8.7_t1", "Q8.8_t1", "Q8.9_t1") #MA
 
-latents <- c(rep("DC_P",5),
+latents <- c(rep("DC_P",3),
              rep("DC_X",3),
              rep("CA_t",3),
              rep("CA",3),
@@ -266,9 +266,9 @@ ht
 
 ## Evaluating PLS model https://cran.r-project.org/web/packages/semPLS/vignettes/semPLS-intro.pdf
 ## PARTIAL MODEL MA 2DC
-ritems <- c(#"Q19a","Q19c", "Q20b", "Q20c", #DC01
+items <- c(#"Q19a","Q19c", "Q20b", "Q20c", #DC01
            #"Q19b","Q19d","Q20d", "Q20e", #DC02
-           "Q6.2_t1","Q6.4_t1", "Q7.1_t1","Q7.2_t1","Q6.5_t1", #DC1
+           "Q6.2_t1","Q6.4_t1","Q7.2_t1","Q6.5_t1", #DC1 #"Q7.1_t1"
            "Q6.1_t1","Q7.3_t1","Q7.4_t1", #DC1
            "Q28","Q28a","Q28c", #CA0
            "Q16.1_t1","Q16.2_t1","Q16.4_t1", #CA1
@@ -278,12 +278,12 @@ ritems <- c(#"Q19a","Q19c", "Q20b", "Q20c", #DC01
            #"Q24","Q24a","Q24b","Q24c","Q24d")
            #"size","pm","age","lassets")
 
-latents <- c(rep("DC_P",5),
+latents <- c(rep("DC_P",4),
              rep("DC_X",3),
            #  rep("DC11",4),
            #  rep("dc12",4),
              rep("CA_{t-1}",3),
-             rep("CA",3),
+             rep("CA1",3),
            #  rep("OR0",3),
            #  rep("OR1",3),
            #  rep("MA01",3))
@@ -291,8 +291,8 @@ latents <- c(rep("DC_P",5),
             # "SZ","PM","AGE","ASS")
 
 mm <- cbind(latents,items); colnames(mm) <- c("source","target")
-iv <- c("R","CA_{t-1}","DC01","DC01","DC02","DC02")
-dv <- c("CA1","CA1","CA1","MA1","CA1","MA1")
+iv <- c("R","CA_{t-1}","DC_P","DC_P","DC_X","DC_X")
+dv <- c("CA1","CA1","CA1","R","CA1","R")
 sm <- cbind(iv,dv);colnames(sm) <- c("source","target")
 
 
@@ -577,3 +577,388 @@ head(t)
     attr(t,"path")
 
     apply(
+
+
+
+
+## Evaluating PLS model https://cran.r-project.org/web/packages/semPLS/vignettes/semPLS-intro.pdf
+## PARTIAL MODEL MA 2DC
+items <- c(#"Q19a","Q19c", "Q20b", "Q20c", #DC01
+           #"Q19b","Q19d","Q20d", "Q20e", #DC02
+           #"Q6.2_t1","Q6.4_t1", "Q7.1_t1","Q7.2_t1","Q6.5_t1", #DC1
+           #"Q6.1_t1","Q7.3_t1","Q7.4_t1", #DC1
+           "Q28","Q28a","Q28c", #CA0
+           "Q16.1_t1","Q16.2_t1","Q16.4_t1", #CA1
+           #"Q21c","Q21d","Q21e", #OC0
+           "Q5.4_t1","Q5.6_t1","Q5.7_t1", #OC1
+           "Q8.7_t1", "Q8.8_t1", "Q8.9_t1",
+           #"Q24","Q24a","Q24b","Q24c","Q24d")
+           "pm","size")
+
+latents <- c(#rep("DC_P",5),
+           #  rep("DC_X",3),
+           #  rep("DC11",4),
+           #  rep("dc12",4),
+             rep("CA0",3),
+             rep("CA1",3),
+           #  rep("OR0",3),
+             rep("P",3),
+           #  rep("MA01",3))
+             rep("R",3),
+
+             "PM","SIZE")
+
+mm <- cbind(latents,items); colnames(mm) <- c("source","target")
+iv <- c("R","CA0","P","PM","SIZE")
+dv <- c("CA1","CA1","CA1","CA1","CA1")
+sm <- cbind(iv,dv);colnames(sm) <- c("source","target")
+
+sm
+MA <- plsm(data = zwadj, strucmod = sm, measuremod = mm)
+ma0 <- sempls(model = MA, data = zwadj, wscheme = "centroid",maxit=1000)
+ma0
+
+
+
+pathDiagram(ma0, file = "ma0", full = FALSE, edge.labels = "both", output.type = "graphics", digits = 2,graphics.fmt="pdf")
+
+
+
+getwd()
+maBoot0 <- bootsempls(ma0, nboot = 200, start = "ones", verbose = FALSE)
+maBoot0
+0.128/0.06282
+
+
+
+
+
+## Evaluating PLS model https://cran.r-project.org/web/packages/semPLS/vignettes/semPLS-intro.pdf
+## PARTIAL MODEL MA 2DC
+items <- c(#"Q19a","Q19c", "Q20b", "Q20c", #DC01
+           #"Q19b","Q19d","Q20d", "Q20e", #DC02
+           "Q6.2_t1","Q6.4_t1","Q7.2_t1", #DC1
+           #"Q6.1_t1","Q7.3_t1","Q7.4_t1", #DC1
+           "Q28","Q28a","Q28c", #CA0
+           "Q16.1_t1","Q16.2_t1","Q16.4_t1", #CA1
+           #"Q21c","Q21d","Q21e", #OC0
+           "Q5.4_t1","Q5.6_t1","Q5.7_t1", #OC1
+           "Q8.7_t1", "Q8.8_t1", "Q8.9_t1",
+           #"Q24","Q24a","Q24b","Q24c","Q24d")
+           "pm","size","lassets","age")
+
+latents <- c(rep("DC_L",3),
+           #  rep("DC_X",3),
+           #  rep("DC11",4),
+           #  rep("dc12",4),
+             rep("CA0",3),
+             rep("CA1",3),
+           #  rep("OR0",3),
+             rep("P",3),
+           #  rep("MA01",3))
+             rep("R",3),
+
+             "PM","SIZE","ASS","AGE")
+
+mm <- cbind(latents,items); colnames(mm) <- c("source","target")
+iv <- c("R","CA0","P","DC_L","DC_L","DC_L","PM","SIZE","ASS","AGE")
+dv <- c("CA1","CA1","CA1","CA1","R","P","CA1","CA1","CA1","CA1")
+sm <- cbind(iv,dv);colnames(sm) <- c("source","target")
+
+sm
+MA <- plsm(data = zwadj, strucmod = sm, measuremod = mm)
+ma1 <- sempls(model = MA, data = zwadj, wscheme = "centroid",maxit=1000)
+ma1
+
+
+
+pathDiagram(ma1, file = "ma1n", full = FALSE, edge.labels = "both", output.type = "graphics", digits = 2,graphics.fmt="pdf")
+
+
+
+getwd()
+maBoot <- bootsempls(ma, nboot = 200, start = "ones", verbose = FALSE)
+maBoot
+0.128/0.06282
+
+
+items <- c(#"Q19a","Q19c", "Q20b", "Q20c", #DC01
+           #"Q19b","Q19d","Q20d", "Q20e", #DC02
+           #"Q6.2_t1","Q6.4_t1", "Q7.1_t1","Q7.2_t1","Q6.5_t1", #DC1
+           "Q6.1_t1","Q7.3_t1","Q7.4_t1", #DC1
+           "Q28","Q28a","Q28c", #CA0
+           "Q16.1_t1","Q16.2_t1","Q16.4_t1", #CA1
+           #"Q21c","Q21d","Q21e", #OC0
+           "Q5.4_t1","Q5.6_t1","Q5.7_t1", #OC1
+           "Q8.7_t1", "Q8.8_t1", "Q8.9_t1",
+           #"Q24","Q24a","Q24b","Q24c","Q24d")
+           "pm","size","lassets","age")
+
+latents <- c(rep("DC_C",3),
+           #  rep("DC_X",3),
+           #  rep("DC11",4),
+           #  rep("dc12",4),
+             rep("CA0",3),
+             rep("CA1",3),
+           #  rep("OR0",3),
+             rep("P",3),
+           #  rep("MA01",3))
+             rep("R",3),
+
+             "PM","SIZE","ASS","AGE")
+
+mm <- cbind(latents,items); colnames(mm) <- c("source","target")
+iv <- c("R","CA0","P","DC_C","DC_C","DC_C","PM","SIZE","ASS","AGE")
+dv <- c("CA1","CA1","CA1","CA1","R","P","CA1","CA1","CA1","CA1")
+sm <- cbind(iv,dv);colnames(sm) <- c("source","target")
+
+sm
+MA <- plsm(data = zwadj, strucmod = sm, measuremod = mm)
+ma2 <- sempls(model = MA, data = zwadj, wscheme = "centroid",maxit=1000)
+ma2
+
+maBoot2 <- bootsempls(ma2, nboot = 200, start = "ones", verbose = FALSE)
+maBoot2
+
+pathDiagram(ma2, file = "ma2", full = FALSE, edge.labels = "both", output.type = "graphics", digits = 2,graphics.fmt="pdf")
+
+0.1367/0.0636
+
+
+
+#### FULL MODEL
+items <- c(#"Q19a","Q19c", "Q20b", "Q20c", #DC01
+           #"Q19b","Q19d","Q20d", "Q20e", #DC02
+           #"Q6.2_t1","Q6.4_t1", "Q7.1_t1","Q7.2_t1","Q6.5_t1", #DC1
+           "Q6.1_t1","Q7.3_t1","Q7.4_t1", #DC1
+           "Q28","Q28a","Q28c", #CA0
+           "Q16.1_t1","Q16.2_t1","Q16.4_t1", #CA1
+           #"Q21c","Q21d","Q21e", #OC0
+           "Q5.4_t1","Q5.6_t1","Q5.7_t1", #OC1
+           "Q8.7_t1", "Q8.8_t1", "Q8.9_t1",
+           #"Q24","Q24a","Q24b","Q24c","Q24d")
+           "pm","size")
+
+latents <- c(rep("DC_X",3),
+           #  rep("DC_X",3),
+           #  rep("DC11",4),
+           #  rep("dc12",4),
+             rep("CA0",3),
+             rep("CA1",3),
+           #  rep("OR0",3),
+             rep("P",3),
+           #  rep("MA01",3))
+             rep("R",3),
+
+             "PM","SIZE")
+
+mm <- cbind(latents,items); colnames(mm) <- c("source","target")
+iv <- c("R","CA0","P","DC_X","DC_X","DC_X","PM","SIZE")
+dv <- c("CA1","CA1","CA1","CA1","R","P","CA1","CA1")
+sm <- cbind(iv,dv);colnames(sm) <- c("source","target")
+
+sm
+MA <- plsm(data = zwadj, strucmod = sm, measuremod = mm)
+ma3 <- sempls(model = MA, data = zwadj, wscheme = "centroid",maxit=1000)
+ma3
+
+maBoot3 <- bootsempls(ma3, nboot = 200, start = "ones", verbose = FALSE)
+maBoot3
+
+zwadjh <- subset(zwadj,dyn<4)
+ma3h <- sempls(model = MA, data = zwadjh, wscheme = "centroid",maxit=1000)
+ma3h
+
+maBoot3h <- bootsempls(ma3h, nboot = 200, start = "ones", verbose = FALSE)
+maBoot3h
+
+pathDiagram(ma3, file = "ma2", full = FALSE, edge.labels = "both", output.type = "graphics", digits = 2,graphics.fmt="pdf")
+
+0.1424/0.0636
+
+
+
+
+model <-
+
+items <- c(#"Q19a","Q19c", "Q20b", "Q20c", #DC01
+           #"Q19b","Q19d","Q20d", "Q20e", #DC02
+           "Q6.2_t1","Q6.4_t1","Q7.2_t1", #DC1
+           "Q6.1_t1","Q7.3_t1","Q7.4_t1", #DC1
+           "Q28","Q28a","Q28c", #CA0
+           "Q16.1_t1","Q16.2_t1","Q16.4_t1", #CA1
+           #"Q21c","Q21d","Q21e", #OC0
+           "Q5.4_t1","Q5.6_t1","Q5.7_t1", #OC1
+           "Q8.7_t1", "Q8.8_t1", "Q8.9_t1",
+           #"Q24","Q24a","Q24b","Q24c","Q24d")
+           "pm","size")
+
+latents <- c(rep("DC_L",3),
+             rep("DC_C",3),
+           #  rep("DC11",4),
+           #  rep("dc12",4),
+             rep("CA0",3),
+             rep("CA1",3),
+           #  rep("OR0",3),
+             rep("P",3),
+           #  rep("MA01",3))
+             rep("R",3),
+
+             "PM","SIZE")
+
+mm <- cbind(latents,items); colnames(mm) <- c("source","target")
+iv <- c("R","CA0","P","DC_C","DC_C","DC_C","PM","SIZE","DC_L","DC_L","DC_L")
+dv <- c("CA1","CA1","CA1","CA1","R","P","CA1","CA1","CA1","R","P")
+sm <- cbind(iv,dv);colnames(sm) <- c("source","target")
+
+MA <- plsm(data = zwadj, strucmod = sm, measuremod = mm)
+ma2 <- sempls(model = MA, data = zwadj, wscheme = "centroid",maxit=1000)
+ma2
+
+maBoot2 <- bootsempls(ma2, nboot = 200, start = "ones", verbose = FALSE)
+maBoot2
+
+
+
+zwadjh <- subset(zwadj,dyn>4.5)
+nrow(zwadjh)
+ma2h <- sempls(model = MA, data = zwadjh, wscheme = "centroid",maxit=1000)
+ma2h
+
+maBoot2h <- bootsempls(ma2h, nboot = 200, start = "ones", verbose = FALSE)
+maBoot2h
+
+
+pathDiagram(ma2, file = "ma2", full = FALSE, edge.labels = "both", output.type = "graphics", digits = 2,graphics.fmt="pdf")
+mplusexport <- zwadj
+mplusexport[is.na(mplusexport)] <- -9999
+write.table(mplusexport,"/Users/larshovdanmolden/Documents/git/article4/estimation/mplusexport2.csv", row.names=FALSE, col.names=FALSE, sep=",")
+names(zwadj)
+names(mplusexport)
+head(mplusexport)
+summary(mplusexport)
+summary(zwadj)
+model <- "
+
+
+DCP  =~ Q6.2_t1+Q6.4_t1+ Q7.2_t1
+#DCX  =~ Q6.1_t1 + Q7.3_t1 + Q7.4_t1
+CA0 =~  Q28+Q28a+Q28c
+CA1 =~           Q16.1_t1+Q16.2_t1+Q16.4_t1
+P =~        Q5.4_t1+Q5.6_t1+Q5.7_t1
+R =~           Q8.7_t1+ Q8.8_t1+ Q8.9_t1
+PM =~     pm
+SZ =~     size
+ASS =~  lassets
+#AGE =~ age
+
+
+P ~ DCP
+R ~ DCP
+#R ~ DCX
+#P ~ DCX
+
+CA1 ~ CA0 + P + R + PM + DCP + ASS + SZ
+
+
+
+
+"
+
+
+
+
+
+fit1 <- sem(model, data = zwadj)
+
+
+
+summary(fit1,fit.measures=TRUE)
+
+
+semPaths(fit)
+semPaths(fit,what="equality","est",style="lisrel",layout="tree", sizeLat=8, edge.label.cex = 0.9, ask =FALSE)
+
+
+
+
+model <- "
+
+
+#DCP  =~ Q6.2_t1+Q6.4_t1+ Q7.2_t1
+DCX  =~ Q6.1_t1 + Q7.3_t1 + Q7.4_t1
+CA0 =~  Q28+Q28a+Q28c
+CA1 =~           Q16.1_t1+Q16.2_t1+Q16.4_t1
+P =~        Q5.4_t1+Q5.6_t1+Q5.7_t1
+R =~           Q8.7_t1+ Q8.8_t1+ Q8.9_t1
+PM =~     pm
+SZ =~     size
+ASS =~  lassets
+#AGE =~ age
+
+
+#P ~ DCP
+#R ~ DCP
+R ~ DCX
+P ~ DCX
+
+CA1 ~ CA0 + P + R + PM + DCX + ASS + SZ
+
+
+
+
+"
+
+
+
+
+
+fit2 <- sem(model, data = zwadj)
+
+
+
+summary(fit2,fit.measures=TRUE)
+
+
+
+
+
+
+model <- "
+
+
+DCP  =~ Q6.2_t1+Q6.4_t1+ Q7.2_t1
+DCX  =~ Q6.1_t1 + Q7.3_t1 + Q7.4_t1
+CA0 =~  Q28+Q28a+Q28c
+CA1 =~           Q16.1_t1+Q16.2_t1+Q16.4_t1
+P =~        Q5.4_t1+Q5.6_t1+Q5.7_t1
+R =~           Q8.7_t1+ Q8.8_t1+ Q8.9_t1
+PM =~     pm
+SZ =~     size
+ASS =~  lassets
+#AGE =~ age
+
+
+P ~ DCP
+R ~ DCP
+
+R ~ DCX
+P ~ DCX
+
+CA1 ~ CA0 + P + R + PM + DCX+ DCP+ ASS + SZ
+
+
+R~~P
+DCP~~DCX
+
+"
+
+
+
+
+
+fit3 <- sem(model, data = zwadj)
+
+
+
+summary(fit3,fit.measures=TRUE)

@@ -66,6 +66,17 @@ dynamic environments.
 
 \section{Introduction}
 
+Extant literature on DC struggles with a fundamental conception and prediction of the
+theory, namely if and when DC can lead to competitive advantage. This friction has been
+dubbed the "elephant in the room" (peteraf) and been tracked back to the seminal papers of
+Teece and Eisenhardt, as well as their their different theoretical antecedents of
+evolutionary economics (ref) and behavioral theory (ref) respectively (ref Arndt
+x2). Recently, distefaneo et al propopsed a theoretical integration of these varying
+conceptions of DC theory. They suggest that latent and constitutent elements of DC
+represent different constructs but are integrated in that they work differently in shaping
+strategic change.  
+
+
 DC is often critizesd for being tautological and less focus has been placed on instances
 when dynamism can lead to poorer competitive outcomes. 
 Structural inertia, commitment \cite{schreyogg2007}. Under what conditions are changing
@@ -81,11 +92,93 @@ capabilities, (2) firm resources and routines, and competitive advantage is seen
 complex system with interactions between different types of each 1 and 2. Many conceptual
 contributions have excellently discussed varieties or functional forms of either dynamic
 capabilities \citep{Ambrosini2009a,Helfat2015ad,DiStefano2014} or underlying resources or
-routines \citep{Winter2003,Eisenhardt2000}. However, very few, is any, papers attempts to
-integrate varieties at multiple levels simultaneously. The bulk of contributions focus
+routines \citep{Winter2003,Eisenhardt2000}. However, very few, if any, papers attempt to
+integrate varieties at multiple levels simultaneously. By asking if dynamic capabilities
+can lead to competitive advantage and how this occurs, one is far better off asking "when"
+competitive advangate is an outcome of dynamic capabiliteis and its workings. 
+
+The definition of dynamic capabilities, albeit contestst, seems to be converging on
+varieties of "the ability of firms to create, modicy and extend its resource base" (ref)
+\citep{Schilke2018}. Meanwhile both dynamic capabilities as the "governing entity" and
+resources as "the governed entity" takes different forms in the literature (ref). Dynamic
+capabilities themsleves can roughly be divided into sets of simple rules governing
+undelying resources, or more complex routines developed for the same purpose
+\citep{Peteraf2013}. In other words, dynamic capabilities themselves can and cannot satisfy
+the VRIO condition. This contention is throughly covered in the literature (refs) and
+recent contribiutions have argued for interplays between simple and complex types of
+dynamic capabilities foring a more complex and initmatble dynamic system
+\citep{DiStefano2014}. Moreover, granted different forms of dynamic capabilities exist
+their impact on the "governed entity", the underlying firm resources, should also be
+varying. 
+
+To explore this we emply two radically differnet forms of dynamic capabilities / one
+geared towards transforming exitsgint resources in order to exploit them to gain
+competitive advantage (refs). The other form is geraed towards seizing new opportunities in order
+to explore new business opportunitieis (refs). We argue that competitive advantage can
+stem from each of these, but that the mechanism varies. Dynamic capabilities geared
+towards transforming for exploitation ($DC_P$) is by and of itself the result of a more
+complex set of routines configured in a way that is hard to imitate because of its path
+dependent and evolutionary nature. This legacy from evolutinoary economics is stressed as
+an important factor for creating VRIO resources (Ref peteraf). The stream of contributions
+maintaining dynamic capabilities working through the object of "changing existing
+capabilities" \citep{Teece1997,Zollo2002a,Winter2003,Zahra2006,Kale2002} also maintain
+that 
+
+We argue that latent and constituted dynamic capabilites behave differently and work
+differnetly trhough differents modes (action or wahtever the term in DiStefano er). 
+
+{\bf LAtent = complex process routines Teece
+Constitutent = simpler, ad hoc - Eisenhardt}
+
+
+We explore two different modes (natures) of dynamic capabilities and how they work
+differently (action) to create competitive advantage. Or is it the object of action as
+either resources or opportunities? 
+
+By introducing different measures of different types of DC (latent and constiuted) as well
+as two different types of action (change existing or create new) we explore the workings
+of the drive train model proposed by DiStefano suggesting a fuller and more dynamic view
+on how latent and consittued DC works differently. 
+
+The working of latent:
+Departing from the definintion of dynamic capabilities found in Teece (ref) and subsequent
+contributions in this tradition
+
+The working of cinstuted
+
+We identify two ditintctly different noptions of dynamic capabilities both following well
+known definitions byut weith different nature (ref distefano). We show that only the
+latent dc can directly and indirectly create CA,whereas the constituent element nature of
+DC only works through changing lower level routines. 
+
+
+Different parts of the drive train works on different types of underlying routines
+
+Looks at competing hypotheses between Eisenhardt and teexe with respect to routinization. Finds that routininzation happens at DC level less than operational level?
+We argue that this depends on the purpose *action of the Dc and the composition of the
+focal operational capability. 
+
+
+Reviewing the literature reveals that researchers have tended to identify dynamic capabilities post hoc, inferring their existence from successful organizational out- comes such as profitability and growth, as prior definitions would suggest (Table
+
+On the other hand we have dynamic capabilites geared toward sensing and seizing new
+opportunities as part of an effort of exploration. Such dynamic capabilities are described
+in the literature as themselves a set of more simple routines orchestrated in a manner
+such that x`
+
+Routinization at certain level, but depends on them being outward or inward looking. 
+
+How can DC lead to competitive advangate. departing from the original definition this
+happens through the modification or aquisition of firm resources. But the resopurces
+themselves can and cannot be a source of competitive advantage
+
+
+At a minimum, in order for something to qualify as a capability, it must work in a reliable manner’ (Helfat and Peteraf, 2003: 999). Capabilities
+
+The bulk of contributions focus
 only on heterogeneity at the dynamic capabilities level, or at
 
-
+W
 
 work dDC offers a theory of how firms achieve
 competitive advantage over time. Yet the DC theory suffers from contradictory claims about
