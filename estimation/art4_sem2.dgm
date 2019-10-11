@@ -1,0 +1,128 @@
+VERSION 1.1.0
+INPUT
+TITLE:
+article4_CA
+
+DATA:
+FILE IS mplusexport2.csv;
+VARIABLE:
+NAMES ARE Q62_t1  Q64_t1  Q65_t1
+Q71_t1  Q72_t1  Q61_t1 Q73_t1  Q74_t1
+Q28 Q28a Q28c
+Q161_t1 Q162_t1 Q164_t1
+Q54_t1 Q56_t1 Q57_t1
+Q87_t1 Q88_t1 Q89_t1
+size age dyn pm lassets;
+USEVARIABLES ARE Q62_t1 Q64_t1
+Q72_t1  Q65_t1 Q71_t1
+Q28 Q28a Q28c
+Q161_t1 Q162_t1 Q164_t1
+Q54_t1 Q56_t1 Q57_t1
+Q87_t1 Q88_t1 Q89_t1
+size pm lassets age dyn;
+MISSING ARE ALL (-9999);
+ANALYSIS:
+TYPE = RANDOM;
+INTEGRATION = MONTECARLO(500);
+ESTIMATOR = WLSMV;
+OUTPUT:
+STANDARDIZED;
+MODEL:
+DC BY Q62_t1 Q64_t1 Q72_t1 Q71_t1 Q65_t1;
+CA0 BY Q28 Q28a Q28c;
+CA1 BY Q161_t1 Q162_t1 Q164_t1;
+P BY Q54_t1 Q56_t1 Q57_t1;
+R BY Q87_t1 Q88_t1 Q89_t1;
+R ON DC;
+P ON DC;
+CA1 ON CA0 R P DC dyn pm size lassets age;
+R WITH P;
+INPUT_END
+2
+0
+0
+0
+MLR
+1
+GENERAL
+0
+17
+5
+5
+q62_t1 q64_t1 q72_t1 q65_t1 q71_t1 q28 q28a q28c q161_t1 q162_t1 q164_t1 q54_t1 q56_t1 q57_t1 q87_t1 q88_t1 q89_t1 dc ca0 ca1 p r size pm lassets age dyn
+3
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 0 0 2 1 1 0 0 0 0 0
+0
+5
+dc
+q62_t1 q64_t1 q72_t1 q71_t1 q65_t1
+ca0
+q28 q28a q28c
+ca1
+q161_t1 q162_t1 q164_t1
+p
+q54_t1 q56_t1 q57_t1
+r
+q87_t1 q88_t1 q89_t1
+1 1 dc q62_t1    1.000    0.000
+1 1 dc q64_t1    1.357    0.164
+1 1 dc q72_t1    1.328    0.253
+1 1 dc q71_t1    1.325    0.262
+1 1 dc q65_t1    1.109    0.229
+1 1 ca0 q28    1.000    0.000
+1 1 ca0 q28a    0.764    0.100
+1 1 ca0 q28c    0.940    0.123
+1 1 ca1 q161_t1    1.000    0.000
+1 1 ca1 q162_t1    1.006    0.084
+1 1 ca1 q164_t1    1.034    0.121
+1 1 p q54_t1    1.000    0.000
+1 1 p q56_t1    1.580    0.278
+1 1 p q57_t1    1.895    0.469
+1 1 r q87_t1    1.000    0.000
+1 1 r q88_t1    1.005    0.049
+1 1 r q89_t1    1.097    0.053
+1 1 dyn ca1    0.025    0.075
+1 1 pm ca1    0.019    0.008
+1 1 size ca1    0.091    0.069
+1 1 lassets ca1    0.075    0.071
+1 1 age ca1   -0.002    0.006
+1 1 dc r    0.903    0.168
+1 1 dc p    0.320    0.094
+1 1 ca0 ca1    0.240    0.080
+1 1 r ca1    0.017    0.074
+1 1 p ca1    0.768    0.277
+1 1 dc ca1    0.306    0.156
+2 1 r p   -0.036    0.058
+2 1 ca0 dc    0.141    0.113
+4 1 q62_t1    1.785    0.200
+4 1 q64_t1    0.962    0.178
+4 1 q72_t1    0.836    0.144
+4 1 q65_t1    1.554    0.245
+4 1 q71_t1    1.077    0.182
+4 1 q28    0.881    0.318
+4 1 q28a    1.468    0.259
+4 1 q28c    1.928    0.303
+4 1 q161_t1    0.963    0.212
+4 1 q162_t1    0.849    0.177
+4 1 q164_t1    1.195    0.211
+4 1 q54_t1    1.200    0.129
+4 1 q56_t1    0.778    0.173
+4 1 q57_t1    0.525    0.184
+4 1 q87_t1    0.801    0.116
+4 1 q88_t1    0.338    0.069
+4 1 q89_t1    0.183    0.076
+4 1 ca1    0.802    0.188
+4 1 p    0.272    0.106
+4 1 r    1.400    0.203
+5 1 dc    0.683    0.210
+5 1 ca0    2.078    0.348
+2 1 size pm  999.000  999.000
+2 1 size lassets  999.000  999.000
+2 1 size age  999.000  999.000
+2 1 size dyn  999.000  999.000
+2 1 pm lassets  999.000  999.000
+2 1 pm age  999.000  999.000
+2 1 pm dyn  999.000  999.000
+2 1 lassets age  999.000  999.000
+2 1 lassets dyn  999.000  999.000
+2 1 age dyn  999.000  999.000

@@ -12,12 +12,12 @@ Q87_t1 Q88_t1 Q89_t1
 size age dyn pm lassets;
 
 USEVARIABLES ARE Q62_t1 Q64_t1 
-Q72_t1  Q61_t1 Q73_t1  Q74_t1  
+Q72_t1  Q65_t1 Q71_t1  
 Q28 Q28a Q28c     
 Q161_t1 Q162_t1 Q164_t1 
 Q54_t1 Q56_t1 Q57_t1 
 Q87_t1 Q88_t1 Q89_t1  
-size pm lassets age;
+size pm lassets age dyn;
 
  
 MISSING ARE ALL (-9999);
@@ -27,34 +27,36 @@ DATA MISSING:
 !TYPE = IMPUTATION;
 !NAME = Q19 Q19a Q19b Q19c Q19d Q20d;
 ANALYSIS: 
-!TYPE = RANDOM;
+TYPE = RANDOM;
 !TYPE = IMPUTATION;
-!ALGORITHM=INTEGRATION;
-!INTEGRATION = MONTECARLO(500);
+ALGORITHM=INTEGRATION;
+INTEGRATION = MONTECARLO(500);
 !ESTIMATOR = WLSMV;
 
 MODEL:
 
-DCL BY Q62_t1 Q64_t1 Q72_t1; 
-DCC BY Q61_t1 Q73_t1 Q74_t1;  
+DC BY Q62_t1 Q64_t1 Q72_t1 Q71_t1 Q65_t1;
 
 CA0 BY Q28 Q28a Q28c;
 CA1 BY Q161_t1 Q162_t1 Q164_t1;
 P BY Q54_t1 Q56_t1 Q57_t1;
 R BY Q87_t1 Q88_t1 Q89_t1;  
-!DCINT | DCL XWITH DCC;
+!DYNINTP | dyn XWITH P;
+DYNINTR | dyn XWITH R;
+! https://www3.nd.edu/~rwilliam/stats2/l55.pdf
 
+! https://www.statalist.org/forums/forum/general-stata-discussion/general/118016-model-with-interaction-term
 
 !ASS BY lassets;
 !PR BY pm;
 !SZ BY size;
 
-R ON DCL DCC;
-P ON DCL DCC;
+!R ON DC;
+!P ON DC ;
 
-CA1 ON CA0 R P DCL DCC pm size lassets age; 
+CA1 ON CA0 R P DC dyn pm size lassets age DYNINTR; 
 
-DCC WITH DCL;
+R WITH P;
 
 !SEIZ BY  q20b  q19c  q20;
 !TRAN BY  q25 q25b q25c;
@@ -91,7 +93,7 @@ DCC WITH DCL;
 
 
 
-OUTPUT:STANDARDIZED;
+!OUTPUT:STANDARDIZED;
 !OUTPUT: TECH2;
 
 !interpretation https://stats.idre.ucla.edu/mplus/output/lgcm_mlm/mlmtwolevel2/

@@ -66,6 +66,168 @@ dynamic environments.
 
 \section{Introduction}
 
+
+%% Extant literature on dynamic capabilities is battling with a fundamental conception and
+%% prediction of the theory, namely if, when and how dynamic capabilities can lead to competitive
+%% advantage. 
+
+Seminal contributions to the field of dynamic capabilities have argued for both direct
+\cite{Kor2005,Eriksson2014,Schilke2014a} and indirect (ref) effects of dynamic
+capabilities on competitive advantage, although increasingly the bulk of the literature
+focuses on the latter \citep{Schilke2018}. This indirect link is typically understood as
+dynamic capabilities modifying, extending or creating firm resources (helfat) (or
+lower-level operational capabilities (Winter, collis)) and thus generating competetive
+advantage (Eriksson and others). Furthermore, empirical evidence keep suggesting that both direct (ref)
+and indirect (ref) links exist. This warrant the question of \emph{when} direct and
+indirect links between dynamic capabilities and competitive advantage is most pronounced. 
+
+Moreover, firm resources or capabiltiies themselves are far from a homogenous set and
+varies among other things with respect to their uniqueness, inimatbility and value
+(barney). Important contributions have thus argued for a deeper insighi into these
+intermediaries and their mechanism calling for a "deeper insight into the variety of mechanisms that
+underlie the performance effects of capabilities.” (Schilke, 2014a: 199). 
+as well as \emph{what} different intermediaries exis .
+
+
+
+%% Extant literature on dynamic capabilities is battling with a fundamental conception and
+%% prediction of the theory, namely if, when and how dynamic capabilities can lead to competitive
+%% advantage. 
+all items
+
+       Path   LOW     t  HIGH     t
+1 DC -> CA1 0.303 3.517 0.087 0.710
+2   DC -> P 0.445 6.070 0.435 3.972
+3  P -> CA1 0.273 3.174 0.308 3.164
+> R
+       Path   LOW     t  HIGH     t
+1 DC -> CA1 0.438 6.161 0.134 0.988
+2   DC -> R 0.400 5.661 0.549 8.033
+3  R -> CA1 0.015 0.186 0.195 1.555
+> 
+
+fewer items
+
+      Path   LOW     t   HIGH      t
+1 DC -> CA1 0.173 1.771 -0.017 -0.172
+2   DC -> P 0.437 5.183  0.432  4.875
+3  P -> CA1 0.329 3.646  0.353  3.731
+> R
+       Path   LOW     t  HIGH     t
+1 DC -> CA1 0.292 2.891 0.049 0.438
+2   DC -> R 0.142 1.287 0.370 4.267
+3  R -> CA1 0.109 1.471 0.244 2.344
+
+
+more items
+
+       Path   LOW     t  HIGH     t
+1 DC -> CA1 0.314 4.107 0.139 1.236
+2   DC -> P 0.386 5.481 0.391 3.797
+3  P -> CA1 0.291 3.596 0.292 3.011
+> R
+       Path   LOW     t  HIGH     t
+1 DC -> CA1 0.439 6.095 0.163 1.122
+2   DC -> R 0.428 5.547 0.579 7.972
+3  R -> CA1 0.019 0.208 0.177 1.466
+
+
+Seminal contributions to the field of dynamic capabilities have argued for both direct
+\cite{Kor2005,Eriksson2014,Schilke2014a} and indirect (ref) effects of dynamic
+capabilities on competitive advantage, although increasingly the bulk of the literature
+focuses on the latter \citep{Schilke2018}. This indirect link is typically understood as
+dynamic capabilities modifying, extending or creating firm resources (helfat) (or
+lower-level operational capabilities (Winter, collis)) and thus generating competetive
+advantage (Eriksson and others). Furthermore, empirical evidence keep suggesting that both direct (ref)
+and indirect (ref) links exist. This warrant the question of \emph{when} and under which conditions direct and
+indirect links between dynamic capabilities and competitive advantage is most pronounced. 
+
+Moreover, firm resources or capabiltiies themselves are far from a homogenous set and
+varies among other things with respect to their uniqueness, inimatbility and value
+(barney). Important contributions have thus argued for a deeper insighi into these
+intermediaries and their mechanism calling for a "deeper insight into the variety of mechanisms that
+underlie the performance effects of capabilities.” (Schilke, 2014a: 199). In other words,
+adding to the question of when direct and indirect links are most pronounced, we would
+also need to understand \emph{what} different forms of intermediatons work under these
+aforementioned conidtions. 
+
+Still, important empirical contributions argue for a direct link although the emerginig
+consensus of the literature argues for an indirect link. This warrants the research question:
+"Under what conditions are dynamic capabilities working directly and indirectly on firm
+competetive advangate". 
+
+We argue that the reason for these differing findings stems from a two distinctly
+different factor; the /emph{environmental dynamism} facing the firm, and the /emph{nature
+  of the mediating resource being employed}.
+
+
+
+TWO observetions>
+- Direct effect mediated away (disappears) in high velocity environments - Could be due to
+conception of DC as simple rules and best practices. Do they change nature? Or is it that
+they go from latent to constitutent and thus their impact becomes clearer
+
+- The mean of mediation matter in low environments. 
+
+What happens? VRIO?
+Routines are never VRIO
+Processes are VRIO
+VRIO concept*idea is based on normal levels of change. In dyn changes happens faster and
+the modes of routines are more important because you need more rapid change and routinesa
+re simpler models. By being changed by DC they can generate CVRIO simply because of their
+rapid deployment. Processes on the other hand are equally important and do not get less
+VRIO facing environmental dynamism. Why? Cause they are path dependent and unique to the
+firm, however should expect them to be less important if speed of change is of
+importance. 
+
+. 
+
+ and a certain consensus leans toward defining
+the concept through the idea of a mediating effect through ordinary capabilities (winter,
+helfat
+
+“Moreover, we need deeper insight into the variety of mechanisms that
+underlie the performance effects of capabilities.” (Schilke, 2014a: 199)
+
+This,
+we argue, is due to the way DC behave differently under high-velocity industries compared
+to normal times, and goes back to the original contention between the seminal papers on EM
+and TPS and their different understanding of the concept.
+
+We argue that DC comes about working differently under different circumstances. As we cant
+exactly measure and observe DC (teece) we can only observe its effects when called
+upon. They are more likely to be called upon in high velocity environments when change is
+most needed. Consecnuently Eisenhardts notion of constitutent DC becomes more pronounced
+and visible under high velocity environments where DC turns to action working as
+intended. In such conditions DC will indeed work to change underlying routines and
+capabilities to enhance competetitieve advantage. However, what we usually observe in more
+stable industries nd contexts, is DC as latent and hence more correlated with competetive
+advantage cause it is related to the potential. Actual change of routines and capabilites
+are less needed so the mediation is less pronounced and we will observe a more direct
+effect cause other factors are playing into the CA explanation such as more
+generalmanagement, resources and so on. As many of these factors normally working in
+stable environments are left out in empirical models, the general idea of DC as a proxy
+for a good firm and management becomes more prevalant and we see a direct effect as a
+consequence. Proxy for a good firm is added and shows that being a good firm is more
+important in slow enviromnetn cause much of the ability to govern ana manage abusiness is
+captured in this variable in this conducion. DC is also more prevelant cause it captures a
+similar side as a latent potential to generate CA and act more as aproxy for a good
+firm. However, in high markets the impact of DC increases as it starts to work as a
+distinct force of change changing underslying routines and capabilites. Here we also see
+that the importance of other factors of a good firm diminishes because the usual metrics
+are not important - path dependency matters less and the ability to change resources
+matters increasingly and thus only ghrouhg mediation is CA achieved. 
+
+However, a difference in the type of underlying resource matter. And this also goes back
+to the difference between simple rules of action and more complex routines. VRIO is
+achieved through either direct effects from DC who is VRIO because of the path dependency
+more pronounced in normal environments. 
+evidence has pointed to a dirc
+
+Noone has looked at how dc operates differently through different OC and how these
+interact with the dynamism in the environment. Conventional wisdom holds that routines are
+not able to ca[ture VRIO whereas processes can. 
+
 Extant literature on DC struggles with a fundamental conception and prediction of the
 theory, namely if and when DC can lead to competitive advantage. This friction has been
 dubbed the "elephant in the room" (peteraf) and been tracked back to the seminal papers of
@@ -76,7 +238,7 @@ conceptions of DC theory. They suggest that latent and constitutent elements of 
 represent different constructs but are integrated in that they work differently in shaping
 strategic change.  
 
-
+Constitutent DC based on simpler rules will not create CA directly. 
 DC is often critizesd for being tautological and less focus has been placed on instances
 when dynamism can lead to poorer competitive outcomes. 
 Structural inertia, commitment \cite{schreyogg2007}. Under what conditions are changing
@@ -297,6 +459,12 @@ with the degree of environmental dynamism facing the firm.
 %% dynamism. It is not that DC does not work under stable conditions as EM claims. Is only
 %% that the effect runs stringer through the evolutionary path. Whereas the market path is
 %% stringer under higher dynamism
+This friction has been
+dubbed the "elephant in the room" (peteraf) and been tracked back to the seminal papers of
+Teece and Eisenhardt, as well as their their different theoretical antecedents of
+evolutionary economics (ref) and behavioral theory (ref) respectively (ref Arndt
+x2).
+
 
 
 One contentious issue surrounding the DC theory is the extent to which differing views on
