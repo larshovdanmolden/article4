@@ -132,6 +132,40 @@ more items
 3  R -> CA1 0.019 0.208 0.177 1.466
 
 
+
+
+
+
+
+
+few items less controls
+
+      Path   LOW     t  HIGH     t
+1 DC -> CA1 0.213 2.555 0.034 0.314
+2   DC -> P 0.436 5.901 0.417 4.648
+3  P -> CA1 0.187 2.206 0.276 2.776
+> R
+       Path   LOW     t  HIGH     t
+1 DC -> CA1 0.269 2.815 0.069 0.646
+2   DC -> R 0.112 1.004 0.338 3.957
+3  R -> CA1 0.117 1.456 0.260 2.565
+> 
+
+all items less controls
+
+       Path   LOW     t  HIGH     t
+1 DC -> CA1 0.355 4.786 0.133 1.348
+2   DC -> P 0.386 5.003 0.436 4.739
+3  P -> CA1 0.155 1.985 0.232 2.311
+> R
+       Path   LOW     t  HIGH     t
+1 DC -> CA1 0.417 6.879 0.144 1.484
+2   DC -> R 0.388 6.092 0.534 7.039
+3  R -> CA1 0.017 0.214 0.211 2.030
+
+
+
+
 Seminal contributions to the field of dynamic capabilities have argued for both direct
 \cite{Kor2005,Eriksson2014,Schilke2014a} and indirect (ref) effects of dynamic
 capabilities on competitive advantage, although increasingly the bulk of the literature
