@@ -113,15 +113,13 @@ dc01 <-  imputezw(zwadj[,c("Q6.2_t1","Q6.4_t1", "Q6.5_t1","Q7.1_t1","Q7.2_t1")] 
 dc02 <-  imputezw(zwadj[,c("Q6.1_t1","Q7.3_t1","Q7.4_t1")] )
 ca0 <-  imputezw(zwadj[,c("Q28","Q28a","Q28c")] )
 ca1 <-   imputezw(zwadj[,c("Q16.1_t1","Q16.2_t1","Q16.4_t1")] )
-or1 <-   imputezw(zwadj[,c("Q5.4_t1","Q5.6_t1","Q5.7_t1")])
-or0 <-   imputezw(zwadj[,c("Q21c","Q21d","Q21e")])
+or1 <-   imputezw(zwadj[,c("Q5.4_t1","Q5.6_t1","Q5.7_t1","Q5.1_t1","Q5.2_t1","Q5.3_t1","Q5.5_t1")])
+or0 <-   imputezw(zwadj[,c("Q21c","Q21d","Q21e","Q22","Q22a","Q22b","Q22c")])
 ma01 <-  imputezw(zwadj[,c( "Q8.7_t1", "Q8.8_t1", "Q8.9_t1")])
 ma02 <-  imputezw(zwadj[,c("Q24","Q24a","Q24b","Q24c","Q24d")])
 complist <- list(DC_P=dc01,DC_X=dc02,CA_t=ca0,CA=ca1,P=or1,R=ma01)
 vcontrols <- zwadj[,c("size","age","dyn","pm","lassets")]
 zwadj <- cbind(dc01,dc02,ca0,ca1,or1,or0,ma01,vcontrols)
-
-
 
 
 ######## ADJUSTING DATASET WITH DELTA
@@ -143,22 +141,21 @@ zwadj$d3 <- zwadj$Q5.7_t1 - zwadj$Q21e
 ## zwadj$d11 <- zwadj$Q7.4_t1 -zwadj$Q20e
 
 
-## zwadj$d4 <- zwadj$Q5.1_t1 - zwadj$Q22
-## zwadj$d5 <- zwadj$Q5.2_t1 - zwadj$Q22a
-## zwadj$d6 <- zwadj$Q5.3_t1 - zwadj$Q22b
-## zwadj$d7 <- zwadj$Q5.5_t1 - zwadj$Q22c
-
+ zwadj$d4 <- zwadj$Q5.1_t1 - zwadj$Q22
+ zwadj$d5 <- zwadj$Q5.2_t1 - zwadj$Q22a
+ zwadj$d6 <- zwadj$Q5.3_t1 - zwadj$Q22b
+ zwadj$d7 <- zwadj$Q5.5_t1 - zwadj$Q22c
 names(zwadj)
-
+summary(zwadj$dyn)
 nboot <- 200
-zwadjh <- subset(zwadj,dyn>4)
-zwadjl <- subset(zwadj,dyn<=4)
+zwadjh <- subset(zwadj,dyn>4);nrow(zwadjh)
+zwadjl <- subset(zwadj,dyn<=4);nrow(zwadjl)
 
 ### delta P MODEL
 items <- c(#"Q19a","Q19c", "Q20b", "Q20c", #DC01
            #"Q19b","Q19d","Q20d", "Q20e", #DC02
             "Q6.2_t1","Q6.4_t1", "Q7.1_t1","Q7.2_t1","Q6.5_t1", #DC1
-           "Q6.1_t1","Q7.3_t1","Q7.4_t1", #DC1
+           #"Q6.1_t1","Q7.3_t1","Q7.4_t1", #DC1
            "Q28","Q28a","Q28c", #CA0
            "Q16.1_t1","Q16.2_t1","Q16.4_t1", #CA1
            #"Q21c","Q21d","Q21e", #OC0
@@ -168,7 +165,7 @@ items <- c(#"Q19a","Q19c", "Q20b", "Q20c", #DC01
            #"Q24","Q24a","Q24b","Q24c","Q24d")
            "size","age")
 
-latents <- c(rep("DC",8),
+latents <- c(rep("DC",5),
            #  rep("DC_X",3),
            #  rep("DC11",4),
            #  rep("dc12",4),
@@ -203,25 +200,16 @@ pBootl <- bootsempls(pl, nboot = nboot, start = "ones", verbose = FALSE)
 pBooth <- bootsempls(ph, nboot = nboot, start = "ones", verbose = FALSE)
 
 PL <- extboot(pBootl,9,"P_LOW","P ")
-PL <- extboot(pBootl,9,"P_LOW","R ")
 PH <- extboot(pBooth,9,"P_HIGH","P ")
 P <- merge(PL,PH , by="name"); colnames(P) <- c("Path","LOW","t","HIGH","t")
 PL
-
-
-
-
- c("R ","P ")
-
-
-paste("P ","R ",sep=",")
 
 
 ### R MODEL
 items <- c(#"Q19a","Q19c", "Q20b", "Q20c", #DC01
            #"Q19b","Q19d","Q20d", "Q20e", #DC02
            "Q6.2_t1","Q6.4_t1", "Q7.1_t1","Q7.2_t1","Q6.5_t1", #DC1
-           "Q6.1_t1","Q7.3_t1","Q7.4_t1", #DC1
+           #"Q6.1_t1","Q7.3_t1","Q7.4_t1", #DC1
            "Q28","Q28a","Q28c", #CA0
            "Q16.1_t1","Q16.2_t1","Q16.4_t1", #CA1
            #"Q21c","Q21d","Q21e", #OC0
@@ -230,7 +218,7 @@ items <- c(#"Q19a","Q19c", "Q20b", "Q20c", #DC01
            #"Q24","Q24a","Q24b","Q24c","Q24d")
            "size","age")
 
-latents <- c(rep("DC",8),
+latents <- c(rep("DC",5),
            #  rep("DC_X",3),
            #  rep("DC11",4),
            #  rep("dc12",4),
@@ -271,26 +259,11 @@ RL
 
 
 
-P
-R
-
-
-gof(rl)
-gof(rh)
-gof(pl)
-
-gof(ph)
-
-
-
-
-
-
 ### R and P  MODEL
 items <- c(#"Q19a","Q19c", "Q20b", "Q20c", #DC01
            #"Q19b","Q19d","Q20d", "Q20e", #DC02
            "Q6.2_t1","Q6.4_t1", "Q7.1_t1","Q7.2_t1","Q6.5_t1", #DC1
-           "Q6.1_t1","Q7.3_t1","Q7.4_t1", #DC1
+           #"Q6.1_t1","Q7.3_t1","Q7.4_t1", #DC1
            "Q28","Q28a","Q28c", #CA0
            "Q16.1_t1","Q16.2_t1","Q16.4_t1", #CA1
            #"Q21c","Q21d","Q21e", #OC0
@@ -299,7 +272,7 @@ items <- c(#"Q19a","Q19c", "Q20b", "Q20c", #DC01
            #"Q24","Q24a","Q24b","Q24c","Q24d")
            "size","age")
 
-latents <- c(rep("DC",8),
+latents <- c(rep("DC",5),
            #  rep("DC_X",3),
            #  rep("DC11",4),
            #  rep("dc12",4),
@@ -330,17 +303,199 @@ rh <- sempls(model = BASEh, data = zwadjh, wscheme = "centroid",maxit=1000)
 rBootl <- bootsempls(rl, nboot = nboot, start = "ones", verbose = FALSE)
 rBooth <- bootsempls(rh, nboot = nboot, start = "ones", verbose = FALSE)
 
+baseBoot <- bootsempls(base, nboot = nboot, start = "ones", verbose = FALSE)
+full <- extboot(baseBoot,9,"Mean",c("R ","P "))
+full
 
-
-
-RL <- extboot(rBootl,9,"R_LOW","R ")
-RH <- extboot(rBooth,9,"R_HIGH","R ")
-R <- merge(RL,RH , by="name"); colnames(R) <- c("Path","LOW","t","HIGH","t")
-
-
+BL <- extboot(rBootl,9,"R_LOW",c("R ","P "))
+BH <- extboot(rBooth,9,"R_HIGH",c("R ","P "))
+B <- merge(BL,BH , by="name"); colnames(R) <- c("Path","LOW","t","HIGH","t")
 
 
 R
+P
+B
+
+
+
+
+
+
+
+names(zwadj)
+summary(zwadj$dyn)
+nboot <- 500
+zwadjh <- subset(zwadj,dyn>4);nrow(zwadjh)
+zwadjl <- subset(zwadj,dyn<=4);nrow(zwadjl)
+
+### delta P MODEL
+items <- c(#"Q19a","Q19c", "Q20b", "Q20c", #DC01
+           #"Q19b","Q19d","Q20d", "Q20e", #DC02
+            "Q6.4_t1", "Q7.1_t1","Q7.2_t1","Q6.5_t1", #DC1
+           #"Q6.1_t1","Q7.3_t1","Q7.4_t1", #DC1
+           "Q28","Q28a","Q28c", #CA0
+           "Q16.1_t1","Q16.2_t1","Q16.4_t1", #CA1
+           #"Q21c","Q21d","Q21e", #OC0
+           #"Q5.4_t1","Q5.6_t1","Q5.7_t1", #OC1
+           "d1","d2","d3","d4","d5","d6","d7",
+           #"Q8.7_t1", "Q8.8_t1", "Q8.9_t1",
+           #"Q24","Q24a","Q24b","Q24c","Q24d")
+           "size","age")
+
+latents <- c(rep("DC",4),
+           #  rep("DC_S",3),
+           #  rep("DC11",4),
+           #  rep("dc12",4),
+             rep("CA0",3),
+             rep("CA1",3),
+           #  rep("OR0",3),
+             rep("P",3),
+           #  rep("MA01",3))
+           #  rep("R",3),
+
+             "SIZE","AGE")
+
+mm <- cbind(latents,items); colnames(mm) <- c("source","target")
+
+iv <- c("CA0","SIZE","AGE","DC","P","DC")
+dv <- c("CA1","CA1","CA1","CA1","CA1","P")
+sm <- cbind(iv,dv);colnames(sm) <- c("source","target")
+
+BASE <- plsm(data = zwadj, strucmod = sm, measuremod = mm)
+base <- sempls(model = BASE, data = zwadj, wscheme = "centroid",maxit=1000)
+
+BASEl <- plsm(data = zwadjl, strucmod = sm, measuremod = mm)
+pl <- sempls(model = BASEl, data = zwadjl, wscheme = "centroid",maxit=1000)
+
+BASEh <- plsm(data = zwadjh, strucmod = sm, measuremod = mm)
+ph <- sempls(model = BASEh, data = zwadjh, wscheme = "centroid",maxit=1000)
+pl
+
+#pathDiagram(base, file = "base", full = FALSE, edge.labels = "both", output.type = "graphics", digits = 2,graphics.fmt="pdf")
+
+pBootl <- bootsempls(pl, nboot = nboot, start = "ones", verbose = FALSE)
+pBooth <- bootsempls(ph, nboot = nboot, start = "ones", verbose = FALSE)
+#baseBoot <- bootsempls(base, nboot = nboot, start = "ones", verbose = FALSE)
+#baseBoot
+
+
+PL <- extboot(pBootl,9,"P_LOW","P ")
+PH <- extboot(pBooth,9,"P_HIGH","P ")
+P <- merge(PL,PH , by="name"); colnames(P) <- c("Path","LOW","t","HIGH","t")
+P
+
+BS <- extboot(baseBoot,9,"base","P ")
+BS
+### R MODEL
+items <- c(#"Q19a","Q19c", "Q20b", "Q20c", #DC01
+           #"Q19b","Q19d","Q20d", "Q20e", #DC02
+           "Q6.2_t1","Q6.4_t1", "Q7.1_t1","Q7.2_t1","Q6.5_t1", #DC1
+           #"Q6.1_t1","Q7.3_t1","Q7.4_t1", #DC1
+           "Q28","Q28a","Q28c", #CA0
+           "Q16.1_t1","Q16.2_t1","Q16.4_t1", #CA1
+           #"Q21c","Q21d","Q21e", #OC0
+           # "Q5.4_t1","Q5.6_t1","Q5.7_t1", #OC1
+           "Q8.7_t1", "Q8.8_t1", "Q8.9_t1",
+           #"Q24","Q24a","Q24b","Q24c","Q24d")
+           "size","age")
+
+latents <- c(rep("DC",5),
+           #  rep("DC_X",3),
+           #  rep("DC11",4),
+           #  rep("dc12",4),
+             rep("CA0",3),
+             rep("CA1",3),
+           #  rep("OR0",3),
+           #  rep("P",3),
+           #  rep("MA01",3))
+             rep("R",3),
+
+             "SIZE","AGE")
+
+mm <- cbind(latents,items); colnames(mm) <- c("source","target")
+
+iv <- c("CA0","SIZE","AGE","DC","DC","R","DC")
+dv <- c("CA1","CA1","CA1","CA1","CA1","CA1","R")
+sm <- cbind(iv,dv);colnames(sm) <- c("source","target")
+
+BASE <- plsm(data = zwadj, strucmod = sm, measuremod = mm)
+base <- sempls(model = BASE, data = zwadj, wscheme = "centroid",maxit=1000)
+
+BASEl <- plsm(data = zwadjl, strucmod = sm, measuremod = mm)
+rl <- sempls(model = BASEl, data = zwadjl, wscheme = "centroid",maxit=1000)
+
+BASEh <- plsm(data = zwadjh, strucmod = sm, measuremod = mm)
+rh <- sempls(model = BASEh, data = zwadjh, wscheme = "centroid",maxit=1000)
+
+rBootl <- bootsempls(rl, nboot = nboot, start = "ones", verbose = FALSE)
+rBooth <- bootsempls(rh, nboot = nboot, start = "ones", verbose = FALSE)
+
+
+
+
+RL <- extboot(rBootl,9,"R_LOW",c("R ","P "))
+RH <- extboot(rBooth,9,"R_HIGH",c("R ","P "))
+R <- merge(RL,RH , by="name"); colnames(R) <- c("Path","LOW","t","HIGH","t")
+RL
+
+
+
+### R and P  MODEL
+items <- c(#"Q19a","Q19c", "Q20b", "Q20c", #DC01
+           #"Q19b","Q19d","Q20d", "Q20e", #DC02
+           "Q6.2_t1","Q6.4_t1", "Q7.1_t1","Q7.2_t1","Q6.5_t1", #DC1
+           #"Q6.1_t1","Q7.3_t1","Q7.4_t1", #DC1
+           "Q28","Q28a","Q28c", #CA0
+           "Q16.1_t1","Q16.2_t1","Q16.4_t1", #CA1
+           #"Q21c","Q21d","Q21e", #OC0
+            "Q5.4_t1","Q5.6_t1","Q5.7_t1", #OC1
+           "Q8.7_t1", "Q8.8_t1", "Q8.9_t1",
+           #"Q24","Q24a","Q24b","Q24c","Q24d")
+           "size","age")
+
+latents <- c(rep("DC",5),
+           #  rep("DC_X",3),
+           #  rep("DC11",4),
+           #  rep("dc12",4),
+             rep("CA0",3),
+             rep("CA1",3),
+           #  rep("OR0",3),
+           #  rep("P",3),
+             rep("P",3),
+             rep("R",3),
+
+             "SIZE","AGE")
+
+mm <- cbind(latents,items); colnames(mm) <- c("source","target")
+
+iv <- c("CA0","SIZE","AGE","DC","DC","R","DC","P","DC")
+dv <- c("CA1","CA1","CA1","CA1","CA1","CA1","R","CA1","P")
+sm <- cbind(iv,dv);colnames(sm) <- c("source","target")
+
+BASE <- plsm(data = zwadj, strucmod = sm, measuremod = mm)
+base <- sempls(model = BASE, data = zwadj, wscheme = "centroid",maxit=1000)
+
+BASEl <- plsm(data = zwadjl, strucmod = sm, measuremod = mm)
+rl <- sempls(model = BASEl, data = zwadjl, wscheme = "centroid",maxit=1000)
+
+BASEh <- plsm(data = zwadjh, strucmod = sm, measuremod = mm)
+rh <- sempls(model = BASEh, data = zwadjh, wscheme = "centroid",maxit=1000)
+
+rBootl <- bootsempls(rl, nboot = nboot, start = "ones", verbose = FALSE)
+rBooth <- bootsempls(rh, nboot = nboot, start = "ones", verbose = FALSE)
+
+baseBoot <- bootsempls(base, nboot = nboot, start = "ones", verbose = FALSE)
+full <- extboot(baseBoot,9,"Mean",c("R ","P "))
+full
+
+BL <- extboot(rBootl,9,"R_LOW",c("R ","P "))
+BH <- extboot(rBooth,9,"R_HIGH",c("R ","P "))
+B <- merge(BL,BH , by="name"); colnames(R) <- c("Path","LOW","t","HIGH","t")
+
+
+R
+P
+B
 
 
 

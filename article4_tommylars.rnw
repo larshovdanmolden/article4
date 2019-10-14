@@ -86,406 +86,29 @@ varies among other things with respect to their uniqueness, inimatbility and val
 (barney). Important contributions have thus argued for a deeper insighi into these
 intermediaries and their mechanism calling for a "deeper insight into the variety of mechanisms that
 underlie the performance effects of capabilities.” (Schilke, 2014a: 199). 
-as well as \emph{what} different intermediaries exis .
-
-
-
-%% Extant literature on dynamic capabilities is battling with a fundamental conception and
-%% prediction of the theory, namely if, when and how dynamic capabilities can lead to competitive
-%% advantage. 
-all items
-
-       Path   LOW     t  HIGH     t
-1 DC -> CA1 0.303 3.517 0.087 0.710
-2   DC -> P 0.445 6.070 0.435 3.972
-3  P -> CA1 0.273 3.174 0.308 3.164
-> R
-       Path   LOW     t  HIGH     t
-1 DC -> CA1 0.438 6.161 0.134 0.988
-2   DC -> R 0.400 5.661 0.549 8.033
-3  R -> CA1 0.015 0.186 0.195 1.555
-> 
-
-fewer items
-
-      Path   LOW     t   HIGH      t
-1 DC -> CA1 0.173 1.771 -0.017 -0.172
-2   DC -> P 0.437 5.183  0.432  4.875
-3  P -> CA1 0.329 3.646  0.353  3.731
-> R
-       Path   LOW     t  HIGH     t
-1 DC -> CA1 0.292 2.891 0.049 0.438
-2   DC -> R 0.142 1.287 0.370 4.267
-3  R -> CA1 0.109 1.471 0.244 2.344
-
-
-more items
-
-       Path   LOW     t  HIGH     t
-1 DC -> CA1 0.314 4.107 0.139 1.236
-2   DC -> P 0.386 5.481 0.391 3.797
-3  P -> CA1 0.291 3.596 0.292 3.011
-> R
-       Path   LOW     t  HIGH     t
-1 DC -> CA1 0.439 6.095 0.163 1.122
-2   DC -> R 0.428 5.547 0.579 7.972
-3  R -> CA1 0.019 0.208 0.177 1.466
-
-
-
-
-
-
-
-
-few items less controls
-
-      Path   LOW     t  HIGH     t
-1 DC -> CA1 0.213 2.555 0.034 0.314
-2   DC -> P 0.436 5.901 0.417 4.648
-3  P -> CA1 0.187 2.206 0.276 2.776
-> R
-       Path   LOW     t  HIGH     t
-1 DC -> CA1 0.269 2.815 0.069 0.646
-2   DC -> R 0.112 1.004 0.338 3.957
-3  R -> CA1 0.117 1.456 0.260 2.565
-> 
-
-all items less controls
-
-       Path   LOW     t  HIGH     t
-1 DC -> CA1 0.355 4.786 0.133 1.348
-2   DC -> P 0.386 5.003 0.436 4.739
-3  P -> CA1 0.155 1.985 0.232 2.311
-> R
-       Path   LOW     t  HIGH     t
-1 DC -> CA1 0.417 6.879 0.144 1.484
-2   DC -> R 0.388 6.092 0.534 7.039
-3  R -> CA1 0.017 0.214 0.211 2.030
-
-
-
-
-Seminal contributions to the field of dynamic capabilities have argued for both direct
-\cite{Kor2005,Eriksson2014,Schilke2014a} and indirect (ref) effects of dynamic
-capabilities on competitive advantage, although increasingly the bulk of the literature
-focuses on the latter \citep{Schilke2018}. This indirect link is typically understood as
-dynamic capabilities modifying, extending or creating firm resources (helfat) (or
-lower-level operational capabilities (Winter, collis)) and thus generating competetive
-advantage (Eriksson and others). Furthermore, empirical evidence keep suggesting that both direct (ref)
-and indirect (ref) links exist. This warrant the question of \emph{when} and under which conditions direct and
-indirect links between dynamic capabilities and competitive advantage is most pronounced. 
-
-Moreover, firm resources or capabiltiies themselves are far from a homogenous set and
-varies among other things with respect to their uniqueness, inimatbility and value
-(barney). Important contributions have thus argued for a deeper insighi into these
-intermediaries and their mechanism calling for a "deeper insight into the variety of mechanisms that
-underlie the performance effects of capabilities.” (Schilke, 2014a: 199). In other words,
-adding to the question of when direct and indirect links are most pronounced, we would
-also need to understand \emph{what} different forms of intermediatons work under these
-aforementioned conidtions. 
-
-Still, important empirical contributions argue for a direct link although the emerginig
-consensus of the literature argues for an indirect link. This warrants the research question:
-"Under what conditions are dynamic capabilities working directly and indirectly on firm
-competetive advangate". 
-
-We argue that the reason for these differing findings stems from a two distinctly
-different factor; the /emph{environmental dynamism} facing the firm, and the /emph{nature
-  of the mediating resource being employed}.
-
-
-
-TWO observetions>
-- Direct effect mediated away (disappears) in high velocity environments - Could be due to
-conception of DC as simple rules and best practices. Do they change nature? Or is it that
-they go from latent to constitutent and thus their impact becomes clearer
-
-- The mean of mediation matter in low environments. 
-
-What happens? VRIO?
-Routines are never VRIO
-Processes are VRIO
-VRIO concept*idea is based on normal levels of change. In dyn changes happens faster and
-the modes of routines are more important because you need more rapid change and routinesa
-re simpler models. By being changed by DC they can generate CVRIO simply because of their
-rapid deployment. Processes on the other hand are equally important and do not get less
-VRIO facing environmental dynamism. Why? Cause they are path dependent and unique to the
-firm, however should expect them to be less important if speed of change is of
-importance. 
-
-. 
-
- and a certain consensus leans toward defining
-the concept through the idea of a mediating effect through ordinary capabilities (winter,
-helfat
-
-“Moreover, we need deeper insight into the variety of mechanisms that
-underlie the performance effects of capabilities.” (Schilke, 2014a: 199)
-
-This,
-we argue, is due to the way DC behave differently under high-velocity industries compared
-to normal times, and goes back to the original contention between the seminal papers on EM
-and TPS and their different understanding of the concept.
-
-We argue that DC comes about working differently under different circumstances. As we cant
-exactly measure and observe DC (teece) we can only observe its effects when called
-upon. They are more likely to be called upon in high velocity environments when change is
-most needed. Consecnuently Eisenhardts notion of constitutent DC becomes more pronounced
-and visible under high velocity environments where DC turns to action working as
-intended. In such conditions DC will indeed work to change underlying routines and
-capabilities to enhance competetitieve advantage. However, what we usually observe in more
-stable industries nd contexts, is DC as latent and hence more correlated with competetive
-advantage cause it is related to the potential. Actual change of routines and capabilites
-are less needed so the mediation is less pronounced and we will observe a more direct
-effect cause other factors are playing into the CA explanation such as more
-generalmanagement, resources and so on. As many of these factors normally working in
-stable environments are left out in empirical models, the general idea of DC as a proxy
-for a good firm and management becomes more prevalant and we see a direct effect as a
-consequence. Proxy for a good firm is added and shows that being a good firm is more
-important in slow enviromnetn cause much of the ability to govern ana manage abusiness is
-captured in this variable in this conducion. DC is also more prevelant cause it captures a
-similar side as a latent potential to generate CA and act more as aproxy for a good
-firm. However, in high markets the impact of DC increases as it starts to work as a
-distinct force of change changing underslying routines and capabilites. Here we also see
-that the importance of other factors of a good firm diminishes because the usual metrics
-are not important - path dependency matters less and the ability to change resources
-matters increasingly and thus only ghrouhg mediation is CA achieved. 
-
-However, a difference in the type of underlying resource matter. And this also goes back
-to the difference between simple rules of action and more complex routines. VRIO is
-achieved through either direct effects from DC who is VRIO because of the path dependency
-more pronounced in normal environments. 
-evidence has pointed to a dirc
-
-Noone has looked at how dc operates differently through different OC and how these
-interact with the dynamism in the environment. Conventional wisdom holds that routines are
-not able to ca[ture VRIO whereas processes can. 
-
-Extant literature on DC struggles with a fundamental conception and prediction of the
-theory, namely if and when DC can lead to competitive advantage. This friction has been
-dubbed the "elephant in the room" (peteraf) and been tracked back to the seminal papers of
-Teece and Eisenhardt, as well as their their different theoretical antecedents of
-evolutionary economics (ref) and behavioral theory (ref) respectively (ref Arndt
-x2). Recently, distefaneo et al propopsed a theoretical integration of these varying
-conceptions of DC theory. They suggest that latent and constitutent elements of DC
-represent different constructs but are integrated in that they work differently in shaping
-strategic change.  
-
-Constitutent DC based on simpler rules will not create CA directly. 
-DC is often critizesd for being tautological and less focus has been placed on instances
-when dynamism can lead to poorer competitive outcomes. 
-Structural inertia, commitment \cite{schreyogg2007}. Under what conditions are changing
-capabilities counterproducttive
-
-The relationship between dynamic capabilities and competitive advantage has been one of
-great contention in the extant literature \citep{Peteraf2013,Ambrosini2009}. From this
-debate a richer understanding of how different dynamic capabilities (or functional forms
-of them) work differently to change different types of firm resources
-\citep{Helfat2015a,Teece2007,Ambrosini2009a} with implications for competitive advantage
-\citep{Peteraf2013} has emerged. Increasingly the relationship between (1) dynamic
-capabilities, (2) firm resources and routines, and competitive advantage is seen as a
-complex system with interactions between different types of each 1 and 2. Many conceptual
-contributions have excellently discussed varieties or functional forms of either dynamic
-capabilities \citep{Ambrosini2009a,Helfat2015ad,DiStefano2014} or underlying resources or
-routines \citep{Winter2003,Eisenhardt2000}. However, very few, if any, papers attempt to
-integrate varieties at multiple levels simultaneously. By asking if dynamic capabilities
-can lead to competitive advantage and how this occurs, one is far better off asking "when"
-competitive advangate is an outcome of dynamic capabiliteis and its workings. 
-
-The definition of dynamic capabilities, albeit contestst, seems to be converging on
-varieties of "the ability of firms to create, modicy and extend its resource base" (ref)
-\citep{Schilke2018}. Meanwhile both dynamic capabilities as the "governing entity" and
-resources as "the governed entity" takes different forms in the literature (ref). Dynamic
-capabilities themsleves can roughly be divided into sets of simple rules governing
-undelying resources, or more complex routines developed for the same purpose
-\citep{Peteraf2013}. In other words, dynamic capabilities themselves can and cannot satisfy
-the VRIO condition. This contention is throughly covered in the literature (refs) and
-recent contribiutions have argued for interplays between simple and complex types of
-dynamic capabilities foring a more complex and initmatble dynamic system
-\citep{DiStefano2014}. Moreover, granted different forms of dynamic capabilities exist
-their impact on the "governed entity", the underlying firm resources, should also be
-varying. 
-
-To explore this we emply two radically differnet forms of dynamic capabilities / one
-geared towards transforming exitsgint resources in order to exploit them to gain
-competitive advantage (refs). The other form is geraed towards seizing new opportunities in order
-to explore new business opportunitieis (refs). We argue that competitive advantage can
-stem from each of these, but that the mechanism varies. Dynamic capabilities geared
-towards transforming for exploitation ($DC_P$) is by and of itself the result of a more
-complex set of routines configured in a way that is hard to imitate because of its path
-dependent and evolutionary nature. This legacy from evolutinoary economics is stressed as
-an important factor for creating VRIO resources (Ref peteraf). The stream of contributions
-maintaining dynamic capabilities working through the object of "changing existing
-capabilities" \citep{Teece1997,Zollo2002a,Winter2003,Zahra2006,Kale2002} also maintain
-that 
-
-We argue that latent and constituted dynamic capabilites behave differently and work
-differnetly trhough differents modes (action or wahtever the term in DiStefano er). 
-
-{\bf LAtent = complex process routines Teece
-Constitutent = simpler, ad hoc - Eisenhardt}
-
-
-We explore two different modes (natures) of dynamic capabilities and how they work
-differently (action) to create competitive advantage. Or is it the object of action as
-either resources or opportunities? 
-
-By introducing different measures of different types of DC (latent and constiuted) as well
-as two different types of action (change existing or create new) we explore the workings
-of the drive train model proposed by DiStefano suggesting a fuller and more dynamic view
-on how latent and consittued DC works differently. 
-
-The working of latent:
-Departing from the definintion of dynamic capabilities found in Teece (ref) and subsequent
-contributions in this tradition
-
-The working of cinstuted
-
-We identify two ditintctly different noptions of dynamic capabilities both following well
-known definitions byut weith different nature (ref distefano). We show that only the
-latent dc can directly and indirectly create CA,whereas the constituent element nature of
-DC only works through changing lower level routines. 
-
-
-Different parts of the drive train works on different types of underlying routines
-
-Looks at competing hypotheses between Eisenhardt and teexe with respect to routinization. Finds that routininzation happens at DC level less than operational level?
-We argue that this depends on the purpose *action of the Dc and the composition of the
-focal operational capability. 
-
-
-Reviewing the literature reveals that researchers have tended to identify dynamic capabilities post hoc, inferring their existence from successful organizational out- comes such as profitability and growth, as prior definitions would suggest (Table
-
-On the other hand we have dynamic capabilites geared toward sensing and seizing new
-opportunities as part of an effort of exploration. Such dynamic capabilities are described
-in the literature as themselves a set of more simple routines orchestrated in a manner
-such that x`
-
-Routinization at certain level, but depends on them being outward or inward looking. 
-
-How can DC lead to competitive advangate. departing from the original definition this
-happens through the modification or aquisition of firm resources. But the resopurces
-themselves can and cannot be a source of competitive advantage
-
-
-At a minimum, in order for something to qualify as a capability, it must work in a reliable manner’ (Helfat and Peteraf, 2003: 999). Capabilities
-
-The bulk of contributions focus
-only on heterogeneity at the dynamic capabilities level, or at
-
-W
-
-work dDC offers a theory of how firms achieve
-competitive advantage over time. Yet the DC theory suffers from contradictory claims about
-competitive advantage as its outcome. On the one hand a stream of contributions argue that
-DC will lead to competitive advantage because it operates by changing operational
-capabilities in face of change and hence create strategic change (ref helfat). In this
-view these changes result in complex and path dependent processes that will be
-idiosyncratic to the firm and hard to imitate. Consequently, they can lead to competitive
-advantage.
-
-A contrary stream of literature argues that changes of operational capabilities over time
-takes the form of routines and converges towards best practice (ref EM). Such best
-practices are simpler and more observable routines that are both imitable and easy to
-copy. Such firm resources are then not idiosyncratic and can consequently not be the
-source of competitive advantage. 
-
-The way DC work differnelty throug changing two sets of operational capabilities = complex
-and path dependent processes based capabilities, and simple rules/based routines. 
-
-These contradictory positions have been thoroughly discussed in earlier work (see
-\cite{Peteraf2013} for a review). On the one hand DC takes the form of simple rules
-shaping underlying routines. On the other hand they take the form of complex processes.  
-
-Regarding the action and the object ofthe action, simple rules are more likely to be
-involved in developing something new in response to new opportunities, while complex
-rou- tines are more concerned with changing existing resources and capabilities.
-
-In a recent "state of the art" literature review on dynamic capabilities
-\cite{Schilke2018} state that much of the attention and interest surrounding the theory is
-that it offer a route to competitive advantage which they argue is "the virtual Holy Grail
-of strategic management" (p. 393). And indeed a considerable body of the extant literature
-concerns itself with exactly this path to competitive advantage (refs from
-shcilke). Still, a discourse regarding the contingencies of the dynamic
-capabilities-competitive advantage (DC-CA) nexus (?) has panned out in the literature,
-most notably coined "the elephant in the room" \citep{Peteraf2013}: Under which conditions
-will dynamic capabilities lead to competitive advantage?
-
-\cite{Peteraf2013} argue that the seminal papers in the dynamic capabilities theory
-tradition (\cite{Teece1997} and \cite{Eisenhardt2000}) differ considerably in their view
-of to what extent the DC-CA nexus exist and under what conditions it is functional. A key
-tenant of this discourse is related to the level of routinization and the ability to
-satisfy the VRIO condition \citep{Barney1991a} of the resource-based view
-\citep{Peteraf2013}.
-
-In this paper we aim to contribute to dissecting the elephant by asking how does the DC-CA
-nexus differ between firms and what determines these differences?
-
-We do this by exploring two paths from dynamic capabilities to competitive advantage: the
-\emph{evolutionary path} and the \emph{market path}. The former is thoroughly described
-and explored in the literature (refs) and stems from the core idea of the dynamic
-capabilities theorizing. In this path dynamic capabilities work to change the operating
-routines of the firm and hence contributing to it's competitive advantage. We argue that
-this path is more suited for less dynamic environments because of its path dependent
-functioning.
-
-The \emph{market path} works not through shaping operational capabilities and routines,
-but by enabling the firm to act in factor markets for new capabilities and
-resources. Hence, it is less path dependent and can be more rapidly
-deployed. Consequently, it is more prevalent in dynamic environments.
-
-This paper contributes to the extant literature on the link between dynamic capabilities
-and competitive advantage in three ways. First, provides an empirical test to the
-drive-train model of \cite{DiStefano2014} on how dynamic capabilities can operate both
-quickly and with high frequency more directly on the strategic direction of the firm by
-acting in factor markets for important resources, and also more slowly through the
-evolutionary path of changing operational capabilities. Second, by conceptually clarifying
-the different paths to competitive advantage by linking it closely to the role of
-capability evolution and the VRIO condition. Finally, we.........
-
-CLARIFIES THE ROLE OF THE ENVIRONMENT AND MEDIATIONS HAPPENING
-
-%% How does dynamic capabilities lead to competitive advantage?
-%% Dynamic capabilities are proposed to confer a competitive advantage by adding unique value to the firm through systematic change, which enhances operational efficiency and enables increased alignment with the environment (Di Stefano et al., 2014; Peteraf et al., 2013)
-
-%% Not all organizations possess them (Collis, 1996); their path dependencies, intangibility, complexity, and organizational specificity make them hard to imitate (Gibson & Birkinshaw, 2004; Helfat & Winter, 2011); and few other means allow organizations to purposefully change on a continuous basis (Day & Wensley, 1988; Helfat et al., 2007).
-
-%% Consistent with the theoretical positions of Eisenhardt and Martin (2000), Helfat and Peteraf (2003), Zahra et al. (2006), and Zott (2003), among others, these researchers have argued that dynamic capabilities’ immediate purpose is to change the resource base, and that this change in the resource base, in turn, explains performance variations. According to this argument, resource changes serve as mediators through which dynamic capabilities affect performance. We
-
-
-%% One of the major unresolved issues in dynamic capabilities theory is to what extent and
-%% how competitive advantage is the ultimate outcome of dynamic capabilities. This very idea
-%% has
-
-
-%% This paper asks two questions: to what extent does a direct lnk between DC and CA exist,
-%% and what determines variations in the role of mediation between them?
-
-%% The idea that Dc impacts CA is uncontroversial (not). Little is known about how this
-%% happens. The theory holds that this happens through xreating extending and modifying the
-%% resource base. YEt, the change in firm capabilities can themselves lead to CA due to their
-%% evlutionary nature.
-
-%% Variations in the share of mediation stems from variation sin the environment. When envdyn
-%% is high firms need to act faster and hence tends to choose strategies including resource
-%% orchestration buying in factor markets cause it tkes more time to develop OR.
-
-%% In less dynamism the role of OR increases and leads to a significant proportion of CA
-%% stemming throhg the mediating effect of OR
-
-%% There is ongoing interest in (dynamic) capabilities and how they influence firm
-%% performance \citep{Fainshmidt2016a,Teece2014}. Indeed, \emph{dynamic capabilities} (DC),
-%% and its front runner, the resource-based view \citep{Barney2001,Helfat2007}, is now
-%% considered one of the major theories in strategic management
-%% \citep{Schilke2018}. Arguably, the key reason is that this theory clearly articulates how
-%% firms can alter their operating routines through dynamic capabilities. Thus, a key
-%% ingredient in this theory is that DCs can alter firms operating routines, with subsequent
-%% performance implications.
+as well as \emph{what} different intermediaries exist.
+
+This paper investigates the boundary conditions of the VRIO condition and how dynamic
+capabilities and resources interact to create firm competitive advantage. We ask the
+following research question:
+Under which conditions are dynamic capabilities able to yield competietive advantage
+through resource orchestration and what are the different outcomes of different types of resources.
+
+We find thatthe dynamism surrounding hte firm represent an important boundary condition as
+suggested in parts of the literature. However, DC consinutes to generate competetive
+advnatage also in high-velocity environments, but doing increasingly so indirectly through
+resource orchestration. Furthermore, we find that non-vrio resources are more likely to
+yield competetive power in high velocity environments, and that vrio-resources tend to
+maintain their CA under any condition. 
 
 
 We demonstrate that two paths indeed do exist and that their relative importance varies
 with the degree of environmental dynamism facing the firm.
+
+
+Under what cionditions are the direct path and indirect path most prevalant? Under which condi
+
+The direct
 
 \section{Hypotheses}\label{sec:hyp}
 
@@ -493,13 +116,19 @@ with the degree of environmental dynamism facing the firm.
 %% dynamism. It is not that DC does not work under stable conditions as EM claims. Is only
 %% that the effect runs stringer through the evolutionary path. Whereas the market path is
 %% stringer under higher dynamism
-This friction has been
-dubbed the "elephant in the room" (peteraf) and been tracked back to the seminal papers of
-Teece and Eisenhardt, as well as their their different theoretical antecedents of
-evolutionary economics (ref) and behavioral theory (ref) respectively (ref Arndt
-x2).
+
+The link between firm resources and competitive advantage is determined by the extent to
+which resources are valuable, rare, inimitable and organized (VRIO)
+\citep{Barney1991a}. This principle is also used to evaluate how higher order capabilities
+(e.g. dynamic capabilities \citep{Winter2003,Collis1994}. This is the core principle we
+use in this article to evaluate how dynamic capabilities can and cannot create competitive
+advantage for the focal firm. Furthermore, as both higher order capabilities (e.g. dynamic
+capabilities) as well as lower-order resources and capabilities (operating routines and
+capabilities) can and cannot satisfy the VRIO condition, we find it useful to think of a
+multilevel VRIO structure in firms.  
 
 
+\subsection{Dynamic capabilities and VRIO}
 
 One contentious issue surrounding the DC theory is the extent to which differing views on
 the nature of dynamic capabilities \citep{Peteraf2013} as well as their outcome. One
@@ -512,14 +141,379 @@ and they are more “more homogeneous (..) than is usually assumed” (EM: 1116)
 simplicity of simple rules also makes them faster do deploy and put in motion, albeit
 potentially unstable. To the extent dynamic capabilities manifest themselves as simple
 rules they cannot alone create competitive advantage, but could very well generate
-strategic change by facilitating acquisition of resources in factor markets. One example
-is the role of post-acquisition routines where routines to identify and deal with
-acquisition partners are a source of generating strategic change (Eisenhardt and Sull
-2001, ref). Another example is (see refs from Schilke 2018). The functioning of this
-expression of dynamic capabilities are more latent and hence mainly observable ex
-post. Hence we can see this as direct route to competitive advantage as this expression of
-dynamic capabilities work directly in the factor market in capturing resources
-needed for strategic change. We coin this direct connection as the \emph{market path}.
+strategic change by facilitating the process of resource orchestration. Resource
+orchestration is defined as "blablbalbla" (helfat). In other words, even if DC play out as
+simple rules that are not in themselves satisfying the VRIO condition, the way they work
+through creating, extending and modifying firm resources, can still yield VRIO results. 
+
+On the other hand, \cite{Teece1997} and others \cite{Helfat2007} argue that dynamic
+capabiltiies will rather invariably be VRIO due to the evolutionary nature of their
+development \citep{Arndt2018,Peteraf2013}. Arguing that dynamic capabilities reflect more
+complex processes that co-evolve with responses to market changes over time and hence
+creating idiosyncratic capabilities that are unique, valuable and hard to copy
+\citep{Helfat2007,Arndt2018}. Consequently, they are likely to satisfy the VRIO condition
+and thus leading to competitive advantage. 
+
+Increasingly the literature remain focused on an \emph{indirect
+  path} between dynamic capabilities and competitive advantage
+\citep{Barreto2010,Schilke2018}. The theory behind this path goes back to the core of
+dynamic capabilities where resource orchestration happens as a response to changes in the
+environment. When markets, technologies or other external factors changes, firms with high
+levels of dynamic capabilities are able to seize opportunities for changes, seize these
+opportunities and transform the resource base to fit the strategic change needed to stay
+competitive \cite{Teece2007}. This ability to adapt is by some coined \emph{evolutionary
+  fitness} defined as BLABLBALBA and stems from the ability of the firm to reconfigure
+resources in the face of change. The extant literature, however, is less clear on how the
+nature of the underlying resources matter in this indirect path. On the one hand we can
+see 
+
+Following REF suggesting more reseaarch on dynamic capabilities should put forth
+competeing hypotheses we propose these first 
+
+We introduce the notion of multilevel VRIO to integrate the interactions between different
+types of capabilities at different levels. This entails that dynamic capabilities (the
+high level) can consist of complex and evolutionary characteristics that are idiosyncratic
+to the firm and hence VRIO by definition along the lines of how the concept is understood
+by \cite{Teece1997}. On the other hand dynamic capabilities can also take the shape of
+simpler routines which are short lived, unstable and substitutable thus violating a key
+VRIO condition. This follows the notion of dynamic capabilities found in
+h\cite{Eisenhardt2000} arguing that they are more “more homogeneous (..) than is usually
+assumed” (EM: 1116). 
+
+Moreover, these dynamic capabilities are in the extant literature argued and found to work
+directly \citep{Kor2005,Eriksson2014,Schilke2018} on competitive advantage which suggests
+that they are indeed VRIO. On the other hand, a growing body of literature (ref) as well
+a consensus on the definition of dynamic capabilities (ref), holds that they can lead to
+competitive advantage by changing underlying resources and routines. In this
+\emph{indirect path} the dynamic capabilities itself need not be VRIO as long as the
+underlying resources themselves are. 
+
+\subsection{The role of dynamism}
+
+The most contentious issue in the current debate on dynamic capabilities is how their
+nature varies with the environment. 
+
+If htey are indeed latent 
+
+
+The lower level resources and routines are to be understood as conventional resources in
+line with the resources-based view 
+
+
+WHAT IS THE ROLE OF DIRECT VS INDIRECT, HOW DOES IT RELATE TO THE ENVIRONMENT, AND WHAT
+ROLE DOES THE TYPE OF UNDERLYING RESOURCE PLAY
+
+
+
+Conventional dc literature has argued for both indirect and direct links. Indeed both
+have been found, but while the indirect link is well rooted in the theory, the direct link
+is to our knowledge less clear. The core idea of DC is that it works to modify underlying
+resources as a response to changes in the environment and hence creating strategic change
+needed to stay competitive. This resource orchestration is heavily represented in the
+literature (ref) and through this process firms are able to generate CA. In such instances
+the CA can stem from VRIO resources and/or VRIO DC. A VRIO DC would mean that the firm is able
+to shuffle and reorganize generic resources in a way that creates a new and unique
+configuration of resoures idiosyncratic and valuable to the firm. In such instances, the
+outcome whould be CA. On the other hand, the DC may not by itself be VRIO but rather a set
+of simple routines put in motion to change, but if the resources they reconfigure are
+themselves VRIO, the outcome could just as eqsily be a competetive advantage. this
+equfinaity is discussed in the literaure \cite{DiStefano2010} and makes it hard to
+distingusih between the role of DC and ordinary capabilites in generating CA. 
+
+Furtemore, Considering a direct link between DC and CA, DC it self must consist of some
+VRIO characteristics to garner CA. So in owther words, when is DC working directly and
+indirectly_ 
+
+How are dynamic capabilities working directly on competitive advantage? The microfoundations of dynamic capabilities explicated by \cite{Teece2007} is a useful
+point of departure of this theoretical inquiry. He hold that for "analytical purposes,
+dynamic capabilities can be disaggregated into the capacity (1) to sense and shape
+opportunities and threats, (2) to seize opportunities, and (3) to maintain competitiveness
+through enhancing, combining, protecting, and, when necessary, reconfiguring the business
+enterprise’s intangible and tangible assets". Sensing and seizing is a part of what we
+would coin the "opportunity capture" of dynamic capabiliites, where as reconfiguring
+concerns itself with the "resource orchestration" needed to change assets to stay
+competetive. 
+
+Hence, when considering indirect and direct paths to compettetive advantage we will have
+to be clear on two fronts: Are DC themselves VRIO and are the underlying resources and
+routines central to the resource orchestration, VRIO. 
+
+
+       Path   LOW     t  HIGH     t
+1 DC -> CA1 0.290 2.732 0.093 0.996
+2   DC -> P 0.325 2.896 0.339 3.284
+3  P -> CA1 0.064 0.462 0.171 1.913
+> 
+
+The microfoundations of dynamic capabilities—the distinct skills, processes, procedures, orga- nizational structures, decision rules, and disciplines—which undergird enterprise-level sensing, seizing, and reconfiguring capacities are difficult to develop and deploy.
+For analytical purposes, dynamic capabilities can be disaggregated into the capacity (1) to sense and shape opportunities and threats, (2) to seize opportunities, and (3) to maintain competitiveness through enhancing, combining, protecting, and, when necessary, reconfiguring the business enter- prise’s intangible and tangible assets.
+
+
+
+
+t its most fundamental level innovation research concerns itself with a simple
+input-output model \citep{Adams2006} where innovation output is seen as a function of
+efforts put into the innovation process. However, firms vary with respect to their ability
+to utilize input and transform it into innovation output. This transformation of input
+into output has been studied with different perspectives and conceptualizations such as
+productivity of R\&D \citep{Gwynne2015}, innovation capability \citep{Breznik2014},
+innovation factor productivity (ref) and innovation conversions rate
+\citep{Duran2015}. \newline
+
+
+
+\subsection{The idiosyncratic nature and strategic expression of IC}
+The question of why firms vary in the degrees of innovation output they get from similar
+levels of innovation input, leads on to a higher order capablility that coordinates and
+extends the first order routines and resources as input in the innovation process. By
+innovation input we mean the resources and routines put into the effort creating
+innovation which composition is dealt with in a large literature (see \cite{Becheikh2006}
+for a review). Innovation output means new products, processes, business models, and
+organizational traits as the results of a purposeful enactment of resources (Van de Ven
+1995). The mechanisms through which input is transformed to output is a reflection of firm
+idiosyncratic abilities. At the meta level this concept is related to entrepreneurial
+orientation \citep{Lumpkin1996}, entrepreneurial action \citep{Klein2016}, innovation
+capability \citep{Breznik2014}, and absorptive capacity \citep{Cohen1990a}. We go with the
+term \emph{innovation capability (IC)} defined as the "ability to continuously transform
+knowledge and ideas into new products, processes and systems for the benefit of the firm
+and its stakeholders"\cite[p. 384]{Lawson2001}. IC is characterized by some factors
+similar for all the above mentioned concepts such as the ability to \emph{sense, seize} and
+\emph{transform} opportunities into outcomes \citep{Teece2007}, and it`s idiosyncratic
+nature is argued by several earlier contributions \citep{Duran2015,Klein2016}. Or as put by
+\cite{Duran2015}: "While most researchers assume that a positive correlation exists
+between innovation input and innovation output, the “slope” of this relationship likely
+differs among organizations because of the complexity of innovation management." (ibid p
+##). Innovation management (def) is the managerial levers for creating innovation
+capabilities, i.e. their ability to orchestrate resources \citep{Sirmon2011} which is an
+important part of what \cite{Helfat2007} calls \emph{Dynamic Managerial Capabilities
+  (MDC)} defined as "the capacity of managers to purposefully create, extend, or modify
+the resource base of an organization" (ibid p 24). MDC, and hence IC, is heterogeneous
+between firms due to the evolutionary nature of developing such capabilities
+\citep{Teece2014,Eriksson2014}. Consequently, we propose the following hypothesis:\newline
+
+H1: IC is heterogeneous between firms due to differences in their sensing and seizing
+abilities \newline
+
+
+\cite{Teece2007,Teece2014} makes a sharp distinction between ordinary- and dynamic
+capabilities arguing, among other dimensions, that managerial emphasis in the former
+relates to cost control, whereas DC relates to entrepreneurial asset orchestration,
+i.e. "doing the things right" in novel ways. A similar line of reasoning argues that
+dynamic capabilities differs from ordinary routines and capabilities in that it goes
+beyond best practices in operational problem solving \citep{Eisenhardt2000}. Consequently,
+we would expect IC to be positively related to innovation outcomes as firms with high IC
+would generate more innovation. Moreover, as managers face changing environments, the ones
+with strong IC would emphasize innovation activities, whereas those with weaker IC would
+have to resort to other means of adapting to change, e.g. cost efficiency. In other words,
+under environmental dynamism high-IC companies will engage in sensing, seizing and
+transforming opportunities, trusting the evolutionary fitness of
+their dynamic capabilities, and preferring innovation as strategic choice. Meanwhile, low-IC
+companies will revert to operating, administering and governing the business, trusting
+their technical fitness and focus strategic choice on efficiency
+\citep{Teece2014}. \newline
+
+
+H2: IC is positively related to innovation activities \newline
+H3: IC is negatively related to efficiency enhancing activities \newline
+
+
+\subsection{The relative importance of sensing and seizing}
+
+The concept of sensing and seizing has analogous meaning in theoretical traditions tangent
+to DC. Notably entrepreneurship \citep{Hitt2011} and organizational theory
+\citep{March1991}. \cite{Hitt2011} states that "entrepreneurship involves identifying and
+exploiting opportunities" (ibid p 59) where identification is tied to the process of
+discovery \citep{Shane2000}. Based on the definitions of opportunity discovery as DEF HERE
+juxtaposed to the definition of sensing as "a scanning, creation, learning, and
+interpretive activity" \citet[p. 1322]{Teece2007} we argue that they are similar in nature
+and usable for exploring the importance of the latter in the innovation process. It also
+bears resemblance to the concept of organizational exploration as searching, risk-taking,
+discovery, experimentation, prototyping, and flexibility \citep{March1991}. Independent of
+the nature of opportunities to be sensed as being either objective
+\citep{Alvarez2007,Shane2000} or created \citep{Alvarez2007}, the process of sensing does
+require resources and capabilities for search (ref) and a clear affinity between
+opportunity and a project exist (casson and Wadeson in Mcmullen2007) suggesting s clear
+inter dependency between routines and resources, and higher order capabilities of sensing
+\citep{Teece2007} and making sense of the opportunity
+\citep{Weick1995,March1991}. Consequently, we would expect the sensing class of dynamic
+capabilities to be positively related to innovation on the one hand, and reinforcing the
+impact from innovation input simultaneously.\newline
+
+H4: Firms with strong sensing abilities will yield higher innovation output \newline
+
+H5: Sensing as dynamic capability reinforces input in the innovation process to
+generate innovation output \newline
+
+In similar ways the concepts of seizing \citep{Teece2007} and exploitation \citep{Shane2000}
+bears resemblance. However, by virtue of its nature innovation represent novel processes
+within the firm so that parts of the understanding of exploitation is
+redundant. Exploitation is defined as utilizing old certainties within the organization
+\citep{March1991} - that is existing resources and capabilities. Innovation does by its
+very nature represent a shift from existing resources and certainties (albeit often a very
+incremental one, but a shift nontheless). Hence the dichotmous nature of exploration vs
+exploitation does not always ring true for innovation processes. However, the discovery and
+exploration of new opportunities is in any case a first step of any innovation process,
+and sensing is the core class of dynamic capabiltieis in place to facilitate this
+process. When the opportunity has been discovered through sensing, the firm`s ability to
+capture value and generate innovation will rest on its ability to seize the opportunity -
+or in other words - exploit this newly arisen opportunity. As such the exploitation
+happens not on existing certainties, but of the potential future certainty arising from
+the innovation opportunitiy from the sensing. Consequently, we argue that the concept of
+seizing as rooted in a sense of grasping opportunities already sensed, is a more useful
+construct understanding firm innovation. \newline
+
+Similar to sensing, the process of seizing requires considerable efforts in enhancing
+competencies and routines (i.e. orchestrating \citep{Hitt2011}) to grasp the opportunity
+identified \citep{Shane2000}.\newline
+
+H6: Firms with strong seizing abilities will yield higher innovation output \newline
+
+H7: Seizing as dynamic capability reinforces input in the innovation process to
+generate innovation output \newline
+
+Despite being conceptually sequential (i.e. seizing follows sensing) their relative
+importance to the innovation process is less clear from the existing literature. However,
+seizing is recognizing potential from the sensed opportunities by combining novel insights
+and market evolution and dynamics. Leveraging this opportunity does, however, have
+implications for strategic choices and decisions to invest \citep{Teece2007,Helfat2015}
+and such pursuits will likely require asset specific investments
+\citep{Williamson1985}(MORE TO THE POINT REF HERE). This mechanism is fundamental as it
+ties into the incentives to develop such capabilities \emph{ex ante}
+\citep{Stieglitz2009}. When faced with a new venture opportunity firms will have to make
+timely investment decisions with potential considerable lock in effects leading to a
+Stackelberg-type investment problem \citep{Arend2009}. Comparatively, the processes of
+sensing can incur with considerable search and discovery costs (REF), but "sensing does
+not necessarily involve large commitments of resources, at least not relative to seizing"
+\citep[p. 1343]{Teece2007}.Thus, due to its asset specific requirements, the expected
+"return" from seizing should be higher than that of sensing.\newline
+
+\noindent H8: Seizing is of relatively stronger importance in transforming innovation
+input to output \newline
+
+Finally, turning to innovation output as a first step in generating value, seizing also
+plays into the process of generating business models for capturing value from innovation
+\citep{Teece2007,Helfat2015}. A business model can be understood as a "pathway by which
+technological innovation and knowhow combined with the utilization of tangible and
+intangible assets are converted into a stream of profit"
+\citep[p. 40]{Teece2017}. Consequently, seizing will play a significant role in
+transforming innovation into value for the company by re-orchestrating resources and
+capabilities \citep{Teece2010,Teece2017}. Hence, we will see seizing working in different
+parts of the input-output process. \newline
+
+\noindent H9: Seizing reinforces the process of generating value from innovation \newline
+
+%\subsection{Balancing sensing and seizing - ambidexterity?}
+%\begin{answer}
+%  Not really sure if this is important or if it just adds confusion. Perhaps suggesting
+%  writing a separate conceptual paper on the differences between exploration /exploitation
+%  vs sensing/seising at a later stage
+%\end{answer}
+
+
+%The classical notion of the innovator`s dilemma (ref christensen) holds that
+%firms face a trade-off between pursuing new avenues for business
+%opportunities on the one hand (novelty), and maintaining efficient organizational
+%characteristics on the other (efficiency). This trade-off is arguably leading certain
+%firms to inertia in the face of environmental change due to limited abilities to pursue
+%both. If this holds true we would expect a firm with considerable abilities for sensing, to be less
+%able to seize, and vice versa. However, a related stream of literature argues that firms
+%can do both by being \emph{ambidexterous} \citet{oreilly2004}.   \newline
+
+\section{Studying innovation capabilities in context}
+There are two important obstacles to empirically studying the working of innovation
+capabilities as dynamic capabilities at the firm level. First, dynamic capabilities are
+mainly considered valuable and operational in dynamic environments
+\citep{Teece1997a,Helfat2007}, thus finding the proper context capturing this dynamism is
+crucial. When studying the phenomena across a multitude of industries and firms with
+simultaneously, the challenge arise to identify a proper context for inquiry. We
+understand environmental dynamism to exhibit volatile and unpredictable characteristics
+such as unstable demand conditions and shifts in industry structure, and increased
+probability of supply or demand shocks \citep{Sirmon2007,Schilke2014}. In such
+environments states, situations, unfamiliar to the firm occur and challenges it`s ability
+to make sense of the market \citep{Weick1995}, i.e. matching the environment with a proper
+internal response. Moreover, firms meeting new challenges and finding existing routines
+and resource configurations to be insufficient in coping, tend to discourage truly novel
+explorative solutions \citep{schreyogg2007}. This combined "matching" and "inertia" problem
+will be remedied by dynamic capabilities making them a mediating factor for environmental
+dynamism \citep{Schilke2014}. In addressing this challenge of context we find the 2008
+global financial crisis as a useful back drop. The rapid decline in financial asset value
+coupled with soaring volatility, and subsequent falling demand in the real economy,
+constitute an interesting backdrop for our study \citep{Makkonen2014}.\newline
+
+A second challenge is the measurement and operationalization of innovation capabilities as
+dynamic capabilities \citep{Schilke2014}. A majority of studies are, however, relying on
+proxies with single items capturing the nature of dynamic capabilities
+\citep{McKelvie2009}, but several studies are increasingly building latent measures based
+on observable characteristics to develop a more nuanced understanding of the phenomenon
+\citep{Makkonen2014,Schilke2014}. We reconfigure the framework put forth by
+\cite{Helfat2015} on how observable traits at the management level is operationalized into
+sensing, seizing and transforming classes of dynamic capabilities. Following
+\cite{Breznik2014} arguing for the similar nature of dynamic- and innovation capabilities,
+we focus on the sensing and seizing aspect as most relevant for studying innovation in an
+input-output framework. Sensing and seizing are, as argued earlier in this paper, related
+to other well established constructs in the innovation and entrepreneurship literature and
+hence suitable for the innovation context, most notably the idea of resource orchestration
+\citep{Hitt2011} and exploration/exploitation \citep{March1991}.\newline
+
+\cite{Helfat2015} demonstrate that certain cognitive capabilities at the management level
+are antecedents of dynamic capabilities. Managerial \emph{perception} and \emph{attention}
+enhance the ability for sensing. Perception relates to sensing in that management "use
+cognitive frameworks they possess to “connect the dots” between changes in technology,
+demographics, markets, government policies, and other factors"
+\citep[p. 831]{Baron2006}. Attention, in turn, are related to perception, and hence to
+sensing, as it enables managers to focus on particular information to focus "on relevant
+stimuli (..)[to] facilitate environmental scanning" \citep[p. 839]{Helfat2015} necessary for
+opportunity discovery \citep{Companys2007} and, consequently, sensing.\newline
+
+Underpinning seizing are capabilities for \emph{problem solving} and
+\emph{reasoning}. These are treated as one construct by \cite{Helfat2015}. In our
+input-output model it is useful to distinguish between seizing innovation opportunities in
+the form of deciding to invest and pursue discovered potential in the sensing process
+(hence in helping generating innovation output), and the process of capturing value (i.e
+generating innovation gain) through developing business models. \cite{Helfat2015} does not
+explicitly make such a distinction presumably because their dependent variable is a
+broader "firm performance" and because the impact of problem solving and reasoning is
+working similarly in creating innovation output and innovation gain. \newline
+
+Having found a useful context and a conceptual framework for operationalizing innovation
+capabilities, we now turn to the data and methods applied in this paper.
+
+
+
+
+       name Mean_est     t
+3   DC -> P    0.396 6.157
+4   DC -> R    0.416 8.104
+5 DC -> CA1    0.239 4.018
+8  P -> CA1    0.172 2.724
+9  R -> CA1    0.081 1.262
+> R
+       Path   LOW     t  HIGH     t
+1 DC -> CA1 0.417 6.585 0.144 1.513
+2   DC -> R 0.388 6.078 0.534 7.525
+3  R -> CA1 0.017 0.219 0.211 2.123
+> P
+       Path   LOW     t  HIGH     t
+1 DC -> CA1 0.355 4.805 0.133 1.379
+2   DC -> P 0.386 5.294 0.436 4.663
+3  P -> CA1 0.155 2.193 0.232 2.315
+> B
+       name R_LOW_est   t.x R_HIGH_est   t.y
+1 DC -> CA1     0.355 5.407      0.044 0.400
+2   DC -> P     0.376 3.729      0.432 4.668
+3   DC -> R     0.366 5.569      0.522 7.225
+4  P -> CA1     0.158 1.989      0.220 2.357
+5  R -> CA1     0.010 0.135      0.200 2.033
+> 
+
+%% creating and One example
+%% is the role of post-acquisition routines where routines to identify and deal with
+%% acquisition partners are a source of generating strategic change (Eisenhardt and Sull
+%% 2001, ref). Another example is (see refs from Schilke 2018). The functioning of this
+%% expression of dynamic capabilities are more latent and hence mainly observable ex
+%% post. Hence we can see this as direct route to competitive advantage as this expression of
+%% dynamic capabilities work directly in the factor market in capturing resources
+%% needed for strategic change. We coin this direct connection as the \emph{market path}.
 
 On the other hand, a stream of contributions see dynamic capabilities as evolutionary and
 more complex routines (ref) or processes (ref) set to change underlying capabilities in
