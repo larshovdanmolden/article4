@@ -96,3 +96,35 @@ meplot <- function(model,var1,var2,ci=.95,
 
   if(rnum){return(dy.dx)}
 }
+
+
+## Imputation function
+imputezw <- function(vec){
+    meanVec <- rowMeans(vec, na.rm=TRUE) #coud be rowMeans
+    for (i in 1:nrow(vec)){
+        for (j in 1:ncol(vec)){
+            if(is.na(vec[i,j])){vec[i,j] <- meanVec[i]}
+        }
+    }
+    return(vec)
+}
+
+
+
+extboot <- function(bootobj,n,nam,r){ #remembaer space between Letter and " ("P ")
+    ##this function extracts estimates and standard errors for a bootstrapped object from PLS Sem
+
+    c1 <- attr(bootobj$t,"path")
+    c2 <- bootobj$t0
+    c3 <- c(apply(bootobj$t,2,sd))
+    res <- data.frame(c1,c2,c3);colnames(res) <- c("name",paste(nam,"est",sep="_"),paste(nam,"se",sep="_"))
+    res <- res[(nrow(res)-n):nrow(res),];  rownames(res) <- NULL
+    toMatch <- c(r, "DC")
+    res <- res[(grep(paste(toMatch,collapse="|"),res$name)),]
+    res$t <- res[,2] / res[,3]
+    res <- res[,c(1,2,4)]
+    res[,2:3] <- round(res[,2:3],3)
+
+
+    return(res)
+}

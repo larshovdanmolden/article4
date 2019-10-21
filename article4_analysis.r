@@ -128,22 +128,6 @@ complist <- list(DC_P=dc01,DC_X=dc02,CA_t=ca0,CA=ca1,P=or1,R=ma01)
 vcontrols <- zwadj[,c("size","age","dyn","pm","lassets")]
 zwadj <- cbind(dc01,dc02,dc00,ca0,ca1,or1,or0,ma01,m0,m1,vcontrols)
 
-#### Testing constructs
-
-
-m0 <- zwadj[,c("Q18a","Q18b","Q18d")]
-m1 <- zwadj[,c("Q4.7_t1","Q4.8_t1","Q4.9_t1")]
-
-
-
-m0c <- na.omit(m0)
-m1c <- na.omit(m1)
-
-pdc1est <- princomp(m0c)
-pdc1est$loadings
-
-pdc1est <- princomp(m1c)
-pdc1est$loadings
 
 ######## ADJUSTING DATASET WITH DELTA
 
@@ -156,113 +140,40 @@ zwadj$m2 <- zwadj$Q4.2_t1 - zwadj$Q16b
 zwadj$m3 <- zwadj$Q4.4_t1 - zwadj$Q17a
 zwadj$m4 <- zwadj$Q4.5_t1 - zwadj$Q17b
 
-## zwadj$d1 <- zwadj$Q6.1_t1 - zwadj$Q19
-## zwadj$d2 <- zwadj$Q6.2_t1 - zwadj$Q19a
-## zwadj$d3 <- zwadj$Q6.3_t1 - zwadj$Q19b
-## zwadj$d4 <- zwadj$Q6.4_t1 - zwadj$Q19c
-## zwadj$d5 <- zwadj$Q6.5_t1 - zwadj$Q19d
-## zwadj$d6 <- zwadj$Q6.6_t1 - zwadj$Q19e
-## zwadj$d7 <- zwadj$Q6.7_t1 - zwadj$Q20
-## zwadj$d8 <- zwadj$Q7.1_t1 - zwadj$Q20b
-## zwadj$d9 <- zwadj$Q7.2_t1 - zwadj$Q20c
-## zwadj$d10 <- zwadj$Q7.3_t1 - zwadj$Q20d
-## zwadj$d11 <- zwadj$Q7.4_t1 -zwadj$Q20e
-
-
- ## zwadj$d4 <- zwadj$Q5.1_t1 - zwadj$Q22
- ## zwadj$d5 <- zwadj$Q5.2_t1 - zwadj$Q22a
- ## zwadj$d6 <- zwadj$Q5.3_t1 - zwadj$Q22b
- ## zwadj$d7 <- zwadj$Q5.5_t1 - zwadj$Q22c
 names(zwadj)
 summary(zwadj$dyn)
 nboot <- 200
 zwadjh <- subset(zwadj,dyn>4);nrow(zwadjh)
 zwadjl <- subset(zwadj,dyn<=4);nrow(zwadjl)
 
-
-
-
-### test model SEM
-
-model <- '
-# outcome model
-#DC =~  Q6.2_t1 + Q6.4_t1 + Q7.1_t1 + Q7.2_t1 + Q6.5_t1
-DC =~  Q6.1_t1 + Q7.3_t1 + Q7.4_t1
-DC0 =~ Q19 + Q20d + Q20e
-CA0 =~ Q28 + Q28a + Q28c
-CA1 =~ Q16.1_t1 + Q16.2_t1 + Q16.4_t1
-#dR =~ d1 + d2 + d3
-#dM =~  m1 + m2 + m3 + m4
-R1 =~ Q5.4_t1 + Q5.6_t1 + Q5.7_t1
-#M1 =~ Q4.1_t1 + Q4.2_t1 + Q4.4_t1 + Q4.5_t1
-R0 =~ Q21c + Q21d + Q21e
-#M0 =~ Q16a + Q16b + Q17a + Q17b
-
-CA1 ~ CA0 + DC + R1 + DC0  +  size + pm + lassets
-#M1 ~ DC + M0
-R1 ~ DC + R0
-DC  ~ DC0
-
-
-#R1 ~~ M1
-#R0 ~~ M0
-'
-
-fit <- sem(model, data=zwadj)
-
-
-summary(fit, fit.measures=TRUE, standardize=TRUE, rsquare=TRUE)
+DC1 <- c("Q6.4_t1", "Q7.1_t1","Q7.2_t1","Q6.5_t1")
+DC2 <- c("Q6.1_t1","Q7.3_t1","Q7.4_t1")
+CA0 <- c("Q28","Q28a","Q28c")
+CA1 <- c("Q16.1_t1","Q16.2_t1","Q16.4_t1")
+R <- c("Q5.4_t1","Q5.6_t1","Q5.7_t1")
+M <- c("Q4.1_t1","Q4.2_t1","Q4.4_t1","Q4.5_t1")
+CONT <- c("size","age","lasset","pm")
 
 
 
 
-
-
-### delta P MODEL
-items <- c(#"Q19a","Q19c", "Q20b", "Q20c", #DC01
-           #"Q19b","Q19d","Q20d", "Q20e", #DC02
-           # "Q6.4_t1", "Q7.1_t1","Q7.2_t1","Q6.5_t1", #DC1
-           "Q6.1_t1","Q7.3_t1","Q7.4_t1", #DC1
-           "Q28","Q28a","Q28c", #CA0
-           "Q16.1_t1","Q16.2_t1","Q16.4_t1", #CA1
-           #"Q21c","Q21d","Q21e", #OC0
-    "Q5.4_t1","Q5.6_t1","Q5.7_t1",
-   #"Q4.7_t1","Q4.8_t1","Q4.9_t1",#OC1
-    "Q4.1_t1","Q4.2_t1","Q4.4_t1","Q4.5_t1",
-
-    #"d1","d2","d3",
-    #"m1","m2","m3","m4",
-
-           "size","age")
-
-latents <- c(rep("DC",3),
-           #  rep("DC_X",3),
-           #  rep("DC11",4),
-           #  rep("dc12",4),
-             rep("CA0",3),
-             rep("CA1",3),
-           #  rep("OR0",3),
-             rep("dR",3),
-             rep("dM",4),
-           #  rep("R",3),
-
-             "SIZE","AGE")
+##### Both mediators
+items <- c(DC2,CA0,CA1,R,M,CONT)
+latents <- c(rep("DC",length(DC2)),rep("CA0",length(CA0)),rep("CA1",length(CA1)),rep("R",length(R)),rep("M",length(M)),toupper(CONT))
 
 mm <- cbind(latents,items); colnames(mm) <- c("source","target")
-
-iv <- c("CA0","SIZE","AGE","dR","DC","dM","DC","DC")
-dv <- c("CA1","CA1","CA1","CA1","dR","CA1","dM","CA1")
-iv <- c("CA0","SIZE","AGE","DC","PM","ASS","dR","DC")
-dv <- c("CA1","CA1","CA1","CA1","CA1","CA1","CA1","dR")
+iv <- c(CONT,"CA0","DC","R","DC","M","DC")
+dv <- c(rep("CA1",length(CONT)),"CA1","CA1","CA1","R","CA1","M")
 sm <- cbind(iv,dv);colnames(sm) <- c("source","target")
+BOTH <- plsm(data = zwadj, strucmod = sm, measuremod = mm)
+both <- sempls(model = BOTH, data = zwadj, wscheme = "centroid",maxit=1000)
 
-FULL <- plsm(data = zwadj, strucmod = sm, measuremod = mm)
-full <- sempls(model = FULL, data = zwadj, wscheme = "centroid",maxit=1000)
-full
+pathDiagram(both, file = "both", full = FALSE, edge.labels = "both", output.type = "graphics", digits = 2,graphics.fmt="pdf")
 
-f <- semPLS::gof(full)
-f2 <- semPLS::gof(full)
+bothfit <- semPLS::gof(both)
+bothBoot <- bootsempls(both, nboot = nboot, start = "ones", verbose = FALSE)
 
+bothout <- extboot(bothBoot,9,"P_LOW",c("dM ","dR "))
 f
 f2
 
@@ -1021,6 +932,39 @@ head(t)
     attr(t,"path")
 
     apply(
+
+### test model SEM
+
+model <- '
+# outcome model
+#DC =~  Q6.2_t1 + Q6.4_t1 + Q7.1_t1 + Q7.2_t1 + Q6.5_t1
+DC =~  Q6.1_t1 + Q7.3_t1 + Q7.4_t1
+DC0 =~ Q19 + Q20d + Q20e
+CA0 =~ Q28 + Q28a + Q28c
+CA1 =~ Q16.1_t1 + Q16.2_t1 + Q16.4_t1
+#dR =~ d1 + d2 + d3
+#dM =~  m1 + m2 + m3 + m4
+R1 =~ Q5.4_t1 + Q5.6_t1 + Q5.7_t1
+#M1 =~ Q4.1_t1 + Q4.2_t1 + Q4.4_t1 + Q4.5_t1
+R0 =~ Q21c + Q21d + Q21e
+#M0 =~ Q16a + Q16b + Q17a + Q17b
+
+CA1 ~ CA0 + DC + R1 + DC0  +  size + pm + lassets
+#M1 ~ DC + M0
+R1 ~ DC + R0
+DC  ~ DC0
+
+
+#R1 ~~ M1
+#R0 ~~ M0
+'
+
+fit <- sem(model, data=zwadj)
+
+
+summary(fit, fit.measures=TRUE, standardize=TRUE, rsquare=TRUE)
+
+
 
 
 
