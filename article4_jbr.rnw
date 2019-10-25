@@ -80,9 +80,34 @@ dynamic environments.
 Extant literature on dynamic capabilities are increasingly focusing on how firm resources
 are changed by dynamic capabilities as a response to changes in the environment
 \citep{Schilke2018,Eriksson2014}, thus placing firm resources as a mediator between
-dynamic capabilities and competetive advantage \citep{Helfat2007}. 
+dynamic capabilities and competetive advantage \citep{Helfat2007}. Less focus has been
+placed on the nature of these underlying firm resources (ref) and how they are capturing a
+rather heterogeneous bulk of routines, capabilities, assets and capital. Hence, there is a
+need to disentangle the black box of firm resources to provide a more nuanced
+understanding of different types of firm resources and how they interact to shape firm
+competitive advantage \cite{Schilke2018}. Indeed, this gap in the literature is explicitly
+called by \cite{Schilke2018} where they  'see an interesting opportunity for future work to add greater richness to our
+understanding of the mechanism of resource-base change, given this mechanism’s central
+role in many foundational works (..) and the diverse ways in which resource changes can
+potentially come about' (p. 419).
 
+We aim to contribute to bridging this gap by 
 
+The inclusion of theoretical linkages of this sort appears to be important at this time
+not only because they are at least partially overlooked in our current understanding of
+capa- bility dynamics.
+
+we propose a model that can accommodate the diverse nature of DCs with respect to the
+objects of change that they aim to act upon and can better serve the call for a better
+understanding of micro-foundations of strategy.
+
+DCs required to adapt the more tacit and subtle aspect of human interactions (motivation,
+emotions, and identity, in partic- ular) to environmental or contextual requirements
+
+A dynamic capability is the capacity of an organization to purposefully create, extend or
+modify its resource base. The resource base of an organization includes tangible,
+intangible and human assets (or resources) as well as capabilities which the organization
+owns, controls or has access to on a preferential basis.  (Helfat
 
 The presence of a direct path from dynamic capabilities and competetive advantage is
 somewhat puzzling. It eiter suggests ommited importrant mediating factors such as
