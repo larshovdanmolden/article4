@@ -86,121 +86,64 @@ rather heterogeneous bulk of routines, capabilities, assets and capital. Hence, 
 need to disentangle the black box of firm resources to provide a more nuanced
 understanding of different types of firm resources and how they interact to shape firm
 competitive advantage \cite{Schilke2018}. Indeed, this gap in the literature is explicitly
-called by \cite{Schilke2018} where they  'see an interesting opportunity for future work to add greater richness to our
-understanding of the mechanism of resource-base change, given this mechanism’s central
-role in many foundational works (..) and the diverse ways in which resource changes can
-potentially come about' (p. 419).
+emphasized by \cite{Schilke2018} where they 'see an interesting opportunity for future
+work to add greater richness to our understanding of the mechanism of resource-base
+change, given this mechanism’s central role in many foundational works (..) and the
+diverse ways in which resource changes can potentially come about' (p. 419).
 
-We aim to contribute to bridging this gap by 
+The conventional mechanism explored in the extant literature is related to changes in the
+firm`s resource base \citep{Eriksson2014,Schilke2018}. This mechanism is also included in
+the dominating definition of dynamic capabilities found in \citep{Helfat2007}: 'A dynamic
+capability is the capacity of an organization to purposefully create, extend or modify its
+resource base' (p. 4). And although this definition opens up for a variety of components
+included in the term 'resource base', a point we discuss later in this paper, most of the
+subsequent contributions have focused on changes in operational routines (ref),
+capabilities (ref), practices (ref) or tangible assets (ref). This focus, albeit very
+important to the development of dynamic capabilities literature, seems to leave out a
+considerable part of a firm`s 'resource base', namely those resources that are tied to how
+the employees of the firm sees their mission, internalize information and effectuates
+change. These traits of the organization is very much related to concepts of
+'organizational culture' (ref), 'employee cognition' (ref)' 'organizational genes'
+\citep{Nelson1982} and 'sense-making' \citep{Weick1995} to name but a few. However, in
+relations with dynamic capabilities one promising avenue for exploring mechanisms beyond
+the conventional ones described above, makes a clear distinction between \emph{behavioral}
+and \emph{non-behavioral} objects of change \citep{Verona2003}. These non-behavioral
+objects of change contain psychological objects such as cognitive frames, motivation and
+identity that are important for strategy formation and implementation (Gavetti etc, vince
+and gabriel ch 15 of book by verona) as they 'concerns how decisions or actions are
+shaped, subverted and transformed by emotions, and (..) determine the "way we do things
+here"' (Vince and gabriel). In this respect they work as firm resources in generating
+outcomes such as performance and competitive advantage. This notion is perhaps expressed
+most clearly by Peter Drucker`s famous quote about how 'culture eats strategy for lunch'
+(ref) insofar as . Moreover, these non-behavioral objects of change are themselves far
+from static and are found to change over time as responses to external change
+\citep{Zollo2016} thus making them a natural part of the mechanisms underpinning how
+dynamic capabilities work \citep{Schilke2018,Verona2003}. Still, far less is know about
+the non-behavioral objects of change and how they work as a mechanism in the dynamic
+capabilities theory. 
 
-The inclusion of theoretical linkages of this sort appears to be important at this time
-not only because they are at least partially overlooked in our current understanding of
-capa- bility dynamics.
+We aim to contribute to bridging this gap by theorize about how non-behavioral objects of
+change work as a mechanism through which dynamic capabilities influence competitive
+advantage. Specifically, we ask the following research question:
 
-we propose a model that can accommodate the diverse nature of DCs with respect to the
-objects of change that they aim to act upon and can better serve the call for a better
-understanding of micro-foundations of strategy.
+{\bf What is the role of non-behavioral objects of change as a mechanism through which
+  dynamic capabilities can influence competitive advantage?}
 
-DCs required to adapt the more tacit and subtle aspect of human interactions (motivation,
-emotions, and identity, in partic- ular) to environmental or contextual requirements
+To shed light on this important question we theorize on the role of a particular type of
+non-behavioral object of change, \emph{organizational cognition}, and how it acts as a
+mediator between dynamic capabilities and firm competitive advantage and hence has a
+pivotal place in the literature. We build on important work on the concept of
+organizational cognition (ref), non-behavioral object of change (ref) and blablabla (ref),
+and hypothesize about how organizational cognition acts as a mediator in the same way as
+conventional behavioral objects of change (such as routines and capabilities) and that
+these two are complementary to a certain degree. Moreover, we also suggest how
+organizational cognition could also influence routines and capabilites directly with
+further implications for competitive advantage. 
 
-A dynamic capability is the capacity of an organization to purposefully create, extend or
-modify its resource base. The resource base of an organization includes tangible,
-intangible and human assets (or resources) as well as capabilities which the organization
-owns, controls or has access to on a preferential basis.  (Helfat
-
-The presence of a direct path from dynamic capabilities and competetive advantage is
-somewhat puzzling. It eiter suggests ommited importrant mediating factors such as
-resources, or that dynamic capabilities can act outside "creating, extending and modifying
-the firm resources base". A growing consensus on the definition as well as the
-theoretical mechanisms underpinning dynamic capabilities suggest that dc work indirectly
-towards strategic change by changing firm resources. Hence, the presence of direct effects
-seems increasingly odd. Still, seminal contributions to the field of dynamic capabilities have argued for both direct
-\cite{Kor2005,Eriksson2014,Schilke2014a} and indirect (ref) effects of dynamic
-capabilities on competitive advantage, although increasingly the bulk of the literature
-focuses on the latter \citep{Schilke2018}.
-
- Resource orchestration is defined as "blablbalbla" (helfat)
-
-This indirect link is typically understood as dynamic capabilities modifying, extending or
-creating firm resources (helfat) (or lower-level operational capabilities (Winter,
-collis)) and thus generating competitive advantage (Eriksson and others).The direct path,
-however, is theoretically less explicitly dealt with in the extant literature although
-empirical evidence keep suggesting that both direct (ref) and indirect (ref) links exist.
-
-In this paper we explore to what extent a direct link between dynamic capabilities and
-competitive advantage work, and under which conditions it is most pronounced. Specifically
-the research question is:
-
-{\bf How is a direct link between dynamic capabilities and competitive advantage working
-  and under which conditions does it come into play or not?}
-
-We argue that direct link exist as a response to the multilevel notion of strategy itself
-and captures strategic change not typically associated with the resource based
-view. Furthermore, we show that the prevalence of the direct link is a function of the
-nature of underlying resources dynamic capabilities are aimed at "creating, extending and
-modifying", specifically if they are valuable and idiosyncratic to the firm or not, and
-the environment facing the firm. 
-
-Our findings indicate that the direct path is less prevalent in very dynamic environments
-where the indirect path becomes far more important. Furthermore, the effect of dynamism is
-partly contingent on the nature of the firm resources suggesting a more complex
-understanding of how imitable and simple resources can play a role in generating
-competetive advantage. 
-
-Our contributions are twofold. First, we explore different mediators by explicitly
-modeling a causal chain with different types of underlying resources, as well as
-under different environments. This is explicitly called for in the literature as "only
-four percent of the articles in our sample explicitly examined possible causal mechanisms,
-suggesting a significant gap in the literature" (Schilke 2018). This work sheds light on
-the contingencies and boundary conditions of the link between dynamic capabilities and the
-"holy grail of strategy" (Schilke et al), competetive advantage. 
-
-Second, we explore a theoretical explanation for why a direct link between dynamic
-capabiliites and competetive advantage may exist. By leaning on empirical evidence
-suggesting a multitude of explanations for performance differentials between firms, we
-suggest that dyanmic capabilities can act outside the theorized path of "resource
-orchestration" through strateic efforts such as industry positioning (porter) or
-institutional leverage (Peng). 
+This paper makes the following contributions:
 
 
-%%%%%%%%%%%%%%5
-
-%%%%%%%%%%%%%%
-
-
-%% This warrant the question of \emph{when}
-%% direct and indirect links between dynamic capabilities and competitive advantage is most
-%% pronounced.
-
-%% Moreover, firm resources or capabiltiies themselves are far from a homogenous set and
-%% varies among other things with respect to their uniqueness, inimatbility and value
-%% (barney). Important contributions have thus argued for a deeper insighi into these
-%% intermediaries and their mechanism calling for a "deeper insight into the variety of mechanisms that
-%% underlie the performance effects of capabilities.” (Schilke, 2014a: 199). 
-%% as well as \emph{what} different intermediaries exist.
-
-%% This paper investigates the boundary conditions of the VRIO condition and how dynamic
-%% capabilities and resources interact to create firm competitive advantage. We ask the
-%% following research question:
-%% Under which conditions are dynamic capabilities able to yield competietive advantage
-%% through resource orchestration and what are the different outcomes of different types of resources.
-
-%% We find thatthe dynamism surrounding hte firm represent an important boundary condition as
-%% suggested in parts of the literature. However, DC consinutes to generate competetive
-%% advnatage also in high-velocity environments, but doing increasingly so indirectly through
-%% resource orchestration. Furthermore, we find that non-vrio resources are more likely to
-%% yield competetive power in high velocity environments, and that vrio-resources tend to
-%% maintain their CA under any condition. 
-
-
-%% We demonstrate that two paths indeed do exist and that their relative importance varies
-%% with the degree of environmental dynamism facing the firm.
-
-
-%% Under what cionditions are the direct path and indirect path most prevalant? Under which condi
-
-%% The direct
+The rest of this paper is organized as follows:
 
 \section{Hypotheses}\label{sec:hyp}
 
