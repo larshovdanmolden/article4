@@ -47,9 +47,7 @@
 %\address[mysecondaryaddress]{360 Park Avenue South, New York}
 
 \begin{abstract}
- We find that DC as routines to shape routines is most prevelant under moderate dynamism,
-whereas DC as routines to capture resources in factor markets are more prevelant under
-dynamic environments.
+TBD
 
 \end{abstract}
 
@@ -107,7 +105,7 @@ change. These traits of the organization is very much related to concepts of
 \citep{Nelson1982} and 'sense-making' \citep{Weick1995} to name but a few. However, in
 relations with dynamic capabilities one promising avenue for exploring mechanisms beyond
 the conventional ones described above, makes a clear distinction between \emph{behavioral}
-and \emph{non-behavioral} objects of change \citep{Verona2003}. These non-behavioral
+and \emph{non-behavioral} objects of change \citep{Verona2011}. These non-behavioral
 objects of change contain psychological objects such as cognitive frames, motivation and
 identity that are important for strategy formation and implementation (Gavetti etc, vince
 and gabriel ch 15 of book by verona) as they 'concerns how decisions or actions are
@@ -118,7 +116,7 @@ most clearly by Peter Drucker`s famous quote about how 'culture eats strategy fo
 (ref) insofar as . Moreover, these non-behavioral objects of change are themselves far
 from static and are found to change over time as responses to external change
 \citep{Zollo2016} thus making them a natural part of the mechanisms underpinning how
-dynamic capabilities work \citep{Schilke2018,Verona2003}. Still, far less is know about
+dynamic capabilities work \citep{Schilke2018,Verona2011}. Still, far less is know about
 the non-behavioral objects of change and how they work as a mechanism in the dynamic
 capabilities theory. 
 
@@ -147,6 +145,338 @@ The rest of this paper is organized as follows:
 
 \section{Hypotheses}\label{sec:hyp}
 
+DC as resource orchestration - influencing capabilities
+DC as cognitive programmer - inluencing cognitive frames
+
+When Satya Nadella took over as CEO of Microsoft in March 2014, he took over a company in
+big trouble. The share price was just north of 30 USD and the company had just launched a
+7.2 billion USD acquisition of the failing Nokia company. The story about how Nadella
+turned Microsoft around to a valuation of 105 USD pr share and with successful mergers
+along the way is a story of excellent 'resource orchestration' as a response to exercising
+dynamic capabilites, specifically through sensing, seizing and transforming resources to
+adapt to changing market conditions \citep{Teece2007}. Nadella and his firm did a
+considerable reorientation towards the cloud and reconfigured firm capabilities to fit
+this objective - almost a school example of exercising dynamic capabilities.
+
+Moreover, and to the point of this paper, through a series of talks, interviews and his
+own book Nadella put considerable emphasis on how Microsoft managed to change their
+'mindset', that is their 'cognitive frames' (Nadella 2017): 'I focused on what would be
+our grandest endeavor, the biggest hurdle - transforming the Microsoft culture'
+(p. 89). Drawing on the concept of a 'growth mindset' \citep{Dweck2016} Nadella sees
+culture as a 'complex system of individual mindsets' and that it encompasses how 'an
+organization thinks and act' (ibid p.90).
+
+Satya Nadella is very much on the same page as recent contributions on how cognitive
+frames of an organization (i.e. its non-behavioral object of action) is a pivotal part in
+how firm resources shape outcomes such as performance and competitive advantage
+\citep{Barney1991a,Barney2001}, and how it consequently plays a role in how dynamic
+capabilities work along these lines \cite{Verona2011}. Microsoft under Nadella did
+transform the company by changing the behavioral objects of action (i.e. capabilities and
+routines), but also through changing the non-behavioral objects of action (i.e. the
+cognitive frames). In other words, the story of Microsoft`s transformation suggest that
+dynamic capabilities worked through mediating factors to influence competetive advantage,
+but that thes mediating factors exist as two distinctly different concepts working in
+tandem. Figure \ref{fig:fig1} presents a conceptual depiction of the paths running through
+these two concepts of \emph{behavioral} and \emph{cognitive} objects of action
+\citep{Zollo2016}. We use a familiar term for the conventional understanding of dynamic
+capabilities mechanism as 'resource orchestration' (ref) as a collective term to describe
+the behavioral objects of action (ref). This idea of orchestrating resources are
+particularly illuminating in that it sets an organization`s dynamic capabilities as a
+director conducting new outcomes by orchestrating the use of firm resources, and it is in
+line with a range of the most common definitions of dynamic capabilities
+\citep{Schilke2018}. The non-behavioral objects of action has no similar agreed upon
+analogy, so for the purpose of our analysis we envision this mechanism to work more as a
+cognitive process enabling the organization to tear away from their current understanding
+and ways in which things are done (Vince and Gabriel). Whereas the analogy of resource
+orchestration has its counterpart in the making of art (i.e. music, movies or theatrical
+plays), the non-behavioral objects of action are more aligned to psychology and cognitive
+therapy. The process is all about changing an organization`s thinking from the automated
+and well-known, to the more cognitively aware, what Kahneman and Tversky coins 'system two'
+thinking (ref). This change of cognitive frames will thus be more similar to a
+reprogramming effort and we henceforth refer to the process of changing the non-behavioral
+objects of action (e.g. cognitive frames, culture, etc) as 'cognitive programming'. 
+
+
+\begin{figure}
+  \centering
+  \captionsetup{width=0.5\linewidth}
+  \input{./figure/fullmod.tex}
+  \captionof{figure}{The resource and cognitive mechanisms of dynamic capability}
+  \label{fig:fig1}
+\end{figure}
+
+RESOURCE ORCH is HITT2011 among other
+\subsection{Cognitive programming}
+Juxtaposed to the experiences from Microsoft, the case of Polaroid brings another set of
+experiences to our discussion on non-behavioral objects of action (see \citep{Tripsas2000}
+for a detailed account). Cognitive inertia on the part of the organization, not the top
+management, \todo{Check this - maybe remove the sentence on top management} played a
+pivotal part in the failing of the company`s digital imaging effort
+\citep{Verona2011}. Similar patterns are found in Kodak and Anderson Consulting (ref
+Hederson and Kaplan 2005), and Smith Corona (Danneels 2010). These examples highlight the
+absence of 'dynamic capabilities specific to the adaptation of cognitive frames, first,
+and consequently of operating processes' \citep[p. 541]{Verona2011}.
+
+Looking at dynamic capabilities through the functions of sensing, seizing and
+transformation \cite{Teece2007} makes an obvious case for resource orchestration which is also highlighted
+in the extant literature. Moreover, as discussed above, these functions are also requiring
+a certain non-behavioral object of action in order to be fully efficient. To achieve a
+competitive edge firms will have to be able to sense and seize, which require a certain
+organizational cognitive frame to be efficient. 'Dynamic capabilities are about doing the
+right things, at the right time, based on new product (and process) development, unique
+managerial orchestration processes, a strong and {\bf change-oriented organizational culture}'
+(our emphasis) \cite[p]{Teece2014}. 
+
+
+To see how dynamic capabilities acts through cognitive objects of action (i.e. as a
+cognitive programmer) we consider two distinctly different functions of dynamic
+capabilities related to their microfoundations \citep{Teece2007}. the first function is
+related to the discovering and capturing opportunities (e.g. the ability of the
+organization to sense and seize opportunities (ibid)) which is very much related to the
+concept of exploration \citep{March1991}. Organizations with high levels of dynamic
+capabilities geared towards sensing and seizing opportunities are doing so through
+\emph{resource orchestration}, e.g. by creating, extending and modifying the resource
+base, as discussed extensively in the extant literature
+\citep{Helfat2007,DiStefano2014,Protogerou2012,Schilke2018}. However, sensing and seizing
+opportunities in the market relates to discovering market disequilibrium
+\citep{Kirzner1997} as well as upsetting existing equilibria \citep{Schumpeter1934}. The
+process of sensing and seizing 'involves understanding latent demand, the structural evolution of
+industries and markets, and likely supplier and competitor responses'
+\citep[p. 1322]{Teece2007} as well as . Individuals are the unit of analysis embedding these abilities
+and if left up to these individuals without a higher organizing framework, the firm will
+be very vulnerable because of knowledge asymmetries and incentive problems (alchian and
+demsetz 1972) and lead to sub optimal rent-appropriation on the part of the individual
+employee \citep{Blyler2003}. A similar argument applies to the function of \emph{seizing}
+where the organization is set to mobilize resources for the purpose of gaining from these
+opportunities. In order for value to be captured from opportunities, a string of
+conditions have to be met \citep{Teece2017}, but the evolution of a 'strong and
+change-oriented organizational culture' \citep[p. 331]{Teece2014} is of pivotal
+importance. Alas the sensing process requires new knowledge from a wide range of sources
+in the organization a lot of this knowledge is tacit and can lead to rent-appropriation
+from information asymmetries \citep{Blyler2003} if not sufficiently aligned with the
+cognitive frames of the organization.
+
+One consequence is a ‘program persistence bias.’ Its corollary is various forms of
+‘anti-innovation bias,’ including the ‘anti- cannibalization’ basis discussed in a later
+section. Program persistence refers to the funding of pro- grams beyond what can be
+sustained on the merits,
+
+
+
+However, in this endeavour
+simply adatping resources is a necessary but not sufficient condition for obtaining the
+needed strategic change.   
+
+The functions of dynamic capabilities as highlighted above is thoroughly discussed in
+extant literature (refs), but a quick recap is useful. 
+
+DC geared towards creating new or reconfiguring old (exploration vs exploitation) but true
+competetiveness over time stems from ambidexterity- link to research on cultural ambidecterity
+
+The concept of sensing and seizing has analogous meaning in theoretical traditions tangent
+to DC. Notably entrepreneurship \citep{Hitt2011} and organizational theory
+\citep{March1991}. \cite{Hitt2011} states that "entrepreneurship involves identifying and
+exploiting opportunities" (ibid p 59) where identification is tied to the process of
+discovery \citep{Shane2000}. Based on the definitions of opportunity discovery as DEF HERE
+juxtaposed to the definition of sensing as "a scanning, creation, learning, and
+interpretive activity" \citet[p. 1322]{Teece2007} we argue that they are similar in nature
+and usable for exploring the importance of the latter in the innovation process. It also
+bears resemblance to the concept of organizational exploration as searching, risk-taking,
+discovery, experimentation, prototyping, and flexibility \citep{March1991}. Independent of
+the nature of opportunities to be sensed as being either objective
+\citep{Alvarez2007,Shane2000} or created \citep{Alvarez2007}, the process of sensing does
+require resources and capabilities for search (ref) and a clear affinity between
+opportunity and a project exist (casson and Wadeson in Mcmullen2007) suggesting s clear
+inter dependency between routines and resources, and higher order capabilities of sensing
+\citep{Teece2007} and making sense of the opportunity
+\citep{Weick1995,March1991}. Consequently, we would expect the sensing class of dynamic
+capabilities to be positively related to innovation on the one hand, and reinforcing the
+impact from innovation input simultaneously.\newline
+
+
+
+To see how dynamic capabilities work to adapt cognitive frames in addition to operational
+capabilities to influence competetive advantage, it is useful to turn to their
+microfoundations \citep{Teece2007}. In this framework dynamic capabilities work through
+three expressions. First, sensing seizing. more here..
+
+Each of these dimensions relates to a function of cognitive frames within the firm beyond
+the cognitive frames of the dynamic capability itself as explored by previous
+contributions in general \citep{Teece2007} and towards management specifically
+\citep{Helfat2015,Helfat2015a}. First, sensing opportunities in the market relates to
+discovering market disequilibrium \citep{Kirzner1997} as well as upsetting existing
+equilibria \citep{Schumpeter1934}. This process is very much at the core of dynamic
+capabilities as a function of management, but its function calls for a very close
+relationship with the rest of the organization both in terms of resource orchestration and
+cognitive programming. The process of sensing 'involves understanding latent demand, the
+structural evolution of industries and markets, and likely supplier and competitor
+responses' \citep[p. 1322]{Teece2007}. Individuals are the unit of analysis embedding
+these abilities and if left up to these individuals without a higher organizing
+framework, the firm will be very vulnerable because of knowledge asymmetries and incentive
+problems (alchian and demsetz 1972) and lead to sub optimal rent-appropriation on the part
+of the individual employee \citep{Blyler2003}. 
+
+A similar argument applies to the function of \emph{seizing} where the organization is set
+to mobilize resources for the purpose of gaining from these opportunities. In order for
+value to be captured from opportunities, a string of conditions have to be met
+\citep{Teece2017}, but the evolution of a 'strong and change-oriented organizational
+culture' \citep[p. 331]{Teece2014} is of pivotal importance. Alas the sensing process
+requires new knowledge from a wide range of sources in the organization a lot of this
+knowledge is tacit and can lead to rent-appropriation from information asymmetries
+\citep{Blyler2003} if not sufficiently aligned with the cognitive frames of the
+organization.
+
+Finally, the \emph{transformation} function of dynamic capabilities are related to the
+idea of continuously renewal of the resource base in order to stay competitive. This continuous
+process requires the development and maintenance of a share cognitive frame such as a
+culture, which is typically found in production processes such as LEAN and Six Sigma
+(ref).     
+
+Looking at dynamic capabilities through the functions of sensing, seizing and
+transformation makes an obvious case for resource orchestration which is also highlighted
+in the extant literature. Moreover, as discussed above, these functions are also requiring
+a certain non-behavioral object of action in order to be fully efficient. To achieve a
+competitive edge firms will have to be able to sense and seize, which require a certain
+organizational cognitive frame to be efficient. 'Dynamic capabilities are about doing the
+right things, at the right time, based on new product (and process) development, unique
+managerial orchestration processes, a strong and change-oriented organizational culture'
+\cite[p]{Teece2014}. 
+
+
+It is argued that contextual ambidexterity is grounded in the type of organizational culture (Ghoshal and Bartlett 1994; Gibson and Birkinshaw 2004; Simsek et al. 2009) that promotes both creativity and discipline (Jelinek and Schoonhoven 1993), or both the presence of different knowledge and the integration of multiple perspectives to develop a cohesive point of view (Eisenhardt and Schoonhoven 1990).
+
+ambidextrous organizational culture wang rafiq 2014
+
+
+The enterprise will be vulner- able if the sensing, creative, and learning functions are left to the cognitive traits of a few individuals
+
+
+Three types of managerial activities can make a capability dynamic: sensing (which means
+identifying and assessing opportunities outside your company), seizing (mobilizing your
+resources to capture value from those opportunities), and transforming (continuous
+renewal).
+
+
+Whereas ordinary capabilities are about doing
+things right, dynamic capabilities are about doing the right things, at the right time, based on new product (and process) development, unique mana- gerial orchestration processes, a strong and change- oriented organizational culture, and a prescient assessment of the business environment and tech- nological opportunities.
+teece 2014
+
+
+The strength of a firm's dynamic capabilities determines the speed and degree (and
+associated cost) of aligning the firm's resources—including its business model(s)—with
+customer needs and aspirations. To achieve this, organizations must be able to
+continuously sense and seize opportunities, and to periodically transform aspects of the
+organization and culture so as to be able to proactively reposition to address yet newer
+threats and opportunities as they arise. Terse 2018
+
+Dynamic capabilities are hard for rivals to replicate because they are built on the
+idiosyncratic characteristics of entrepreneurial managers and the history-honed routines
+and culture of the organization (Teece, 2014a). In addition, there is the uncertain
+imitability of a complex system that even those directly involved may not fully understand
+(Lippman and Rumelt, 1982). Because they are a unique and valuable general-purpose
+resource, strong dynamic capabilities can serve as a firm foundation for sustainable
+competitive advantage. This is especially true the more deeply embedded the capabilities
+are in the organization, and the less they are resident only in the top management
+team. Teece 2018
+
+ Managers must articulate a vision and establish an appropriate organizational culture and an incentive system that will promote organizational identification and loyalty (Augier and Teece, 2009).
+ 
+ 
+
+Put differ- ently, selecting the right ‘architecture’ for a busi- ness requires not just understanding the choices available; it also requires assembling the evidence needed to validate conjectures and hunches about costs, customers, competitors, complementors, dis- tributors, and suppliers. Designing
+
+Distinct rolle
+
+H1: Cognitive frames mediates the effect of dynamic capabilities on competetive advantage
+above and beyond mediating effect of operational capabilities
+
+H2: Cognitive frames has a direct impact on operational capabilities
+
+H3: Something to do with dynamism - importance of cognitive frames increases in dynamism
+
+Minor hypotheses: On 
+
+The role of cognitive frames in strategy: Schilling 2018 abstraction
+
+
+Proactiveness
+Coff and Blyler - who reaps the reward from rents). cognitive frames common -
+proactiveness - culture can prohibit the rent appropriation happening 
+
+Cognitive programming as rent appropriation inihibitor
+
+Cognitive programming as implementation catalyst (complement to OC)
+
+Cognitive programming as alignment mechanism (link to OC)
+
+
+
+
+THIS IS HOW FAR I CAME
+\newpage
+
+Ethnographic study on cognitive farmes - still top management team
+http://knowledge.wharton.upenn.edu/wp-content/uploads/2013/09/13481.pdf
+
+Implications: Maybe proactiveness cog frames can help in the paradox schreyogg, and the
+elephant. 
+
+We suggest that a systematic socio-cognitive approach to “competitive sensemaking” has
+been absent from theory and research on competitive strategy. We define competitive
+sensemaking as the social and cognitive processes that underlie how firms detect, define,
+and conceptualize their competitive relationships with other firms. Competitive
+sensemaking is a subset of the more general process of strategic sensemaking, which is the
+“making plausible sense” of the broad array of stimuli and circumstances that characterize
+complex market situations. Using the value-based view of value creation and capture as a
+conceptual base for our arguments, we unpack four cognitive underpinnings of competitive
+sensemaking: mental time travel, comparability, counterfactual reasoning, and stories. We
+then show how these four components were differentially involved in shaping competitive
+sensemaking in four actual market situations. In doing so, we illustrate how competitive
+sensemaking provides fundamental inputs into the value creation and value capture
+process. We conclude the paper by drawing out the implications of competitive sensemaking
+for strategy theory and research.
+
+
+
+Some strategic decisions will long be remembered for being remarkably successful, providing dramatic benefits to customers, investors, or social welfare. The individuals who make these decisions are often called "visionary." But what enables some people to be visionary? Is it a gift or skill, and can it be learned? In this paper I identify three main cognitive processes that underlie the creation of visionary strategy: abstraction, idealism, and long paths of analytical reasoning. Using a combination of examples and cognitive science, I explain how they work individually and in combination, and how they may be cultivated.
+Schiller
+
+
+
+
+Cognition explain organizational inertia garud and rappa
+Sharing of dominant logic pralahad and bettis (actually managmenet but maybe org as well)
+Tripsas and Gavetti 2000 focus on management cognition in digital imaging
+
+power of analogical reasoning prevailing in teh strategy makin in novel and complex worlds
+
+(Gavetti, 2012; Gavetti et al., 2005; Tripsas and Gavetti, 2000), awaiting from LB
+
+
+DCs are viewed as stable patterns of action that poten- tially build a string of temporary
+advantages by adding, integrating, and reconfi guring resources, which amount to sustained
+advantage once the entire pattern is taken into account (Blyler and Coff, 2003)
+
+Again, some acquiring fi rms (not many) undergo these motivational change processes (Gottschalg and Zollo, 2007) by
+
+would for the larger part argue that 
+including the 33000 people at nokia / cultural change rr
+
+
+
+Capabilities changes reinvent productivity and business processs, as well as introcuing
+new capabiltieis. 
+Cloud based capabilities and infrastructure
+
+
+'AS I conlcluded my talk that morning in orlando, i focused on what would be our grandest
+endeavor / the biggest hurdle, transforming the microsofg culture. p 89
+
+Defined culture as a 'complex system of individual mindsets' culture is how an
+organization thinks and acts, but indiciduals shape it. p 90
+
+%https://news.microsoft.com/2014/02/04/satya-nadella-email-to-employees-on-first-day-as-ceo/
+%https://qz.com/work/1539071/how-microsoft-ceo-satya-nadella-rebuilt-the-company-culture/
 
 %{\bf How is a direct link between dynamic capabiliites and competetive advantage working
 %  and under which conditions does it come into play or not?}
