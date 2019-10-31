@@ -217,20 +217,123 @@ Hederson and Kaplan 2005), and Smith Corona (Danneels 2010). These examples high
 absence of 'dynamic capabilities specific to the adaptation of cognitive frames, first,
 and consequently of operating processes' \citep[p. 541]{Verona2011}.
 
-Looking at dynamic capabilities through the functions of sensing, seizing and
-transformation \cite{Teece2007} makes an obvious case for resource orchestration which is also highlighted
-in the extant literature. Moreover, as discussed above, these functions are also requiring
-a certain non-behavioral object of action in order to be fully efficient. To achieve a
+Looking at dynamic capabilities through the functions of sensing and seizing opportunities
+\cite{Teece2007} makes an obvious case for resource orchestration which is also
+highlighted in the extant literature. This function is related to the discovering and
+capturing opportunities (e.g. the ability of the organization to sense and seize
+opportunities (ibid)) which is very much related to the concept of exploration
+\citep{March1991}Moreover, as discussed above, these functions are also requiring a
+certain non-behavioral object of action in order to be fully efficient. To achieve a
 competitive edge firms will have to be able to sense and seize, which require a certain
 organizational cognitive frame to be efficient. 'Dynamic capabilities are about doing the
 right things, at the right time, based on new product (and process) development, unique
-managerial orchestration processes, a strong and {\bf change-oriented organizational culture}'
-(our emphasis) \cite[p]{Teece2014}. 
+managerial orchestration processes, a strong and {\bf change-oriented organizational
+  culture}' (our emphasis) \cite[p]{Teece2014}.
+
+
+changes resulting from execution of dynamic capabilities (e.g. sensing and seizing) may
+move existing organizational objective functions and thus render current incentive
+alignment obsolete or out of place. This leads to an objective displacement that is
+particularly prevalent in firms with high sensing and seizing capabilities because distant
+search may lead to more radical change (ref). Organizations with high levels of dynamic
+capabilities geared towards sensing and seizing opportunities are doing so through
+\emph{resource orchestration}, e.g. by creating, extending and modifying the resource
+base, as discussed extensively in the extant literature
+\citep{Helfat2007,DiStefano2014,Protogerou2012,Schilke2018}. However, sensing and seizing
+opportunities in the market relates to discovering market disequilibrium
+\citep{Kirzner1997} as well as upsetting existing equilibria \citep{Schumpeter1934}. The
+process of sensing and seizing 'involves understanding latent demand, the structural
+evolution of industries and markets, and likely supplier and competitor responses'
+\citep[p. 1322]{Teece2007} as well as 'a good deal of customer, competitor, and supplier
+information and intelligence (with a) a significant tacit component' (ibid p 1330).To make
+sure the organization respond to changes (i.e. having an efficient cognitive frame)
+stemming from executed dynamic capabilities (e.g. sensing and seizing) the firm needs to
+make sure incentives are aligned for change. 
+
+Through the process of exploration, individuals in the organization may
+accumulate private and tacit information that, if unchecked, can become a source of
+knowledge asymmetries and incentive problems (alchian and demsetz 1972), and leave the
+firm vulnerable to agency problems. Accumulation of private information in the
+organization without incentive alignment of some sort can lead rent-appropriation from
+information asymmetries \citep{Blyler2003}. In such instances of potential misalignment of
+interest, a shared cognitive frame emphasizing a growth mindset can be a useful
+remedy. Furthermore, in addition to incentives alignment the more psychological element
+of change buy-in comes into play \todo{Not sure how to proceed here - should we make a
+  distinction between the incentive problem and the buy in problem? Coud they both be
+  examples of interest alignment with different faces of motivation - extrensic vs intrinsic} (ref).   
+
+To see how this would work recent contribution in neuroscience is helpful. Several
+contributions have established a clear connection between having a growth mindset and
+emphasizing intrinsic motivation (Schroder et.al 2014,O`Rourke et.al 2014). Moreover,
+individuals with higher degrees of intrinsic motivation from a growth mindset exhibit a
+significant higher ability for learning and consequently for embracing new learning
+opportunities (Yeager et al 2012). In other words, individuals with a growth mindset are
+more open to change because it enhances their intrinsic motivation from learning which
+fuels their individual utility (Ng 2018). In a situation with considerable change stemming
+from execution of dynamic capabilities, an organization with a common cognitive frame
+based on a growth mindset will be able to capture more value from the change \emph{et
+  ceteris paribus}.
+
+Consequently, by instilling a growth mindset as a change in the cognitive frame of
+Microsoft, Nadella enhanced the change ability of the firm by strengthening the intrinsic
+motivation employees have to buy into the change, and meanwhile securing a certain
+interest alignment. So Nadella did not only change the resources and capabilites of the
+company due to a strategic change towards the cloud, he did also instill a growth mindset
+to utilize the motivational and non-behavioral object of action discussed above. In other
+words, dynamic capabilites can work through two distinctly different paths. The first path
+is the familiar process of changing underlying resources and operational capabilities
+(\emph{resource orchestration path}). The second is the focal path of this paper where
+dynamic capabilities changes the cognitive frames of the organization \emph{cognitive
+  programmer path}. This leads us to the following initial hypotheses:
+
+H1: Dynamic capabilities influences the quality? of operational capabilities 
+
+H2: Dynamic capabilities influences the WHAT of cognitive frames 
+
+The link between operational capabilities enacted through dynamic capabilites, and
+competetive advantage is well established in the literature (refs). The main notion is
+that resources and capabilites evolved through dynamic capabilites are inimatable and
+rare, and hence conducive to the conditions underpinning competetive advantage (refs
+barney). Thus our third hypothesis is well known as the first one:
+
+H3: Operational capabilites acts as a mediator between dynamic capabiliites and
+competetive advantage. 
+
+Similarly, instilling a growth mindset is also leading to competetive advantge BECAUSE???
+\todo{Need to discuss this}
+
+
+And one more hpythoses on how COG influences resources
+
+
+
+THIS IS HOW FAR I CAME
+\newpage
+
+
+
+To make sure that these interests are aligned
+
+
+
+DC executed requires changes. These changes will require a simultanous change in cognitive
+frames of the firm for N reasons.
+
+1. Sensing and seizing activities typicaly of dynamic capabilities generate possible
+agency problems *blyler coff
+2. Information from the process is interpreted and differently at different levels in the
+corporate hierarchy (gavetti) hence aligning interpretation across the organization matter
+
+One way of overcoming this agency problems and varying interpratations of the environment,
+is to develop a common cognitive frame within which all information is interpreted and
+acted upon. Such common traits purpose and organizational identity, 
+organizatioanl values and culture \citep{Verona2011}.
+
 
 
 To see how dynamic capabilities acts through cognitive objects of action (i.e. as a
 cognitive programmer) we consider two distinctly different functions of dynamic
-capabilities related to their microfoundations \citep{Teece2007}. the first function is
+capabilities related to their microfoundations \citep{Teece2007}. The first function is
 related to the discovering and capturing opportunities (e.g. the ability of the
 organization to sense and seize opportunities (ibid)) which is very much related to the
 concept of exploration \citep{March1991}. Organizations with high levels of dynamic
@@ -240,26 +343,109 @@ base, as discussed extensively in the extant literature
 \citep{Helfat2007,DiStefano2014,Protogerou2012,Schilke2018}. However, sensing and seizing
 opportunities in the market relates to discovering market disequilibrium
 \citep{Kirzner1997} as well as upsetting existing equilibria \citep{Schumpeter1934}. The
-process of sensing and seizing 'involves understanding latent demand, the structural evolution of
-industries and markets, and likely supplier and competitor responses'
-\citep[p. 1322]{Teece2007} as well as . Individuals are the unit of analysis embedding these abilities
-and if left up to these individuals without a higher organizing framework, the firm will
-be very vulnerable because of knowledge asymmetries and incentive problems (alchian and
-demsetz 1972) and lead to sub optimal rent-appropriation on the part of the individual
-employee \citep{Blyler2003}. A similar argument applies to the function of \emph{seizing}
-where the organization is set to mobilize resources for the purpose of gaining from these
+process of sensing and seizing 'involves understanding latent demand, the structural
+evolution of industries and markets, and likely supplier and competitor responses'
+\citep[p. 1322]{Teece2007} as well as 'a good deal of customer, competitor, and supplier
+information and intelligence (with a) a significant tacit component' (ibid p
+1330). Consequently, in this process of exploration individuals in the organization may
+accumulate private and tacit information that, if unchecked, can become a source of
+knowledge asymmetries and incentive problems (alchian and demsetz 1972), and leave the
+firm vulnerable to agency problems. Accumulation of private information in the
+organization without incentive alignment of some sort can lead rent-appropriation from
+information asymmetries \citep{Blyler2003}. One way to  if not sufficiently aligned with the
+cognitive frames of the organization. This particular
+
+%Mindset induction effects on cognitive control: a neurobehavioral investigation.
+%Schroder HS, Moran TP, Donnellan MB, Moser JS
+%Biol Psychol. 2014 Dec; 103():27-37.
+
+%12. Yeager D.S., Dweck C.S. Mindsets that promote resilience: When students believe that personal characteristics can be developed. Educ. Psych%ol. 2012;47:302–314
+
+
+Proactiveness is an opportunity-seeking, forward-looking perspective characterized by the introduction of new products and ser- vices ahead of the competition and acting in anticipation of future demand.
+
+Proacteivenss can create psychological ownership (siegel 
+We build on these theoretical considerations by applying the concept of psychological ownership (Pierce et al., 2003), defined as ‘the state in which individuals feel as though the target of ownership or a piece of that target is “theirs” ’ (Pierce et al., 2003, p. 86)
+
+Missing link between growth mindset and internal motivation
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5836039/
+
+Growth mindset and individual proactivity
+https://www.emerald.com/insight/content/doi/10.1108/CDI-11-2016-0194/full/html
+
+
+
+To be clear, the importance of motivation and, in particular, its strategic relevance for
+organi- zational performance and competitive advan- tage has surfaced in some recent
+contributions in the strategic management field. Managerial rent theorists (Castanias &
+Helfat, 1991, 2001), for example, submit that the availability of skills that have rent
+generation potential is a neces- sary but not sufficient condition for rent gener-
+ation. In so doing, they also point to the impor- tance of motivation for the realization
+of any such potential. Similarly, Coff (1997) discusses a number of dilemmas firms face in
+generating an advantage from human assets, and he points to the importance of governance
+mechanisms to overcome them. Finally, Makadok (2003) calls for future research into the
+genesis of competitive advantage in a way that combines competence- based issues with
+questions of governance or motivation.
+
+of the
+company’s existence and what defi nes or limits its role(s) within its social and eco-
+nomic environment (organizational identity)? What does it stand for (organizational val-
+ues)? How are things done over here (organizational culture)?
+
+include norms (leonard Barton 1992), avoidance of cognitive
+inertia (Trpisas and Gavetti 2000)
+
+organizational inertia
+Second, 
+The existence of layer upon layer of standard procedures, established capabilities, complementary assets, and/or admin- istrative routines can exacerbate decision-making biases against innovation. Incumbent enterprises,
+
+
+Individuals are the unit of analysis embedding these abilities and if left up to
+these individuals without a higher organizing framework, the firm will be very vulnerable
+because of knowledge asymmetries and incentive problems (alchian and demsetz 1972) and
+lead to sub optimal rent-appropriation on the part of the individual employee
+\citep{Blyler2003}. A similar argument applies to the function of \emph{seizing} where the
+organization is set to mobilize resources for the purpose of gaining from these
 opportunities. In order for value to be captured from opportunities, a string of
 conditions have to be met \citep{Teece2017}, but the evolution of a 'strong and
 change-oriented organizational culture' \citep[p. 331]{Teece2014} is of pivotal
 importance. Alas the sensing process requires new knowledge from a wide range of sources
-in the organization a lot of this knowledge is tacit and can lead to rent-appropriation
-from information asymmetries \citep{Blyler2003} if not sufficiently aligned with the
-cognitive frames of the organization.
+in the organization a lot of this tacit knowledge can lead to rent-appropriation
+from information asymmetries if not sufficiently aligned with the
+cognitive frames of the organization \citep{Blyler2003}. Furthermore, as cognition plays
+an important role in the sensing and seizing of opportunities \citep{Helfat2015} and the
+interpretation and understanding varies with individuals position within the
+organization, then diverging interpretations stemming from misaligned cognitive frames may
+lead to 
+
+They maintain that social capital and notably individuals’ valuable internal and external social ties allow for information sharing, innovation and novel ways of thinking which in turn helps managers understand resource acquisition, integration and release
+
+
+Although they relate the existence of social capital
+as an antecedents to dynamic capabilities, the same argument can be applied to their
+function; to be able to capture rents for the organization and not the individual a
+certain level of social capital is needed and 
+
+
+“firms would be unable to acquire, recombine, and release resources”
+resources” (2003: 680) without the social capital of individuals. Hence need to build
+social capital. Growth mindset - cognitive frames important to build social captail within
+the organization?
+
+
 
 One consequence is a ‘program persistence bias.’ Its corollary is various forms of
 ‘anti-innovation bias,’ including the ‘anti- cannibalization’ basis discussed in a later
 section. Program persistence refers to the funding of pro- grams beyond what can be
 sustained on the merits,
+
+the emphasis is on the intermediary role of "asset
+orchestration" \citep{Teece2012,Sirmon2011} as related to the "the selection, con-
+figuration, alignment, and modification of tangible and intangible assets"
+\citep[p.842]{Helfat2015}. This process is very much similar to the exploration and
+exploitation of opportunities and we consider reconfiguration to come into the focus when
+these processes are seen over time and in changing contexts. Hence we are limiting this
+study to looking at the sensing and seizing class of dynamic capabilities.
 
 
 
@@ -272,27 +458,6 @@ extant literature (refs), but a quick recap is useful.
 
 DC geared towards creating new or reconfiguring old (exploration vs exploitation) but true
 competetiveness over time stems from ambidexterity- link to research on cultural ambidecterity
-
-The concept of sensing and seizing has analogous meaning in theoretical traditions tangent
-to DC. Notably entrepreneurship \citep{Hitt2011} and organizational theory
-\citep{March1991}. \cite{Hitt2011} states that "entrepreneurship involves identifying and
-exploiting opportunities" (ibid p 59) where identification is tied to the process of
-discovery \citep{Shane2000}. Based on the definitions of opportunity discovery as DEF HERE
-juxtaposed to the definition of sensing as "a scanning, creation, learning, and
-interpretive activity" \citet[p. 1322]{Teece2007} we argue that they are similar in nature
-and usable for exploring the importance of the latter in the innovation process. It also
-bears resemblance to the concept of organizational exploration as searching, risk-taking,
-discovery, experimentation, prototyping, and flexibility \citep{March1991}. Independent of
-the nature of opportunities to be sensed as being either objective
-\citep{Alvarez2007,Shane2000} or created \citep{Alvarez2007}, the process of sensing does
-require resources and capabilities for search (ref) and a clear affinity between
-opportunity and a project exist (casson and Wadeson in Mcmullen2007) suggesting s clear
-inter dependency between routines and resources, and higher order capabilities of sensing
-\citep{Teece2007} and making sense of the opportunity
-\citep{Weick1995,March1991}. Consequently, we would expect the sensing class of dynamic
-capabilities to be positively related to innovation on the one hand, and reinforcing the
-impact from innovation input simultaneously.\newline
-
 
 
 To see how dynamic capabilities work to adapt cognitive frames in addition to operational
@@ -412,8 +577,7 @@ Cognitive programming as alignment mechanism (link to OC)
 
 
 
-THIS IS HOW FAR I CAME
-\newpage
+
 
 Ethnographic study on cognitive farmes - still top management team
 http://knowledge.wharton.upenn.edu/wp-content/uploads/2013/09/13481.pdf
