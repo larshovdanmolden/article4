@@ -63,7 +63,11 @@ TBD
 \doublespacing
 
 
+
+
 \section{Introduction}
+
+
 
 
 %% Extant literature on dynamic capabilities is battling with a fundamental conception and
@@ -145,7 +149,7 @@ The rest of this paper is organized as follows:
 
 \section{Hypotheses}\label{sec:hyp}
 
-DC as resource orchestration - influencing capabilities
+DC as resource orchestration - influencing capabilitie
 DC as cognitive programmer - inluencing cognitive frames
 
 When Satya Nadella took over as CEO of Microsoft in March 2014, he took over a company in
@@ -222,14 +226,13 @@ Looking at dynamic capabilities through the functions of sensing and seizing opp
 highlighted in the extant literature. This function is related to the discovering and
 capturing opportunities (e.g. the ability of the organization to sense and seize
 opportunities (ibid)) which is very much related to the concept of exploration
-\citep{March1991}Moreover, as discussed above, these functions are also requiring a
+\citep{March1991}. Moreover, as discussed above, these functions are also requiring a
 certain non-behavioral object of action in order to be fully efficient. To achieve a
 competitive edge firms will have to be able to sense and seize, which require a certain
 organizational cognitive frame to be efficient. 'Dynamic capabilities are about doing the
 right things, at the right time, based on new product (and process) development, unique
 managerial orchestration processes, a strong and {\bf change-oriented organizational
   culture}' (our emphasis) \cite[p]{Teece2014}.
-
 
 changes resulting from execution of dynamic capabilities (e.g. sensing and seizing) may
 move existing organizational objective functions and thus render current incentive
@@ -248,22 +251,60 @@ evolution of industries and markets, and likely supplier and competitor response
 information and intelligence (with a) a significant tacit component' (ibid p 1330).To make
 sure the organization respond to changes (i.e. having an efficient cognitive frame)
 stemming from executed dynamic capabilities (e.g. sensing and seizing) the firm needs to
-make sure incentives are aligned for change. 
+make sure incentives are aligned for change and that the organization buys into the changes.
 
-Through the process of exploration, individuals in the organization may
-accumulate private and tacit information that, if unchecked, can become a source of
+First, the \emph{incentive alignment problem} relates to how interests of the firm
+as a whole and the collection of individual are aligned \cite{Gottschalg2007} and how this
+alignment changes when the firm embarks on strategic change as triggered by execution of
+dynamic capabilities. Through the process of exploration, individuals in the organization
+may accumulate private and tacit information that, if unchecked, can become a source of
 knowledge asymmetries and incentive problems (alchian and demsetz 1972), and leave the
 firm vulnerable to agency problems. Accumulation of private information in the
 organization without incentive alignment of some sort can lead rent-appropriation from
 information asymmetries \citep{Blyler2003}. In such instances of potential misalignment of
-interest, a shared cognitive frame emphasizing a growth mindset can be a useful
-remedy. Furthermore, in addition to incentives alignment the more psychological element
-of change buy-in comes into play \todo{Not sure how to proceed here - should we make a
-  distinction between the incentive problem and the buy in problem? Coud they both be
-  examples of interest alignment with different faces of motivation - extrensic vs intrinsic} (ref).   
+interest, a shared cognitive frame emphasizing a growth mindset can be a useful remedy.
+
+Second, the \emph{buy-in problem} refers to the general willingness of the organization to
+accept and value the importance of some decision or system 'without being prompted or
+required by formal governance mechanisms'\citep[p. 812]{Simsek2009}. When individuals of
+a firm buys into changes they will enhance the full organization`s ability to not only act
+upon changes (Marchand et.al 2000), but also in 'timely responsiveness' (Kohli et.al 1993,
+Simsek2009). 
+
+Both the incentive alignment problem and the buy-in problem are interrelated, but still
+represents different mechanisms. They are tied to individual motivation albeit in
+different ways. The incentive alignment problem is tied to \emph{extrinsic motivation}
+(Lindenberg 2001, Brief and Aldag 1977) where the individual is motivated by rewards or
+outcome 'such as money, power, recognition and so forth'
+\citep[p. 420]{Gottschalg2007}. The buy-in problem, in turn, is related to \emph{intrinsic
+  motivation} where the individual is driven by the goal of being engaged in enjoyable
+(Lindenberg, 2001), self-determined, and competence-enhancing (Deci \& Ryan, 1985)
+behavior (hedonistic intrinsic motivation), as well as adhering to a goal of engaging in
+behavior that is compli- ant with norms and values (normative intrinsic
+motivation). \todo{some direct citations here - need rewrite}.
+
+Extrinsic motivation is often addressed through reward systems (ref) but tacit mechanisms
+such as psychological ownership \citep{Sieger2013} has been found to be very efficient in
+aligning incentives. Psychological ownership basically retains agency theory’s assumption
+of the self-interested manager, whereas the non-economic functions of ownership, such as
+efficacy, identity, and territoriality, might curtail expropriating behaviour and align
+the interests of agents and principals (cf. Pierce et al., 2003). Hence, this concept of
+psychological ownership bridges over to the intrinsic motivation of individuals. Moreover,
+intrinsic motivation in general is influenced through changing the tasks of individuals or
+at the very least accepting individuals to change ttasks themselves to fit their
+perception of their context (Hackman and Gersick), and through regimes of socialization
+and shared norms (Kerr and Jackofsky). Common for both psychological ownership and the
+intrinsic motivation enhancement in general is a feature of the employees' cognitive
+framing, which guides the mental pathways by which they decide what is, and what is not,
+important. According to Leonard- Barton (1992), these norms and values represent the
+accretion of decisions made over time in response to the interpretation of organizational
+roles. Consequently, a cognitive frame that enhances the intrinsic motivation of the
+employees are very valuable. One way of thinking of instilling an appropriate and
+efficient cognitive frame would be the concept of a growth mindset (Dweck) as also
+emphasized in the case of Microsoft.    
 
 To see how this would work recent contribution in neuroscience is helpful. Several
-contributions have established a clear connection between having a growth mindset and
+contributions have established a clear connection between having a growth mindset (Dweck 200x) and
 emphasizing intrinsic motivation (Schroder et.al 2014,O`Rourke et.al 2014). Moreover,
 individuals with higher degrees of intrinsic motivation from a growth mindset exhibit a
 significant higher ability for learning and consequently for embracing new learning
@@ -310,7 +351,8 @@ And one more hpythoses on how COG influences resources
 THIS IS HOW FAR I CAME
 \newpage
 
-
+the general capability, views, norms and rules of behavior, with regard to accessing,
+understanding and using information in a social collectivity. Zheng 2005
 
 To make sure that these interests are aligned
 
