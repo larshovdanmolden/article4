@@ -10,7 +10,9 @@ library(mediation)
 library(reshape)
 library(huxtable)
 library(semPLS)
-###install.packages("huxtable")
+library(mice)
+library(mma)
+####install.packages("semPLS")
                                         #library(polycor)
 
 ## This loads the data workspace where skattefunn_data.r is already loaded
@@ -80,6 +82,11 @@ imputezw <- function(vec){
     return(vec)
 }
 
+imputezw <- function(vec){
+    tempData <- mice(vec,m=10,maxit=50,meth='pmm',seed=500)
+    return(complete(tempData,1))
+}
+
 
 
 extboot <- function(bootobj,n,nam,r){ #remembaer space between Letter and " ("P ")
@@ -101,71 +108,174 @@ extboot <- function(bootobj,n,nam,r){ #remembaer space between Letter and " ("P 
 }
 
 ## including only observations at both times
-zwadj <- subset(zw,!is.na(Q4.1_t1))
+zw2 <- zw
+zw2[zw2 == 0] <- NA
+zwadj <- subset(zw2,!is.na(Q4.1_t1))
 rownames(zwadj) <- NULL
+
 
 
 setwd("/Users/larshovdanmolden/Documents/git/article4")
 alldc <- zwadj[,c("Q19a", "Q19c", "Q19d", "Q20b", "Q20c","Q19", "Q20d","Q20e","Q19b","Q20")]
 
 ## Running median imputations
-dc01 <-  imputezw(zwadj[,c("Q6.2_t1","Q6.4_t1", "Q6.5_t1","Q7.1_t1","Q7.2_t1")] )
-dc02 <-  imputezw(zwadj[,c("Q6.1_t1","Q7.3_t1","Q7.4_t1")] )
-dc001 <- imputezw(zwadj[,c("Q19a", "Q19c", "Q19d", "Q20b", "Q20c")] )
-dc002 <-  imputezw(zwadj[,c("Q19", "Q20d","Q20e")] )
-dc002 <-  imputezw(zwadj[,c("Q19c", "Q20b", "Q20c")])
+#dc01 <-  imputezw(zwadj[,c("Q6.4_t1", "Q6.5_t1","Q7.1_t1","Q7.2_t1")] )
+#dc02 <-  imputezw(zwadj[,c("Q6.1_t1","Q7.3_t1","Q7.4_t1")] )
+#dc001 <- imputezw(zwadj[,c("Q19a", "Q19c", "Q19d", "Q20b", "Q20c")] )
+##dc002 <-  imputezw(zwadj[,c("Q19", "Q20d","Q20e")] )
+dc002 <-  imputezw(zwadj[,c("Q19d","Q19c", "Q20b", "Q20c","Q20e")])
 ca0 <-  imputezw(zwadj[,c("Q28","Q28a","Q28c")] )
 ca1 <-   imputezw(zwadj[,c("Q16.1_t1","Q16.2_t1","Q16.4_t1")] )
-or1 <-   imputezw(zwadj[,c("Q5.4_t1","Q5.6_t1","Q5.7_t1","Q5.1_t1","Q5.2_t1","Q5.3_t1","Q5.5_t1")])
-or0 <-   imputezw(zwadj[,c("Q21c","Q21d","Q21e","Q22","Q22a","Q22b","Q22c")])
+#or1 <-   imputezw(zwadj[,c("Q5.4_t1","Q5.6_t1","Q5.7_t1","Q5.1_t1","Q5.2_t1","Q5.3_t1","Q5.5_t1")])
+#or0 <-   imputezw(zwadj[,c("Q21c","Q21d","Q21e","Q22","Q22a","Q22b","Q22c")])
 or1 <-   imputezw(zwadj[,c("Q5.4_t1","Q5.6_t1","Q5.7_t1")])
-or0 <-   imputezw(zwadj[,c("Q21c","Q21d","Q21e")])
-ma01 <-  imputezw(zwadj[,c( "Q8.7_t1", "Q8.8_t1", "Q8.9_t1")])
-ma02 <-  imputezw(zwadj[,c("Q24","Q24a","Q24b","Q24c","Q24d")])
-m0 <- imputezw(zwadj[,c("Q16a","Q16b","Q17a","Q17b")])
-m1 <- imputezw(zwadj[,c("Q4.1_t1","Q4.2_t1","Q4.4_t1","Q4.5_t1")])
+#or0 <-   imputezw(zwadj[,c("Q21c","Q21d","Q21e")])
+#ma01 <-  imputezw(zwadj[,c( "Q8.7_t1", "Q8.8_t1", "Q8.9_t1")])
+#ma02 <-  imputezw(zwadj[,c("Q24","Q24a","Q24b","Q24c","Q24d")])
+## m0 <- imputezw(zwadj[,c("Q16a","Q16b","Q17a","Q17b")])
+#m0 <- imputezw(zwadj[,c("Q18","Q17a","Q17b")])
 m1 <- imputezw(zwadj[,c("Q4.4_t1","Q4.5_t1","Q4.6_t1")])
+m2 <- imputezw(zwadj[,c("Q4.1_t1","Q4.2_t1","Q4.3_t1")])
+#dyn  <- imputezw(zwadj[,c("Q27a","Q27b","Q27c")])
 #m0 <- imputezw(zwadj[,c("Q18a","Q18b","Q18d")])
 #m1 <- imputezw(zwadj[,c("Q4.7_t1","Q4.8_t1","Q4.9_t1")])
 
 
-complist <- list(DC_P=dc01,DC_X=dc02,CA_t=ca0,CA=ca1,P=or1,R=ma01)
-vcontrols <- zwadj[,c("size","age","dyn","pm","lassets")]
-zwadj <- cbind(dc01,dc02,dc001,dc002,ca0,ca1,or1,or0,ma01,m0,m1,vcontrols)
+#complist <- list(DC_P=dc01,DC_X=dc02,CA_t=ca0,CA=ca1,P=or1,R=ma01)
+vcontrols <- zwadj[,c("size","age","pm","lassets","debt","assets","dyn")]
+#zwadj <- cbind(dc01,dc02,dc001,dc002,ca0,ca1,or1,or0,ma01,m0,m1,vcontrols,dyn)
+zwadj <- cbind(dc002,ca0,ca1,m1,vcontrols)
+zwadj$de <- zwadj$debt/zwadj$assets
 
 
+########### USE REGRESSION
+
+zwadj$m  <- rowMeans(m1)
+zwadj$r  <- rowMeans(or1)
+#zwadj$m0  <- rowMeans(m0)
+#zwadj$r0  <- rowMeans(or0)
+zwadj$ca1  <- rowMeans(ca1)
+zwadj$ca0  <- rowMeans(ca0)
+zwadj$dc0  <- rowMeans(dc002)
+#zwadj$dc1  <- rowMeans(dc02)
+
+am1 <- round(psych::alpha(m1)$total[1],2)
+am1
+
+
+zwadj <- subset(zwadj,!is.na(zwadj$ca0))
+zwadj <- subset(zwadj,!is.na(zwadj$r0))
+zwadj <- subset(zwadj,!is.na(zwadj$r))
+
+
+mod1 <- lm(ca1 ~ ca0 + dc0 + r + size + de + assets + pm, data=zwadj);summary(mod1)
+mod1m <- lm(r ~ + dc0 + size + debt + assets + pm  , data=zwadj);summary(mod1m)
+med.out1 <- mediate(mod1m,mod1, treat="dc0",mediator="r",robustSE=TRUE, sims=1000)
+summary(med.out1) ## ADE is insignificant telling us that DL has no direct effect on OR
+
+mod1 <- lm(ca1 ~ ca0 + dc0 + m + size + age + pm+ assets + debt, data=zwadj);summary(mod1)
+mod1m <- lm(m ~ + dc0 + size + age  + pm + assets +debt, data=zwadj);summary(mod1m)
+med.out1 <- mediate(mod1m,mod1, treat="dc0",mediator="m",robustSE=TRUE, sims=1000)
+summary(med.out1) ## ADE is insignificant telling us that DL has no direct effect on OR
+
+plot(m.med, type = "point")
+plot(m.med, type = c("sigma", "R2-total"), tgroup = c("treated", "control"))
+
+
+
+Xnames <-  c("ca0")
+m.med <- multimed(outcome = "ca1", med.main = "m", med.alt = "r", treat = "dc0", covariates = Xnames, data = zwadj, sims = 100)
+summary(m.med)
+
+
+m.med.para <- multimed(outcome = "ca1", med.main = "r", treat = "dc0", experiment = "m", design = "parallel", data = zwadj, sims = 100)
+summary(m.med.para)
+
+
+
+zwadj <- subset(zwadj,!is.na(zwadj$ca1))
+zwadj <- subset(zwadj,!is.na(zwadj$age))
+zwadj <- subset(zwadj,!is.na(zwadj$size))
+zwadj <- subset(zwadj,!is.na(zwadj$r))
+zwadj <- subset(zwadj,!is.na(zwadj$pm))
+zwadj <- subset(zwadj,!is.na(zwadj$debt))
+
+
+x=zwadj[,c("ca0","size","age","assets","debt","pm","r","m")]
+y=zwadj[,"ca1"]
+pred=zwadj$dc0
+
+data.bin<-data.org(x,y,mediator=7:8,jointm=list(n=1,j1=c(7,8)),pred=pred, predref="M",alpha=0.1,alpha2=0.1)
+summary(data.bin)
+
+temp1<-mma::boot.med(data=data.bin,n=2,n2=4,nonlinear=FALSE)
+temp1
+summary(temp1)
+
+data.bin<-data.org(x,y,mediator=7:8,pred=pred, predref="M",alpha=0.1,alpha2=0.1)
+summary(data.bin)
+
+temp1<-mma::boot.med(data=data.bin,n=2,n2=4,nonlinear=FALSE)
+temp1
+summary(temp1)
+
+
+
+
+
+data.contx<-data.org(x,y,pred=pred,contmed=c(5:6),
+                     alpha=0.4,alpha2=0.4)
+
+summary(data.contx)
+
+temp1<-mma::boot.med(data=data.contx,n=1,n2=2)
+temp1
+summary(temp1)
+data('weight_behavior')
+x=weight_behavior[,2:14]
+y=weight_behavior[,1]
+
+
+
+data("weight_behavior")
+x=weight_behavior[,2:14]
+y=weight_behavior[,15]
+data.bin<-data.org(x,y,pred=2,mediator=c(1,3:13), jointm=list(n=1,j1=c("tvhours","cmpthours","cellhours")), predref="F",alpha=0.4,alpha2=0.4)
+
+x=weight_behavior[,c(3:14)]
+pred=weight_behavior[,2]
+y=weight_behavior[,15]
+
+data.b.b.2.1<-data.org(x,y,mediator=5:12,jointm=list(n=1,j1=c(5,7,9)),
+pred=pred,predref="M", alpha=0.4,alpha2=0.4)
+
+> summary(data.bin)
 ######## ADJUSTING DATASET WITH DELTA
 
 zwadj$d1 <- zwadj$Q5.4_t1 - zwadj$Q21c
 zwadj$d2 <- zwadj$Q5.6_t1 - zwadj$Q21d
 zwadj$d3 <- zwadj$Q5.7_t1 - zwadj$Q21e
 
-zwadj$m1 <- zwadj$Q4.1_t1 - zwadj$Q16a
-zwadj$m2 <- zwadj$Q4.2_t1 - zwadj$Q16b
-zwadj$m3 <- zwadj$Q4.4_t1 - zwadj$Q17a
-zwadj$m4 <- zwadj$Q4.5_t1 - zwadj$Q17b
-
-names(zwadj)
-summary(zwadj$dyn)
 nboot <- 200
-zwadjh <- subset(zwadj,dyn>4);nrow(zwadjh)
-zwadjl <- subset(zwadj,dyn<=4);nrow(zwadjl)
+## zwadjh <- subset(zwadj,dyn>4);nrow(zwadjh)
+## zwadjl <- subset(zwadj,dyn<=4);nrow(zwadjl)
 
 DC1 <- c("Q6.4_t1", "Q7.1_t1","Q7.2_t1","Q6.5_t1")
-DC2 <- c("Q6.1_t1","Q7.3_t1","Q7.4_t1")
+DC01 <- c("Q6.1_t1","Q7.3_t1","Q7.4_t1")
 #DC01 <- c("Q19", "Q20d","Q20e")
-#DC01 <- c("Q19a", "Q19c", "Q19d", "Q20b", "Q20c")
+DC01 <- c("Q19a", "Q19c", "Q19d", "Q20b", "Q20c")
+
 DC01 <- c("Q19c", "Q20b", "Q20c")
 CA0 <- c("Q28","Q28a","Q28c")
 CA1 <- c("Q16.1_t1","Q16.2_t1","Q16.4_t1")
 R <- c("Q5.4_t1","Q5.6_t1","Q5.7_t1")
-M <- c("Q4.1_t1","Q4.2_t1","Q4.4_t1","Q4.5_t1")
+M <- c("Q4.4_t1","Q4.5_t1","Q4.6_t1")
 R0 <- c("Q21c","Q21d","Q21e")
-M0 <- c("Q16a","Q16b","Q17a","Q17b")
-#R <- c("d1","d2","d3")
-#M <- c("m1","m2","m3","m4")
+M0 <- c("Q18","Q17a","Q17b")
 
-CONT <- c("size","age","lassets","pm")
+CONT <- c("size","age","lassets","dyn")
+#CONT <- c("size")
+#CONT <- c("pm","de","dyn","size")
 
 ##### Direct only
 items <- c(DC01,CA0,CA1,CONT)
@@ -177,21 +287,25 @@ sm <- cbind(iv,dv);colnames(sm) <- c("source","target")
 
 DIR <- plsm(data = zwadj, strucmod = sm, measuremod = mm)
 dir <- sempls(model = DIR, data = zwadj, wscheme = "centroid",maxit=1000)
+dir
 
 pathDiagram(dir, file = "direct", full = FALSE, edge.labels = "both", output.type = "graphics", digits = 2,graphics.fmt="pdf")
 
 dirfit <- semPLS::gof(dir)
+dirfit
 dirBoot <- bootsempls(dir, nboot = nboot, start = "ones", verbose = FALSE)
 dirout <- extboot(dirBoot,9,"",c("^M ","R "))
-dirout
+
+
+
 
 ##### R as  mediators
-items <- c(DC01,CA0,CA1,R,CONT)
-latents <- c(rep("DC",length(DC01)),rep("CA0",length(CA0)),rep("CA1",length(CA1)),rep("R",length(R)),toupper(CONT))
+items <- c(DC01,CA0,CA1,R,R0,CONT)
+latents <- c(rep("DC",length(DC01)),rep("CA0",length(CA0)),rep("CA1",length(CA1)),rep("R",length(R)),rep("R0",length(R0)),toupper(CONT))
 
 mm <- cbind(latents,items); colnames(mm) <- c("source","target")
-iv <- c(toupper(CONT),"CA0","DC","R","DC")
-dv <- c(rep("CA1",length(CONT)),"CA1","CA1","CA1","R")
+iv <- c(toupper(CONT),toupper(CONT),"CA0","DC","R","DC","R0")
+dv <- c(rep("CA1",length(CONT)),rep("R",length(CONT)),"CA1","CA1","CA1","R","R")
 sm <- cbind(iv,dv);colnames(sm) <- c("source","target")
 RMED <- plsm(data = zwadj, strucmod = sm, measuremod = mm)
 rmed <- sempls(model = RMED, data = zwadj, wscheme = "centroid",maxit=1000)
@@ -199,6 +313,7 @@ rmed <- sempls(model = RMED, data = zwadj, wscheme = "centroid",maxit=1000)
 pathDiagram(rmed, file = "rmed", full = FALSE, edge.labels = "both", output.type = "graphics", digits = 2,graphics.fmt="pdf")
 
 rmedfit <- semPLS::gof(rmed)
+rmedfit
 rmedBoot <- bootsempls(rmed, nboot = nboot, start = "ones", verbose = FALSE)
 rmedout <- extboot(rmedBoot,9,"",c("^M ","R "))
 
@@ -209,8 +324,8 @@ items <- c(DC01,CA0,CA1,M,CONT)
 latents <- c(rep("DC",length(DC01)),rep("CA0",length(CA0)),rep("CA1",length(CA1)),rep("M",length(M)),toupper(CONT))
 
 mm <- cbind(latents,items); colnames(mm) <- c("source","target")
-iv <- c(toupper(CONT),"CA0","DC","M","DC")
-dv <- c(rep("CA1",length(CONT)),"CA1","CA1","CA1","M")
+iv <- c(toupper(CONT),toupper(CONT),"CA0","DC","M","DC")
+dv <- c(rep("CA1",length(CONT)),rep("M",length(CONT)),"CA1","CA1","CA1","M")
 sm <- cbind(iv,dv);colnames(sm) <- c("source","target")
 MMED <- plsm(data = zwadj, strucmod = sm, measuremod = mm)
 mmed <- sempls(model = MMED, data = zwadj, wscheme = "centroid",maxit=1000)
@@ -218,42 +333,49 @@ mmed <- sempls(model = MMED, data = zwadj, wscheme = "centroid",maxit=1000)
 pathDiagram(mmed, file = "mmed", full = FALSE, edge.labels = "both", output.type = "graphics", digits = 2,graphics.fmt="pdf")
 
 mmedfit <- semPLS::gof(mmed)
+mmedfit
+
 mmedBoot <- bootsempls(mmed, nboot = nboot, start = "ones", verbose = FALSE)
 mmedout <- extboot(mmedBoot,9,"",c("^M ","R "))
+mmedfit
+
 
 
 ##### Both mediators
-items <- c(DC01,CA0,CA1,R,M,CONT)
-latents <- c(rep("DC",length(DC01)),rep("CA0",length(CA0)),rep("CA1",length(CA1)),rep("R",length(R)),rep("M",length(M)),toupper(CONT))
+items <- c(DC01,CA0,CA1,R,M,M0,R0,CONT)
+latents <- c(rep("DC",length(DC01)),rep("CA0",length(CA0)),rep("CA1",length(CA1)),rep("R",length(R)),rep("M",length(M)),rep("R0",length(R0)),rep("M0",length(M0)),toupper(CONT))
 
 mm <- cbind(latents,items); colnames(mm) <- c("source","target")
-iv <- c(toupper(CONT),"CA0","DC","R","DC","M","DC")
-dv <- c(rep("CA1",length(CONT)),"CA1","CA1","CA1","R","CA1","M")
+iv <- c(toupper(CONT),toupper(CONT),toupper(CONT),"CA0","R","DC","M","DC","M0","R0")
+dv <- c(rep("CA1",length(CONT)),rep("R",length(CONT)),rep("M",length(CONT)),"CA1","CA1","R","CA1","M","M","R")
 sm <- cbind(iv,dv);colnames(sm) <- c("source","target")
 BOTH <- plsm(data = zwadj, strucmod = sm, measuremod = mm)
 both <- sempls(model = BOTH, data = zwadj, wscheme = "centroid",maxit=1000)
+both
 
 pathDiagram(both, file = "both", full = FALSE, edge.labels = "both", output.type = "graphics", digits = 2,graphics.fmt="pdf")
 
 bothfit <- semPLS::gof(both)
+bothfit
 bothBoot <- bootsempls(both, nboot = nboot, start = "ones", verbose = FALSE)
 bothout <- extboot(bothBoot,9,"",c("^M ","R "))
-
+bothBoot
 
 ##### Both mediators with link between
-items <- c(DC01,CA0,CA1,R,M,CONT)
-latents <- c(rep("DC",length(DC01)),rep("CA0",length(CA0)),rep("CA1",length(CA1)),rep("R",length(R)),rep("M",length(M)),toupper(CONT))
+items <- c(DC01,CA0,CA1,R,R0,M,M0,CONT)
+latents <- c(rep("DC",length(DC01)),rep("CA0",length(CA0)),rep("CA1",length(CA1)),rep("R",length(R)),rep("M",length(M)),rep("R0",length(R0)),rep("M0",length(M0)),toupper(CONT))
 
 mm <- cbind(latents,items); colnames(mm) <- c("source","target")
-iv <- c(toupper(CONT),"CA0","DC","R","DC","M","DC","M")
-dv <- c(rep("CA1",length(CONT)),"CA1","CA1","CA1","R","CA1","M","R")
+iv <- c(toupper(CONT),toupper(CONT),toupper(CONT),"CA0","DC","R","DC","M","DC","M","M0","R0")
+dv <- c(rep("CA1",length(CONT)),rep("M",length(CONT)),rep("R",length(CONT)),"CA1","CA1","CA1","R","CA1","M","R","M","R")
 sm <- cbind(iv,dv);colnames(sm) <- c("source","target")
 LINK <- plsm(data = zwadj, strucmod = sm, measuremod = mm)
 link <- sempls(model = LINK, data = zwadj, wscheme = "centroid",maxit=1000)
-
+link
 pathDiagram(link, file = "link", full = FALSE, edge.labels = "both", output.type = "graphics", digits = 2,graphics.fmt="pdf")
 
 linkfit <- semPLS::gof(link)
+linkfit
 linkBoot <- bootsempls(link, nboot = nboot, start = "ones", verbose = FALSE)
 linkout <- extboot(linkBoot,9,"",c("^M ","R "))
 
@@ -264,108 +386,19 @@ dirfit
 rmedfit
 mmedfit
 bothfit
-linkfit
+###linkfit
 
 dirout
 rmedout
 mmedout
 bothout
-linkout
+###linkout
 
+qSquared(dir, d=4)
+qSquared(rmed, d=4)
+qSquared(mmed, d=4)
+qSquared(both, d=4)
 
-
-
-DC1 <- c("Q6.4_t1", "Q7.1_t1","Q7.2_t1","Q6.5_t1")
-DC2 <- c("Q6.1_t1","Q7.3_t1","Q7.4_t1")
-#DC01 <- c("Q19", "Q20d","Q20e")
-#DC01 <- c("Q19a", "Q19c", "Q19d", "Q20b", "Q20c")
-DC01 <- c("Q19c", "Q20b", "Q20c")
-CA0 <- c("Q28","Q28a","Q28c")
-CA1 <- c("Q16.1_t1","Q16.2_t1","Q16.4_t1")
-R <- c("Q5.4_t1","Q5.6_t1","Q5.7_t1")
-M <- c("Q4.1_t1","Q4.2_t1","Q4.4_t1","Q4.5_t1")
-R0 <- c("Q21c","Q21d","Q21e")
-M0 <- c("Q16a","Q16b","Q17a","Q17b")
-M <- c("Q4.4_t1","Q4.5_t1","Q4.6_t1")
-
-
-##### Both mediators with proactiveness as M
-items <- c(DC01,CA0,CA1,R,M,CONT)
-latents <- c(rep("DC",length(DC01)),rep("CA0",length(CA0)),rep("CA1",length(CA1)),rep("R",length(R)),rep("M",length(M)),toupper(CONT))
-
-mm <- cbind(latents,items); colnames(mm) <- c("source","target")
-iv <- c(toupper(CONT),"CA0","DC","R","DC","M","DC")
-dv <- c(rep("CA1",length(CONT)),"CA1","CA1","CA1","R","CA1","M")
-sm <- cbind(iv,dv);colnames(sm) <- c("source","target")
-BOTH <- plsm(data = zwadj, strucmod = sm, measuremod = mm)
-both <- sempls(model = BOTH, data = zwadj, wscheme = "centroid",maxit=1000)
-both
-pathDiagram(both, file = "both_with_proactiveness_as_M", full = FALSE, edge.labels = "both", output.type = "graphics", digits = 2,graphics.fmt="pdf")
-
-
-bothfit <- semPLS::gof(both)
-bothBoot <- bootsempls(both, nboot = nboot, start = "ones", verbose = FALSE)
-bothout <- extboot(bothBoot,9,"",c("^M ","R "))
-bothout
-
-##### Both mediators with path
-items <- c(DC01,CA0,CA1,R,M,R0,M0,CONT)
-latents <- c(rep("DC",length(DC01)),rep("CA0",length(CA0)),rep("CA1",length(CA1)),rep("R",length(R)),rep("M",length(M)),rep("R0",length(R0)),rep("M0",length(M0)),toupper(CONT))
-
-mm <- cbind(latents,items); colnames(mm) <- c("source","target")
-iv <- c(toupper(CONT),"CA0","DC","R","DC","M","DC","M0","R0","DC","DC")
-dv <- c(rep("CA1",length(CONT)),"CA1","CA1","CA1","R","CA1","M","M","R","M0","R0")
-sm <- cbind(iv,dv);colnames(sm) <- c("source","target")
-BOTH <- plsm(data = zwadj, strucmod = sm, measuremod = mm)
-both <- sempls(model = BOTH, data = zwadj, wscheme = "centroid",maxit=1000)
-both
-pathDiagram(both, file = "bothdct0", full = FALSE, edge.labels = "both", output.type = "graphics", digits = 2,graphics.fmt="pdf")
-
-bothfit <- semPLS::gof(both)
-bothBoot <- bootsempls(both, nboot = nboot, start = "ones", verbose = FALSE)
-bothout <- extboot(bothBoot,15,"",c("M ","R ","M0 ","R0 "))
-
-bothout
-
-
-
-###### SUMMARY OF FINDINGS
-dirfit
-rmedfit
-mmedfit
-bothfit
-bothfith
-bothfitl
-linkfit
-
-dirout
-rmedout
-mmedout
-bothout
-dynout
-linkout
-
-plsLoadings(both)
-
-
-plot(dc01[,1],dc001[,1])
-plot(zwadj$d1)
-
-## opening in the DC literature saying that DC needs to affect CA and that mindset another mechanism in
-
-Organizational posture (EO started as posture) - attitudes
-(Organizational behaviour)
-
-Definitions
-Are there other definitiosn that opens for other mediators than resources
-
-
-
-
-
-
-
-
-
-
-
+dir
+rmed
+mmed
