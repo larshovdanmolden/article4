@@ -82,11 +82,10 @@ imputezw <- function(vec){
     return(vec)
 }
 
-imputezw <- function(vec){
-    tempData <- mice(vec,m=10,maxit=50,meth='pmm',seed=500)
-    return(complete(tempData,1))
-}
-
+## imputezw <- function(vec){
+##     tempData <- mice(vec,m=10,maxit=50,meth='pmm',seed=500)
+##     return(complete(tempData,1))
+## }
 
 
 extboot <- function(bootobj,n,nam,r){ #remembaer space between Letter and " ("P ")
@@ -107,10 +106,10 @@ extboot <- function(bootobj,n,nam,r){ #remembaer space between Letter and " ("P 
     return(res)
 }
 
+
+
 ## including only observations at both times
-zw2 <- zw
-zw2[zw2 == 0] <- NA
-zwadj <- subset(zw2,!is.na(Q4.1_t1))
+zwadj <- subset(zw,!is.na(Q4.1_t1))
 rownames(zwadj) <- NULL
 
 
@@ -140,11 +139,12 @@ m2 <- imputezw(zwadj[,c("Q4.1_t1","Q4.2_t1","Q4.3_t1")])
 m0 <- imputezw(zwadj[,c("Q18","Q17a","Q17b")])
 #m1 <- imputezw(zwadj[,c("Q4.7_t1","Q4.8_t1","Q4.9_t1")])
 
-dcm <- (dc002+dc02)/2 ;colnames(dcm)  <-  c("dcm1","dcm2","dcm3")
+dcm <- (dc002+dc02)/2 ;colnames(dcm)  <-  c("dcm1","dcm2","dcm3") ## Average DC between two periods
 #complist <- list(DC_P=dc01,DC_X=dc02,CA_t=ca0,CA=ca1,P=or1,R=ma01)
 vcontrols <- zwadj[,c("size","age","pm","lassets","debt","assets","dyn")]
 #zwadj <- cbind(dc01,dc02,dc001,dc002,ca0,ca1,or1,or0,ma01,m0,m1,vcontrols,dyn)
 zwadj <- cbind(dc002,dc02,ca0,ca1,m1,m0,or0, or1,vcontrols,dcm)
+zwadj <- cbind(ca0,ca1,m1,m0,or0, or1,dcm)
 zwadj$de <- zwadj$debt/zwadj$assets
 
 #zwbck  <- zwadj
@@ -183,86 +183,7 @@ am1
 ## zwadj <- subset(zwadj,!is.na(zwadj$m0))
 
 
-### Model set 1: Path dependency in mediator and with DC mid way
 
-zwadj <- subset(zwadj,!is.na(zwadj$ca0))
-zwadj <- subset(zwadj,!is.na(zwadj$r))
-
-
-mod1 <- lm(ca1 ~ ca0 + r + dcm + size + age + assets + pm, data=zwadj);summary(mod1)
-mod1m <- lm(r ~  + dcm + r0 + size + age + assets + pm, data=zwadj);summary(mod1m)
-med.out1 <- mediate(mod1m,mod1, treat="dcm",mediator="r",robustSE=TRUE, sims=1000)
-summary(med.out1) ## ADE is insignificant telling us that DL has no direct effect on OR
-
-mod1 <- lm(ca1 ~ ca0 + dcm + m + size + age + assets + pm, data=zwadj);summary(mod1)
-mod1m <- lm(m ~ + dcm + m0 + size + age + assets + pm, data=zwadj);summary(mod1m)
-med.out1 <- mediate(mod1m,mod1, treat="dcm",mediator="m",robustSE=TRUE, sims=1000)
-summary(med.out1) ## ADE is insignificant telling us that DL has no direct effect on OR
-
-
-x=zwadj[,c("ca0","size","age","assets","pm","m","r")]
-y=zwadj[,"ca1"]
-pred=zwadj$dcm
-nrow(zwadj)
-
-data.bin<-data.org(x,y,mediator=6:7,jointm=list(n=1,j1=c(6,7)),pred=pred, predref="M",alpha=0.05,alpha2=0.05)
-summary(data.bin)
-
-## data.bin<-data.org(x,y,mediator=7,pred=pred, predref="M",alpha=0.05,alpha2=0.1)
-## summary(data.bin)
-
-
-temp1<-mma::boot.med(data=data.bin,n=2,n2=4,nonlinear=TRUE)
-temp1
-summary(temp1)
-
-data.bin<-data.org(x,y,mediator=7:8,pred=pred, predref="M",alpha=0.1,alpha2=0.1)
-summary(data.bin)
-
-temp1<-mma::boot.med(data=data.bin,n=2,n2=4,nonlinear=FALSE)
-temp1
-summary(temp1)
-
-
-## interpreting https://openresearchsoftware.metajnl.com/articles/10.5334/jors.160/
-## example from business
-##Chen CC, Chiu SF. An integrative model linking supervisor support and organizational citizenship behavior. Journal of Business and Psychology. 2008;23:1–10. [Google Scholar]
-
-
-data.contx<-data.org(x,y,pred=pred,contmed=c(5:6),
-                     alpha=0.4,alpha2=0.4)
-
-summary(data.contx)
-
-temp1<-mma::boot.med(data=data.contx,n=1,n2=2)
-temp1
-summary(temp1)
-data('weight_behavior')
-x=weight_behavior[,2:14]
-y=weight_behavior[,1]
-
-
-
-data("weight_behavior")
-x=weight_behavior[,2:14]
-y=weight_behavior[,15]
-data.bin<-data.org(x,y,pred=2,mediator=c(1,3:13), jointm=list(n=1,j1=c("tvhours","cmpthours","cellhours")), predref="F",alpha=0.4,alpha2=0.4)
-
-x=weight_behavior[,c(3:14)]
-pred=weight_behavior[,2]
-y=weight_behavior[,15]
-
-data.b.b.2.1<-data.org(x,y,mediator=5:12,jointm=list(n=1,j1=c(5,7,9)),
-pred=pred,predref="M", alpha=0.4,alpha2=0.4)
-
-> summary(data.bin)
-######## ADJUSTING DATASET WITH DELTA
-
-
-
-zwadj$d1 <- zwadj$Q5.4_t1 - zwadj$Q21c
-zwadj$d2 <- zwadj$Q5.6_t1 - zwadj$Q21d
-zwadj$d3 <- zwadj$Q5.7_t1 - zwadj$Q21e
 
 nboot <- 200
 ## zwadjh <- subset(zwadj,dyn>4);nrow(zwadjh)
@@ -402,12 +323,12 @@ mmedout
 bothout
 ###linkout
 
-qSquared(dir, d=4)
+qSquared(both, d=4)
 qSquared(rmed, d=4)
 qSquared(mmed, d=4)
 qSquared(both, d=4)
 
-rSquared(rmed)
+rSquared(both)
 
 dir
 rmed
@@ -417,7 +338,7 @@ mmed
 
 
 
-
+### Coud be run to test interaction
 #### SEMINR
 library(seminr)
 
@@ -428,19 +349,19 @@ M <- c("Q4.4_t1","Q4.5_t1","Q4.6_t1")
 R0 <- c("Q21c","Q21d","Q21e")
 M0 <- c("Q18","Q17a","Q17b")
 DC01  <- c("dcm1","dcm2","dcm3")
-CONT <- c("size","age","lassets","dyn")
+CONT <- c("size","age","lassets","dyn","pm")
+size  <- "size"
 
-
-measurements <- constructs(
-  composite("DC",DC01),
-  composite("CA1",CA1),
-  composite("R",R,),
-  composite("R0",R0,),
-  composite("M",M,),
-  composite("M0",M0,),
-  composite("CA0",CA0,),
-  interaction_term("R", "M", method =  orthogonal, weights = mode_A)
-)
+## measurements <- constructs(
+##   composite("DC",DC01),
+##   composite("CA1",CA1),
+##   composite("R",R,),
+##   composite("R0",R0,),
+##   composite("M",M,),
+##   composite("M0",M0,),
+##   composite("CA0",CA0,),
+##   interaction_term("R", "M", method =  orthogonal, weights = mode_A)
+## )
 
 measurements <- constructs(
   reflective("DC",DC01),
@@ -450,13 +371,18 @@ measurements <- constructs(
   reflective("M",M),
   reflective("M0",M0),
   reflective("CA0",CA0),
-  interaction_term("R", "M", method =  orthogonal, weights = mode_A)
+  composite("size","size"),
+  composite("assets","assets"),
+  composite("debt","debt"),
+  composite("age","age"),
+  #composite("pm","pm"),
+ interaction_term("R", "M", method =  orthogonal, weights = mode_A)
 )
 
 
 # Quickly create multiple paths "from" and "to" sets of constructs
 structure <- relationships(
-    paths(from = c("DC", "R", "M", "CA0"),to = "CA1"),
+    paths(from = c("DC", "R", "M", "CA0","size","age","debt","assets"),to = "CA1"),
     paths(from = c("DC", "R0"),to = "R"),
     paths(from = c("DC", "M0"),to = "M")
     )
@@ -474,7 +400,7 @@ summary(boot_estimates)
 
 # Quickly create multiple paths "from" and "to" sets of constructs
 structure <- relationships(
-    paths(from = c("DC", "R", "M","R*M", "CA0"),to = "CA1"),
+    paths(from = c("DC", "R", "M","R*M", "CA0","size","age","debt","assets"),to = "CA1"),
     paths(from = c("DC", "R0"),to = "R"),
     paths(from = c("DC", "M0"),to = "M")
     )
@@ -487,4 +413,129 @@ summary(pls_modelint)
 
 # Use multi-core parallel processing to speed up bootstraps
 boot_estimatesint <- bootstrap_model(pls_modelint, nboot = 1000, cores = 2)
+summary(boot_estimatesint)
+
+
+
+
+
+
+
+measurements <- constructs(
+  reflective("DC",DC01),
+  reflective("CA1",CA1),
+  reflective("R",R),
+  reflective("R0",R0),
+  #reflective("M",M),
+  #reflective("M0",M0),
+  reflective("CA0",CA0),
+  composite("size","size"),
+  composite("assets","assets"),
+  composite("debt","debt"),
+  composite("age","age")
+  #composite("pm","pm"),
+ interaction_term("R", "M", method =  orthogonal, weights = mode_A)
+)
+
+
+
+# Quickly create multiple paths "from" and "to" sets of constructs
+structure <- relationships(
+    paths(from = c("DC", "R", "CA0","size","age","debt","assets"),to = "CA1"),
+    paths(from = c("DC", "R0"),to = "R")
+    )
+
+
+
+# Dynamically compose SEM models from individual parts
+pls_model <- estimate_pls(data = zwadj, measurements, structure)
+summary(pls_model)
+
+# Use multi-core parallel processing to speed up bootstraps
+boot_estimates <- bootstrap_model(pls_model, nboot = 1000, cores = 2)
 summary(boot_estimates)
+
+
+
+
+#### EXTRA
+### Model set 1: Path dependency in mediator and with DC mid way
+
+zwadj <- subset(zwadj,!is.na(zwadj$ca0))
+zwadj <- subset(zwadj,!is.na(zwadj$r))
+
+
+mod1 <- lm(ca1 ~ ca0 + r + dcm + size + age + assets + pm, data=zwadj);summary(mod1)
+mod1m <- lm(r ~  + dcm + r0 + size + age + assets + pm, data=zwadj);summary(mod1m)
+med.out1 <- mediate(mod1m,mod1, treat="dcm",mediator="r",robustSE=TRUE, sims=1000)
+summary(med.out1) ## ADE is insignificant telling us that DL has no direct effect on OR
+
+mod1 <- lm(ca1 ~ ca0 + dcm + m + size + age + assets + pm, data=zwadj);summary(mod1)
+mod1m <- lm(m ~ + dcm + m0 + size + age + assets + pm, data=zwadj);summary(mod1m)
+med.out1 <- mediate(mod1m,mod1, treat="dcm",mediator="m",robustSE=TRUE, sims=1000)
+summary(med.out1) ## ADE is insignificant telling us that DL has no direct effect on OR
+
+
+x=zwadj[,c("ca0","size","age","assets","pm","m","r")]
+y=zwadj[,"ca1"]
+pred=zwadj$dcm
+nrow(zwadj)
+
+data.bin<-data.org(x,y,mediator=6:7,jointm=list(n=1,j1=c(6,7)),pred=pred, predref="M",alpha=0.05,alpha2=0.05)
+summary(data.bin)
+
+## data.bin<-data.org(x,y,mediator=7,pred=pred, predref="M",alpha=0.05,alpha2=0.1)
+## summary(data.bin)
+
+
+temp1<-mma::boot.med(data=data.bin,n=2,n2=4,nonlinear=TRUE)
+temp1
+summary(temp1)
+
+data.bin<-data.org(x,y,mediator=7:8,pred=pred, predref="M",alpha=0.1,alpha2=0.1)
+summary(data.bin)
+
+temp1<-mma::boot.med(data=data.bin,n=2,n2=4,nonlinear=FALSE)
+temp1
+summary(temp1)
+
+
+## interpreting https://openresearchsoftware.metajnl.com/articles/10.5334/jors.160/
+## example from business
+##Chen CC, Chiu SF. An integrative model linking supervisor support and organizational citizenship behavior. Journal of Business and Psychology. 2008;23:1–10. [Google Scholar]
+
+
+data.contx<-data.org(x,y,pred=pred,contmed=c(5:6),
+                     alpha=0.4,alpha2=0.4)
+
+summary(data.contx)
+
+temp1<-mma::boot.med(data=data.contx,n=1,n2=2)
+temp1
+summary(temp1)
+data('weight_behavior')
+x=weight_behavior[,2:14]
+y=weight_behavior[,1]
+
+
+
+data("weight_behavior")
+x=weight_behavior[,2:14]
+y=weight_behavior[,15]
+data.bin<-data.org(x,y,pred=2,mediator=c(1,3:13), jointm=list(n=1,j1=c("tvhours","cmpthours","cellhours")), predref="F",alpha=0.4,alpha2=0.4)
+
+x=weight_behavior[,c(3:14)]
+pred=weight_behavior[,2]
+y=weight_behavior[,15]
+
+data.b.b.2.1<-data.org(x,y,mediator=5:12,jointm=list(n=1,j1=c(5,7,9)),
+pred=pred,predref="M", alpha=0.4,alpha2=0.4)
+
+> summary(data.bin)
+######## ADJUSTING DATASET WITH DELTA
+
+
+
+zwadj$d1 <- zwadj$Q5.4_t1 - zwadj$Q21c
+zwadj$d2 <- zwadj$Q5.6_t1 - zwadj$Q21d
+zwadj$d3 <- zwadj$Q5.7_t1 - zwadj$Q21e
