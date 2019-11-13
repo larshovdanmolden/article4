@@ -120,16 +120,16 @@ alldc <- zwadj[,c("Q19a", "Q19c", "Q19d", "Q20b", "Q20c","Q19", "Q20d","Q20e","Q
 
 ## Running median imputations
 #dc01 <-  imputezw(zwadj[,c("Q6.4_t1", "Q6.5_t1","Q7.1_t1","Q7.2_t1")] )
-#dc02 <-  imputezw(zwadj[,c("Q6.1_t1","Q7.3_t1","Q7.4_t1")] )
+dc02 <-  imputezw(zwadj[,c("Q6.1_t1","Q7.3_t1","Q7.4_t1")] )
 #dc001 <- imputezw(zwadj[,c("Q19a", "Q19c", "Q19d", "Q20b", "Q20c")] )
-##dc002 <-  imputezw(zwadj[,c("Q19", "Q20d","Q20e")] )
-dc002 <-  imputezw(zwadj[,c("Q19d","Q19c", "Q20b", "Q20c","Q20e")])
+dc002 <-  imputezw(zwadj[,c("Q19", "Q20d","Q20e")] )
+#dc002 <-  imputezw(zwadj[,c("Q19d","Q19c", "Q20b", "Q20c","Q20e")])
 ca0 <-  imputezw(zwadj[,c("Q28","Q28a","Q28c")] )
 ca1 <-   imputezw(zwadj[,c("Q16.1_t1","Q16.2_t1","Q16.4_t1")] )
 #or1 <-   imputezw(zwadj[,c("Q5.4_t1","Q5.6_t1","Q5.7_t1","Q5.1_t1","Q5.2_t1","Q5.3_t1","Q5.5_t1")])
 #or0 <-   imputezw(zwadj[,c("Q21c","Q21d","Q21e","Q22","Q22a","Q22b","Q22c")])
 or1 <-   imputezw(zwadj[,c("Q5.4_t1","Q5.6_t1","Q5.7_t1")])
-#or0 <-   imputezw(zwadj[,c("Q21c","Q21d","Q21e")])
+or0 <-   imputezw(zwadj[,c("Q21c","Q21d","Q21e")])
 #ma01 <-  imputezw(zwadj[,c( "Q8.7_t1", "Q8.8_t1", "Q8.9_t1")])
 #ma02 <-  imputezw(zwadj[,c("Q24","Q24a","Q24b","Q24c","Q24d")])
 ## m0 <- imputezw(zwadj[,c("Q16a","Q16b","Q17a","Q17b")])
@@ -137,78 +137,82 @@ or1 <-   imputezw(zwadj[,c("Q5.4_t1","Q5.6_t1","Q5.7_t1")])
 m1 <- imputezw(zwadj[,c("Q4.4_t1","Q4.5_t1","Q4.6_t1")])
 m2 <- imputezw(zwadj[,c("Q4.1_t1","Q4.2_t1","Q4.3_t1")])
 #dyn  <- imputezw(zwadj[,c("Q27a","Q27b","Q27c")])
-#m0 <- imputezw(zwadj[,c("Q18a","Q18b","Q18d")])
+m0 <- imputezw(zwadj[,c("Q18","Q17a","Q17b")])
 #m1 <- imputezw(zwadj[,c("Q4.7_t1","Q4.8_t1","Q4.9_t1")])
 
-
+dcm <- (dc002+dc02)/2 ;colnames(dcm)  <-  c("dcm1","dcm2","dcm3")
 #complist <- list(DC_P=dc01,DC_X=dc02,CA_t=ca0,CA=ca1,P=or1,R=ma01)
 vcontrols <- zwadj[,c("size","age","pm","lassets","debt","assets","dyn")]
 #zwadj <- cbind(dc01,dc02,dc001,dc002,ca0,ca1,or1,or0,ma01,m0,m1,vcontrols,dyn)
-zwadj <- cbind(dc002,ca0,ca1,m1,vcontrols)
+zwadj <- cbind(dc002,dc02,ca0,ca1,m1,m0,or0, or1,vcontrols,dcm)
 zwadj$de <- zwadj$debt/zwadj$assets
 
+#zwbck  <- zwadj
 
-########### USE REGRESSION
+
+zwadj <- zwbck
+### Making indexes for further analysis
 
 zwadj$m  <- rowMeans(m1)
 zwadj$r  <- rowMeans(or1)
-#zwadj$m0  <- rowMeans(m0)
-#zwadj$r0  <- rowMeans(or0)
+zwadj$m0  <- rowMeans(m0)
+zwadj$r0  <- rowMeans(or0)
 zwadj$ca1  <- rowMeans(ca1)
 zwadj$ca0  <- rowMeans(ca0)
 zwadj$dc0  <- rowMeans(dc002)
-#zwadj$dc1  <- rowMeans(dc02)
+zwadj$dc1  <- rowMeans(dc02)
+zwadj$dcm  <- (zwadj$dc1+zwadj$dc0)/2
+zwadj$ddc  <- zwadj$dc1-zwadj$dc0
+zwadj$dm  <- (zwadj$m-zwadj$m0)/zwadj$m0
+zwadj$dr  <- (zwadj$r-zwadj$r0)/zwadj$r0
+
+
 
 am1 <- round(psych::alpha(m1)$total[1],2)
 am1
 
 
+## Removing missing for analysis to work
+## zwadj <- subset(zwadj,!is.na(zwadj$ca0))
+## zwadj <- subset(zwadj,!is.na(zwadj$pm))
+## zwadj <- subset(zwadj,!is.na(zwadj$r0))
+## zwadj <- subset(zwadj,!is.na(zwadj$size))
+## zwadj <- subset(zwadj,!is.na(zwadj$age))
+## zwadj <- subset(zwadj,!is.na(zwadj$dcm))
+## zwadj <- subset(zwadj,!is.na(zwadj$m))
+## zwadj <- subset(zwadj,!is.na(zwadj$m0))
+
+
+### Model set 1: Path dependency in mediator and with DC mid way
+
 zwadj <- subset(zwadj,!is.na(zwadj$ca0))
-zwadj <- subset(zwadj,!is.na(zwadj$r0))
 zwadj <- subset(zwadj,!is.na(zwadj$r))
 
 
-mod1 <- lm(ca1 ~ ca0 + dc0 + r + size + de + assets + pm, data=zwadj);summary(mod1)
-mod1m <- lm(r ~ + dc0 + size + debt + assets + pm  , data=zwadj);summary(mod1m)
-med.out1 <- mediate(mod1m,mod1, treat="dc0",mediator="r",robustSE=TRUE, sims=1000)
+mod1 <- lm(ca1 ~ ca0 + r + dcm + size + age + assets + pm, data=zwadj);summary(mod1)
+mod1m <- lm(r ~  + dcm + r0 + size + age + assets + pm, data=zwadj);summary(mod1m)
+med.out1 <- mediate(mod1m,mod1, treat="dcm",mediator="r",robustSE=TRUE, sims=1000)
 summary(med.out1) ## ADE is insignificant telling us that DL has no direct effect on OR
 
-mod1 <- lm(ca1 ~ ca0 + dc0 + m + size + age + pm+ assets + debt, data=zwadj);summary(mod1)
-mod1m <- lm(m ~ + dc0 + size + age  + pm + assets +debt, data=zwadj);summary(mod1m)
-med.out1 <- mediate(mod1m,mod1, treat="dc0",mediator="m",robustSE=TRUE, sims=1000)
+mod1 <- lm(ca1 ~ ca0 + dcm + m + size + age + assets + pm, data=zwadj);summary(mod1)
+mod1m <- lm(m ~ + dcm + m0 + size + age + assets + pm, data=zwadj);summary(mod1m)
+med.out1 <- mediate(mod1m,mod1, treat="dcm",mediator="m",robustSE=TRUE, sims=1000)
 summary(med.out1) ## ADE is insignificant telling us that DL has no direct effect on OR
 
-plot(m.med, type = "point")
-plot(m.med, type = c("sigma", "R2-total"), tgroup = c("treated", "control"))
 
-
-
-Xnames <-  c("ca0")
-m.med <- multimed(outcome = "ca1", med.main = "m", med.alt = "r", treat = "dc0", covariates = Xnames, data = zwadj, sims = 100)
-summary(m.med)
-
-
-m.med.para <- multimed(outcome = "ca1", med.main = "r", treat = "dc0", experiment = "m", design = "parallel", data = zwadj, sims = 100)
-summary(m.med.para)
-
-
-
-zwadj <- subset(zwadj,!is.na(zwadj$ca1))
-zwadj <- subset(zwadj,!is.na(zwadj$age))
-zwadj <- subset(zwadj,!is.na(zwadj$size))
-zwadj <- subset(zwadj,!is.na(zwadj$r))
-zwadj <- subset(zwadj,!is.na(zwadj$pm))
-zwadj <- subset(zwadj,!is.na(zwadj$debt))
-
-
-x=zwadj[,c("ca0","size","age","assets","debt","pm","r","m")]
+x=zwadj[,c("ca0","size","age","assets","pm","m","r")]
 y=zwadj[,"ca1"]
-pred=zwadj$dc0
+pred=zwadj$dcm
+nrow(zwadj)
 
-data.bin<-data.org(x,y,mediator=7:8,jointm=list(n=1,j1=c(7,8)),pred=pred, predref="M",alpha=0.1,alpha2=0.1)
+data.bin<-data.org(x,y,mediator=6:7,jointm=list(n=1,j1=c(6,7)),pred=pred, predref="M",alpha=0.05,alpha2=0.05)
 summary(data.bin)
 
-temp1<-mma::boot.med(data=data.bin,n=2,n2=4,nonlinear=FALSE)
+## data.bin<-data.org(x,y,mediator=7,pred=pred, predref="M",alpha=0.05,alpha2=0.1)
+## summary(data.bin)
+
+
+temp1<-mma::boot.med(data=data.bin,n=2,n2=4,nonlinear=TRUE)
 temp1
 summary(temp1)
 
@@ -220,7 +224,9 @@ temp1
 summary(temp1)
 
 
-
+## interpreting https://openresearchsoftware.metajnl.com/articles/10.5334/jors.160/
+## example from business
+##Chen CC, Chiu SF. An integrative model linking supervisor support and organizational citizenship behavior. Journal of Business and Psychology. 2008;23:1–10. [Google Scholar]
 
 
 data.contx<-data.org(x,y,pred=pred,contmed=c(5:6),
@@ -252,6 +258,8 @@ pred=pred,predref="M", alpha=0.4,alpha2=0.4)
 > summary(data.bin)
 ######## ADJUSTING DATASET WITH DELTA
 
+
+
 zwadj$d1 <- zwadj$Q5.4_t1 - zwadj$Q21c
 zwadj$d2 <- zwadj$Q5.6_t1 - zwadj$Q21d
 zwadj$d3 <- zwadj$Q5.7_t1 - zwadj$Q21e
@@ -260,19 +268,19 @@ nboot <- 200
 ## zwadjh <- subset(zwadj,dyn>4);nrow(zwadjh)
 ## zwadjl <- subset(zwadj,dyn<=4);nrow(zwadjl)
 
-DC1 <- c("Q6.4_t1", "Q7.1_t1","Q7.2_t1","Q6.5_t1")
-DC01 <- c("Q6.1_t1","Q7.3_t1","Q7.4_t1")
+#DC1 <- c("Q6.4_t1", "Q7.1_t1","Q7.2_t1","Q6.5_t1")
+#DC01 <- c("Q6.1_t1","Q7.3_t1","Q7.4_t1")
 #DC01 <- c("Q19", "Q20d","Q20e")
-DC01 <- c("Q19a", "Q19c", "Q19d", "Q20b", "Q20c")
+#DC01 <- c("Q19a", "Q19c", "Q19d", "Q20b", "Q20c")
 
-DC01 <- c("Q19c", "Q20b", "Q20c")
+#DC01 <- c("Q19c", "Q20b", "Q20c")
 CA0 <- c("Q28","Q28a","Q28c")
 CA1 <- c("Q16.1_t1","Q16.2_t1","Q16.4_t1")
 R <- c("Q5.4_t1","Q5.6_t1","Q5.7_t1")
 M <- c("Q4.4_t1","Q4.5_t1","Q4.6_t1")
 R0 <- c("Q21c","Q21d","Q21e")
 M0 <- c("Q18","Q17a","Q17b")
-
+DC01  <- c("dcm1","dcm2","dcm3")
 CONT <- c("size","age","lassets","dyn")
 #CONT <- c("size")
 #CONT <- c("pm","de","dyn","size")
@@ -309,7 +317,7 @@ dv <- c(rep("CA1",length(CONT)),rep("R",length(CONT)),"CA1","CA1","CA1","R","R")
 sm <- cbind(iv,dv);colnames(sm) <- c("source","target")
 RMED <- plsm(data = zwadj, strucmod = sm, measuremod = mm)
 rmed <- sempls(model = RMED, data = zwadj, wscheme = "centroid",maxit=1000)
-
+rmed
 pathDiagram(rmed, file = "rmed", full = FALSE, edge.labels = "both", output.type = "graphics", digits = 2,graphics.fmt="pdf")
 
 rmedfit <- semPLS::gof(rmed)
@@ -346,8 +354,8 @@ items <- c(DC01,CA0,CA1,R,M,M0,R0,CONT)
 latents <- c(rep("DC",length(DC01)),rep("CA0",length(CA0)),rep("CA1",length(CA1)),rep("R",length(R)),rep("M",length(M)),rep("R0",length(R0)),rep("M0",length(M0)),toupper(CONT))
 
 mm <- cbind(latents,items); colnames(mm) <- c("source","target")
-iv <- c(toupper(CONT),toupper(CONT),toupper(CONT),"CA0","R","DC","M","DC","M0","R0")
-dv <- c(rep("CA1",length(CONT)),rep("R",length(CONT)),rep("M",length(CONT)),"CA1","CA1","R","CA1","M","M","R")
+iv <- c(toupper(CONT),toupper(CONT),toupper(CONT),"CA0","R","DC","M","DC","M0","R0","DC")
+dv <- c(rep("CA1",length(CONT)),rep("R",length(CONT)),rep("M",length(CONT)),"CA1","CA1","R","CA1","M","M","R","CA1")
 sm <- cbind(iv,dv);colnames(sm) <- c("source","target")
 BOTH <- plsm(data = zwadj, strucmod = sm, measuremod = mm)
 both <- sempls(model = BOTH, data = zwadj, wscheme = "centroid",maxit=1000)
@@ -399,6 +407,84 @@ qSquared(rmed, d=4)
 qSquared(mmed, d=4)
 qSquared(both, d=4)
 
+rSquared(rmed)
+
 dir
 rmed
 mmed
+
+
+
+
+
+
+#### SEMINR
+library(seminr)
+
+CA0 <- c("Q28","Q28a","Q28c")
+CA1 <- c("Q16.1_t1","Q16.2_t1","Q16.4_t1")
+R <- c("Q5.4_t1","Q5.6_t1","Q5.7_t1")
+M <- c("Q4.4_t1","Q4.5_t1","Q4.6_t1")
+R0 <- c("Q21c","Q21d","Q21e")
+M0 <- c("Q18","Q17a","Q17b")
+DC01  <- c("dcm1","dcm2","dcm3")
+CONT <- c("size","age","lassets","dyn")
+
+
+measurements <- constructs(
+  composite("DC",DC01),
+  composite("CA1",CA1),
+  composite("R",R,),
+  composite("R0",R0,),
+  composite("M",M,),
+  composite("M0",M0,),
+  composite("CA0",CA0,),
+  interaction_term("R", "M", method =  orthogonal, weights = mode_A)
+)
+
+measurements <- constructs(
+  reflective("DC",DC01),
+  reflective("CA1",CA1),
+  reflective("R",R),
+  reflective("R0",R0),
+  reflective("M",M),
+  reflective("M0",M0),
+  reflective("CA0",CA0),
+  interaction_term("R", "M", method =  orthogonal, weights = mode_A)
+)
+
+
+# Quickly create multiple paths "from" and "to" sets of constructs
+structure <- relationships(
+    paths(from = c("DC", "R", "M", "CA0"),to = "CA1"),
+    paths(from = c("DC", "R0"),to = "R"),
+    paths(from = c("DC", "M0"),to = "M")
+    )
+
+
+
+# Dynamically compose SEM models from individual parts
+pls_model <- estimate_pls(data = zwadj, measurements, structure)
+summary(pls_model)
+
+# Use multi-core parallel processing to speed up bootstraps
+boot_estimates <- bootstrap_model(pls_model, nboot = 1000, cores = 2)
+summary(boot_estimates)
+
+
+# Quickly create multiple paths "from" and "to" sets of constructs
+structure <- relationships(
+    paths(from = c("DC", "R", "M","R*M", "CA0"),to = "CA1"),
+    paths(from = c("DC", "R0"),to = "R"),
+    paths(from = c("DC", "M0"),to = "M")
+    )
+
+
+
+# Dynamically compose SEM models from individual parts
+pls_modelint <- estimate_pls(data = zwadj, measurements, structure)
+summary(pls_modelint)
+
+# Use multi-core parallel processing to speed up bootstraps
+boot_estimatesint <- bootstrap_model(pls_modelint, nboot = 1000, cores = 2)
+summary(boot_estimates)
