@@ -12,7 +12,8 @@ library(huxtable)
 library(semPLS)
 library(mice)
 library(mma)
-####install.packages("semPLS")
+#install.packages("semPLSModelSelection", repos="http://R-Forge.R-project.org")
+library("semPLSModelSelection")
                                         #library(polycor)
 
 ## This loads the data workspace where skattefunn_data.r is already loaded
@@ -144,32 +145,9 @@ dcm <- (dc002+dc02)/2 ;colnames(dcm)  <-  c("dcm1","dcm2","dcm3") ## Average DC 
 vcontrols <- zwadj[,c("size","age","pm","lassets","debt","assets","dyn")]
 #zwadj <- cbind(dc01,dc02,dc001,dc002,ca0,ca1,or1,or0,ma01,m0,m1,vcontrols,dyn)
 zwadj <- cbind(dc002,dc02,ca0,ca1,m1,m0,or0, or1,vcontrols,dcm)
-zwadj <- cbind(ca0,ca1,m1,m0,or0, or1,dcm)
+#zwadj <- cbind(ca0,ca1,m1,m0,or0, or1,dcm)
 zwadj$de <- zwadj$debt/zwadj$assets
 
-#zwbck  <- zwadj
-
-
-zwadj <- zwbck
-### Making indexes for further analysis
-
-zwadj$m  <- rowMeans(m1)
-zwadj$r  <- rowMeans(or1)
-zwadj$m0  <- rowMeans(m0)
-zwadj$r0  <- rowMeans(or0)
-zwadj$ca1  <- rowMeans(ca1)
-zwadj$ca0  <- rowMeans(ca0)
-zwadj$dc0  <- rowMeans(dc002)
-zwadj$dc1  <- rowMeans(dc02)
-zwadj$dcm  <- (zwadj$dc1+zwadj$dc0)/2
-zwadj$ddc  <- zwadj$dc1-zwadj$dc0
-zwadj$dm  <- (zwadj$m-zwadj$m0)/zwadj$m0
-zwadj$dr  <- (zwadj$r-zwadj$r0)/zwadj$r0
-
-
-
-am1 <- round(psych::alpha(m1)$total[1],2)
-am1
 
 
 ## Removing missing for analysis to work
@@ -186,14 +164,12 @@ am1
 
 
 nboot <- 200
-## zwadjh <- subset(zwadj,dyn>4);nrow(zwadjh)
-## zwadjl <- subset(zwadj,dyn<=4);nrow(zwadjl)
+
 
 #DC1 <- c("Q6.4_t1", "Q7.1_t1","Q7.2_t1","Q6.5_t1")
 #DC01 <- c("Q6.1_t1","Q7.3_t1","Q7.4_t1")
 #DC01 <- c("Q19", "Q20d","Q20e")
 #DC01 <- c("Q19a", "Q19c", "Q19d", "Q20b", "Q20c")
-
 #DC01 <- c("Q19c", "Q20b", "Q20c")
 CA0 <- c("Q28","Q28a","Q28c")
 CA1 <- c("Q16.1_t1","Q16.2_t1","Q16.4_t1")
@@ -202,8 +178,8 @@ M <- c("Q4.4_t1","Q4.5_t1","Q4.6_t1")
 R0 <- c("Q21c","Q21d","Q21e")
 M0 <- c("Q18","Q17a","Q17b")
 DC01  <- c("dcm1","dcm2","dcm3")
-CONT <- c("size","age","lassets","dyn")
-#CONT <- c("size")
+CONT <- c("size","assets","pm")
+CONTm <- c("size","assets")
 #CONT <- c("pm","de","dyn","size")
 
 ##### Direct only
@@ -233,8 +209,8 @@ items <- c(DC01,CA0,CA1,R,R0,CONT)
 latents <- c(rep("DC",length(DC01)),rep("CA0",length(CA0)),rep("CA1",length(CA1)),rep("R",length(R)),rep("R0",length(R0)),toupper(CONT))
 
 mm <- cbind(latents,items); colnames(mm) <- c("source","target")
-iv <- c(toupper(CONT),toupper(CONT),"CA0","DC","R","DC","R0")
-dv <- c(rep("CA1",length(CONT)),rep("R",length(CONT)),"CA1","CA1","CA1","R","R")
+iv <- c(toupper(CONT),toupper(CONTm),"CA0","DC","R","DC","R0")
+dv <- c(rep("CA1",length(CONT)),rep("R",length(CONTm)),"CA1","CA1","CA1","R","R")
 sm <- cbind(iv,dv);colnames(sm) <- c("source","target")
 RMED <- plsm(data = zwadj, strucmod = sm, measuremod = mm)
 rmed <- sempls(model = RMED, data = zwadj, wscheme = "centroid",maxit=1000)
@@ -244,17 +220,17 @@ pathDiagram(rmed, file = "rmed", full = FALSE, edge.labels = "both", output.type
 rmedfit <- semPLS::gof(rmed)
 rmedfit
 rmedBoot <- bootsempls(rmed, nboot = nboot, start = "ones", verbose = FALSE)
-rmedout <- extboot(rmedBoot,9,"",c("^M ","R "))
+rmedout <- extboot(rmedBoot,15,"",c("^M ","R "))
 
 
 
 ##### M as  mediators
-items <- c(DC01,CA0,CA1,M,CONT)
-latents <- c(rep("DC",length(DC01)),rep("CA0",length(CA0)),rep("CA1",length(CA1)),rep("M",length(M)),toupper(CONT))
+items <- c(DC01,CA0,CA1,M,M0,CONT)
+latents <- c(rep("DC",length(DC01)),rep("CA0",length(CA0)),rep("CA1",length(CA1)),rep("M",length(M)),rep("M0",length(M0)),toupper(CONT))
 
 mm <- cbind(latents,items); colnames(mm) <- c("source","target")
-iv <- c(toupper(CONT),toupper(CONT),"CA0","DC","M","DC")
-dv <- c(rep("CA1",length(CONT)),rep("M",length(CONT)),"CA1","CA1","CA1","M")
+iv <- c(toupper(CONT),toupper(CONTm),"CA0","DC","M","DC","M0")
+dv <- c(rep("CA1",length(CONT)),rep("M",length(CONTm)),"CA1","CA1","CA1","M","M")
 sm <- cbind(iv,dv);colnames(sm) <- c("source","target")
 MMED <- plsm(data = zwadj, strucmod = sm, measuremod = mm)
 mmed <- sempls(model = MMED, data = zwadj, wscheme = "centroid",maxit=1000)
@@ -265,9 +241,9 @@ mmedfit <- semPLS::gof(mmed)
 mmedfit
 
 mmedBoot <- bootsempls(mmed, nboot = nboot, start = "ones", verbose = FALSE)
-mmedout <- extboot(mmedBoot,9,"",c("^M ","R "))
-mmedfit
+mmedout <- extboot(mmedBoot,16,"",c("^M ","R "))
 
+mmedout
 
 
 ##### Both mediators
@@ -275,8 +251,8 @@ items <- c(DC01,CA0,CA1,R,M,M0,R0,CONT)
 latents <- c(rep("DC",length(DC01)),rep("CA0",length(CA0)),rep("CA1",length(CA1)),rep("R",length(R)),rep("M",length(M)),rep("R0",length(R0)),rep("M0",length(M0)),toupper(CONT))
 
 mm <- cbind(latents,items); colnames(mm) <- c("source","target")
-iv <- c(toupper(CONT),toupper(CONT),toupper(CONT),"CA0","R","DC","M","DC","M0","R0","DC")
-dv <- c(rep("CA1",length(CONT)),rep("R",length(CONT)),rep("M",length(CONT)),"CA1","CA1","R","CA1","M","M","R","CA1")
+iv <- c(toupper(CONT),toupper(CONTm),toupper(CONTm),"CA0","R","DC","M","DC","M0","R0","DC")
+dv <- c(rep("CA1",length(CONT)),rep("R",length(CONTm)),rep("M",length(CONTm)),"CA1","CA1","R","CA1","M","M","R","CA1")
 sm <- cbind(iv,dv);colnames(sm) <- c("source","target")
 BOTH <- plsm(data = zwadj, strucmod = sm, measuremod = mm)
 both <- sempls(model = BOTH, data = zwadj, wscheme = "centroid",maxit=1000)
@@ -287,27 +263,7 @@ pathDiagram(both, file = "both", full = FALSE, edge.labels = "both", output.type
 bothfit <- semPLS::gof(both)
 bothfit
 bothBoot <- bootsempls(both, nboot = nboot, start = "ones", verbose = FALSE)
-bothout <- extboot(bothBoot,9,"",c("^M ","R "))
-bothBoot
-
-##### Both mediators with link between
-items <- c(DC01,CA0,CA1,R,R0,M,M0,CONT)
-latents <- c(rep("DC",length(DC01)),rep("CA0",length(CA0)),rep("CA1",length(CA1)),rep("R",length(R)),rep("M",length(M)),rep("R0",length(R0)),rep("M0",length(M0)),toupper(CONT))
-
-mm <- cbind(latents,items); colnames(mm) <- c("source","target")
-iv <- c(toupper(CONT),toupper(CONT),toupper(CONT),"CA0","DC","R","DC","M","DC","M","M0","R0")
-dv <- c(rep("CA1",length(CONT)),rep("M",length(CONT)),rep("R",length(CONT)),"CA1","CA1","CA1","R","CA1","M","R","M","R")
-sm <- cbind(iv,dv);colnames(sm) <- c("source","target")
-LINK <- plsm(data = zwadj, strucmod = sm, measuremod = mm)
-link <- sempls(model = LINK, data = zwadj, wscheme = "centroid",maxit=1000)
-link
-pathDiagram(link, file = "link", full = FALSE, edge.labels = "both", output.type = "graphics", digits = 2,graphics.fmt="pdf")
-
-linkfit <- semPLS::gof(link)
-linkfit
-linkBoot <- bootsempls(link, nboot = nboot, start = "ones", verbose = FALSE)
-linkout <- extboot(linkBoot,9,"",c("^M ","R "))
-
+bothout <- extboot(bothBoot,20,"",c("^M ","R "))
 
 
 ###### SUMMARY OF FINDINGS
@@ -320,21 +276,163 @@ bothfit
 dirout
 rmedout
 mmedout
+bothout###linkout
+
+qsq <- round(c(qSquared(dir, d=4)[length(qSquared(dir, d=4))],
+         qSquared(rmed, d=4)[length(qSquared(rmed, d=4))],
+         qSquared(mmed, d=4)[length(qSquared(mmed, d=4))],
+         qSquared(both, d=4)[length(qSquared(both, d=4))]),2)
+
+rsq <- round(c(rSquared(dir)[length(rSquared(dir))],
+          rSquared(rmed)[length(rSquared(rmed))],
+          rSquared(mmed)[length(rSquared(mmed))],
+          rSquared(both)[length(rSquared(both))]),2)
+
+gof <- round(c(gof(dir)[3],
+         gof(rmed)[3],
+         gof(mmed)[3],
+         gof(both)[3]),2)
+
+#######
+##https://rdrr.io/rforge/semPLSModelSelection/man/ic.html
+
+bic <-round(c(ic(dir, LV = "CA1",criteria = "BIC"),
+        ic(rmed, LV = "CA1",criteria = "BIC"),
+        ic(mmed, LV = "CA1",criteria = "BIC"),
+        ic(both, LV = "CA1",criteria = "BIC")),1)
+
+fact <- data.frame(both$factor_scores)
+
+### VIF
+#Chin (1998) considers Dillon-Goldstein’s rho to be a
+#better indicator than Cronbach’s alpha. As a rule of
+#thumb Dillon-Goldstein’s rho values higher than 0.70
+#suggest unidimensionality.
+mod1 <- lm(CA1 ~ CA0 + R + M + SIZE + ASSETS + DC, data=fact) ; summary(mod1)
+vif(mod1)
+
+dgrho(both)
+cor(fact,use="complete.obs")
+
+
+###### RESULT OUTPUT
+resmat  <- data.frame()
+resmatmed = data.frame()  ## res for mediator paths
+
+
+#Mod1
+m=2
+resmat[1,1] <- as.character(dirout[1,1])
+resmat[1,m] <- (dirout[1,2])
+resmat[2,m] <- (dirout[1,3])
+resmat[11,m] <- rsq[m-1]
+resmat[12,m] <- qsq[m-1]
+resmat[13,m] <- gof[m-1]
+resmat[14,m] <- bic[m-1]
+
+resmatmed[2,m-1] <- NA
+resmatmed[2,m] <- NA
+
+
+#Mod2
+m=3
+resmat[1,1] <- as.character(rmedout[5,1])
+resmat[1,m] <- (rmedout[5,2])
+resmat[2,m] <- (rmedout[5,3])
+
+resmat[3,1] <- as.character(rmedout[6,1])
+resmat[3,m] <- (rmedout[6,2])
+resmat[4,m] <- (rmedout[6,3])
+
+resmat[7,1] <- as.character(rmedout[4,1])
+resmat[7,m] <- (rmedout[4,2])
+resmat[8,m] <- (rmedout[4,3])
+
+resmat[11,m] <- rsq[m-1]
+resmat[12,m] <- qsq[m-1]
+resmat[13,m] <- gof[m-1]
+resmat[14,m] <- bic[m-1]
+
+rmedm <- extboot(rmedBoot,20,"",c("M0 ","R0 "))
+resmatmed[1,1] <- as.character(rmedm[2,1])
+resmatmed[1,m] <- (rmedm[2,2])
+resmatmed[2,m] <- (rmedm[2,3])
+
+
+#Mod3
+m=4
+resmat[1,1] <- as.character(mmedout[5,1])
+resmat[1,m] <- (mmedout[5,2])
+resmat[2,m] <- (mmedout[5,3])
+
+resmat[5,1] <- as.character(mmedout[6,1])
+resmat[5,m] <- (mmedout[6,2])
+resmat[6,m] <- (mmedout[6,3])
+
+resmat[9,1] <- as.character(mmedout[4,1])
+resmat[9,m] <- (mmedout[4,2])
+resmat[10,m] <- (mmedout[4,3])
+
+
+resmat[11,m] <- rsq[m-1]
+resmat[12,m] <- qsq[m-1]
+resmat[13,m] <- gof[m-1]
+resmat[14,m] <- bic[m-1]
+
+mmedm <- extboot(mmedBoot,20,"",c("M0 ","R0 "))
+resmatmed[3,1] <- as.character(mmedm[2,1])
+resmatmed[3,m] <- (mmedm[2,2])
+resmatmed[4,m] <- (mmedm[2,3])
+
+#Mod4
+m=5
+resmat[1,1] <- as.character(bothout[6,1])
+resmat[1,m] <- (bothout[6,2])
+resmat[2,m] <- (bothout[6,3])
+
+resmat[3,1] <- as.character(bothout[8,1])
+resmat[3,m] <- (bothout[8,2])
+resmat[4,m] <- (bothout[8,3])
+
+resmat[5,1] <- as.character(bothout[7,1])
+resmat[5,m] <- (bothout[7,2])
+resmat[6,m] <- (bothout[7,3])
+
+resmat[7,1] <- as.character(bothout[5,1])
+resmat[7,m] <- (bothout[5,2])
+resmat[8,m] <- (bothout[5,3])
+
+resmat[9,1] <- as.character(bothout[4,1])
+resmat[9,m] <- (bothout[4,2])
+resmat[10,m] <- (bothout[4,3])
+
+resmat[11,m] <- rsq[m-1]
+resmat[12,m] <- qsq[m-1]
+resmat[13,m] <- gof[m-1]
+resmat[14,m] <- bic[m-1]
+
+bothm <- extboot(bothBoot,20,"",c("M0 ","R0 "))
+resmatmed[3,1] <- as.character(bothm[2,1])
+resmatmed[3,m] <- (bothm[2,2])
+resmatmed[4,m] <- (bothm[2,3])
+resmatmed[1,1] <- as.character(bothm[4,1])
+resmatmed[1,m] <- (bothm[4,2])
+resmatmed[2,m] <- (bothm[4,3])
+
+
+# Adding names to GOF stats
+resmat[11:14,1] = c("rsq","qsq","gof","bic")
+colnames(resmat) = c("path","m1","m2","m3","m4")
+colnames(resmatmed) = c("path","m1","m2","m3","m4")
+resmatmed
+## res for mediator paths
+resmatmed = data.frame()
+
+
 bothout
-###linkout
+resmat
 
-qSquared(both, d=4)
-qSquared(rmed, d=4)
-qSquared(mmed, d=4)
-qSquared(both, d=4)
-
-rSquared(both)
-
-dir
-rmed
-mmed
-
-
+dirout[1,1]
 
 
 
@@ -539,3 +637,28 @@ pred=pred,predref="M", alpha=0.4,alpha2=0.4)
 zwadj$d1 <- zwadj$Q5.4_t1 - zwadj$Q21c
 zwadj$d2 <- zwadj$Q5.6_t1 - zwadj$Q21d
 zwadj$d3 <- zwadj$Q5.7_t1 - zwadj$Q21e
+
+
+#zwbck  <- zwadj
+
+
+zwadj <- zwbck
+### Making indexes for further analysis
+
+zwadj$m  <- rowMeans(m1)
+zwadj$r  <- rowMeans(or1)
+zwadj$m0  <- rowMeans(m0)
+zwadj$r0  <- rowMeans(or0)
+zwadj$ca1  <- rowMeans(ca1)
+zwadj$ca0  <- rowMeans(ca0)
+zwadj$dc0  <- rowMeans(dc002)
+zwadj$dc1  <- rowMeans(dc02)
+zwadj$dcm  <- (zwadj$dc1+zwadj$dc0)/2
+zwadj$ddc  <- zwadj$dc1-zwadj$dc0
+zwadj$dm  <- (zwadj$m-zwadj$m0)/zwadj$m0
+zwadj$dr  <- (zwadj$r-zwadj$r0)/zwadj$r0
+
+
+
+am1 <- round(psych::alpha(m1)$total[1],2)
+am1
