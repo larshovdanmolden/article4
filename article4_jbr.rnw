@@ -80,18 +80,18 @@ TBD
 \section{Introduction}
 
 
-<<load, results="asis", echo=FALSE >>=
-
+<<loading, results="asis", echo=FALSE >>=
 setwd("/Users/larshovdanmolden/Documents/git/article4")
 library(xtable)
-#load("./data/resart4.RData")
+load("./data/resart4.RData")
 r <- main$resmat
 rm  <- main$resmatmed
 l  <- main$loadings
-
-foolars=0.99
-
+l <- main$loadings
+#foolars=0.99
 @
+
+
 %% Extant literature on dynamic capabilities is battling with a fundamental conception and
 %% prediction of the theory, namely if, when and how dynamic capabilities can lead to competitive
 %% advantage.
@@ -100,7 +100,7 @@ foolars=0.99
 
 % paper about the DC for MNC in india an dimpact on CA
 %https://journals.sagepub.com/doi/abs/10.1177/0971890717701781
-
+BLA
 Extant literature on dynamic capabilities are increasingly focusing on how firm resources
 are changed by dynamic capabilities as a response to changes in the environment
 \citep{Schilke2018,Eriksson2014}, thus placing firm resources as a mediator between
@@ -207,7 +207,7 @@ individuals face with respect to the strategic goal of the organization \footnot
   'cognitive representation' and is adapted to fit the pursuit of strategic goals such as
   competetive advantage which is the aim of this paper}. This strategic
 cognition is the result of a mental process that underlie internal
-audicences adoption of new strategic representation and identity code to move toward a
+audiences adoption of new strategic representation and identity code to move toward a
 new or existing goal \citep{Gavetti2012}. Although strategic cognition may lead to
 behavioral outcome, the nature of the concept itself is tied to cognition rather than
 actual latent action \citep{Zollo2016}. Thus, dynamic capabilities are not sufficiently
@@ -444,37 +444,31 @@ discussion.
 
 \subsection{Variable construction}
 
-The focal constructs of this paper are dynamic capabilities,
-operational capabilities, strategic cognition as measured by
-proactiveness, and competitive advantage. These are all
-operationalized using the survey data described above. Table
-\ref{tab:item} in the appendix describes the items used to
-operationalize the focal constructs and their internal validity as
-measured by Dillon-Goldstein Rho which is the preferred metric for
-this purpose \citep{Hair2019}. The results show that our key constructs
-can be represented by the items in the survey, with a minor
-caveat. The measure of strategic cognition as proactiveness loads only
-partly on one item (item 3). Statsistically, a loading of
-$\Sexpr{l[["lcog"]][3]}$ is on the weaker side of traditional 'rules
-of thumb' \citep{Hair2010}, but from a theoretical stand point the
-measure makes sense and is established in the literature (REF to EO).
+The focal constructs of this paper are dynamic capabilities, operational capabilities,
+strategic cognition as measured by proactiveness, and competitive advantage. These are all
+operationalized using the survey data described above. Table \ref{tab:item} in the
+appendix describes the items used to operationalize the focal constructs and their
+internal validity as measured by Dillon-Goldstein Rho which is the preferred metric for
+this purpose \citep{Hair2019}. The results show that our key constructs can be represented
+by the items in the survey, with a minor caveat. The measure of strategic cognition as
+proactiveness loads only partly on one item (item 3). Statsistically, a loading of
+$\Sexpr{l[["lcog"]][3]}$ is on the weaker side of traditional 'rules of thumb'
+\citep{Hair2010}, but from a theoretical stand point the measure makes sense and is
+established in the literature (REF to EO).
 
 There are no established measurement models of dynamic capabilities
-\citep{McKelvie2009,Schilke2018}.Therefore this study builds on a
-mixture of qualitative case study methodology, literature review and
-statistical techniques to develop and refine measures of DCs. First,
-exploratory qualitative interviews, using a semistructured interview
-guide, were conducted with management representatives from 10
-R\&D/innovative firms. The aim of the interviews was to get an
-overview of each firm's innovation and development processes, in
-particular the processes related to its dynamic capabilities and the
-management of its resources. Themes raised in the interviews were
-about network, co-operation with external R\&D-institutions, learning
-in the firm, adaptation and changes in the firm. We interviewed SMEs
-and larger firms, and the industries varied from high-tech and ICT to
-publishing.  Based on the interviews and an extensive literature
-review, statements identified as descriptions of dynamic capabilities
-and resources were developed and included in a questionnaire.
+\citep{McKelvie2009,Schilke2018}.Therefore this study builds on a mixture of qualitative
+case study methodology, literature review and statistical techniques to develop and refine
+measures of DCs. First, exploratory qualitative interviews, using a semi-structured
+interview guide, were conducted with management representatives from 10 R\&D/innovative
+firms. The aim of the interviews was to get an overview of each firm's innovation and
+development processes, in particular the processes related to its dynamic capabilities and
+the management of its resources. Themes raised in the interviews were about network,
+co-operation with external R\&D-institutions, learning in the firm, adaptation and changes
+in the firm. We interviewed SMEs and larger firms, and the industries varied from
+high-tech and ICT to publishing.  Based on the interviews and an extensive literature
+review, statements identified as descriptions of dynamic capabilities and resources were
+developed and included in a questionnaire.
 
 Second, the informants from the 10 firms were subsequently asked to take part in a pretest
 of the questionnaire, including the preliminary items developed to measure dynamic
@@ -497,9 +491,36 @@ is in this spirit that the research reported in this paper has been undertaken.
 
 Respondents were asked to indicate to what extent each statement fitted a description of
 their business. We adopted one-sided seven point Likert scale where: 1 = strongly disagree
-and 7 = strongly agree. We built on prior studies where items measuring OCs have been
-measured relative to competitors \citep{McKelvie2009}.
+and 7 = strongly agree. We built on prior studies where items measuring operating
+capabilities have been measured relative to competitors \citep{McKelvie2009}.
 
+The nine year lag between our points of measurement has its distinct advantages with
+respect to capturing long term trajectory of the firms. For example, the operating
+capabilities at time $t=1$ is very likely a function of operating capabilities at time
+$t=0$ as well as other factors such as dynamic capabilities. Indeed, extant literature
+argues for this path dependency of resources and routines
+\citep{Helfat2007,Winter2003}. These capabilities are said to be serial-correlated and
+path dependent. However, as dynamic capabilities and operating capabilities are distinctly
+different concepts, this kind of path dependency is also not equally clear in this
+regard. We could have firms with very high levels of dynamic capabilities at $t=0$ and
+equally a poorer level at time $t=1$. Because of the long time lag a lot of factors could
+have influenced this decline, and indeed a rather high number of over firms exhibit this
+characteristic of declining dynamic capabilities over time. As we regard dynamic
+capabilities as 'the first derivative' \citep{Winter2003} (i.e. the rate of change of the
+operating capabilites) a large initial value (at time $t=0$) could over estimate the
+expected change of the underlying capability at time $t=1$. Moreover, based on the scale
+applied (Likert from 1 through 7) a high initial value leaves nowhere to move but
+downwards. This is not to say that those firms are likely to develop poorer operating
+routines. Nor is to say that those with low dynamic capabilities at time $t=0$ are
+rendered useless in developing capabilities going forward towards $t=1$. Rather it
+suggests that a long time span may include unnecessary noise in the model. Thus, we
+estimated an average of the dynamic capabilities of the firm between time $t=0$ and $t=1$
+as a proxy for a more representative measure of the rate of change. Hence, our construct
+of $DC_0$ is actually a measure between times $t=0$ and $t=1$. As a robustness check we
+repeated the full analysis using 2005 measure as our $DC_0$. This did not severely alter
+the conclusions we draw in this paper, but had some minor effects on the significance of
+the path between $DC_0$ and $COG_1$. The full alternative analysis is included in the
+appendix.
 
 
 \subsection{Control variables}
@@ -524,62 +545,67 @@ control variable. In this paper we use the profit margin of the firm as this typ
 control. It is not perfect as profit margins can be due to many factors outside our model,
 but it serves to control for parts of the possible cofounding factors of firm quality.
 
+All the constructs and the control variables are presented with descriptive statistics and
+pairwise correlations. The main estimation was tested for multicolinearity using the
+variance inflation test (VIF) with no severe multicolinearity detected. This is also
+suggested by the correlation matrix.
+
+\begin{table}[t]
+  \caption{Descriptive statistics and correlation between key constructs and control
+  variables.}
+\label{tab:cor}
+  <<corchild, child='./figure/cortab.rnw',results="asis">>=
+@
+
+\end{table}
+
+
 \subsection{Estimation and empirical model}
 
-Our empirical model is a mediation analysis where operational
-capabilities and proactiveness acts as mediators of the dynamic
-capabilities-competitive advantage relationship. Our data is for the
-larger part survey based with some controls gathered from registry
-data (particularly the Norwegian Company Registry). The total sample
-size of the paper is $N=262$ which makes it very suited for a latent
-variable analysis using Partial Least Squares - Structural Equation
-Modeling (PLS-SEM) \citep{Hair2010}. Particularly, PLS-SEM is useful
-when studying theoretical extensions of established theories, when the
-sample size is small, when the structural model includes many
-constructs and indicators, and when distribution issues are a concern
-\citep{Hair2019}. Indeed, the use of PLS-SEM is increasingly taking
-hold in strategic management research \citep{Hair2012}.
+Our empirical model is a mediation analysis where operational capabilities and
+proactiveness acts as mediators of the dynamic capabilities-competitive advantage
+relationship. Our data is for the larger part survey based with some controls gathered
+from registry data (particularly the Norwegian Company Registry). The total sample size of
+the paper is $N=262$ which makes it very suited for a latent variable analysis using
+Partial Least Squares - Structural Equation Modeling (PLS-SEM)
+\citep{Hair2010}. Particularly, PLS-SEM is useful when studying theoretical extensions of
+established theories, when the sample size is small, when the structural model includes
+many constructs and indicators, and when distribution issues are a concern
+\citep{Hair2019}. Indeed, the use of PLS-SEM is increasingly taking hold in strategic
+management research \citep{Hair2012}.
 
-As we work with latent constructs we needed to handle missing values
-in the measurement model. Each latent variable consists of several
-observable indicator variables and the latent variable will drop an
-observation if one of the indicators are missing. Thus, to reduce the
-number of missing observations we ran a two-step validation process
-when constructing the latent variables. First, we established a
-theoretical structure based on theory and tested the constructs
-accordingly by evaluating the internal validity using Cronbachs alpha
-and composite reliability index (joreskog 1971). In this first step we
-used only observations where all indicators were complete (i.e. no
-missing). Then we imputed the mean value of the other indicators when
-one indicator had a missing value. In the second step we reran the
-model and compared the reliability measures. None of the constructs
-changed materially, but the total sample size went from $N=262$ to
-$N=240$ because some of the constructs lacked more than one item,
-rendering the imputation challenging. In these cases we dropped the
-observation. As a robustness check we reran all the models using a
-Multivariate Imputation By Chained Equations (MICE) procedure which
-makes use of the whole sample to impute missing values where more than
-one underlying item is missing. This procedure did not change the
-results materially.
+As we work with latent constructs we needed to handle missing values in the measurement
+model. Each latent variable consists of several observable indicator variables and the
+latent variable will drop an observation if one of the indicators are missing. Thus, to
+reduce the number of missing observations we ran a two-step validation process when
+constructing the latent variables. First, we established a theoretical structure based on
+theory and tested the constructs accordingly by evaluating the internal validity using
+Cronbachs alpha and composite reliability index (joreskog 1971). In this first step we
+used only observations where all indicators were complete (i.e. no missing). Then we
+imputed the mean value of the other indicators when one indicator had a missing value. In
+the second step we reran the model and compared the reliability measures. None of the
+constructs changed materially, but the total sample size went from $N=262$ to $N=240$
+because some of the constructs lacked more than one item, rendering the imputation
+challenging. In these cases we dropped the observation. As a robustness check we reran all
+the models using a Multivariate Imputation By Chained Equations (MICE) procedure which
+makes use of the whole sample to impute missing values where more than one underlying item
+is missing. This procedure did not change the results materially.
 
-The complete data used in the measurement model then comprised of
-$N=240$ observations. When adding the registry data from the Norwegian
-Company Registry, the sample sized declined somewhat to $N=206$. We
-ran all the models with and without the registry data without the
-focal relationship changing materially.
+The complete data used in the measurement model then comprised of $N=240$
+observations. When adding the registry data from the Norwegian Company Registry, the
+sample sized declined somewhat to $N=206$. We ran all the models with and without the
+registry data without the focal relationship changing materially.
 
-To test our hypotheses we then built a path-model from the latent
-variables we constructed. This resulted in four models. The results
-from the structural model is reported in figure \ref{fig:res} and
-table \ref{tab:res}. To estimate the standard errors we ran
-simulations using bootstrapping and reported the simulation number,
-standard errors and corresponding p-values. To evaluate the models we
-compared $R^2$ and $Q^2$ statistics, as well as changes in Baysian
-Information Criteria (BIC) for model comparison. All these are
-reported in table \ref{tab:res}. Finally, we tested the model for
-nonlinear effets, endogeneity and unbserved heterogeneity using
-Ramsey, Gaussian Copula approach and Information Criteria test
-respectively. These results are available in the appendix.
+To test our hypotheses we then built a path-model from the latent variables we
+constructed. This resulted in four models. The results from the structural model is
+reported in figure \ref{fig:res} and table \ref{tab:res}. To estimate the standard errors
+we ran simulations using bootstrapping and reported the simulation number, standard errors
+and corresponding p-values. To evaluate the models we compared $R^2$ and $Q^2$ statistics,
+as well as changes in Baysian Information Criteria (BIC) for model comparison. All these
+are reported in table \ref{tab:res}. Finally, we tested the model for nonlinear effects,
+endogeneity and unbserved heterogeneity using Regression Equation Specification Error Test
+(RESET) , Gaussian Copula approach and Information Criteria test respectively. These
+results are available in the appendix.
 
 The estimated models is based on the following specification:
 
@@ -590,35 +616,39 @@ The estimated models is based on the following specification:
    COG_{i,1} & = \eta_0 + \eta_1 COG_{i,0} + \eta_2 DC_{i,0} + \mathbf{\Gamma}_m\mathbf{C}^m_{i,1}+ u_i
 \end{align}
 
-$CA$,$CAP$,$COG$ and $DC$ indicates the consctruct for competetive
-advantage, operational capabilities, strategic cognition
-(proactiveness) and dynamic capabilities respectively. Subscript $i$
-refers to the firm and the second subscript indicates the time $t=0$
-or $t=1$. $\mathbf{\Gamma}_m$ is an $m \times 1$ vector of coefficients
-$\gamma_1$ to $\gamma_m$ for the control variables included in the
-model captured in  $\mathbf{C}^m_{i,1}$ which is a $i \times m$ matrix
-of controls. This generic model structure corresponds to four models
-by changing the parameters $\omega_1$ and $\omega_2$ which are
-indicator variables $\omega \in [0,1]$. Our base case model is
-$\omega_1 = \omega_2 = 0$ where only the direct effects from $DC$
-including the controls is captured. Models 2 and 3 captures the
-mediation effect of $CAP$ and $COG$ respectively ($\omega_1$ or
-$\omega_2 = 1$). Our final model captures the effect of both mediators
-($\omega_1 = \omega_2 = 1$). 
+$CA$,$CAP$,$COG$ and $DC$ indicates the consctruct for competetive advantage, operational
+capabilities, strategic cognition (proactiveness) and dynamic capabilities
+respectively. Subscript $i$ refers to the firm and the second subscript indicates the time
+$t=0$ or $t=1$. $\mathbf{\Gamma}_m$ is an $m \times 1$ vector of coefficients $\gamma_1$
+to $\gamma_m$ for the control variables included in the model captured in
+$\mathbf{C}^m_{i,1}$ which is a $i \times m$ matrix of controls. This generic model
+structure corresponds to four models by changing the parameters $\omega_1$ and $\omega_2$
+which are indicator variables $\omega \in [0,1]$. Our base case model is
+$\omega_1 = \omega_2 = 0$ where only the direct effects from $DC$ including the controls
+is captured. Models 2 and 3 captures the mediation effect of $CAP$ and $COG$ respectively
+($\omega_1$ or $\omega_2 = 1$). Our final model captures the effect of both mediators
+($\omega_1 = \omega_2 = 1$).
 
 \section{Results}
+The main results of our analysis are depicted both in the graphical path diagrams (figure
+\ref{fig:res}) and the regression table in table \ref{tab:res}. The empirical models are
+presented from left to right starting with the direct model. The main effect from $DC_0$
+to $CA_1$, controlled for $CA_0$, firm size, age, profit margin and assets, is positive
+and significant at the onset. Increasingly, by adding mediating variables as suggested by
+the theory, this effect diminishes to an extent suggesting that partial or full mediation
+is taking place. The effect decreases from BLA to BLA and turns insignificant. The
+mediating variables $CAP_1$ and $COG_1$ are both positive and significantly related to
+$CA_1$. This suggests that the effect between dynamic capabilities and competitive
+advantage is mediated by these two factors separately, as well as together. These findings
+both support H1 and H2. Moreover, the model becomes increasingly better both in terms if
+explanatory power ($R^2$), predictive power ($Q^2$) and the Bayesian Information Criteria
+(BIC).  
 
-\begin{table}[t]\label{tab:cor}
-  \caption{Descriptive statistics and correlation between key constructs and control
-  variables.}
-  <<corchild, child='./figure/cortab.rnw',results="asis">>=
-@
 
-\end{table}
 
-\begin{table}[t]\label{tab:res}
+\begin{table}[t]
   \caption{PLS-SEM results for key constructs}
-
+\label{tab:res}
   \scriptsize
   <<child-demo, child='./figure/restab.rnw'>>=
 @
@@ -627,10 +657,24 @@ $\omega_2 = 1$). Our final model captures the effect of both mediators
       \item Standard-errors estimated using bootstrapping with 10 000 simulations.
       \item Firm level control variables include firm size, firm age,
         profit margin, firm assets.
-
     \end{tablenotes}
   \end{table}
 
+One striking finding, however, is that the improvement in the model between
+model 3 and 4 is neglectable, whereas it represents a considerable improvement between 2 and 3. This
+suggests that strategic cognition represents a stronger mediator than operational
+capabilities. However, the difference is too small to render further analysis all but
+conjecture on our part. Thus, we wanted found it necessary to explore the joint mediation
+between $CAP_1$ and $COG_1$. 
+
+
+\subsection{Post-hoc analysis: joint mediation}
+
+From standard production theory we know that the isoquants
+between two factors of input rarely are angled (Leontief isoquants) suggesting that the
+factors are total complements to eachother. Rather there are trade offs between these
+factors suggesting a non-linear relationship. One way to investigate this is by means of
+joint mediation where (USE MODERATED MEDIATION RATHER). 
  <<pathchild, child='./figure/medanalysisall.rnw',results="asis">>=
 @
 

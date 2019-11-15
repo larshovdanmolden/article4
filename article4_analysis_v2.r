@@ -118,8 +118,8 @@ rownames(zwadj) <- NULL
 
 
 setwd("/Users/larshovdanmolden/Documents/git/article4")
-alldc <- zwadj[,c("Q19","Q19a", "Q19b","Q19c", "Q19d", "Q20","Q20b", "Q20c", "Q20d","Q20e")]
-alldc0 <- zwadj[,c("Q6.1_t1","Q6.2_t1","Q6.3_t1","Q6.4_t1","Q6.5_t1","Q6.7_t1","Q7.1_t1","Q7.2_t1","Q7.3_t1","Q7.4_t1")]
+#alldc <- zwadj[,c("Q19","Q19a", "Q19b","Q19c", "Q19d", "Q20","Q20b", "Q20c", "Q20d","Q20e")]
+#alldc0 <- zwadj[,c("Q6.1_t1","Q6.2_t1","Q6.3_t1","Q6.4_t1","Q6.5_t1","Q6.7_t1","Q7.1_t1","Q7.2_t1","Q7.3_t1","Q7.4_t1")]
 
 alldc <- zwadj[,c("Q19","Q19c", "Q19d", "Q20b", "Q20c", "Q20d","Q20e")]
 alldc0 <- zwadj[,c("Q6.1_t1","Q6.4_t1","Q6.5_t1","Q7.1_t1","Q7.2_t1","Q7.3_t1","Q7.4_t1")]
@@ -128,7 +128,7 @@ alldc0 <- zwadj[,c("Q6.1_t1","Q6.4_t1","Q6.5_t1","Q7.1_t1","Q7.2_t1","Q7.3_t1","
 ## Running median imputation
 dc02 <-  imputezw(zwadj[,c("Q6.4_t1", "Q6.5_t1","Q7.1_t1","Q7.2_t1")] )
 #dc02 <-  imputezw(zwadj[,c("Q6.1_t1","Q7.3_t1","Q7.4_t1")] )
-dc002 <- imputezw(zwadj[,c("Q19c", "Q19d", "Q20b", "Q20c")] )
+#dc002 <- imputezw(zwadj[,c("Q19c", "Q19d", "Q20b", "Q20c")] )
 dc02 <-  imputezw(alldc)
 dc002 <-  imputezw(alldc0)
 #dc002 <-  imputezw(zwadj[,c("Q19", "Q20d","Q20e")] )
@@ -148,7 +148,7 @@ m2 <- imputezw(zwadj[,c("Q4.1_t1","Q4.2_t1","Q4.3_t1")])
 #dyn  <- imputezw(zwadj[,c("Q27a","Q27b","Q27c")])
 m0 <- imputezw(zwadj[,c("Q18","Q17a","Q17b")])
 #m1 <- imputezw(zwadj[,c("Q4.7_t1","Q4.8_t1","Q4.9_t1")])
-
+#dcm <- dc002 ;colnames(dcm)  <-  paste("dcm",seq(1,length(dc002),1),sep="") ## Average DC between two periods
 dcm <- (dc002+dc02)/2 ;colnames(dcm)  <-  paste("dcm",seq(1,length(dc002),1),sep="") ## Average DC between two periods
 #complist <- list(DC_P=dc01,DC_X=dc02,CA_t=ca0,CA=ca1,P=or1,R=ma01)
 vcontrols <- zwadj[,c("size","age","pm","lassets","debt","assets","dyn")]
@@ -479,9 +479,9 @@ return(list(extrfact=fact,resmatmed=resmatmed,resmat=resmat,dgr=dgr,sdind=sdindC
 zwadj2<-subset(zwadj,pm>-20)
 plot(zwadj$pm)
 nrow(zwadj2)
-nboot=100
+nboot=200
 main<-plswrap(zwadj, c("size","age"), c("size","age"))
-mainf <-plswrap(zwadj2,c("size","lassets","pm","age"), c("size","lassets","age"))
+mainf <-plswrap(zwadj2,c("size","lassets","pm","age"), c("size","lassets","age","pm"))
 
 save.image("./data/resart4.RData")
 
