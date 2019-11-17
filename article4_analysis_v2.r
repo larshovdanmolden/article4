@@ -569,6 +569,24 @@ nboot=200
 main<-plswrap(zwadj, c("size","age"), c())
 mainf <-plswrap(zwadj2,c("size","lassets","pm","age"), c("size","lassets","age","pm"))
 
+interaction<-matrix(c(
+  0.26932034207859623, 0.26923690255247545, 0.04814863208543181, 5.59352011497921, 3.669225634439499E-8, 
+  0.33103128717881747, 0.3323640758665314, 0.045724630251763085, 7.2396711653245855, 1.7621459846850485E-12, 
+  0.3512170134073069, 0.35453979904198096, 0.0641087026729594, 5.478460782446121, 6.810904551457497E-8, 
+  0.18625055537645321, 0.19955110191159914, 0.06718384748338509, 2.7722519973646036, 0.005774687355312835, 
+  0.22513185914079997, 0.22544489295104994, 0.06147333291610961, 3.6622686368417523, 2.7664183068054626E-4, 
+  0.06116102318365884, 0.06014449246886341, 0.05440671102134564, 1.1241448349940368, 0.26149095523686583, 
+  0.20629260491579082, 0.21313255834073758, 0.06496708651484248, 3.1753402527703147, 0.001588948586402239, 
+  0.32932110930791636, 0.33228844472191554, 0.06206401583333989, 5.306152121903298, 1.6858410845088656E-7, 
+  0.09274062017926049, 0.09086154127388878, 0.045578858837511976, 2.034728875285789, 0.04240522287255999, 
+  0.017322516024085983, 0.015280519583150617, 0.0480473964505637, 0.36052975402963283, 0.7186032612185613, 
+  0.17666995752931067, 0.17584583914912322, 0.051281148379350314, 3.4451248287655627, 6.18817371048408E-4
+), byrow=TRUE, nrow=11, ncol=5)
+rownames(interaction)<-c("CA0 -> CA1","CAP -> CA1","CAP0 -> CAP","COG0 -> COG_","COG_ -> CA1","DC_ -> CA1","DC_ -> CAP","DC_ -> COG_","Moderating Effect 1 -> CA1","age -> CA1","size -> CA1")
+colnames(interaction)<-c("Original Sample (O)","Sample Mean (M)","Standard Deviation (STDEV)","T Statistics (|O/STDEV|)","P Values")
+interaction
+interaction<-round(interaction,3)
+i<-interaction
 save.image("./data/resart4.RData")
 
 main$resmat
@@ -576,6 +594,18 @@ mainf$resmat
 main$cormat
 mainf$cormat
 
+both <- main$models$both
+
+
+
+#### INTERACTION PLOT
+library(sjPlot)
+library(sjmisc)
+library(ggplot2)
+
+
+ic(both, LV = "M",criteria = "BIC")
+ic_exhaustive(both, LV = "CA1",criteria = "BIC",data=zwadj)
 
 names(main$models)
 
@@ -648,10 +678,32 @@ LcKS(RDC, "pnorm", nreps = 4999)
 LcKS(RM, "pnorm", nreps = 4999)
 LcKS(RR, "pnorm", nreps = 4999)
 LcKS(RCA0, "pnorm", nreps = 4999)
-
+RI2<- (RM*RR)^2
 # Calculate standard regression
-stdModel <- lm(CA1 ~ CA0 + DC + M + RR)
+stdModel <- lm(RCA1 ~ RCA0 +RDC + RM + RR + RM*RR)
+
 summary(stdModel);
+
+plot_model(stdModel, type = "pred", terms = c("RR", "RM"),title= "Predicted values of competitive advantage",
+           axis.title = c("Operational Capabilities (CAP)","Competitive Advantage"),
+           legend.title = "Strategic Cognition (COG)",legend_style())
+         
+     main="BLA")
+
+library(interplot)
+
+
+interplot(m = stdModel, var1 = "RR", var2 = "RM") +
+  # Add labels for X and Y axes
+  xlab("Automobile Weight (thousands lbs)") +
+  ylab("Estimated Coefficient CAP") +
+  # Change the background
+  theme_bw() +
+  # Add the title
+  ggtitle("Estimated Coefficient of Engine Cylinders \non Mileage by Automobile Weight") +
+  theme(plot.title = element_text(face="bold")) +
+  # Add a horizontal line at y = 0
+  geom_hline(yintercept = 0, linetype = "dashed")
 
 # Calculate copulas for indpndent variables within model
 CA0_star <- createCopula(RCA0)
