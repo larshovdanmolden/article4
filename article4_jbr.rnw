@@ -83,11 +83,16 @@ TBD
 <<loading, results="asis", echo=FALSE >>=
 setwd("/Users/larshovdanmolden/Documents/git/article4")
 library(xtable)
+library(semPLS)
 load("./data/resart4.RData")
 r <- main$resmat
 rm  <- main$resmatmed
 l  <- main$loadings
-l <- main$loadings
+ic <- data.frame(i[,c(1,4)]);colnames(ic) <- c("b","t")
+ic$rn  <- 1:nrow(ic)
+bb <- main$models$both
+bm <- main$models$mmed
+br <- main$models$rmed
 #foolars=0.99
 @
 
@@ -100,7 +105,7 @@ l <- main$loadings
 
 % paper about the DC for MNC in india an dimpact on CA
 %https://journals.sagepub.com/doi/abs/10.1177/0971890717701781
-BLA
+
 Extant literature on dynamic capabilities are increasingly focusing on how firm resources
 are changed by dynamic capabilities as a response to changes in the environment
 \citep{Schilke2018,Eriksson2014}, thus placing firm resources as a mediator between
@@ -223,6 +228,8 @@ orientation.
 
 %Prior research focused on managerial cognition, but gavetti shows that hierarchy matters
 %and different cognition maters
+
+What doe sit mean to execute DC (sense etc) and see opportunities and change underlying...
 
 When Satya Nadella took over as CEO of Microsoft in March 2014, he took over a company in
 big trouble. The share price was just north of 30 USD and the company had just launched a
@@ -602,12 +609,14 @@ reported in figure \ref{fig:res} and table \ref{tab:res}. To estimate the standa
 we ran simulations using bootstrapping and reported the simulation number, standard errors
 and corresponding p-values. To evaluate the models we compared $R^2$ and $Q^2$ statistics,
 as well as changes in Baysian Information Criteria (BIC) for model comparison. All these
-are reported in table \ref{tab:res}. Finally, we tested the model for nonlinear effects,
-endogeneity and unbserved heterogeneity using Regression Equation Specification Error Test
-(RESET) , Gaussian Copula approach and Information Criteria test respectively. These
-results are available in the appendix.
+are reported in table \ref{tab:res}.
 
-The estimated models is based on the following specification:
+%% Finally, we tested the model for nonlinear effects,
+%% endogeneity and unbserved heterogeneity using Regression Equation Specification Error Test
+%% (RESET), Gaussian Copula approach and Information Criteria test respectively. These
+%% results are available in the appendix.
+
+The estimated models are based on the following specification:
 
 \begin{align}
   CA_{i,1} & = \alpha_0 + \alpha_1 CA_{i,0} + \omega_1 \alpha_2 CAP_{i,1}
@@ -629,20 +638,45 @@ is captured. Models 2 and 3 captures the mediation effect of $CAP$ and $COG$ res
 ($\omega_1$ or $\omega_2 = 1$). Our final model captures the effect of both mediators
 ($\omega_1 = \omega_2 = 1$).
 
+A final model includes an interaction term between $CAP_t$ and $COG_t$ to capture any
+complementarity or substitution-effects these two may exhibit:
+
+\begin{align}
+  CA_{i,1} & = \alpha_0 + \alpha_1 CA_{i,0} + \omega_1 \alpha_2 CAP_{i,1}
+  + \omega_2 \alpha_3 COG_{i,1} + \alpha_{4} DC_{i,0} + \alpha_5 CAP_{i,1} \times  COG_{i,1} + \mathbf{\Gamma}_m\mathbf{C}^m_{i,1} + \epsilon_i 
+\end{align}
+
+
+
 \section{Results}
 The main results of our analysis are depicted both in the graphical path diagrams (figure
-\ref{fig:res}) and the regression table in table \ref{tab:res}. The empirical models are
-presented from left to right starting with the direct model. The main effect from $DC_0$
-to $CA_1$, controlled for $CA_0$, firm size, age, profit margin and assets, is positive
-and significant at the onset. Increasingly, by adding mediating variables as suggested by
-the theory, this effect diminishes to an extent suggesting that partial or full mediation
-is taking place. The effect decreases from BLA to BLA and turns insignificant. The
+\ref{fig:res}) and the regression table in table \ref{tab:res}. The use of PLS-SEM has
+increased substantially in the realm of marketing \citep{hult2018} and strategic management
+\citep{Hair2012} and is the topic of special issues in leading journals (e.g. Journal of
+Business Research call for papers in 2020). In this tradition we aim to present thorough
+analysis of our models and largely follows the recommendations made in recent
+contributions \citep{Hair2019}.
+
+The empirical models are presented from left to right starting with the direct model. The
+main effect from $DC_0$ to $CA_1$, controlled for $CA_0$, firm size, age, profit margin
+and assets, is positive and significant at the onset. Increasingly, by adding mediating
+variables as suggested by the theory, this effect diminishes to an extent suggesting that
+partial or full mediation is taking place. The effect decreases from 0.25 to 0.08 and
+turns insignificant when adding the two mediators. This suggests a full mediation. The
 mediating variables $CAP_1$ and $COG_1$ are both positive and significantly related to
 $CA_1$. This suggests that the effect between dynamic capabilities and competitive
 advantage is mediated by these two factors separately, as well as together. These findings
 both support H1 and H2. Moreover, the model becomes increasingly better both in terms if
-explanatory power ($R^2$), predictive power ($Q^2$) and the Bayesian Information Criteria
-(BIC).  
+explanatory power ($R^2$) and predictive power ($Q^2$).
+
+When adding the interaction term  $CAP_1 \times COG_1$ we get a significant effect. this
+is compatible with the idea of behavioral ($CAP_t$) and non-behavioral ($COG_t$) objects
+of change being complementary. This lends support to H3. 
+
+Our results indicate that between 37\%  and 48\% of the variation in $CA_1$ can be explained by our model,
+whereas 19\% and 18\% of the variation in our mediators $CAP_1$ and $COG_t$ respectively
+is explained. 
+
 
 
 
@@ -660,23 +694,119 @@ explanatory power ($R^2$), predictive power ($Q^2$) and the Bayesian Information
     \end{tablenotes}
   \end{table}
 
-One striking finding, however, is that the improvement in the model between
-model 3 and 4 is neglectable, whereas it represents a considerable improvement between 2 and 3. This
-suggests that strategic cognition represents a stronger mediator than operational
-capabilities. However, the difference is too small to render further analysis all but
-conjecture on our part. Thus, we wanted found it necessary to explore the joint mediation
-between $CAP_1$ and $COG_1$. 
+
+\subsection{Robustness and assumption validation}
+The results are subject to some robustness checks not directly reported in the paper,
+albeit a summary is available in the appendix. First, controlling for functional form
+using a Ramsay RESET test we find support for a linear relationship between our
+constructs. Second, we ran the a Variance Inflation Test (VIF) to control for
+multicolinearity. None of the VIF values exceeded the suggested level indicating
+multicolinearity problems. Third, we ran two separate models where we (1) included other
+measures of $DC$ (using the original measure of $DC_0$), and (2) added fewer control
+variables to which increased the sample size (from $N=205$ to $N=240$). Appendix 2
+presents the results from all these robustness checks and assumption validations.
 
 
-\subsection{Post-hoc analysis: joint mediation}
+%% Second, running a Bayesian Copula approach, we assess the problem of
+%% endogeneity in the model stemming from causes such as omitted variable bias or
+%% simultaneity. The approach explicitly models the correlation between the proposed
+%% endogenous variable ant the error term by means of a copula. When including a copula in
+%% the estimation as a correction for endogeneity we can compare changes in the estimated
+%% coefficients in terms of how they change. We tested this approach on all our three main
+%% independent variables ($CAP_1$, $COG_1$ and $DC_0$) and found no support for endogeneity
+%% problems in our model. However, $CAP_1$ did not fully satisfy the non-normality assumption
+%% of this approach as tested using a Kolmogorov-Smirnoff test, so we cannot fully conclude
+%% that endogenous effects may be at play in the model. However, the normality test did not
+%% establish normality, so we believe the Bayesian Copula approach was rather efficient for
+%% our purpose. Consequently, we do not believe that we have endogeneity problems in our
+%% model.
+%% introduced the Gaussian copula approach, which controls for endogeneity by directly
+%% modeling the correlation between the endogenous variable and the error term by means of a
+%% copula Model estimation in PLS-SEM draws on a three-stage approach that belongs to the
+%% family of (alternating) least squares algorithms (Mateos-Aparicio 2011). Stage 1 of the
+%% PLS-SEM algorithm iteratively determines indicator weights, composite scores, and path
+%% coefficients. The algorithm converges when the indicator weights change only marginally
+%% from one iteration to the next. Stages 2 and 3 use the final composite scores from Stage 1
+%% as input for a series of ordinary least squares regressions. These regressions produce the
+%% final indicator loadings, indicator weights, and path coefficients, as well as related
+%% elements, such as the indirect and total effects, and R2 values (e.g., Sarstedt et
+%% al. 2017a). With Simply put, the copula connects the marginal distributions of two or more
+%% variables that follow any distribution (e.g., normal, non-normal). Park and Gupta (2012)
+%% add a copula term to the model that represents the correlation between the endogenous
+%% variable and the error term. By including this term, the effect of the endogenous
+%% regressor can be estimated consistently
 
-From standard production theory we know that the isoquants
-between two factors of input rarely are angled (Leontief isoquants) suggesting that the
-factors are total complements to eachother. Rather there are trade offs between these
-factors suggesting a non-linear relationship. One way to investigate this is by means of
-joint mediation where (USE MODERATED MEDIATION RATHER). 
+
+
+
  <<pathchild, child='./figure/medanalysisall.rnw',results="asis">>=
 @
+
+\section{Discussion}
+The aim of this paper is to theorize about how non-behavioral objects of change work as a
+mechanism through which dynamic capabilities influence competitive advantage. Our results
+indicate that both behavioral (\emph{operating capabilities}) and non-behavioral
+(\emph{strategic cognition}) mediates the effect from dynamic capabilities on competitive
+advantage. The first mechanism, dubbed 'conducting' in reference to the well established
+terminology of 'resource orchestration' \citep{Sirmon2011,Helfat2007}, shows a robust and
+strong function as a mediator in line with our first hypothesis. When firms exhibit strong
+dynamic capabilities they are able to adapt their operating capabilites to stay
+competitive. We hypothesized that this relationship would be positive and significant. Our
+results indicated exactly this relationship and thus lending support to hour hypothesis.
+In our example context of Microsoft Nadella did several investments in capabilities and
+resources as a response to Microsofts dynamic capabilities execution. For example, he
+acquired important capabilities from M\&A efforts, and upgraded the competencies regarding
+cloud business and big data (Nadella). This should not be surprising given the vast
+literature on indirect effects of dynamic capabilities \citep{Eriksson2014} supported by
+empirical and theoretical research
+\citep{Fainshmidt2016a,Protogerou2012,Karimi2015}. However, it adds to this ongoing effort
+of investigating mechanisms through which dynamic capabilities work which is called for in
+the literature \citep{Schilke2018}.
+
+In this vein, our second hypothesis, and the main contribution of this paper, is much more
+novel in its characteristics. Building on the important work of \cite{Verona2011} in what
+they call adding a 'human side to dynamic capabilities' we suggest that non-behavioral
+objects of action exists in parallel with behavioral ones. This view holds that cognition
+makes a difference in creating strategic change and should thus be a part of a more
+'holistic' approach to dynamic capabilities theory (ibid). The notion of cognition in
+general plays an important role in determining 'the way we do things' (Vince and Gabriel
+2011, ch 15). The idea of 'strategic cognition' seems to be a way of safeguarding that
+organization members buy into the needed strategic change identified by execution of
+dynamic capabilities. Indeed, this is also what we find in our results. Our
+operationalization of 'strategic cognition' as \emph{proactiveness} makes for a proper
+mediator in the focal relationship between dynamic capabilities and competitive
+advantage. This is the path we have dubbed 'coaching' where dynamic capabilities rather
+than orchestrating resources enables the organization to fully grasp and adapt to the proposed
+strategic change. In our Microsoft example this was exactly where Nadella put the most
+emphasis. By instilling a growth mindset Microsoft became a more proactive company, but
+the triggering mechanism was the execution of dynamic capabilities through sensing and
+seizing the opportunities they saw. 
+
+Our empirical results support the idea that \emph{operating capabilities}) and
+\emph{strategic cognition} being distinctly different mechanisms through which dynamic
+capabilities influence competitive advantage. 
+
+
+
+Specifically, we ask the following research question:
+
+{\bf What is the role of non-behavioral objects of change as a mechanism through which
+  dynamic capabilities can influence competitive advantage?}
+
+To shed light on this important question we theorize on the role of a particular type of
+non-behavioral object of change, \emph{strategic cognition}, and how it acts as a
+mediator between dynamic capabilities and firm competitive advantage and hence has a
+pivotal place in the literature. We build on important work on the concept of
+organizational cognition (ref), non-behavioral object of change (ref) and cognitive
+psychology (kahneman and tversky),
+and hypothesize about how strategic cognition acts as a mediator in the same way as
+conventional behavioral objects of change (such as routines and capabilities) and that
+these two are complementary to a certain degree. Consequently, we argue, dynamic capabilities takes
+the function of a 'conductor' by orchestrating routines and capabilities, and the role of
+a 'coach' in stimulating strategic cognition. We use the case of Microsoft's transition
+into the cloud computing business as an illuminating case for demonstrating how the roles
+of 'conductor' and 'coach' coexist and act partly complimentary in generating strategic
+change and competitive advantage.
 
 
 

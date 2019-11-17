@@ -85,10 +85,10 @@ imputezw <- function(vec){
     return(vec)
 }
 
-## imputezw <- function(vec){
-##     tempData <- mice(vec,m=10,maxit=50,meth='pmm',seed=500)
-##     return(complete(tempData,1))
-## }
+imputezw <- function(vec){
+   tempData <- mice(vec,m=10,maxit=50,meth='pmm',seed=500)
+   return(complete(tempData,1))
+}
 
 
 extboot <- function(bootobj,n,nam,r){ #remembaer space between Letter and " ("P ")
@@ -126,7 +126,7 @@ alldc0 <- zwadj[,c("Q6.1_t1","Q6.4_t1","Q6.5_t1","Q7.1_t1","Q7.2_t1","Q7.3_t1","
 ## Running median imputation
 
 ## Running median imputation
-dc02 <-  imputezw(zwadj[,c("Q6.4_t1", "Q6.5_t1","Q7.1_t1","Q7.2_t1")] )
+#dc02 <-  imputezw(zwadj[,c("Q6.4_t1", "Q6.5_t1","Q7.1_t1","Q7.2_t1")] )
 #dc02 <-  imputezw(zwadj[,c("Q6.1_t1","Q7.3_t1","Q7.4_t1")] )
 #dc002 <- imputezw(zwadj[,c("Q19c", "Q19d", "Q20b", "Q20c")] )
 dc02 <-  imputezw(alldc)
@@ -135,10 +135,13 @@ dc002 <-  imputezw(alldc0)
 #dc002 <-  imputezw(zwadj[,c("Q19d","Q19c", "Q20b", "Q20c","Q20e")])
 ca0 <-  imputezw(zwadj[,c("Q28","Q28a","Q28c")] )
 ca1 <-   imputezw(zwadj[,c("Q16.1_t1","Q16.2_t1","Q16.4_t1")] )
-#or1 <-   imputezw(zwadj[,c("Q5.4_t1","Q5.6_t1","Q5.7_t1","Q5.1_t1","Q5.2_t1","Q5.3_t1","Q5.5_t1")])
-#or0 <-   imputezw(zwadj[,c("Q21c","Q21d","Q21e","Q22","Q22a","Q22b","Q22c")])
-or1 <-   imputezw(zwadj[,c("Q5.4_t1","Q5.6_t1","Q5.7_t1")])
-or0 <-   imputezw(zwadj[,c("Q21c","Q21d","Q21e")])
+or1 <-   imputezw(zwadj[,c("Q5.4_t1","Q5.6_t1","Q5.7_t1","Q5.1_t1","Q5.2_t1","Q5.3_t1","Q5.5_t1")])
+or0 <-   imputezw(zwadj[,c("Q21c","Q21d","Q21e","Q22","Q22a","Q22b","Q22c")])
+#or1 <-   imputezw(zwadj[,c("Q5.4_t1","Q5.6_t1","Q5.7_t1")])
+#or0 <-   imputezw(zwadj[,c("Q21c","Q21d","Q21e")])
+or1 <-   imputezw(zwadj[,c("Q5.1_t1","Q5.2_t1","Q5.3_t1")]) ## CHANGED FOR EXPLOITAINON
+or0 <-   imputezw(zwadj[,c("Q22","Q22a","Q22b")])
+
 #ma01 <-  imputezw(zwadj[,c( "Q8.7_t1", "Q8.8_t1", "Q8.9_t1")])
 #ma02 <-  imputezw(zwadj[,c("Q24","Q24a","Q24b","Q24c","Q24d")])
 ## m0 <- imputezw(zwadj[,c("Q16a","Q16b","Q17a","Q17b")])
@@ -157,24 +160,78 @@ zwadj <- cbind(dc002,dc02,ca0,ca1,m1,m0,or0, or1,vcontrols,dcm)
 #zwadj <- cbind(ca0,ca1,m1,m0,or0, or1,dcm)
 zwadj$de <- zwadj$debt/zwadj$assets
 
+#### NO IMP
+zwadj <- subset(zw,!is.na(Q4.1_t1))
+rownames(zwadj) <- NULL
 
+setwd("/Users/larshovdanmolden/Documents/git/article4")
+#alldc <- zwadj[,c("Q19","Q19a", "Q19b","Q19c", "Q19d", "Q20","Q20b", "Q20c", "Q20d","Q20e")]
+#alldc0 <- zwadj[,c("Q6.1_t1","Q6.2_t1","Q6.3_t1","Q6.4_t1","Q6.5_t1","Q6.7_t1","Q7.1_t1","Q7.2_t1","Q7.3_t1","Q7.4_t1")]
+
+alldc <- zwadj[,c("Q19","Q19c", "Q19d", "Q20b", "Q20c", "Q20d","Q20e")]
+alldc0 <- zwadj[,c("Q6.1_t1","Q6.4_t1","Q6.5_t1","Q7.1_t1","Q7.2_t1","Q7.3_t1","Q7.4_t1")]
+## Running median imputation
+
+## Running median imputation
+#dc02 <-  (zwadj[,c("Q6.4_t1", "Q6.5_t1","Q7.1_t1","Q7.2_t1")] )
+#dc02 <-  (zwadj[,c("Q6.1_t1","Q7.3_t1","Q7.4_t1")] )
+#dc002 <- (zwadj[,c("Q19c", "Q19d", "Q20b", "Q20c")] )
+dc02 <-  (alldc)
+dc002 <-  (alldc0)
+#dc002 <-  (zwadj[,c("Q19", "Q20d","Q20e")] )
+#dc002 <-  (zwadj[,c("Q19d","Q19c", "Q20b", "Q20c","Q20e")])
+ca0 <-  (zwadj[,c("Q28","Q28a","Q28c")] )
+ca1 <-   (zwadj[,c("Q16.1_t1","Q16.2_t1","Q16.4_t1")] )
+or1 <-   (zwadj[,c("Q5.4_t1","Q5.6_t1","Q5.7_t1","Q5.1_t1","Q5.2_t1","Q5.3_t1","Q5.5_t1")])
+or0 <-   (zwadj[,c("Q21c","Q21d","Q21e","Q22","Q22a","Q22b","Q22c")])
+#or1 <-   (zwadj[,c("Q5.4_t1","Q5.6_t1","Q5.7_t1")])
+#or0 <-   (zwadj[,c("Q21c","Q21d","Q21e")])
+or1 <-   (zwadj[,c("Q5.1_t1","Q5.2_t1","Q5.3_t1")]) ## CHANGED FOR EXPLOITAINON
+or0 <-   (zwadj[,c("Q22","Q22a","Q22b")])
+
+#ma01 <-  (zwadj[,c( "Q8.7_t1", "Q8.8_t1", "Q8.9_t1")])
+#ma02 <-  (zwadj[,c("Q24","Q24a","Q24b","Q24c","Q24d")])
+## m0 <- (zwadj[,c("Q16a","Q16b","Q17a","Q17b")])
+#m0 <- (zwadj[,c("Q18","Q17a","Q17b")])
+m1 <- (zwadj[,c("Q4.4_t1","Q4.5_t1","Q4.6_t1")])
+m2 <- (zwadj[,c("Q4.1_t1","Q4.2_t1","Q4.3_t1")])
+#dyn  <- (zwadj[,c("Q27a","Q27b","Q27c")])
+m0 <- (zwadj[,c("Q18","Q17a","Q17b")])
+#m1 <- (zwadj[,c("Q4.7_t1","Q4.8_t1","Q4.9_t1")])
+#dcm <- dc002 ;colnames(dcm)  <-  paste("dcm",seq(1,length(dc002),1),sep="") ## Average DC between two periods
+dcm <- (dc002+dc02)/2 ;colnames(dcm)  <-  paste("dcm",seq(1,length(dc002),1),sep="") ## Average DC between two periods
+#complist <- list(DC_P=dc01,DC_X=dc02,CA_t=ca0,CA=ca1,P=or1,R=ma01)
+vcontrols <- zwadj[,c("size","age","pm","lassets","debt","assets","dyn")]
+#zwadj <- cbind(dc01,dc02,dc001,dc002,ca0,ca1,or1,or0,ma01,m0,m1,vcontrols,dyn)
+zwadj <- cbind(dc002,dc02,ca0,ca1,m1,m0,or0, or1,vcontrols,dcm)
+#zwadj <- cbind(ca0,ca1,m1,m0,or0, or1,dcm)
+zwadj$de <- zwadj$debt/zwadj$assets
+
+zwexp<-zwadj
+
+zwexp[is.na(zwexp)] <- -99
+#zwexp <- subset(zwexp,pm>-5)
+write.csv(zwexp,"zwad_noimp.csv",quote = FALSE)
 
 #DC1 <- c("Q6.4_t1", "Q7.1_t1","Q7.2_t1","Q6.5_t1")
 #DC01 <- c("Q6.1_t1","Q7.3_t1","Q7.4_t1")
-#DC01 <- c("Q19", "Q20d","Q20e")
+#DC01 <- c("Q19c", "Q19d", "Q20b", "Q20c")
 #DC01 <- c("Q19a", "Q19c", "Q19d", "Q20b", "Q20c")
 #DC01 <- c("Q19c", "Q20b", "Q20c")
 CA0 <- c("Q28","Q28a","Q28c")
 CA1 <- c("Q16.1_t1","Q16.2_t1","Q16.4_t1")
-R <- c("Q5.4_t1","Q5.6_t1","Q5.7_t1")
-M <- c("Q4.4_t1","Q4.5_t1","Q4.6_t1")
+#R <- c("Q5.4_t1","Q5.6_t1","Q5.7_t1")
+#M <- c("Q4.4_t1","Q4.5_t1","Q4.6_t1")
 R0 <- c("Q21c","Q21d","Q21e")
 M0 <- c("Q18","Q17a","Q17b")
 DC01  <- names(dcm)
+#DC01 <- c("Q19","Q19c", "Q19d", "Q20b", "Q20c", "Q20d","Q20e")
 CONT <- c("size","assets","pm")
 CONTm <- c("size","assets")
 #CONT <- c("pm","de","dyn","size")
-
+#or0 <-   imputezw(zwadj[,c("Q21c","Q21d","Q21e")])
+R <-c("Q5.1_t1","Q5.2_t1","Q5.3_t1") ## CHANGED FOR EXPLOITAINON
+R0 <-c("Q22","Q22a","Q22b")
 
 CONT <- c("size","age")
 CONTm <- c("size","age")
@@ -238,6 +295,8 @@ plswrap <-function(zwadj,CONT,CONTm){
       bothfit <- semPLS::gof(both)
       bothBoot <- bootsempls(both, nboot = nboot, start = "ones", verbose = FALSE)
       bothout <- extboot(bothBoot,20,"",c("^M ","R "))
+      
+      
 
   ### Model fit
   ## https://rdrr.io/rforge/semPLSModelSelection/man/ic.html
@@ -475,12 +534,39 @@ return(list(extrfact=fact,resmatmed=resmatmed,resmat=resmat,dgr=dgr,sdind=sdindC
 
 }
 
+
+#### Create interaction terms
+RI <-(zwadj[,R])
+MI <-(zwadj[,M])
+
+RI[is.na(RI)] <- 3
+MI[is.na(MI)] <- 3
+
+mkint <-function(V1,V2){
+  res<-data.frame()
+  i=1
+  for (a in 1:ncol(V2)){
+    for(b in 1:ncol(V1)){
+      res[1:nrow(V2),i] <- sqrt(V1[,a] * V2[,b])
+      i=i+1
+      print(i)
+    }
+  }
+    colnames(res) <-paste("int",c(1:9),sep="")
+    return(res)
+}
+
+zwadj<-zwadj[,1:47]
+INT <-mkint(RI,MI)
+zwadj<-cbind(zwadj,INT)
+INTn <-names(INT)
+head(zwadj)  
 #### remove extreme pm values
-zwadj2<-subset(zwadj,pm>-20)
+zwadj2<-subset(zwadj,pm>-5)
 plot(zwadj$pm)
 nrow(zwadj2)
 nboot=200
-main<-plswrap(zwadj, c("size","age"), c("size","age"))
+main<-plswrap(zwadj, c("size","age"), c())
 mainf <-plswrap(zwadj2,c("size","lassets","pm","age"), c("size","lassets","age","pm"))
 
 save.image("./data/resart4.RData")
@@ -494,6 +580,10 @@ mainf$cormat
 names(main$models)
 
 main$models$both
+
+### ON PLS SEM
+##https://www.researchgate.net/profile/Harald_Van_Heerde/publication/319360558_Addressing_Endogeneity_in_Marketing_Models/links/5ac297a145851584fa773930/Addressing-Endogeneity-in-Marketing-Models.pdf
+
 
 ### COPULA TESTING
 # R code for correcting for endogeneity in the Corporate Reputation Data PLS model
@@ -512,6 +602,10 @@ main$models$both
 # Load required libraries -> PLEASE INSTALL THE "CAR" PACKAGE IF YOU HAVE NOT
 # ALREADY. SEE https://www.r-bloggers.com/how-to-install-packages-on-r-screenshots/
 # FOR INSTRUCTIONS HOW TO INSTALL A PACKAGE
+library(KScorrect)
+
+## READ MORE http://dse.univr.it/ssdev/documents/material2013/slidesBlauwSanne.pdf
+#Run the he KolmogorovñSmirnov test with Lilliefors correction
 
 
 # Function to create Gausian Copula
@@ -540,34 +634,40 @@ bootstrapedSignificance <- function(dataset, bootstrapresults, numIndependentVar
 
 # Read data (extracted standardized latent variable scores from PLS model)
 #CRDdata = read.csv2("CRP_dataset_std.csv", header=TRUE, sep=";", dec=".", stringsAsFactors=FALSE);
-CRDdata <- fact
-CA1 <- CRDdata[,"CA1"]
-CA0 <- CRDdata[,"CA0"]
-DC <- CRDdata[,"DC"]
+CRDdata <- main$extrfact
+RCA1 <- CRDdata[,"CA1"]
+RCA0 <- CRDdata[,"CA0"]
+RDC <- CRDdata[,"DC"]
 RR <- CRDdata[,"R"]
-M <- CRDdata[,"M"]
-R0 <- CRDdata[,"R0"]
-M0 <- CRDdata[,"M0"]
+RM <- CRDdata[,"M"]
+RR0 <- CRDdata[,"R0"]
+RM0 <- CRDdata[,"M0"]
+
+### Run the he KolmogorovñSmirnov test with Lilliefors correction / the independent only
+LcKS(RDC, "pnorm", nreps = 4999)
+LcKS(RM, "pnorm", nreps = 4999)
+LcKS(RR, "pnorm", nreps = 4999)
+LcKS(RCA0, "pnorm", nreps = 4999)
 
 # Calculate standard regression
-stdModel <- lm(CA1 ~ CA0 + DC + M + R)
+stdModel <- lm(CA1 ~ CA0 + DC + M + RR)
 summary(stdModel);
 
 # Calculate copulas for indpndent variables within model
-CA0_star <- createCopula(CA0)
-DC_star <- createCopula(DC)
+CA0_star <- createCopula(RCA0)
+DC_star <- createCopula(RDC)
 RR_star <- createCopula(RR)
-M_star <- createCopula(M)
+M_star <- createCopula(RM)
 
 # Set bootstrapping rounds
 # FOR TESTING PURPOSE, WE RECOMMEND SETTING THIS VALUE TO 100; FOR REPORTING THE FINAL
 # RESULTS WE RECOMMEND SETTING IT TO 10000
-bootrounds = 10000
+bootrounds = 100
 
 # Calculate Results
 # Include Copula for CA0
 # Normal regression
-copulaResults1 <- lm(CA1 ~ CA0 + DC + RR+ CA0_star + 0)
+copulaResults1 <- lm(RCA1 ~ RCA0 + RDC + RM+RR+ M_star + 0)
 summary(copulaResults1)
 # Bootstrap Standard Errors
 bootCopulaResults1 <- Boot(copulaResults1, R=bootrounds)
@@ -577,7 +677,7 @@ bootstrapedSignificance(CRDdata, bootCopulaResults1, 3, 1)
 
 # Include Copula for LIKE
 # Normal copula regression
-copulaResults2 <- lm (CA1 ~ CA0 + DC + M + DC_star + 0)
+copulaResults2 <- lm (RCA1 ~ RCA0 + RDC + RM +RR+ DC_star + 0)
 summary(copulaResults2)
 # Bootstrap standard errors
 bootCopulaResults2 <- Boot(copulaResults2, R=bootrounds)
@@ -587,7 +687,7 @@ bootstrapedSignificance(CRDdata, bootCopulaResults2, 3, 1)
 
 # Include Copula for CUSA
 # Normal copula regression
-copulaResults3 <- lm (CA1 ~ CA0 + DC + M + M_star + 0)
+copulaResults3 <- lm (RCA1 ~ RCA0 + RDC + RM + RR + M_star + 0)
 summary(copulaResults3)
 # Bootstrap standard errors
 bootCopulaResults3 <- Boot(copulaResults3, R=bootrounds)
@@ -597,7 +697,7 @@ bootstrapedSignificance(CRDdata, bootCopulaResults3, 3, 1)
 
 # Include Copula for LIKE and COMP
 # Normal copula regression
-copulaResults4 <- lm (CA1 ~ CA0 + DC + M + RR + M_star + CA0_star + DC_star + RR_star)
+copulaResults4 <- lm (RCA1 ~ RCA0 + RDC + RM + RR + M_star + DC_star + RR_star )
 summary(copulaResults4)
 # Bootstrap standard errors
 bootCopulaResults4 <- Boot(copulaResults4, R=bootrounds)
@@ -675,75 +775,79 @@ library(seminr)
 
 CA0 <- c("Q28","Q28a","Q28c")
 CA1 <- c("Q16.1_t1","Q16.2_t1","Q16.4_t1")
-R <- c("Q5.4_t1","Q5.6_t1","Q5.7_t1")
+R <- c("Q5.1_t1","Q5.2_t1","Q5.3_t1")
 M <- c("Q4.4_t1","Q4.5_t1","Q4.6_t1")
-R0 <- c("Q21c","Q21d","Q21e")
+R0 <- c("Q22","Q22a","Q22b")
 M0 <- c("Q18","Q17a","Q17b")
-DC01  <- c("dcm1","dcm2","dcm3")
-CONT <- c("size","age","lassets","dyn","pm")
-size  <- "size"
+DC01  <- names(dcm)
+#DC01 <- c("Q19c", "Q19d", "Q20b", "Q20c")
+#CONT <- c("size","age","lassets","dyn","pm")
+#size  <- "size"
 
-## measurements <- constructs(
-##   composite("DC",DC01),
-##   composite("CA1",CA1),
-##   composite("R",R,),
-##   composite("R0",R0,),
-##   composite("M",M,),
-##   composite("M0",M0,),
-##   composite("CA0",CA0,),
-##   interaction_term("R", "M", method =  orthogonal, weights = mode_A)
-## )
+drops <- c("lassets","pm","assets","debt","dyn","de")
+zw3 <- zwadj[ , !(names(zwadj) %in% drops)]
+names(zw3)
+
+zw4 <- subset(zwadj, pm>-5)
 
 measurements <- constructs(
   reflective("DC",DC01),
   reflective("CA1",CA1),
-  reflective("R",R),
+  reflective("RR",R),
   reflective("R0",R0),
   reflective("M",M),
   reflective("M0",M0),
   reflective("CA0",CA0),
-  composite("size","size"),
-  composite("assets","assets"),
-  composite("debt","debt"),
-  composite("age","age"),
-  #composite("pm","pm"),
- interaction_term("R", "M", method =  orthogonal, weights = mode_A)
+  composite("size",single_item("size")),
+#  composite("lassets",single_item("lassets")),
+ # composite("pm",single_item("pm")),
+  composite("age",single_item("age")),
+ # composite("dyn","dyn"),
+ interaction_term("RR", "M", method =  orthogonal, weights = mode_A)
 )
 
 
 # Quickly create multiple paths "from" and "to" sets of constructs
 structure <- relationships(
-    paths(from = c("DC", "R", "M", "CA0","size","age","debt","assets"),to = "CA1"),
-    paths(from = c("DC", "R0"),to = "R"),
-    paths(from = c("DC", "M0"),to = "M")
-    )
+  paths(from = c("DC", "M", "RR","RR*M","CA0","size","age"),to = "CA1"),
+  paths(from = c("DC", "M0"),to = "M"),
+  paths(from = c("DC", "R0"),to = "RR")
+)
 
 
 
 # Dynamically compose SEM models from individual parts
-pls_model <- estimate_pls(data = zwadj, measurements, structure)
+pls_model <- estimate_pls(data = zw3, measurements, structure)
 summary(pls_model)
 
-# Use multi-core parallel processing to speed up bootstraps
-boot_estimates <- bootstrap_model(pls_model, nboot = 1000, cores = 2)
+foo<-PLSc(pls_model)
+names(foo)
+foo$path_coef
+foo$outer_weights
+
+boot_estimates <- bootstrap_model(foo, nboot = 500, cores = 2)
 summary(boot_estimates)
+# Use multi-core parallel processing to speed up bootstraps
+boot_estimates2 <- bootstrap_model(pls_model, nboot = 500, cores = 2)
+summary(boot_estimates2)
 
+cf <- confidence_interval(boot_seminr_model = boot_estimates, from = "DC", through = "M", to = "CA1", alpha = 0.05)
+cf
 
-# Quickly create multiple paths "from" and "to" sets of constructs
 structure <- relationships(
-    paths(from = c("DC", "R", "M","R*M", "CA0","size","age","debt","assets"),to = "CA1"),
-    paths(from = c("DC", "R0"),to = "R"),
-    paths(from = c("DC", "M0"),to = "M")
-    )
+  paths(from = c("DC", "R", "M", "CA0","size","age"),to = "CA1"),
+  paths(from = c("DC"),to = "R"),
+  paths(from = c("DC"),to = "M")
+)
 
 
 
 # Dynamically compose SEM models from individual parts
-pls_modelint <- estimate_pls(data = zwadj, measurements, structure)
+pls_modelint <- estimate_pls(data = zw3, measurements, structure)
 summary(pls_modelint)
-
+plot_scores(pls_modelint)
 # Use multi-core parallel processing to speed up bootstraps
-boot_estimatesint <- bootstrap_model(pls_modelint, nboot = 1000, cores = 2)
+boot_estimatesint <- bootstrap_model(pls_modelint, nboot = 100, cores = 2)
 summary(boot_estimatesint)
 
 
