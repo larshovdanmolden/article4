@@ -269,7 +269,7 @@ non-valuable resources. Consequently, the mediation effects of underlying resour
 dependent on the nature of the resource - it being valuable and inimitable or not.
 
 \emph{H2a: When dynamic capabilities are being mediated by VRIO resources the firm can
-  achieve competitive advantage}
+o  achieve competitive advantage}
 
 \emph{H2a: When dynamic capabilities are being mediated by VRIO resources the firm can not
   achieve competitive advantage}

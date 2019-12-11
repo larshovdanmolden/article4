@@ -44,9 +44,7 @@
 %Eating strategy for breakfast?
 %Push, skill and two mediating factors
 
-\title{A Tale of Two Mechanisms: How mediators act and interact in dynamic capabilities
-  theory\\ Lock, Stock and Two Convoking Mechanisms: Towards a holistic theory of dynamic
-  capabilitie }
+\title{One goal, two paths: How dynamic capabilities enable competitive advantage through behavioral and non-behavioral objects of change}
 %\tnotetext[mytitlenote]{Fully documented templates are available in the elsarticle package on \href{http://www.ctan.org/tex-archive/macros/latex/contrib/elsarticle}{CTAN}.}
 
 %% Group authors per affiliation:
@@ -66,16 +64,29 @@
 %\address[mysecondaryaddress]{360 Park Avenue South, New York}
 
 \begin{abstract}
-This paper investigates strategic cognition as mediating factor in the dynamic
-capabilities-competitive advantage relationship. By including strategic cognition into the
-analysis in addition to the conventional mediator (operating capabilities) we argue that a
-more holistic approach to understanding the workings of dynamic capabilities emerges. We
-introduce two expressions of how dynamic capabilities work, namely as a conductor (the
-conventional mechanism) and as a coach (the cognitive mechanism). Using repeated
-cross-sectional data from Norwegian technology firms our results indicate support for our
-holistic model. This has implications for understanding how dynamic capabilites work, as
-well as practical implications for how strategic change is implemented in firms.
+% This paper investigates strategic cognition as mediating factor in the dynamic
+% capabilities-competitive advantage relationship. By including strategic cognition into the
+% analysis in addition to the conventional mediator (operating capabilities) we argue that a
+% more holistic approach to understanding the workings of dynamic capabilities emerges. We
+% introduce two expressions of how dynamic capabilities work, namely as a conductor (the
+% conventional mechanism) and as a coach (the cognitive mechanism). Using repeated
+% cross-sectional data from Norwegian technology firms our results indicate support for our
+% holistic model. This has implications for understanding how dynamic capabilites work, as
+% well as practical implications for how strategic change is implemented in firms.
 
+
+  The ultimate goal in the theory of dynamic capabilities (DCs) is competitive advantage.
+  This paper analyzes to what extent DCs influence competitive advantage through two paths
+  - one old, and one new - namely behavioral and non-behavioral objects of change.  In
+  addition to emergent theorizing and real world examples, we use the metaphor of “DC as
+  coach” and DC as conductor” to build a conceptual model and derive hypotheses.  Using
+  longitudinal survey data with a 10 year time lag we find that DCs influence competitive
+  advantage through both paths. Thus, the paper empirically validates emergent theorizing
+  proposing non-behavioral objects of change as a new path between DC and competitive
+  advantage. Moreover, the paper helps to broaden the conceptual basis for empirically
+  investigating how DCs enable competitive advantage. This has implications for
+  understanding how dynamic capabilities work, as well as practical implications for how
+  strategic change is implemented in firms.
 
 \end{abstract}
 
@@ -112,7 +123,6 @@ br <- main$models$rmed
 #foolars=0.99
 @
 
-
 %% Extant literature on dynamic capabilities is battling with a fundamental conception and
 %% prediction of the theory, namely if, when and how dynamic capabilities can lead to competitive
 %% advantage.
@@ -121,96 +131,91 @@ br <- main$models$rmed
 
 % paper about the DC for MNC in india an dimpact on CA
 %https://journals.sagepub.com/doi/abs/10.1177/0971890717701781
+The ultimate goal in the theory of dynamic capabilities ($DC$) is competitive advantage
+\citep{Schilke2014,Helfat2007,Protogerou2012,Li2014,Efrat2018a,Mikalef2017,Davcik2016a}. Extant
+theory argues that competitive advantage ($CA$) stem from resources and routines that are
+well aligned to firms’ competitive environment
+\citep{Helfat2007,Peteraf2013,Teece1997,Li2014,Jantunen201,Makkonen2014}. Dynamic
+capabilities are a source of longer-term competitive advantage in this perspective through
+its capacity to purposefully change these lower-level routines and capabilities
+\citep{Winter2003,Helfat2011,Schilke2018,Pezeshkan2016b,Lin2014a}, also referred to as
+ordinary, substantive, and zero-level routines and capabilities
+\citep{Winter2003,Danneels2008,Collis1994}. As a group, these lower level routines and
+capabilities are called 'behavioral objects of change' \citep{Verona2011,Zollo2016}, and constitutes an
+important path through which DCs can enable competitive advantage \citep{Verona2011}.
 
-Extant literature on dynamic capabilities are increasingly focusing on how firm resources
-are changed by dynamic capabilities as a response to changes in the environment
-\citep{Schilke2018,Eriksson2014}, thus placing firm capabilities as a mediator between
-dynamic capabilities and competetive advantage \citep{Helfat2007}. This notion of
-'orchestration' of firm resources, assets and capabilities has indeed been emphasized in
-the extant literature \citep{Sirmon2011,Helfat2015}. Less emphasis has been placed on how
-other mechanisms can be work in shaping firm competitive advantage. Indeed, this gap in
-the literature is explicitly emphasized by \cite{Schilke2018} where they 'see an
-interesting opportunity for future work to add greater richness to our understanding of
-the mechanism of resource-base change, given this mechanism’s central role in many
-foundational works (..) and the diverse ways in which resource changes can potentially
-come about' (p. 419).
+However, less emphasis has been placed on how other mechanisms can be work in shaping firm
+competitive advantage. Indeed, this gap in the literature is explicitly emphasized by
+\citep{Schilke2018} where they 'see an interesting opportunity for future work to add
+greater richness to our understanding of the mechanism of resource-base change, given this
+mechanisms central role in many foundational works (..) and the diverse ways in which
+resource changes can potentially come the mechanism of resource-base change, given this
+mechanisms central role in many foundational works (..) and the diverse ways in which
+resource changes can potentially come about' (p. 419).
 
-The conventional mechanism explored in the extant literature is related to changes in the
-firm`s resource base \citep{Eriksson2014,Schilke2018}. This mechanism is also included in
-the dominating definition of dynamic capabilities found in \citep{Helfat2007}: 'A dynamic
-capability is the capacity of an organization to purposefully create, extend or modify its
-resource base' (p. 4). This definition opens up for a variety of components
-included in the term 'resource base', a point we discuss later in this paper. We coin this
-expression of dynamic capabilities as the {\bf conductor} envisioning a conductor
-orchestrating firm capabilities.
+Indeed, the extant conceptualization of the $DC-CA$ link leaves out a considerable part of
+a firm‘s 'resource base' that are non-behavioral, such as resources that are tied to how
+the employees of the firm sees their mission, internalize information and effectuates
+change. These traits of the organization is very much related to concepts of 'mindset'
+\citep{Dweck2016}, ’employee cognition’ \citep{Lakoff1987,Gavetti2012} 'organizational
+genes' \citep{Nelson1982} and 'sense-making' \citep{Weick1995} to name but a few. However,
+in relations with dynamic capabilities, one promising avenue for exploring mechanisms,
+beyond the conventional behavioral objects of change is to examine the role of
+\emph{non-behavioral} objects of change in the theory of DC \citep{Verona2011}. These
+non-behavioral objects of change contain psychological objects such as cognitive frames,
+motivation and identity that are important for strategy formation and implementation
+\citep{Vince2011,Gavetti2012} as they 'concern how decisions or actions are shaped,
+subverted and transformed by emotions, and (..) determine the ”way we do things here”'
+\cite[p. 338]{Vince2011}.
 
-This notion of a {\bf conductor} albeit very important to the development of dynamic
-capabilities literature, seems to leave out a considerable part of a firm`s 'resource
-base', namely those resources that are tied to how the employees of the firm sees their
-mission, internalize information and effectuates change. These traits of the organization
-is very much related to concepts of 'mindset' \citep{Dweck2016}, 'employee cognition'
-\citep{Lakoff1987,Gavetti2012} 'organizational genes' \citep{Nelson1982} and
-'sense-making' \citep{Weick1995} to name but a few. However, in relations with dynamic
-capabilities, one promising avenue for exploring mechanisms, beyond the conventional ones
-described above, makes a clear distinction between \emph{behavioral} and
-\emph{non-behavioral} objects of change \citep{Verona2011}. These non-behavioral objects
-of change contain psychological objects such as cognitive frames, motivation and identity
-that are important for strategy formation and implementation \citep{Vince2011,Gavetti2012}
-as they 'concerns how decisions or actions are shaped, subverted and transformed by
-emotions, and (..) determine the "way we do things here"' \citep[p. 338]{Vince2011}. In
-this respect they work as firm resources in generating outcomes such as performance and
-competitive advantage. This notion is popularly perhaps expressed most clearly by Peter
-Drucker`s famous quote about how 'culture eats strategy for lunch'. \footnote{The debate
-  on whether Drucker actually uttered these words are still in the open, but it was
-  attributed to him by Mark Fields in 2006} Moreover, these non-behavioral objects of
+Moreover, these non-behavioral objects of
 change are themselves far from static and are found to change over time as responses to
 external change \citep{Zollo2016} thus making them a natural part of the mechanisms
 underpinning how dynamic capabilities work \citep{Schilke2018,Verona2011}.  Still, far less
 is know about the non-behavioral objects of change and how they work as a mechanism in the
-dynamic capabilities theory.We coin {\bf coach} to capture the enabling role dynamic
-capabilities plays through \emph{strategic cognition} as
-juxtaposed to the more directional role played as {\bf conductor} of \emph{operational capabilities}.
+dynamic capabilities theory.
 
-We aim to contribute to bridging this gap by theorize about how non-behavioral objects of
-change work as a mechanism through which dynamic capabilities influence competitive
-advantage. Specifically, we ask the following research question:
+We aim to contribute to bridging this gap by analyzing to what extent DCs influence
+competitive advantage through two paths - one old, and one new - namely behavioral and
+non-behavioral objects of change.  Specifically, we ask the following research question:
 
 {\bf What is the role of non-behavioral objects of change as a mechanism through which
   dynamic capabilities can influence competitive advantage?}
 
-To shed light on this important question we theorize on the role of a particular type of
-non-behavioral object of change, \emph{strategic cognition}, and how it acts as a mediator
-between dynamic capabilities and firm competitive advantage and hence has a pivotal place
-in the literature. We build on important work on the concept of organizational cognition
-\citep{Lakoff1987} , non-behavioral object of change \citep{Verona2011} and cognitive
-psychology \cite{Tversky1983,Kahneman2011} and hypothesize about how strategic cognition
-acts as a mediator in the same way as conventional behavioral objects of change (such as
-routines and capabilities) and that these two are complementary to a certain
-degree. Consequently, we argue, dynamic capabilities takes the function of a {\bf conductor}
-by orchestrating routines and capabilities, and the role of a {\bf coach} in stimulating
-strategic cognition. We use the case of Microsoft's transition into the cloud computing
-business as an illuminating case for demonstrating how the roles of {\bf conductor} and
-{\bf coach} coexist and act partly complimentary in generating strategic change and
-competitive advantage.
 
-Centering this paper around the dynamic capabilities-competitive advantage nexus stems
-from the origins and promises of the dynamic capabilities theory. Competitive advantage is
-considered the 'holy grail' of strategic management \citep{Schilke2018} and is indeed the
-focal point of important antecedent theories of dynamic capabilities
-\citep{Arndt2018}. Consequently, contributions to push the theory forward should enable a
-better understanding of \emph{how} dynamic capabilities work to influence firms'
-competitive advantage. In this spirit, our paper makes the following contributions to
-extant dynamic capabilities theory. First, we provide clarification on the theoretical
-role of non-behavioral objects of change as well as a possible empirical
-operationalization through the concept of \emph{proactiveness}. Second, we conceptualize
-two different expressions of dynamic capabilities (i.e. {\bf conductor} and {\bf coach})
-and theorize on how they work in the dynamic capabilities-competitive advantage nexus. We
-also extend this reasoning to include how they relate to each other. Finally, we develop and
-test an empirical model suited for analyzing mediating constructs on the dynamic
-capabilities-competitive advantage nexus. The time-lag of our data in conjunction with
-advances in empirical estimations of multiple simultaneous mediators makes for an
-interesting model to push our understanding of important mechanisms in the
-theory.
+To help answer this research question we build a conceptual model which illuminates the
+relationships between $DC$, behavioral and non-behavioral objects of change and $CA$. The
+model firmly integrates theorizing on organizational cognition \citep{Lakoff1987},
+non-behavioral object of change \citep{Verona2011} and cognitive psychology
+\citep{Tversky1983,Kahneman2011} into the $DC-CA$ nexus. Specifically, we focus on a
+particular type of non-behavioral object of change, strategic cognition, and how it acts
+as a mediator between dynamic capabilities and firm competitive advantage and hence has a
+pivotal place in the literature. Reflecting this, we argue that DCs have two important
+functions, namely 'DC as {\bf coach}' and 'DC as {\bf conductor}':
+
+Dynamic capabilities take the function of a {\bf conductor} by orchestrating routines and
+capabilities, and the role of a {\bf coach} in stimulating strategic cognition.  We discuss this
+theoretical understanding of $DC$ and use the case of Microsoft’s transition into the cloud
+computing business as an illuminating case. Importantly, this case demonstrates how the
+roles of conductor and coach coexist and in generating strategic change and competitive
+advantage.
+
+The conceptual model is used to derive a set of hypotheses which is tested against
+longitudinal survey data with a 10 year time lag. We find that $DC$ influence competitive
+advantage through both behavioral and non-behavioral objects of change. Thus, the paper
+empirically validates emergent theorizing proposing non-behavioral objects of change as a
+new path between $DC$ and competitive advantage. Moreover, the paper helps to broaden the
+conceptual basis for empirically investigating how $DC$ enable competitive advantage. This
+has implications for understanding how dynamic capabilities work, as well as practical
+implications for how strategic change is implemented in firms. Thus, the paper clarifies
+the theoretical role of non-behavioral objects of change as well as a possible
+operationalization through the concept of \emph{strategic cognition}. Moreover, we
+conceptualize two different expressions of dynamic capabilities (i.e. conductor and coach)
+and theorize on how they work in the $DC-CA$ nexus. Finally, we develop and test an empirical model
+suited for analyzing mediating constructs on the dynamic capabilities-competitive
+advantage nexus. The time-lag of our data in conjunction with advances in empirical
+estimations of multiple simultaneous mediators makes for an interesting model to push our
+understanding of important mechanisms in the theory.
 
 The rest of this paper is organized as follows: First, we present a brief discussion on
 the key definitions applied in this paper. We then move on to develop hypothesis of the
@@ -218,20 +223,37 @@ focal relationships. Third, we present the data and empirical models used to tes
 hypothesis. A discussion follows the results from our model, before we conclude by
 offering some limitations to our study as well as future directions for study.
 
-\section{Definitions}
+\section{Theoretical background and hypotheses}
+
+Competitive advantage is considered the ’holy grail’ of strategic management
+\citep{Schilke2018} and is indeed the focal point of important antecedent theories of
+dynamic capabilities \citep{Arndt2018,Pezeshkan2016b}. Consequently, contributions to push
+the theory forward should enable a better understanding of how dynamic capabilities work
+to influence firms’ competitive advantage.
+
 The collective term for assets available for firms in their pursuit of their objectives
-are \emph{resources}. This term entails tangible assets such as machines, capital, and
-labor, but also intangible assets such as procedures, practices, and intellectual
-property. The process of using these resources in the pursuit of business objectives such
-as competitive advantage is a firm's \emph{capabilities} which can be a set of routines
-and skills applied. Resources and capabilities are both tied organizational behavior and
-how the organization act in their operation. Hence, they are coined \emph{behavioral
-  objects of change} \citep{Verona2011}: 'A pattern of action, a process, an operating
-routine, or any form of group activity characterized by some level of stability and
-predictability' (ibid. p.538). Such behavioral objects such as capabilities are the
-conventional understanding of how dynamic capabilities work; they 'purposefully create,
-extend and modify the resource base' (helfat). In the terminology proposed in this paper
-this process takes the shape as a 'conductor'.
+are \emph{resources} \citep{Helfat2011,Helfat2007}. This term entails tangible assets such
+as machines, capital, and labor, but also intangible assets such as procedures, practices,
+and intellectual property \citep{Pisano2017}. The process of using these resources in the
+pursuit of business objectives such as competitive advantage is a firm's
+\emph{capabilities} which can be a set of routines and skills applied
+\citep{Helfat2007,Helfat2011}. Resources and capabilities are both tied organizational
+behavior and how the organization act in their operation. Hence, they are coined
+\emph{behavioral objects of change} \citep{Verona2011}: 'A pattern of action, a process,
+an operating routine, or any form of group activity characterized by some level of
+stability and predictability' (ibid. p.538). Such behavioral objects such as capabilities
+are the conventional understanding of how dynamic capabilities work; they 'purposefully
+create, extend and modify the resource base' \cite[p. 4]{Helfat2007}. In the terminology
+proposed in this paper this process takes the shape as a {\bf conductor} envisioning a
+conductor orchestrating firm capabilities. Extant literature on dynamic capabilities are
+increasingly focusing on how firm resources are changed by dynamic capabilities as a
+response to changes in the environment \citep{Schilke2018,Eriksson2014}, thus placing firm
+capabilities as a mediator between dynamic capabilities and competetive advantage
+\citep{Helfat2007}. This notion of 'orchestration' of firm resources, assets and
+capabilities has indeed been emphasized in the extant literature
+\citep{Sirmon2011,Helfat2015}. Thus the notion of a {\bf conductor} captures a directional
+role played by $DC$ in terms of its functioning to 'orchestrate' \emph{behavioral}
+objects of changes such as \emph{operational capabilities}.
 
 However, as \cite{Verona2011} points out: 'This approach misses the fundamental aspect
 that organizational capabilities specific to managing change can hardly be reduced to the
@@ -254,20 +276,24 @@ audiences adoption of new strategic representation and identity code to move tow
 new or existing goal \citep{Gavetti2012}. Although strategic cognition may lead to
 behavioral outcome, the nature of the concept itself is tied to cognition rather than
 actual latent action \citep{Zollo2016}. Thus, dynamic capabilities are not sufficiently
-creating strategic change through its role as 'conductor'. Additionally they need to
-exercise a role of 'coach' to adapt the strategic cognition of the organization to create
+creating strategic change through its role as {\bf conductor}. Additionally they need to
+exercise a role to adapt the strategic cognition of the organization to create
 a shared understanding of the sense and necessity of the strategic goals of the
-orientation.
+orientation. We coin {\bf coach} to capture the enabling role dynamic
+capabilities plays through \emph{strategic cognition} as
+juxtaposed to the more directional role played as {\bf conductor} of \emph{operational
+  capabilities}. According to the Cambridge dictionary the noun 'coach' means 'someone
+whose job is to teach people to improve' and 'someone whose job is to train and
+organize'. Albeit often used in relation to sports it is also increasingly used for any
+process of 'learning and development intervention that uses a collaborative, reflective, goal-focused
+relationship to achieve professional outcomes' \cite[p. 253]{Jones2016}. We use the word
+as an analogous idiom for an organizational process focusing on the subject (e.g. the firm or an
+individual) to utilize own capacities as well as activating latent motivations. Thus it is
+juxtaposed to a {\bf conductor} that creates results through directions and
+orchestration.
 
-\section{Hypotheses}\label{sec:hyp}
+\subsection{Conducting and coaching at Microsoft}\label{sec:case}
 
-%DC as resource orchestration - influencing capabilitie
-%DC as cognitive programmer - inluencing cognitive frames
-
-%Prior research focused on managerial cognition, but gavetti shows that hierarchy matters
-%and different cognition maters
-
-What doe sit mean to execute DC (sense etc) and see opportunities and change underlying...
 
 When Satya Nadella took over as CEO of Microsoft in March 2014, he took over a company in
 big trouble. The share price was just north of 30 USD and the company had just launched a
@@ -310,19 +336,11 @@ purpose of our analysis we envision this mechanism to work more as a cognitive p
 enabling the organization to tear away from their current understanding and ways in which
 things are done \citep{Vince2011}. Whereas the analogy of a {\bf conductor} suggests a
 function that composes an outcome based on the available capabilities, the notion of a
-{\bf conductor} refers to the function of enabling others to achieve their objectives. The process
-is all about changing an organization`s thinking from the automated and well-known, to the
-more cognitively aware, moving from what Kahneman and Tversky coins the automated 'system
-one' to the deliberate 'system two' thinking \citep{Kahneman2011}. We will now turn to the two functions
-of dynamic capabilities in turn.
+{\bf coach} refers to the function of enabling others to achieve their objectives. The
+process is all about getting employees on board, and by changing an organization`s
+thinking from the automated and well-known, to the more cognitively aware. We will now
+turn to the two functions of dynamic capabilities in turn.
 
-\begin{figure}
-  \centering
-  \captionsetup{width=0.5\linewidth}
-  \input{./figure/fullmod.tex}
-  \captionof{figure}{The resource and cognitive mechanisms of dynamic capability}
-  \label{fig:fig1}
-\end{figure}
 
 \subsection{Capabilities conductor}
 
@@ -344,9 +362,9 @@ capabilities \cite{Brune2009} and alliance capabilities \cite{Kale2002,kale2007}
 
 The bulk of prior contributions study firm capabilities and resources as the mechanism
 through which dynamic capabilities influence an outcome
-\citep{Fainshmidt2016a,Protogerou2012,Schilke2018,Eriksson2014}. Particularly, much of the
-extant literature concerns measures of accounting profitability and competitive advantage
-as the final outcome of dynamic capabilities
+\citep{Pezeshkan2016b,Fainshmidt2016a,Protogerou2012,Schilke2018}. Particularly, much of
+the extant literature concerns measures of accounting profitability and competitive
+advantage as the final outcome of dynamic capabilities
 \cite{shamsie2009,Schilke2014,Schilke2014a,Teece2016}. Thus, from these prior
 contributions we derive a fundamental hypotheses of the relationship between dynamic
 capabilities and competitive advantage:
@@ -383,7 +401,7 @@ become the notion of the growth mindset \citep{Dweck2016}. This transformation o
 cognition of the organization to better fit the strategy he was laying out, is a proper
 example of instilling a \emph{strategic cognition} in the organization.
 
-Juxtaposed to the experiences from Microsoft, the case of Polaroid brings another set of
+vJuxtaposed to the experiences from Microsoft, the case of Polaroid brings another set of
 experiences to our discussion on non-behavioral objects of action (see \citep{Tripsas2000}
 for a detailed account). Cognitive inertia on the part of the organization played a
 pivotal part in the failing of the company`s digital imaging effort \citep{Verona2011}. In
@@ -403,7 +421,7 @@ in order to stay competitive. This processes relates to creating strategic chang
 organization. This strategic change requires, in addition to modifying, extending and
 creating firm capabilities, also some kind of alignment with the organization as a whole -
 what is often referred to as 'how we do things here' \citep{Nelson1982}, and how an
-organization thinks and act \citep{Nadella2017}. This alignment is possible only if the
+organization think and act \citep{Nadella2017}. This alignment is possible only if the
 employees share a common cognitive frame related to the the strategic direction of the
 company enabling them to make sense of the changes ahead. This is what we have coined
 \emph{strategic cognition} and has its expression in Microsoft's development of a growth
@@ -413,11 +431,24 @@ the organization to accept and value the importance of some decision or system '
 being prompted or required by formal governance
 mechanisms'\citep[p. 812]{Simsek2009}. Moreover, When individuals of a firm buys into
 changes they will enhance the full organization`s ability to not only act upon changes
-\citep{Marchand2004}, but also in 'timely responsiveness' \citep{Kohli1993}. Consequently,
-strategic cognition not only contributes to getting people on board, it also maintain a
-more efficient change process where the individuals take more responsibilities for the
-change itself and leverages their individual knowledge in the endeavor. For a firm to
-create real strategic change as enabled by their dynamic capabilities and hence stay
+\citep{Marchand2004}, but also in 'timely responsiveness' \citep{Kohli1993}.
+
+Seminal contributions in cognitive psychology describes this state of actively engaging in
+cognitive processes 'system 2 thinking' and define it as allocating 'attention to the
+effortful mental activities that demand it, including complex computations'
+\cite[p. 21]{Kahneman2011}. This is juxtaposed to the more automated 'system 1' which
+'operates automatically and quickly, with little or no effort and no sense of voluntary
+control' (ibid). The process is all about changing an organization`s thinking from the
+automated and well-known, to the more cognitively aware. The extent to which individuals
+in an organization is enabled to allocate attention to effortful mental activities related
+to understanding needs for strategic change instead of relying on automatic reasoning
+\citep{Tversky1983} or rules of thumb \citep{Kahneman1979}, can be a forceful remedy
+aganist organizational inertia \citep{Adriaenssen2016}.
+
+Consequently, strategic cognition not only contributes to getting people on board, it also
+maintain a more efficient change process where the individuals take more responsibilities
+for the change itself and leverages their individual knowledge in the endeavor. For a firm
+to create real strategic change as enabled by their dynamic capabilities and hence stay
 competitive, is will need to act as a {\bf coach} to instill a strategic cognition in the
 organization.
 
@@ -453,8 +484,13 @@ capabilites and resources are aligned for the needed strategic change
 \emph{H3: Strategic cognition and operating capabilities are complementary and thus
   mutually reinforcing their individual effect on competitive advantage}
 
-\subsection{Proactiveness as strategic cognition}
-
+\begin{figure}
+  \centering
+  \captionsetup{width=0.5\linewidth}
+  \input{./figure/fullmod.tex}
+  \captionof{figure}{The resource and cognitive mechanisms of dynamic capability}
+  \label{fig:fig1}
+\end{figure}
 
 
 \section{Data and methods}
@@ -468,25 +504,32 @@ path dependency of organizational routines has been noted as permanent limitatio
 moving the dynamic capabilities literature forward empirically and theoretically
 \citep{Schilke2018}.
 
-We collected survey data from R\&D active firms in Norway at two points in time
-($T_0=2005$ and $T_1=2014$). The population was all businesses registered to a scheme for
+
+We use a unique data set where Norwegian technology firms were administered a survey at
+two points in time. ($T_0 = 2005$ and $T_2 = 2014$). The data combine the secondary data
+from an earlier survey with registery data and a follow-up survey conducted by the
+authors. The baseline survey was captured in 2005 when a web based survey was sent to 1721
+technology firms in Norway intending to capture the concept of dynamic capabilities
+\citep{Alsos2007}. Approximatly 70\% of the firms returned filled-in questionaires mouting
+to a total sample size of 1199 firms. Details of the data gathering process and the
+validation is available in \cite{Alsos2007}, but a brief explanation is waranted. The
+authors used a mixed methods approach combining an extensive literature review with
+qualitative interviews and testing in the field. Face validity of the items was further
+examined by testing the items on experts. The authors of the present paper did take part
+in this data initial collection. However, we have been given access to the raw data
+collected in 2005. The second author of this paper followed up with a similar survey in
+the spring/summer of 2014, 9 years after the first round. All the same firms received a
+web-based questionnaire containing the same measures of the key constructs in this
+paper. Following htis second round we were left with a sample size of 283 representing the
+number of firms returning a filled-in second questionnaire.
+
+The population was all businesses registered to a scheme for
 tax deduction of R\&D costs (called SkatteFUNN). As all enterprises which are eligible for
 taxation could register their R\&D activities to receive a tax refund, the registered
 enterprises include close to all enterprises which are involved in such activities at the
 time of our study. The context of R\&D active firms is particularly relevant for studying
 dynamic capabilities because R\&D activity is a signal of responsiveness to change and
 that the firms are located in industries with a certain level of dynamism.
-
-We contacted all the firms that were registering R\&D activities during May to December
-2005 yielding a total of 1721 firms. Using a web-based questionnaire we included items to
-measure the key constructs of this paper. Each firm received an email with a link to the
-questionnaire within a month after their registration for the R\&D tax credit. This
-initial contact was followed by two subsequent email reminders. A total of 1199 (70 \% of
-the initial sample size) answered and returned the questionnaire. In the second phase of
-the study each of these 1199 were contacted again in 2014, 9 years later, with the lion
-share of the firms contacted during the spring and summer of 2014. All received a similar
-web-based questionnaire containing the same measures of the focal constructs of this
-paper. 262 of the firms returned filled-in questionnaire.
 
 All the firms in the sample were identifiable by means of the official firm
 identifier. This enabled us to attach financial data from the annual accounts of the firms
@@ -731,7 +774,7 @@ complementarity or substitution-effects these two may exhibit:
 The main results of our analysis are depicted both in the graphical path diagrams (figure
 \ref{fig:res}) and the regression table in table \ref{tab:res}. The use of PLS-SEM has
 increased substantially in the realm of marketing \citep{hult2018} and strategic management
-\citep{Hair2012} and is the topic of special issues in leading journals (e.g. Journal of
+\citep{Hair2012,Valaei2017} and is the topic of special issues in leading journals \citep{Hair2020} (e.g. Journal of
 Business Research call for papers in 2020). In this tradition we aim to present thorough
 analysis of our models and largely follows the recommendations made in recent
 contributions \citep{Hair2019}.
@@ -748,15 +791,13 @@ advantage is mediated by these two factors separately, as well as together. Thes
 both support H1 and H2. Moreover, the model becomes increasingly better both in terms if
 explanatory power ($R^2$) and predictive power ($Q^2$).
 
-When adding the interaction term  $CAP_1 \times COG_1$ we get a significant effect. this
-is compatible with the idea of behavioral ($CAP_t$) and non-behavioral ($COG_t$) objects
-of change being complementary. This lends support to H3.
+When adding the interaction term $CAP_1 \times COG_1$ we get a significant effect. this is
+compatible with the idea of behavioral ($CAP_t$) and non-behavioral ($COG_t$) objects of
+change being complementary. This lends support to H3.
 
-Our results indicate that between 37\%  and 48\% of the variation in $CA_1$ can be explained by our model,
-whereas 19\% and 18\% of the variation in our mediators $CAP_1$ and $COG_t$ respectively
-is explained.
-
-
+Our results indicate that between 37\% and 48\% of the variation in $CA_1$ can be
+explained by our model, whereas 19\% and 18\% of the variation in our mediators $CAP_1$
+and $COG_t$ respectively is explained.
 
 
 \begin{table}[t]
@@ -817,9 +858,6 @@ variables to which decreased the sample size (from $N=238$ to $N=205$).
 %% variable and the error term. By including this term, the effect of the endogenous
 %% regressor can be estimated consistently
 
-
-
-
  <<pathchild, child='./figure/medanalysisall.rnw',results="asis">>=
 @
 
@@ -837,12 +875,12 @@ results indicated exactly this relationship and thus lending support to hour hyp
 In our example context of Microsoft Nadella did several investments in capabilities and
 resources as a response to Microsofts dynamic capabilities execution. For example, he
 acquired important capabilities from M\&A efforts, and upgraded the competencies regarding
-cloud business and big data \citep{Nadella2017}. This should not be surprising given the vast
-literature on indirect effects of dynamic capabilities \citep{Eriksson2014} supported by
-empirical and theoretical research
-\citep{Fainshmidt2016a,Protogerou2012,Karimi2015}. However, it adds to this ongoing effort
-of investigating mechanisms through which dynamic capabilities work which is called for in
-the literature \citep{Schilke2018}.
+cloud business and big data \citep{Nadella2017}. This should not be surprising given the
+vast literature on indirect effects of dynamic capabilities
+\citep{Schilke2018,Eriksson2014} supported by empirical and theoretical research
+\citep{Pezeshkan2016b,Fainshmidt2016a,Protogerou2012,Karimi2015}. However, it adds to this
+ongoing effort of investigating mechanisms through which dynamic capabilities work which
+is called for in the literature \citep{Schilke2018}.
 
 In this vein, our second hypothesis, and the main contribution of this paper, is much more
 novel in its characteristics. Building on the important work of \cite{Verona2011} in what
@@ -871,13 +909,22 @@ cognition at the same time. Moreover, these two types of objects of change, as t
 discussed by \cite{Verona2011}, are not independent. They work in tandem in that you are
 not able create strategic change without adapting your capabilities for the change,
 meanwhile exercising the right interpretation, understanding and attitude towards
-change. This is also one of the key lessons from the Microsoft case. Our empirical results
-do indeed support this. \emph{Operating capabilities}) and \emph{strategic cognition} are
-complementary to each other in influencing competitive advantage meaning that businesses
-will not succeed properly without being conscious of both.
+change. Our third hypothesis considers strategic cognition in tandem with relevant and
+strong capabilities and hold that they would reinforce each other. This has also been
+supported in previous research where firm success has been shown to relate to the
+interconnection between resources and capabilities, and culture and attitude
+\citep{Verona2003}, and high levels of social capital \citep{Blyler2003}. Moreover, the
+lack of one (e.g. strategic cognition) can lead to unfavorable outcomes even though
+capabilites and resources are aligned for the needed strategic change
+\citep{Tripsas2000}. This is also one of the key lessons from the Microsoft case. Our
+empirical results do indeed support this. \emph{Operating capabilities}) and
+\emph{strategic cognition} are complementary to each other in influencing competitive
+advantage meaning that businesses will not succeed properly without being conscious of
+both.
+
+
 
 \section{Concluding remarks}
-
 
 We started this inquire with the aim to shed light on non-behavioral objects of change as
 an alternative mechanism between dynamic capabilities and competitive advantage. Inspired
@@ -912,10 +959,27 @@ Specifically we have tried to push the theory forward in understanding of \emph{
 dynamic capabilities work to influence firms' competitive advantage. Our contributions
 have been threefold. First, we clarified the theoretical role of non-behavioral objects of
 change and suggested a possible empirical operationalization through the concept of
-\emph{proactiveness}. Second, we suggested and demonstrated two different expressions of
-dynamic capabilities (i.e. {\bf conductor} and {\bf coach}) as well as their workings in
-the dynamic capabilities-competitive advantage nexus. We also extend this reasoning to
-include how they relate to each other. Third, we utilized time-lagged data in conjunction
+\emph{proactiveness}. This has implications for how we operationalize important mediators
+in the $DC-CA$ nexus.
+
+Second, we suggested and demonstrated two different expressions of dynamic capabilities
+(i.e. {\bf conductor} and {\bf coach}) as well as their workings in the dynamic
+capabilities-competitive advantage nexus. This insight adds to the nascent work of
+bringing cognition into broader strategic management field in general
+\citep{Gavetti2012,Gavetti2005a} and dynamic capabilities in particular
+\citep{Helfat2015,Arndt2018}. In particular, the evolutionary and resource based roots of
+$DC$ theory has to a large extent been dominating the field \citep{Arndt2018,Peteraf2013}
+leaving an important side of cognition \cite{Verona2011} and heuristics \cite{Arndt2015}
+less explored. Particularly, the call for exploring new mediators of the $DC-CA$ nexus
+\citep{Schilke2018} is particularly relevant to moving $DC$ theory forward. Our
+conceptualization is thus an important contribution to this work. Bringing the notion of
+simultanously separate and interpendent expressions of $DC$ has implications for
+strategizing and decisions to pursue capability aquisition and development. As with the
+case of Microsoft, our data shows that simultanously maintaining 'strategic cognition'
+adds to outcome of the strategic change. Thus, managers who underestimate these effects
+may very well end up delivering less value than they otherwise could.
+
+Third, we utilized time-lagged data in conjunction
 with advances in empirical estimations of multiple simultaneous mediators. In doing these
 three we believe we have helped to push our understanding of important mechanisms in the
 dynamic capabilities theory.
@@ -931,7 +995,10 @@ our sample size is on the smaller size. Granted, PLS-SEM is able to capture rath
 consistent estimates on small samples, larger samples would enable researchers to extend
 the analysis further. More industries and countries should also be included in the
 analysis, and more observations over time would be helpful in analyzing more causal claims
-in the theory.
+in the theory. Forth, we have examined two particular types of behavioral and
+non-behavioral objects of change. Thus, future research should examine other types in
+order to develop e more elaborate and holistic understanding of how behavioral and
+nonbehavioral objects of change influence competitive advantage in the theory of DC.
 
 These limitations aside, we believe that this paper has helped to push the theory in a
 more 'holistic' direction as suggested by \cite{Verona2011} and hence answering the call
