@@ -104,14 +104,14 @@
 
 
 
-\section{Introduction}
+\section*{Introduction}
 
 
 <<loading, results="asis", echo=FALSE >>=
 setwd("/Users/larshovdanmolden/Documents/git/article4")
 library(xtable)
 library(semPLS)
-#load("./data/resart4.RData")
+load("./data/resart4.RData")
 r <- main$resmat
 rm  <- main$resmatmed
 l  <- main$loadings
@@ -223,7 +223,7 @@ focal relationships. Third, we present the data and empirical models used to tes
 hypothesis. A discussion follows the results from our model, before we conclude by
 offering some limitations to our study as well as future directions for study.
 
-\section{Theoretical background and hypotheses}
+\section*{Theoretical background and hypotheses}
 
 Competitive advantage is considered the ’holy grail’ of strategic management
 \citep{Schilke2018} and is indeed the focal point of important antecedent theories of
@@ -292,7 +292,7 @@ individual) to utilize own capacities as well as activating latent motivations. 
 juxtaposed to a {\bf conductor} that creates results through directions and
 orchestration.
 
-\subsection{Conducting and coaching at Microsoft}\label{sec:case}
+\subsection*{Conducting and coaching at Microsoft}\label{sec:case}
 
 
 When Satya Nadella took over as CEO of Microsoft in March 2014, he took over a company in
@@ -342,7 +342,7 @@ thinking from the automated and well-known, to the more cognitively aware. We wi
 turn to the two functions of dynamic capabilities in turn.
 
 
-\subsection{Capabilities conductor}
+\subsection*{Capabilities conductor}
 
 Satya Nadella set out to transform Microsoft by investing heavily in artificial
 intelligence and cloud computing capabilities. This entailed hiring new people, upgrading
@@ -387,7 +387,7 @@ supported in the lessons from Microsoft's transition.
 % https://hbswk.hbs.edu/item/the-transformation-of-microsoft
 
 
-\subsection{Cognitive coach}
+\subsection*{Cognitive coach}
 
 On February 4th 2014 an email appeared in the inbox of all Microsoft employees. It was
 from Nadella who had just begun his tenure as CEO of the company. In this email he lays
@@ -455,7 +455,7 @@ organization.
 \emph{H2: Strategic cognition mediates the relationship between dynamic capabilities and
   competitive advantage}
 
-\subsection{Coaching conductor}
+\subsection*{Coaching conductor}
 
 Although Satya Nadella and Microsoft put strong emphasis on the cognitive side of
 strategic change (the role as {\bf coach}), acquisition and development of capabilities
@@ -487,13 +487,13 @@ capabilites and resources are aligned for the needed strategic change
 \begin{figure}
   \centering
   \captionsetup{width=0.5\linewidth}
-  \input{./figure/fullmod.tex}
+  \input{/Users/larshovdanmolden/Documents/git/article4/figure/fullmod.tex}
   \captionof{figure}{The resource and cognitive mechanisms of dynamic capability}
   \label{fig:fig1}
 \end{figure}
 
 
-\section{Data and methods}
+\section*{Data and methods}
 
 To test the relationships between dynamic capabilities and competitive advantage, as well
 as the mediating effects on operational capabilities and strategic cognition, we need a
@@ -558,7 +558,7 @@ discussion.
 %% common factors. Moreover, we add robustness checks for endogeneity as a n extra layer of
 %% certainty (see the result section).
 
-\subsection{Variable construction}
+\subsection*{Variable construction}
 
 The focal constructs of this paper are dynamic capabilities, operating capabilities,
 strategic cognition as measured by proactiveness, and competitive advantage. These are all
@@ -652,7 +652,7 @@ the conclusions we draw in this paper, but had some minor effects on the signifi
 the path between $DC_0$ and $COG_1$.
 
 
-\subsection{Control variables}
+\subsection*{Control variables}
 
 We add a set of control variables expected to explain parts of the variation in our focal
 constructs. From the survey we add firm size and firm age. Size is the reported number of
@@ -683,13 +683,13 @@ suggested by the correlation matrix.
   \caption{Descriptive statistics and correlation between key constructs and control
   variables.}
 \label{tab:cor}
-  <<corchild, child='./figure/cortab.rnw',results="asis">>=
+  <<corchild, child='/Users/larshovdanmolden/Documents/git/article4/figure/cortab.rnw',results="asis">>=
 @
 
 \end{table}
 
 
-\subsection{Estimation and empirical model}
+\subsection*{Estimation and empirical model}
 
 Our empirical model is a mediation analysis where operational capabilities and
 proactiveness acts as mediators of the dynamic capabilities-competitive advantage
@@ -770,7 +770,7 @@ complementarity or substitution-effects these two may exhibit:
 
 
 
-\section{Results}
+\section*{Results}
 The main results of our analysis are depicted both in the graphical path diagrams (figure
 \ref{fig:res}) and the regression table in table \ref{tab:res}. The use of PLS-SEM has
 increased substantially in the realm of marketing \citep{hult2018} and strategic management
@@ -804,7 +804,7 @@ and $COG_t$ respectively is explained.
   \caption{PLS-SEM results for key constructs}
 \label{tab:res}
   \scriptsize
-  <<child-demo, child='./figure/restab.rnw'>>=
+  <<child-demo, child='/Users/larshovdanmolden/Documents/git/article4/figure/restab.rnw'>>=
 @
    \begin{tablenotes}
       \tiny
@@ -815,7 +815,7 @@ and $COG_t$ respectively is explained.
   \end{table}
 
 
-\subsection{Robustness and assumption validation}
+\subsection*{Robustness and assumption validation}
 The results are subject to some robustness checks not directly reported in the paper,
 albeit a summary is available in the appendix. First, controlling for functional form
 using a Ramsay RESET test we find support for a linear relationship between our
@@ -858,10 +858,10 @@ variables to which decreased the sample size (from $N=238$ to $N=205$).
 %% variable and the error term. By including this term, the effect of the endogenous
 %% regressor can be estimated consistently
 
- <<pathchild, child='./figure/medanalysisall.rnw',results="asis">>=
+ <<pathchild, child='/Users/larshovdanmolden/Documents/git/article4/figure/medanalysisall.rnw',results="asis">>=
 @
 
-\section{Discussion}
+\section*{Discussion}
 The aim of this paper is to theorize about how non-behavioral objects of change work as a
 mechanism through which dynamic capabilities influence competitive advantage. Our results
 indicate that both behavioral (\emph{operating capabilities}) and non-behavioral
@@ -924,7 +924,7 @@ both.
 
 
 
-\section{Concluding remarks}
+\section*{Concluding remarks}
 
 We started this inquire with the aim to shed light on non-behavioral objects of change as
 an alternative mechanism between dynamic capabilities and competitive advantage. Inspired
@@ -1005,7 +1005,7 @@ more 'holistic' direction as suggested by \cite{Verona2011} and hence answering 
 for investigating more mechanisms in the dynamic capabilities theory \citep{Schilke2018}.
 
 
-\section{Bibliography}
+\section*{Bibliography}
 
 
 \singlespacing
@@ -1013,13 +1013,13 @@ for investigating more mechanisms in the dynamic capabilities theory \citep{Schi
 
 
 
-\section{Appendix}
+\section*{Appendix}
 \newpage
 
   \begin{table}\label{tab:items}
     \caption{Core constructs and their measurement items. Factor
       loadings in parantheses}
-    <<itemchild, child='./figure/itemtab.rnw',results="asis">>=
+    <<itemchild, child='/Users/larshovdanmolden/Documents/git/article4/figure/itemtab.rnw',results="asis">>=
     @
     \begin{tablenotes}
       \tiny
