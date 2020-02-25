@@ -1,0 +1,24 @@
+\singlespacing
+\tiny
+\setlength{\tabcolsep}{3pt}
+<<corcalc, results="asis", echo=FALSE>>=
+
+cormat <- mainf$cormat
+rownames(cormat) <- c("1) $CA_1$",
+                     "2) $CA_0$",
+                     "3) $DC_0$",
+                     "4) $CAP_1$",
+                     "5) $CAP_0$",
+                     "6) $COG_1$",
+                     "7) $COG_0$",
+                     "8) Size",
+                     "9) ln(Assets)",
+                     "11) Margin",
+                     "12) Age")
+
+
+names(cormat) <- c("Mean","SD",paste(seq(1:(length(cormat)-2)),sep=","))
+
+print(xtable(cormat ,size="\\small",caption="Correlation matrix \\label{tab:cor}", align = c("l", rep("p{0.290in}",(dim(cormat)[2]))),table.placement="h", size = "\\small", tabular.environment="longtable"), size="scriptsize", label='tab:cor', caption.placement="top", floating=FALSE,latex.environments=NULL,sanitize.text.function=function(x){x})
+@
+

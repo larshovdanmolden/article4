@@ -3,7 +3,57 @@
 %https://academic.oup.com/journals/pages/authors/latex_files
 %latexmk -pdf -pvc -auxdir=/Users/larshovdanmolden/Documents/Output/  article2_mancap.tex
 
-\documentclass[review,fleqn]{elsarticle}
+\documentclass[review,fleqn]{elsarticle}\usepackage[]{graphicx}\usepackage[]{color}
+% maxwidth is the original width if it is less than linewidth
+% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+\let\hlipl\hlkwb
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
 \usepackage[textsize=tiny,colorinlistoftodos]{todonotes}
 %\usepackage{subfigure}
 %\usepackage{subcaption}
@@ -32,11 +82,10 @@
 %%%% TURN OFF PAGE NUMBER FOR INCLUSION IN THESIS
 %\pagenumbering{gobble}
 %%%%%%%
-
-
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
 
-\begin{frontmatter}
+%\begin{frontmatter}
 %Lock, Stock and Two Smoking Barrels lock stock and two mediating factors
 %The Lord of the Rings: The Two Towers
 %Bravo Two Zero (1999)
@@ -44,7 +93,7 @@
 %Eating strategy for breakfast?
 %Push, skill and two mediating factors
 
-\title{One goal, two paths: How dynamic capabilities enable competitive advantage through behavioral and non-behavioral objects of change}
+%\title{One goal, two paths: How dynamic capabilities enable competitive advantage through behavioral and non-behavioral objects of change}
 %\tnotetext[mytitlenote]{Fully documented templates are available in the elsarticle package on \href{http://www.ctan.org/tex-archive/macros/latex/contrib/elsarticle}{CTAN}.}
 
 %% Group authors per affiliation:
@@ -63,7 +112,7 @@
 %\address[mymainaddress]{1600 John F Kfennedy Boulevard, Philadelphia}
 %\address[mysecondaryaddress]{360 Park Avenue South, New York}
 
-\begin{abstract}
+
 % This paper investigates strategic cognition as mediating factor in the dynamic
 % capabilities-competitive advantage relationship. By including strategic cognition into the
 % analysis in addition to the conventional mediator (operating capabilities) we argue that a
@@ -74,7 +123,11 @@
 % holistic model. This has implications for understanding how dynamic capabilites work, as
 % well as practical implications for how strategic change is implemented in firms.
 
+{\large \bf One goal, two paths: How dynamic capabilities enable competitive advantage through behavioral and non-behavioral objects of change}\\
+\newline 
 
+% \begin{abstract}
+{\bf Abstract:}\\
   The ultimate goal in the theory of dynamic capabilities (DCs) is competitive advantage.
   This paper analyzes to what extent DCs influence competitive advantage through two paths
   - one old, and one new - namely behavioral and non-behavioral objects of change.  In
@@ -88,18 +141,18 @@
   understanding how dynamic capabilities work, as well as practical implications for how
   strategic change is implemented in firms.
 
-\end{abstract}
+%\end{abstract}
 
 \begin{keyword}
 \texttt{Dynamic Capabilities, strategic cognition, operating capabilities, mechanisms,
   competitive advantage }
 \end{keyword}
 
-\end{frontmatter}
+%\end{frontmatter}
 
 %\linenumbers
 
-\doublespacing
+%\doublespacing
 
 
 
@@ -109,21 +162,7 @@
 
 %Frame flexibility: The role of cognitive and emotional framing in innovation adoption by incumbent firms rafaelli2019
 
-<<loading, results="asis", echo=FALSE >>=
-setwd("/Users/larshovdanmolden/Documents/git/article4")
-library(xtable)
-library(semPLS)
-load("./data/resart4.RData")
-r <- main$resmat
-rm  <- main$resmatmed
-l  <- main$loadings
-ic <- data.frame(i[,c(1,4)]);colnames(ic) <- c("b","t")
-ic$rn  <- 1:nrow(ic)
-bb <- main$models$both
-bm <- main$models$mmed
-br <- main$models$rmed
-#foolars=0.99
-@
+
 
 %% Extant literature on dynamic capabilities is battling with a fundamental conception and
 %% prediction of the theory, namely if, when and how dynamic capabilities can lead to competitive
@@ -137,7 +176,7 @@ The ultimate goal in the theory of dynamic capabilities ($DC$) is competitive ad
 \citep{Schilke2014,Helfat2007,Protogerou2012,Li2014,Efrat2018a,Mikalef2017,Davcik2016a}. Extant
 theory argues that competitive advantage ($CA$) stem from resources and routines that are
 well aligned to firms’ competitive environment
-\citep{Helfat2007,Peteraf2013,Teece1997,Li2014,Jantunen201,Makkonen2014}. Dynamic
+\citep{Helfat2007,Peteraf2013,Teece1997,Li2014,Jantunen2018,Makkonen2014}. Dynamic
 capabilities are a source of longer-term competitive advantage in this perspective through
 its capacity to purposefully change these lower-level routines and capabilities
 \citep{Winter2003,Helfat2011,Schilke2018,Pezeshkan2016b,Lin2014a}, also referred to as
@@ -358,9 +397,9 @@ This role of {\bf conductor} is the conventional way of understanding dynamic ca
 stems from one of the most common definitions \citep{Helfat2007} as well as the analogy of
 the process as 'resource orchestration' \citep{Sirmon2011}. It is also found in the
 empirical literature handling various functional forms of dynamic capabilities such as
-acquisition targeting \citep{Bingham2015}, alliancing \cite{Schilke2014}, new product
-development \cite{Danneels2008}, innovation capabilities \citep{Breznik2014}, marketing
-capabilities \cite{Brune2009} and alliance capabilities \cite{Kale2002,kale2007}.
+acquisition targeting \citep{Bingham2015}, alliancing \citep{Schilke2014}, new product
+development \citep{Danneels2008}, innovation capabilities \citep{Breznik2014}, marketing
+capabilities \citep{Brune2009} and alliance capabilities \citep{Kale2002,kale2007}.
 
 The bulk of prior contributions study firm capabilities and resources as the mechanism
 through which dynamic capabilities influence an outcome
@@ -583,7 +622,7 @@ constructs and their internal validity as measured by Dillon-Goldstein Rho which
 preferred metric for this purpose \citep{Hair2019}. The results show that our key
 constructs can be represented by the items in the survey, with a minor caveat. The measure
 of strategic cognition as proactiveness loads only partly on one item (item
-3). Statsistically, a loading of $\Sexpr{l[["lcog"]][3]}$ is on the weaker side of
+3). Statsistically, a loading of $0.53$ is on the weaker side of
 traditional 'rules of thumb' \citep{Hair2010}, but from a theoretical stand point the
 measure makes sense and is established in the literature \cite{covin2012}.
 
@@ -685,11 +724,35 @@ suggested by the correlation matrix.
   \caption{Descriptive statistics and correlation between key constructs and control
   variables.}
 \label{tab:cor}
-  <<corchild, child='/Users/larshovdanmolden/Documents/git/article4/figure/cortab.rnw',results="asis">>=
-@
+
+\singlespacing
+\tiny
+\setlength{\tabcolsep}{3pt}
+% latex table generated in R 3.6.1 by xtable 1.8-4 package
+% Tue Jan 28 12:23:38 2020
+\begingroup\scriptsize
+\begin{tabular}{lp{0.290in}p{0.290in}p{0.290in}p{0.290in}p{0.290in}p{0.290in}p{0.290in}p{0.290in}p{0.290in}p{0.290in}p{0.290in}p{0.290in}p{0.290in}}
+  \hline
+ & Mean & SD & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 \\ 
+  \hline
+1) $CA_1$ & 3.89 & 1.39 & 1 &  &  &  &  &  &  &  &  &  &  \\ 
+  2) $CA_0$ & 3.88 & 1.47 & 0.38 & 1 &  &  &  &  &  &  &  &  &  \\ 
+  3) $DC_0$ & 4.66 & 0.84 & 0.3 & 0.06 & 1 &  &  &  &  &  &  &  &  \\ 
+  4) $CAP_1$ & 4.17 & 0.99 & 0.54 & 0.18 & 0.36 & 1 &  &  &  &  &  &  &  \\ 
+  5) $CAP_0$ & 4.23 & 1.17 & 0.32 & 0.41 & 0.21 & 0.36 & 1 &  &  &  &  &  &  \\ 
+  6) $COG_1$ & 4.63 & 1.15 & 0.45 & 0.06 & 0.39 & 0.46 & 0.25 & 1 &  &  &  &  &  \\ 
+  7) $COG_0$ & 4.71 & 1.26 & 0.19 & 0.27 & 0.24 & 0.15 & 0.37 & 0.34 & 1 &  &  &  &  \\ 
+  8) Size & 4.33 & 1.90 & 0.36 & 0.29 & 0.06 & 0.31 & 0.29 & 0.11 & 0.13 & 1 &  &  &  \\ 
+  9) ln(Assets) & 10.01 & 2.03 & 0.35 & 0.33 & 0.06 & 0.32 & 0.26 & 0.08 & 0.11 & 0.87 & 1 &  &  \\ 
+  11) Margin & -0.07 & 0.66 & 0.18 & 0.24 & 0 & 0.09 & 0.13 & -0.06 & -0.09 & 0.07 & 0.02 & 1 &  \\ 
+  12) Age & 25.12 & 14.24 & 0.17 & 0.18 & -0.05 & 0.19 & 0.17 & -0.02 & -0.05 & 0.52 & 0.51 & 0.04 & 1 \\ 
+   \hline
+\end{tabular}
+\endgroup
+
+
 
 \end{table}
-
 
 \subsection*{Estimation and empirical model}
 
@@ -729,7 +792,7 @@ registry data without the focal relationship changing materially.
 
 To test our hypotheses we then built a path-model from the latent variables we
 constructed. This resulted in four models. The results from the structural model is
-reported in figure \ref{fig:res} and table \ref{tab:res}. To estimate the standard errors
+reported in figure \ref{fig:med4} and table \ref{tab:res}. To estimate the standard errors
 we ran simulations using bootstrapping and reported the simulation number, standard errors
 and corresponding p-values. To evaluate the models we compared $R^2$ and $Q^2$ statistics
 for model comparison. All these are reported in table \ref{tab:res}.
@@ -740,10 +803,12 @@ for model comparison. All these are reported in table \ref{tab:res}.
 %% results are available in the appendix.
 
 The estimated models are based on the following specification:
+\begin{align}
+  CA_{i,1}  = & \alpha_0 + \alpha_1 CA_{i,0} + \omega_1 \alpha_2 CAP_{i,1} + \\
+           & \omega_2 \alpha_3 COG_{i,1} + \alpha_{4} DC_{i,0} + \mathbf{\Gamma}_m\mathbf{C}^m_{i,1} + \epsilon_i
+\end{align}
 
 \begin{align}
-  CA_{i,1} & = \alpha_0 + \alpha_1 CA_{i,0} + \omega_1 \alpha_2 CAP_{i,1}
-  + \omega_2 \alpha_3 COG_{i,1} + \alpha_{4} DC_{i,0} + \mathbf{\Gamma}_m\mathbf{C}^m_{i,1} + \epsilon_i \\
   CAP_{i,1} & = \beta_0 + \beta_1 CAP_{i,0} + \beta_2 DC_{i,0} + v_i\\
    COG_{i,1} & = \eta_0 + \eta_1 COG_{i,0} + \eta_2 DC_{i,0} +  u_i
 \end{align}
@@ -763,7 +828,6 @@ is captured. Models 2 and 3 captures the mediation effect of $CAP$ and $COG$ res
 
 A final model includes an interaction term between $CAP_t$ and $COG_t$ to capture any
 complementarity or substitution-effects these two may exhibit:
-
 \begin{align}
   CA_{i,1}  = & \alpha_0 + \alpha_1 CA_{i,0} + \omega_1 \alpha_2 CAP_{i,1}
   + \omega_2 \alpha_3 COG_{i,1} + \alpha_{4} DC_{i,0} +  \\ \nonumber
@@ -771,15 +835,14 @@ complementarity or substitution-effects these two may exhibit:
 \end{align}
 
 
-
 \section*{Results}
 The main results of our analysis are depicted both in the graphical path diagrams (figure
-\ref{fig:res}) and the regression table in table \ref{tab:res}. The use of PLS-SEM has
+\ref{fig:med4}) and the regression table in table \ref{tab:res}. The use of PLS-SEM has
 increased substantially in the realm of marketing \citep{hult2018} and strategic management
 \citep{Hair2012,Valaei2017} and is the topic of special issues in leading journals \citep{Hair2020} (e.g. Journal of
 Business Research call for papers in 2020). In this tradition we aim to present thorough
 analysis of our models and largely follows the recommendations made in recent
-contributions \citep{Hair2019}.
+xcontributions \citep{Hair2019}.
 
 The empirical models are presented from left to right starting with the direct model. The
 main effect from $DC_0$ to $CA_1$, controlled for $CA_0$, firm size, age, profit margin
@@ -806,11 +869,52 @@ and $COG_t$ respectively is explained.
   \caption{PLS-SEM results for key constructs}
 \label{tab:res}
   \scriptsize
-  <<child-demo, child='/Users/larshovdanmolden/Documents/git/article4/figure/restab.rnw'>>=
-@
-   \begin{tablenotes}
+
+
+
+
+
+
+\begin{tabular}{l*{5}{l}}
+
+  \hline                                                                                                                                                                                \\[-0.5em]
+                           & (1)                        & (2)                           & (3)                           & (4)                        & (5)                              \\ 
+  %                        & \multicolumn{1}{c}{Direct} & \multicolumn{1}{c}{CAP model} & \multicolumn{1}{c}{COG model} & \multicolumn{1}{c}{BOTH model}                                \\
+  \hline                                                                                                                                                                                \\
+  \rowcolor{Gray}
+                           & $\mathbf{CA_t}$            & $\mathbf{CA_t}$               & $\mathbf{CA_t}$               & $\mathbf{CA_t}$            & $\mathbf{CA_t}$                  \\     
+  $DC_{t-1}$               & 0.246             & 0.134                & 0.126                & 0.083             & 0.061                  \\
+                           & (5.52)  & (2.72)     & (2.49)     & (1.6)  & (1.12)       \\ [1em]
+  $CAP_{t}$                &                            & 0.382                &                               & 0.324             & 0.331                  \\
+                           &                            & (7.65)     &                               & (6.38)  & (7.24)       \\[1em]
+  $COG_{t}$                &                            &                               & 0.301                & 0.188             & 0.225                  \\
+                           &                            &                               & (5.27)     & (3.11)  & (3.66)       \\ [1em]
+    $CAP_{t} \times COG_t$ &                            &                               &                               &                            & 0.093                  \\
+                           &                            &                               &                               &                            & (2.04)       \\ [1em]
+    \rowcolor{Gray}
+                           & $\mathbf{}$                & $\mathbf{CAP_t}$              & $\mathbf{}$                   & $\mathbf{CAP_t}$           & $\mathbf{CAP_t}$                 \\
+  $DC_{t-1}$               &                            & 0.237                &                               & 0.224             & 0.206                  \\ 
+                           &                            & (4.12)     &                               & (3.38)  & (3.17)       \\[1em]
+    \rowcolor{Gray}
+                           & $\mathbf{}$                & $\mathbf{}$                   & $\mathbf{COG_t}$              & $\mathbf{COG_t}$           & $\mathbf{COG_t}$                 \\
+  $DC_{t-1}$               &                            &                               & 0.325                & 0.331             & 0.329                  \\
+                           &                            &                               & (5.23)    & (5.29) & (5.31)       \\  \\[-0.5em]
+  \hline                                                                                                                                                                                \\[-0.5em]
+  CA controls              & YES                        & YES                           & YES                           & YES                        & YES                              \\
+  CAP controls             &                            & YES                           &                               & YES                        & YES                              \\
+  COG controls             &                            &                               & YES                           & YES                        & YES                              \\
+  $R^2$                    & 0.3   & 0.44      & 0.37      & 0.47   & 0.48                             \\
+  $Q^2$                    & 0.2   & 0.31      & 0.25      & 0.32   & 0.31                             \\
+ % GOF                      & round(r[13,2],2)   & round(r[13,3],2)      & round(r[13,4],2)      & round(r[13,5],2)   &                                  \\
+ % BIC                      & round(r[14,2],1)   & round(r[14,3],1)      & round(r[14,4],1)      & round(r[14,5],1)   & round((r[14,5]*0.996),1) \\
+  N                        & 240   & 232      & 240      & 232   & 232                              \\
+  \hline
+ % \multicolumn{4}{l}{\tiny Standardized coefficients. T-values in parantheses}                                                                                                         \\
+\end{tabular}
+\begin{tablenotes}
+
       \tiny
-      \item Standard-errors estimated using bootstrapping with 10 000 simulations.
+      \item Standard-errors estimated using bootstrapping with 10 000 simulations. \vspace{-1em}
       \item Firm level control variables include firm size, firm age,
         profit margin, firm assets.
     \end{tablenotes}
@@ -860,8 +964,159 @@ variables to which decreased the sample size (from $N=238$ to $N=205$).
 %% variable and the error term. By including this term, the effect of the endogenous
 %% regressor can be estimated consistently
 
- <<pathchild, child='/Users/larshovdanmolden/Documents/git/article4/figure/medanalysisall.rnw',results="asis">>=
-@
+\begin{figure}
+
+
+\usetikzlibrary{arrows.meta}
+% \begin{minipage}{.48\textwidth}
+\begin{tabular}{cc}
+  % \subcaption{DIRECT model}
+ 
+  
+ %\end{minipage}
+ %\begin{minipage}{.48\textwidth}
+   % \subcaption{CAP model}
+  \begin{tikzpicture}
+   
+    \tikzstyle{mynode}=[circle,draw,thin, draw=black, fill=white, minimum
+    size=12mm,inner sep=0pt, align=center]
+
+    \tikzstyle{mynode2}=[circle,draw, ultra thin, draw=gray,text=gray, fill=white, minimum
+    size=12mm,inner sep=0pt, align=center]
+
+    \tikzstyle{gof}=[draw, ultra thin, draw=none, minimum size=18mm,inner sep=0pt, align=center]
+        
+        
+    \node[mynode] (m){$CAP_t$};
+    \node[mynode,below left=of m,yshift=0.5cm,xshift=-0.5cm](a) {$DC_{t-1}$};
+    \node[mynode,below right=of m,yshift=0.5cm,xshift=0.5cm](b) {$CA_{t}$};
+    \node[mynode2,below of=m,yshift=-1.5cm](c) {$COG_{t}$};
+    \node[gof,below of=c,yshift=-0cm](gof) {$R^2= 0.44$, $Q^2= 0.31$};
+    
+    \draw[-latex, line width=0.3mm] (a.east) -- node[text width=0.8cm,font=\scriptsize, align=center,
+    fill=white] {$0.134^{*}$} (b.west);
+    
+    \draw[-latex, line width=0.3mm] (a.north) -- node[text width=0.8cm,font=\footnotesize, align=center, fill=white] {$0.237^{*}$} (m.west);
+    \draw[ -latex, line width=0.3mm] (m.east) -- node[text
+    width=0.8cm,font=\footnotesize,align=center, fill=white] {$0.382^{*}$} (b.north);
+
+    \draw[gray,-latex] (a.south) -- node[text width=1.3cm,font=\scriptsize, align=left, fill=none] {} (c.west);
+    \draw[gray, -latex,line ] (c.east) -- node[text
+    width=1.3cm,font=\scriptsize,align=right, fill=none] {} (b.south);
+    
+    
+   \end{tikzpicture}
+ %\end{minipage}
+ %\begin{minipage}{.48\textwidth}
+ %  \subcaption{COG model}
+    &
+  \begin{tikzpicture}
+   
+    \tikzstyle{mynode}=[circle,draw, thin, draw=black, fill=white, minimum
+    size=12mm,inner sep=0pt, align=center]
+
+    \tikzstyle{mynode2}=[circle,draw, ultra thin, draw=gray,text=gray, fill=white, minimum
+    size=12mm,inner sep=0pt, align=center]
+
+    \tikzstyle{gof}=[draw, ultra thin, draw=none, minimum size=18mm,inner sep=0pt, align=center]
+        
+        
+    \node[mynode2] (m){$CAP_t$};
+    \node[mynode,below left=of m,yshift=0.5cm,xshift=-0.5cm](a) {$DC_{t-1}$};
+    \node[mynode,below right=of m,yshift=0.5cm,xshift=0.5cm](b) {$CA_{t}$};
+    \node[mynode,below of=m,yshift=-1.5cm](c) {$COG_{t}$};
+    \node[gof,below of=c,yshift=-0cm](gof) {$R^2= 0.37$, $Q^2= 0.25$};
+    
+    \draw[-latex, line width=0.3mm] (a.east) -- node[text width=0.8cm,font=\scriptsize, align=center,
+    fill=white] {$0.126^{*}$} (b.west);
+    
+    \draw[gray,-latex] (a.north) -- node[text width=0.8cm,font=\scriptsize, align=left, fill=none] {} (m.west);
+    \draw[gray, -latex,line ] (m.east) -- node[text
+    width=0.8cm,font=\scriptsize,align=right, fill=none] {} (b.north);
+
+    \draw[-latex, line width=0.3mm] (a.south) -- node[text width=0.8cm,font=\scriptsize, align=center, fill=white] {$0.325^{*}$} (c.west);
+    \draw[-latex, line width=0.3mm] (c.east) -- node[text
+    width=0.8 cm,font=\scriptsize,align=center, fill=white] {$0.301^{*}$} (b.south);
+    
+    
+   \end{tikzpicture}
+ %\end{minipage}
+ %\begin{minipage}{.48\textwidth}
+ %  \subcaption{FULL model}
+  \\
+  \begin{tikzpicture}
+   
+    \tikzstyle{mynode}=[circle,draw, thin, draw=black, fill=white, minimum
+    size=12mm,inner sep=0pt, align=center]
+
+    \tikzstyle{mynode2}=[circle,draw, ultra thin, draw=gray,text=gray, fill=white, minimum
+    size=12mm,inner sep=0pt, align=center]
+
+    \tikzstyle{gof}=[draw, ultra thin, draw=none, minimum size=18mm,inner sep=0pt, align=center]
+        
+        
+    \node[mynode] (m){$CAP_t$};
+    \node[mynode,below left=of m,yshift=0.5cm,xshift=-0.5cm](a) {$DC_{t-1}$};
+    \node[mynode,below right=of m,yshift=0.5cm,xshift=0.5cm](b) {$CA_{t}$};
+    \node[mynode,below of=m,yshift=-1.5cm](c) {$COG_{t}$};
+    \node[gof,below of=c,yshift=-0cm](gof) {$R^2= 0.47$, $Q^2= 0.32$};
+    
+    \draw[-latex,line width=0.3mm] (a.east) -- node[text width=0.8cm,font=\scriptsize, align=center,
+    fill=white] {$0.083$} (b.west);
+    
+    \draw[-latex,line width=0.3mm] (a.north) -- node[text width=0.8cm,font=\scriptsize, align=left, fill=white] {$0.224^{*}$} (m.west);
+    \draw[ -latex,line width=0.3mm ] (m.east) -- node[text
+    width=0.8cm,font=\scriptsize,align=right, fill=white] {$0.324^{*}$} (b.north);
+
+    \draw[-latex,line width=0.3mm] (a.south) -- node[text width=0.8cm,font=\scriptsize, align=left, fill=white] {$0.331^{*}$} (c.west);
+    \draw[-latex,line width=0.3mm ] (c.east) -- node[text
+    width=0.8cm,font=\scriptsize,align=right, fill=white] {$0.188^{*}$} (b.south);
+    
+    
+   \end{tikzpicture}
+    &
+    \begin{tikzpicture}
+   
+    \tikzstyle{mynode}=[circle,draw, thin, draw=black, fill=white, minimum
+    size=12mm,inner sep=0pt, align=center]
+
+    \tikzstyle{mynode2}=[circle,draw, ultra thin, draw=gray,text=gray, fill=white, minimum
+    size=12mm,inner sep=0pt, align=center]
+
+    \tikzstyle{gof}=[draw, ultra thin, draw=none, minimum size=18mm,inner sep=0pt, align=center]
+        
+        
+    \node[mynode] (m){$CAP_t$};
+    \node[mynode,below left=of m,yshift=0.5cm,xshift=-0.5cm](a) {$DC_{t-1}$};
+    \node[mynode,below right=of m,yshift=0.5cm,xshift=0.5cm](b) {$CA_{t}$};
+    \coordinate (CAf) at ([xshift=-1.25cm]b.west);
+    \node[mynode,below of=m,yshift=-1.5cm](c) {$COG_{t}$};
+    \node[gof,below of=c,yshift=-0cm](gof) {$R^2= 0.48$, $Q^2= 0.31$};
+    
+    \draw[-latex,line width=0.3mm] (a.south east) -- node[above,text width=0.8cm,font=\scriptsize, align=left,
+    fill=white] {$0.061$} (b.south west);
+    
+    \draw[-latex,line width=0.3mm] (a.north) -- node[text width=0.8cm,font=\scriptsize, align=left, fill=white] {$0.206^{*}$} (m.west);
+    \draw[ -latex,line width=0.3mm ] (m.east) -- node[text
+    width=0.8cm,font=\scriptsize,align=right, fill=white] {$0.331^{*}$} (b.north);
+
+    \draw[-latex,line width=0.3mm] (a.south) -- node[text width=0.8cm,font=\scriptsize, align=left, fill=white] {$0.329^{*}$} (c.west);
+    \draw[-latex,line width=0.3mm ] (c.east) -- node[text
+    width=0.8cm,font=\scriptsize,align=right, fill=white] {$0.225^{*}$} (b.south);
+    
+     \draw[line width=0.3mm] (m.south east) to[bend left=20] node[text width=0.8cm,font=\scriptsize, align=center,
+    fill=none] {} (c.north east);
+    
+    \draw[{Circle[black]}-latex,line width=0.3mm] (CAf.east) -- node[above, text width=0.2cm,font=\scriptsize, align=center,
+    fill=white] {$0.093^{*}$} (b.west);   
+    
+   \end{tikzpicture}
+% \end{minipage}
+\end{tabular}
+\caption{Mediation analysis - graphical representation}
+\label{fig:med4}
+\end{figure}
+
 
 \section*{Discussion}
 The aim of this paper is to theorize about how non-behavioral objects of change work as a
@@ -971,7 +1226,7 @@ bringing cognition into broader strategic management field in general
 \citep{Gavetti2012,Gavetti2005a} and dynamic capabilities in particular
 \citep{Helfat2015,Arndt2018}. In particular, the evolutionary and resource based roots of
 $DC$ theory has to a large extent been dominating the field \citep{Arndt2018,Peteraf2013}
-leaving an important side of cognition \cite{Verona2011} and heuristics \cite{Arndt2015}
+leaving an important side of cognition \citep{Verona2011} and heuristics \citep{Arndt2015}
 less explored. Particularly, the call for exploring new mediators of the $DC-CA$ nexus
 \citep{Schilke2018} is particularly relevant to moving $DC$ theory forward. Our
 conceptualization is thus an important contribution to this work. Bringing the notion of
@@ -1007,22 +1262,65 @@ more 'holistic' direction as suggested by \cite{Verona2011} and hence answering 
 for investigating more mechanisms in the dynamic capabilities theory \citep{Schilke2018}.
 
 
-\section*{Bibliography}
+%\section*{Bibliography}
 
 
-\singlespacing
-\bibliography{Dissertation_clean}
+%\singlespacing
+%\bibliography{Dissertation_clean}
 
 
-
-\section*{Appendix}
 \newpage
+\section*{Appendix}
 
-  \begin{table}\label{tab:items}
+\begin{table}[h]
+  \label{tab:items}
     \caption{Core constructs and their measurement items. Factor
       loadings in parantheses}
-    <<itemchild, child='/Users/larshovdanmolden/Documents/git/article4/figure/itemtab.rnw',results="asis">>=
-    @
+
+
+
+\scriptsize
+\singlespacing
+\setlist[itemize]{leftmargin=*}
+
+
+
+\begin{tabular}{p{2cm} c p{9cm}}
+
+\textbf{Construct}     & \textbf{Rho}               & \textbf{Items}\\ \toprule%
+  \textbf{Dynamic} \\ \textbf{Capabilities} &\textbf{$0.89$} &\vspace{-5mm} 
+                                                             \begin{itemize} 
+                                                               \setlength\itemsep{-0.2em} 
+                                                             \item Management receive frequent information about the employee's newly gained experiences ($0.69$)
+                                                             \item Knowledge and experiences are shared a cross teams in the firm ($0.77$)
+                                                             \item Knowledge and experiences are shared a cross teams in the firm ($0.76$)
+                                                             \item Positive and negative experiences are shared between employees ($0.82$)
+                                                             \item The employees are involved in discussions where the way of doing business is questioned ($0.79$)
+                                                             \item The employees are encouraged to engage in critical discussions on how the company is conducting its business ($0.62$)
+                                                             \item We conduct evaluations of "what has worked and what has not worked" in regards to larger projects etc ($0.61$)
+                                                             \end{itemize} \\ \midrule%
+ \textbf{Operating}                                                                            \\ \textbf{Capabilities} & \textbf{$0.84$}} & \vspace{-5mm} 
+                                                               \begin{itemize} \setlength\itemsep{-0.2em} 
+                                                               \item The firm has better marketing competence than the competitors ($0.78$)
+                                                               \item Compared to our competitors our firm is particularly skilled in customer service ($0.71$)
+                                                               \itemCompared to our competitors our firm is particularly skilled in management and operations  ($0.86$)
+                                                               \end{itemize} \\  \midrule%
+  
+   \textbf{Strategic} \\ \textbf{Cognition} & \textbf{$0.82$} & \vspace{-5mm} 
+                                                               \begin{itemize} \setlength\itemsep{-0.2em} 
+                                                               \item Compared to our competitiors our firm typically refrain from action until competitors move, and then answer ($0.89$)
+                                                               \item Compared to our competitors we are often first movers in introducing new products, services, administrative routines, production methods etc ($0.87$)
+                                                               \item We relate to our competitors by adopting a "go get them" attitude. We are gonna win this ($0.53$)
+                                                               \end{itemize} \\  \midrule%
+  
+   \textbf{Competitive} \\ \textbf{Advantage} & \textbf{$0.89$} & \vspace{-5mm} 
+                                                               \begin{itemize} \setlength\itemsep{-0.2em} 
+                                                               \item The firm has better financial results than our competitors ($0.85$)
+                                                               \item The firm has a stronger revenue growth than our competitors ($0.87$)
+                                                               \item The firm has a larger market share than our competitors ($0.87$)
+                                                               \end{itemize} \\  \bottomrule%
+  
+\end{tabular}
     \begin{tablenotes}
       \tiny
       \item Dillon-Goldstein Rho is recommended as reliability measure

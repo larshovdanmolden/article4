@@ -36,7 +36,7 @@
 
 \begin{document}
 
-\begin{frontmatter}
+%\begin{frontmatter}
 %Lock, Stock and Two Smoking Barrels lock stock and two mediating factors
 %The Lord of the Rings: The Two Towers
 %Bravo Two Zero (1999)
@@ -44,7 +44,7 @@
 %Eating strategy for breakfast?
 %Push, skill and two mediating factors
 
-\title{One goal, two paths: How dynamic capabilities enable competitive advantage through behavioral and non-behavioral objects of change}
+%\title{One goal, two paths: How dynamic capabilities enable competitive advantage through behavioral and non-behavioral objects of change}
 %\tnotetext[mytitlenote]{Fully documented templates are available in the elsarticle package on \href{http://www.ctan.org/tex-archive/macros/latex/contrib/elsarticle}{CTAN}.}
 
 %% Group authors per affiliation:
@@ -63,7 +63,7 @@
 %\address[mymainaddress]{1600 John F Kfennedy Boulevard, Philadelphia}
 %\address[mysecondaryaddress]{360 Park Avenue South, New York}
 
-\begin{abstract}
+
 % This paper investigates strategic cognition as mediating factor in the dynamic
 % capabilities-competitive advantage relationship. By including strategic cognition into the
 % analysis in addition to the conventional mediator (operating capabilities) we argue that a
@@ -74,7 +74,11 @@
 % holistic model. This has implications for understanding how dynamic capabilites work, as
 % well as practical implications for how strategic change is implemented in firms.
 
+{\large \bf One goal, two paths: How dynamic capabilities enable competitive advantage through behavioral and non-behavioral objects of change}\\
+\newline 
 
+% \begin{abstract}
+{\bf Abstract:}\\
   The ultimate goal in the theory of dynamic capabilities (DCs) is competitive advantage.
   This paper analyzes to what extent DCs influence competitive advantage through two paths
   - one old, and one new - namely behavioral and non-behavioral objects of change.  In
@@ -88,18 +92,18 @@
   understanding how dynamic capabilities work, as well as practical implications for how
   strategic change is implemented in firms.
 
-\end{abstract}
+%\end{abstract}
 
 \begin{keyword}
 \texttt{Dynamic Capabilities, strategic cognition, operating capabilities, mechanisms,
   competitive advantage }
 \end{keyword}
 
-\end{frontmatter}
+%\end{frontmatter}
 
 %\linenumbers
 
-\doublespacing
+%\doublespacing
 
 
 
@@ -111,9 +115,9 @@
 
 <<loading, results="asis", echo=FALSE >>=
 setwd("/Users/larshovdanmolden/Documents/git/article4")
-library(xtable)
-library(semPLS)
-load("./data/resart4.RData")
+#library(xtable)
+#library(semPLS)
+#load("./data/resart4.RData")
 r <- main$resmat
 rm  <- main$resmatmed
 l  <- main$loadings
@@ -690,7 +694,6 @@ suggested by the correlation matrix.
 
 \end{table}
 
-
 \subsection*{Estimation and empirical model}
 
 Our empirical model is a mediation analysis where operational capabilities and
@@ -742,8 +745,11 @@ for model comparison. All these are reported in table \ref{tab:res}.
 The estimated models are based on the following specification:
 
 \begin{align}
-  CA_{i,1} & = \alpha_0 + \alpha_1 CA_{i,0} + \omega_1 \alpha_2 CAP_{i,1}
-  + \omega_2 \alpha_3 COG_{i,1} + \alpha_{4} DC_{i,0} + \mathbf{\Gamma}_m\mathbf{C}^m_{i,1} + \epsilon_i \\
+  CA_{i,1}  = & \alpha_0 + \alpha_1 CA_{i,0} + \omega_1 \alpha_2 CAP_{i,1} + \\
+           & \omega_2 \alpha_3 COG_{i,1} + \alpha_{4} DC_{i,0} + \mathbf{\Gamma}_m\mathbf{C}^m_{i,1} + \epsilon_i
+\end{align}
+
+\begin{align}
   CAP_{i,1} & = \beta_0 + \beta_1 CAP_{i,0} + \beta_2 DC_{i,0} + v_i\\
    COG_{i,1} & = \eta_0 + \eta_1 COG_{i,0} + \eta_2 DC_{i,0} +  u_i
 \end{align}
@@ -808,9 +814,10 @@ and $COG_t$ respectively is explained.
   \scriptsize
   <<child-demo, child='/Users/larshovdanmolden/Documents/git/article4/figure/restab.rnw'>>=
 @
-   \begin{tablenotes}
+\begin{tablenotes}
+
       \tiny
-      \item Standard-errors estimated using bootstrapping with 10 000 simulations.
+      \item Standard-errors estimated using bootstrapping with 10 000 simulations. \vspace{-1em}
       \item Firm level control variables include firm size, firm age,
         profit margin, firm assets.
     \end{tablenotes}
@@ -860,8 +867,11 @@ variables to which decreased the sample size (from $N=238$ to $N=205$).
 %% variable and the error term. By including this term, the effect of the endogenous
 %% regressor can be estimated consistently
 
+\begin{figure}\label{fig:med4}
  <<pathchild, child='/Users/larshovdanmolden/Documents/git/article4/figure/medanalysisall.rnw',results="asis">>=
 @
+\caption{Mediation analysis - graphical representation}
+\end{figure}
 
 \section*{Discussion}
 The aim of this paper is to theorize about how non-behavioral objects of change work as a
@@ -1007,18 +1017,18 @@ more 'holistic' direction as suggested by \cite{Verona2011} and hence answering 
 for investigating more mechanisms in the dynamic capabilities theory \citep{Schilke2018}.
 
 
-\section*{Bibliography}
+%\section*{Bibliography}
 
 
-\singlespacing
-\bibliography{Dissertation_clean}
+%\singlespacing
+%\bibliography{Dissertation_clean}
 
 
 
 \section*{Appendix}
-\newpage
 
-  \begin{table}\label{tab:items}
+\begin{table}[t!]
+  \label{tab:items}
     \caption{Core constructs and their measurement items. Factor
       loadings in parantheses}
     <<itemchild, child='/Users/larshovdanmolden/Documents/git/article4/figure/itemtab.rnw',results="asis">>=

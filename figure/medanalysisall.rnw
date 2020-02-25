@@ -1,0 +1,149 @@
+
+\usetikzlibrary{arrows.meta}
+% \begin{minipage}{.48\textwidth}
+\begin{tabular}{cc}
+  % \subcaption{DIRECT model}
+ 
+  
+ %\end{minipage}
+ %\begin{minipage}{.48\textwidth}
+   % \subcaption{CAP model}
+  \begin{tikzpicture}
+   
+    \tikzstyle{mynode}=[circle,draw,thin, draw=black, fill=white, minimum
+    size=12mm,inner sep=0pt, align=center]
+
+    \tikzstyle{mynode2}=[circle,draw, ultra thin, draw=gray,text=gray, fill=white, minimum
+    size=12mm,inner sep=0pt, align=center]
+
+    \tikzstyle{gof}=[draw, ultra thin, draw=none, minimum size=18mm,inner sep=0pt, align=center]
+        
+        
+    \node[mynode] (m){$CAP_t$};
+    \node[mynode,below left=of m,yshift=0.5cm,xshift=-0.5cm](a) {$DC_{t-1}$};
+    \node[mynode,below right=of m,yshift=0.5cm,xshift=0.5cm](b) {$CA_{t}$};
+    \node[mynode2,below of=m,yshift=-1.5cm](c) {$COG_{t}$};
+    \node[gof,below of=c,yshift=-0cm](gof) {$R^2= \Sexpr{r[11,3]}$, $Q^2= \Sexpr{r[12,3]}$};
+    
+    \draw[-latex, line width=0.3mm] (a.east) -- node[text width=0.8cm,font=\scriptsize, align=center,
+    fill=white] {$\Sexpr{r[1,3]}^{*}$} (b.west);
+    
+    \draw[-latex, line width=0.3mm] (a.north) -- node[text width=0.8cm,font=\footnotesize, align=center, fill=white] {$\Sexpr{r[7,3]}^{*}$} (m.west);
+    \draw[ -latex, line width=0.3mm] (m.east) -- node[text
+    width=0.8cm,font=\footnotesize,align=center, fill=white] {$\Sexpr{r[3,3]}^{*}$} (b.north);
+
+    \draw[gray,-latex] (a.south) -- node[text width=1.3cm,font=\scriptsize, align=left, fill=none] {} (c.west);
+    \draw[gray, -latex,line ] (c.east) -- node[text
+    width=1.3cm,font=\scriptsize,align=right, fill=none] {} (b.south);
+    
+    
+   \end{tikzpicture}
+ %\end{minipage}
+ %\begin{minipage}{.48\textwidth}
+ %  \subcaption{COG model}
+    &
+  \begin{tikzpicture}
+   
+    \tikzstyle{mynode}=[circle,draw, thin, draw=black, fill=white, minimum
+    size=12mm,inner sep=0pt, align=center]
+
+    \tikzstyle{mynode2}=[circle,draw, ultra thin, draw=gray,text=gray, fill=white, minimum
+    size=12mm,inner sep=0pt, align=center]
+
+    \tikzstyle{gof}=[draw, ultra thin, draw=none, minimum size=18mm,inner sep=0pt, align=center]
+        
+        
+    \node[mynode2] (m){$CAP_t$};
+    \node[mynode,below left=of m,yshift=0.5cm,xshift=-0.5cm](a) {$DC_{t-1}$};
+    \node[mynode,below right=of m,yshift=0.5cm,xshift=0.5cm](b) {$CA_{t}$};
+    \node[mynode,below of=m,yshift=-1.5cm](c) {$COG_{t}$};
+    \node[gof,below of=c,yshift=-0cm](gof) {$R^2= \Sexpr{r[11,4]}$, $Q^2= \Sexpr{r[12,4]}$};
+    
+    \draw[-latex, line width=0.3mm] (a.east) -- node[text width=0.8cm,font=\scriptsize, align=center,
+    fill=white] {$\Sexpr{r[1,4]}^{*}$} (b.west);
+    
+    \draw[gray,-latex] (a.north) -- node[text width=0.8cm,font=\scriptsize, align=left, fill=none] {} (m.west);
+    \draw[gray, -latex,line ] (m.east) -- node[text
+    width=0.8cm,font=\scriptsize,align=right, fill=none] {} (b.north);
+
+    \draw[-latex, line width=0.3mm] (a.south) -- node[text width=0.8cm,font=\scriptsize, align=center, fill=white] {$\Sexpr{r[9,4]}^{*}$} (c.west);
+    \draw[-latex, line width=0.3mm] (c.east) -- node[text
+    width=0.8 cm,font=\scriptsize,align=center, fill=white] {$\Sexpr{r[5,4]}^{*}$} (b.south);
+    
+    
+   \end{tikzpicture}
+ %\end{minipage}
+ %\begin{minipage}{.48\textwidth}
+ %  \subcaption{FULL model}
+  \\
+  \begin{tikzpicture}
+   
+    \tikzstyle{mynode}=[circle,draw, thin, draw=black, fill=white, minimum
+    size=12mm,inner sep=0pt, align=center]
+
+    \tikzstyle{mynode2}=[circle,draw, ultra thin, draw=gray,text=gray, fill=white, minimum
+    size=12mm,inner sep=0pt, align=center]
+
+    \tikzstyle{gof}=[draw, ultra thin, draw=none, minimum size=18mm,inner sep=0pt, align=center]
+        
+        
+    \node[mynode] (m){$CAP_t$};
+    \node[mynode,below left=of m,yshift=0.5cm,xshift=-0.5cm](a) {$DC_{t-1}$};
+    \node[mynode,below right=of m,yshift=0.5cm,xshift=0.5cm](b) {$CA_{t}$};
+    \node[mynode,below of=m,yshift=-1.5cm](c) {$COG_{t}$};
+    \node[gof,below of=c,yshift=-0cm](gof) {$R^2= \Sexpr{r[11,5]}$, $Q^2= \Sexpr{r[12,5]}$};
+    
+    \draw[-latex,line width=0.3mm] (a.east) -- node[text width=0.8cm,font=\scriptsize, align=center,
+    fill=white] {$\Sexpr{r[1,5]}$} (b.west);
+    
+    \draw[-latex,line width=0.3mm] (a.north) -- node[text width=0.8cm,font=\scriptsize, align=left, fill=white] {$\Sexpr{r[7,5]}^{*}$} (m.west);
+    \draw[ -latex,line width=0.3mm ] (m.east) -- node[text
+    width=0.8cm,font=\scriptsize,align=right, fill=white] {$\Sexpr{r[3,5]}^{*}$} (b.north);
+
+    \draw[-latex,line width=0.3mm] (a.south) -- node[text width=0.8cm,font=\scriptsize, align=left, fill=white] {$\Sexpr{r[9,5]}^{*}$} (c.west);
+    \draw[-latex,line width=0.3mm ] (c.east) -- node[text
+    width=0.8cm,font=\scriptsize,align=right, fill=white] {$\Sexpr{r[5,5]}^{*}$} (b.south);
+    
+    
+   \end{tikzpicture}
+    &
+    \begin{tikzpicture}
+   
+    \tikzstyle{mynode}=[circle,draw, thin, draw=black, fill=white, minimum
+    size=12mm,inner sep=0pt, align=center]
+
+    \tikzstyle{mynode2}=[circle,draw, ultra thin, draw=gray,text=gray, fill=white, minimum
+    size=12mm,inner sep=0pt, align=center]
+
+    \tikzstyle{gof}=[draw, ultra thin, draw=none, minimum size=18mm,inner sep=0pt, align=center]
+        
+        
+    \node[mynode] (m){$CAP_t$};
+    \node[mynode,below left=of m,yshift=0.5cm,xshift=-0.5cm](a) {$DC_{t-1}$};
+    \node[mynode,below right=of m,yshift=0.5cm,xshift=0.5cm](b) {$CA_{t}$};
+    \coordinate (CAf) at ([xshift=-1.25cm]b.west);
+    \node[mynode,below of=m,yshift=-1.5cm](c) {$COG_{t}$};
+    \node[gof,below of=c,yshift=-0cm](gof) {$R^2= 0.48$, $Q^2= 0.31$};
+    
+    \draw[-latex,line width=0.3mm] (a.south east) -- node[above,text width=0.8cm,font=\scriptsize, align=left,
+    fill=white] {$\Sexpr{ic[6,1]}$} (b.south west);
+    
+    \draw[-latex,line width=0.3mm] (a.north) -- node[text width=0.8cm,font=\scriptsize, align=left, fill=white] {$\Sexpr{ic[7,1]}^{*}$} (m.west);
+    \draw[ -latex,line width=0.3mm ] (m.east) -- node[text
+    width=0.8cm,font=\scriptsize,align=right, fill=white] {$\Sexpr{ic[2,1]}^{*}$} (b.north);
+
+    \draw[-latex,line width=0.3mm] (a.south) -- node[text width=0.8cm,font=\scriptsize, align=left, fill=white] {$\Sexpr{ic[8,1]}^{*}$} (c.west);
+    \draw[-latex,line width=0.3mm ] (c.east) -- node[text
+    width=0.8cm,font=\scriptsize,align=right, fill=white] {$\Sexpr{ic[5,1]}^{*}$} (b.south);
+    
+     \draw[line width=0.3mm] (m.south east) to[bend left=20] node[text width=0.8cm,font=\scriptsize, align=center,
+    fill=none] {} (c.north east);
+    
+    \draw[{Circle[black]}-latex,line width=0.3mm] (CAf.east) -- node[above, text width=0.2cm,font=\scriptsize, align=center,
+    fill=white] {$\Sexpr{ic[9,1]}^{*}$} (b.west);
+    
+    
+   \end{tikzpicture}
+% \end{minipage}
+\end{tabular}
+ 

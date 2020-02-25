@@ -1,0 +1,44 @@
+
+
+\scriptsize
+\singlespacing
+\setlist[itemize]{leftmargin=*}
+
+
+
+\begin{tabular}{p{2cm} c p{9cm}}
+
+\textbf{Construct}     & \textbf{Rho}               & \textbf{Items}\\ \toprule%
+  \textbf{Dynamic} \\ \textbf{Capabilities} &\textbf{$\Sexpr{dgr["DC"]}$} &\vspace{-5mm} 
+                                                             \begin{itemize} 
+                                                               \setlength\itemsep{-0.2em} 
+                                                             \item Management and employees of the firm are strongly encouraged to front new visions, objectives and ideas ($\Sexpr{l[["ldcm"]][1]}$)
+                                                             \item We systematically identify which resources we can utilize (economic, competencies, political and organizational ($\Sexpr{l[["ldcm"]][2]}$)
+                                                             \item We systematically search for new business concepts through observing what happens in our environment ($\Sexpr{l[["ldcm"]][3]}$)
+                                                             \item Systematic transfer of resources for development of new business areas is common in our firm ($\Sexpr{l[["ldcm"]][4]}$)
+                                                             \item We have developed routines that enable us to recombine existing resources in novel ways ($\Sexpr{l[["ldcm"]][5]}$)
+                                                             \item The firm is continously searching for partners to develop our resource base (economic, competencies, political, organizational) ($\Sexpr{l[["ldcm"]][6]}$)
+                                                             \item The firm employees is given space to utilize new opportunities without existing daily activities sufferingc ($\Sexpr{l[["ldcm"]][7]}$)
+                                                             \end{itemize} \\ \midrule%
+ \textbf{Operating}                                                                            \\ \textbf{Capabilities} & \textbf{$\Sexpr{dgr["R"]}$}} & \vspace{-5mm} 
+                                                               \begin{itemize} \setlength\itemsep{-0.2em} 
+                                                               \item The firm has better marketing competence than the competitors ($\Sexpr{l[["lcap"]][1]}$)
+                                                               \item Compared to our competitors our firm is particularly skilled in customer service ($\Sexpr{l[["lcap"]][2]}$)
+                                                               \itemCompared to our competitors our firm is particularly skilled in management and operations  ($\Sexpr{l[["lcap"]][3]}$)
+                                                               \end{itemize} \\  \midrule%
+  
+   \textbf{Strategic} \\ \textbf{Cognition} & \textbf{$\Sexpr{dgr["M"]}$} & \vspace{-5mm} 
+                                                               \begin{itemize} \setlength\itemsep{-0.2em} 
+                                                               \item Compared to our competitiors our firm typically refrain from action until competitors move, and then answer ($\Sexpr{l[["lcog"]][1]}$)
+                                                               \item Compared to our competitors we are often first movers in introducing new products, services, administrative routines, production methods etc ($\Sexpr{l[["lcog"]][2]}$)
+                                                               \item We relate to our competitors by adopting a "go get them" attitude. We are gonna win this ($\Sexpr{l[["lcog"]][3]}$)
+                                                               \end{itemize} \\  \midrule%
+  
+   \textbf{Competitive} \\ \textbf{Advantage} & \textbf{$\Sexpr{dgr["CA1"]}$} & \vspace{-5mm} 
+                                                               \begin{itemize} \setlength\itemsep{-0.2em} 
+                                                               \item The firm has better financial results than our competitors ($\Sexpr{l[["lca"]][1]}$)
+                                                               \item The firm has a stronger revenue growth than our competitors ($\Sexpr{l[["lca"]][2]}$)
+                                                               \item The firm has a larger market share than our competitors ($\Sexpr{l[["lca"]][3]}$)
+                                                               \end{itemize} \\  \bottomrule%
+  
+\end{tabular}
